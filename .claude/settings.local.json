@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git --yes)",
+      "Bash(npx create-next-app@latest global-investor-temp --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git --yes)",
+      "Bash(cp -r C:/dev/global-investor-temp/. C:/dev/Global-investor/)",
+      "Bash(rm -rf C:/dev/global-investor-temp)",
+      "Bash(cp:*)",
+      "Read(//mnt/c/**)",
+      "Read(//c/dev//**)",
+      "Bash(cmd.exe /c \"dir C:\\\\dev\")",
+      "Bash(cmd.exe:*)",
+      "Bash(npx create-next-app@latest global-investor-tmp --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git --yes)",
+      "Bash(powershell:*)",
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest init --yes --defaults)"
+    ]
+  }
+}
