@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { PlayingCard } from '@/components/ui/PlayingCard'
+import { WelcomeModal } from '@/components/ui/WelcomeModal'
 
 interface Suggestion { symbol: string; name: string; exchange: string }
 
@@ -39,56 +40,50 @@ interface SageEntry {
 const SAGES: SageEntry[] = [
   {
     id: 'buffett', name: 'Buffett', title: 'El Anfitrión',
-    suit: '♥', accent: '#C9A84C', cardLabel: 'QUALITY & MOAT',
+    suit: '♥', accent: '#D4A843', cardLabel: 'QUALITY & MOAT',
     headline: 'Wonderful companies at fair prices',
     metrics: [{ label: 'MOAT', value: 'Wide' }, { label: 'ROIC', value: '>15%' }, { label: 'P/FCF', value: '<25x' }],
-    /* 0° — top center */
     cardPos:  { left: 'calc(50% - 30px)',  top: 'calc(50% - 337px)' },
-    /* panel right of card, same top */
     panelPos: { left: 'calc(50% + 38px)',  top: 'calc(50% - 337px)' },
     cardRotate: 0,
   },
   {
     id: 'lynch', name: 'Lynch', title: 'El Rastreador',
-    suit: '♣', accent: '#34D399', cardLabel: 'GROWTH',
+    suit: '♣', accent: '#2EC47E', cardLabel: 'GROWTH',
     headline: 'Average investor wins (PEG)',
     metrics: [{ label: 'PEG', value: '<1.0' }, { label: 'GROWTH', value: '>10%' }, { label: 'EPS', value: 'Rising' }],
     /* 72° — upper-right */
     cardPos:  { left: 'calc(50% + 251px)', top: 'calc(50% - 133px)' },
-    /* panel upper-right of card — radially outward, 15px below-gap to card */
     panelPos: { left: 'calc(50% + 260px)', top: 'calc(50% - 240px)' },
     cardRotate: 5,
   },
   {
     id: 'greenblatt', name: 'Greenblatt', title: 'El Matemático',
-    suit: '♦', accent: '#94A3B8', cardLabel: 'VALUE',
+    suit: '♦', accent: '#7BBDE0', cardLabel: 'VALUE',
     headline: 'Magic formula (cheap & good)',
     metrics: [{ label: 'EARN YLD', value: '>8%' }, { label: 'ROC', value: '>20%' }, { label: 'RANK', value: 'Top 30' }],
-    /* 144° — lower-right */
+    /* 144° — lower-right; panel below, offset for name-tag height */
     cardPos:  { left: 'calc(50% + 143px)', top: 'calc(50% + 197px)' },
-    /* panel below card — 25px gap */
-    panelPos: { left: 'calc(50% + 143px)', top: 'calc(50% + 306px)' },
+    panelPos: { left: 'calc(50% + 143px)', top: 'calc(50% + 318px)' },
     cardRotate: -5,
   },
   {
     id: 'taleb', name: 'Taleb', title: 'El Centinela',
-    suit: '★', accent: '#CBD5E1', cardLabel: 'ANTIFRAGILITY',
+    suit: '★', accent: '#A8BDD8', cardLabel: 'ANTIFRAGILITY',
     headline: 'Hunts hidden leverage, avoids ruin',
     metrics: [{ label: 'LEVERAGE', value: 'Low' }, { label: 'TAIL RISK', value: 'Hedged' }, { label: 'CONVEX', value: 'Yes' }],
-    /* 216° — lower-left */
+    /* 216° — lower-left; panel below, offset for name-tag height */
     cardPos:  { left: 'calc(50% - 203px)', top: 'calc(50% + 197px)' },
-    /* panel below card — 25px gap */
-    panelPos: { left: 'calc(50% - 283px)', top: 'calc(50% + 306px)' },
+    panelPos: { left: 'calc(50% - 283px)', top: 'calc(50% + 318px)' },
     cardRotate: 5,
   },
   {
     id: 'marks', name: 'Marks', title: 'El Estratega',
-    suit: '♠', accent: '#60A5FA', cardLabel: 'CYCLES',
+    suit: '♠', accent: '#6AAFFA', cardLabel: 'CYCLES',
     headline: 'Second-level thinking (market cycles)',
     metrics: [{ label: 'CYCLE POS', value: 'Late' }, { label: 'SPREAD', value: 'Tight' }, { label: 'RISK/RWD', value: '0.8x' }],
     /* 288° — upper-left */
     cardPos:  { left: 'calc(50% - 311px)', top: 'calc(50% - 133px)' },
-    /* panel upper-left of card — radially outward, 15px below-gap to card */
     panelPos: { left: 'calc(50% - 480px)', top: 'calc(50% - 240px)' },
     cardRotate: -5,
   },
@@ -110,6 +105,7 @@ export default function HomePage() {
   const [suggestions, setSuggestions] = useState<Suggestion[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [helpOpen, setHelpOpen] = useState(false)
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const wrapperRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
@@ -143,6 +139,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col" style={{ background: LIBRARY_BG, backgroundAttachment: 'fixed' }}>
+      <WelcomeModal forceOpen={helpOpen} onClose={() => setHelpOpen(false)} />
 
       <div style={{ height: 2, background: 'linear-gradient(to right, transparent, #B8922A 30%, #E8C96C 50%, #B8922A 70%, transparent)' }} />
 
@@ -155,30 +152,42 @@ export default function HomePage() {
           </div>
           <div className="hidden sm:block">
             <div style={{ color: '#C9A84C', fontSize: 10, letterSpacing: '0.38em', textTransform: 'uppercase', fontFamily: 'var(--font-playfair), Georgia, serif', fontWeight: 700 }}>Omaha Bridge Group</div>
-            <div style={{ color: 'rgba(201,168,76,0.35)', fontSize: 7, letterSpacing: '0.30em', textTransform: 'uppercase' }}>Investment Intelligence</div>
+            <div style={{ color: 'rgba(201,168,76,0.60)', fontSize: 7, letterSpacing: '0.30em', textTransform: 'uppercase' }}>Investment Intelligence</div>
           </div>
         </div>
-        <Link href="/ideas" style={{ color: 'rgba(201,168,76,0.60)', fontSize: 9, letterSpacing: '0.25em', textTransform: 'uppercase', border: '1px solid rgba(201,168,76,0.22)', borderRadius: 6, padding: '6px 16px', background: 'rgba(201,168,76,0.03)' }}
-          className="hover:text-[#C9A84C] hover:border-[#C9A84C]/50 transition-all">
-          Today&apos;s Hand <span style={{ opacity: 0.5 }}>♠</span>
-        </Link>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setHelpOpen(true)}
+            style={{ color: 'rgba(201,168,76,0.60)', fontSize: 9, letterSpacing: '0.25em', textTransform: 'uppercase', border: '1px solid rgba(201,168,76,0.22)', borderRadius: 6, padding: '6px 14px', background: 'rgba(201,168,76,0.03)', cursor: 'pointer', transition: 'all 0.2s', fontFamily: 'inherit' }}
+            onMouseEnter={e => { e.currentTarget.style.color = '#C9A84C'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.50)' }}
+            onMouseLeave={e => { e.currentTarget.style.color = 'rgba(201,168,76,0.60)'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.22)' }}
+          >Reglamento</button>
+          <Link href="/ideas" style={{ color: 'rgba(201,168,76,0.60)', fontSize: 9, letterSpacing: '0.25em', textTransform: 'uppercase', border: '1px solid rgba(201,168,76,0.22)', borderRadius: 6, padding: '6px 16px', background: 'rgba(201,168,76,0.03)' }}
+            className="hover:text-[#C9A84C] hover:border-[#C9A84C]/50 transition-all">
+            Today&apos;s Hand <span style={{ opacity: 0.5 }}>♠</span>
+          </Link>
+        </div>
       </header>
 
       <main className="flex-1 flex flex-col items-center">
 
         {/* HERO */}
-        <section className="w-full max-w-4xl mx-auto px-4 pt-10 pb-4 text-center">
-          <div style={{ color: 'rgba(201,168,76,0.45)', fontSize: 9, letterSpacing: '0.55em', textTransform: 'uppercase', marginBottom: 16 }}>
-            ♠ &nbsp; La Mesa de los Grandes &nbsp; ♠
+        <section className="w-full max-w-4xl mx-auto px-4 pt-10 pb-4 text-center" style={{ position: 'relative' }}>
+          {/* Warm ambient glow behind text */}
+          <div style={{ position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%,-50%)', width: 600, height: 200, background: 'radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <div style={{ display: 'inline-block', color: '#C9A84C', fontSize: 9, letterSpacing: '0.55em', textTransform: 'uppercase', marginBottom: 16, background: 'rgba(0,0,0,0.45)', padding: '4px 18px', borderRadius: 20, border: '1px solid rgba(201,168,76,0.22)' }}>
+              ♠ &nbsp; La Mesa de los Grandes &nbsp; ♠
+            </div>
+            <h1 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', fontSize: 'clamp(1.9rem, 5vw, 3.2rem)', fontWeight: 800, lineHeight: 1.1, color: '#F2F6FF', textShadow: '0 1px 3px rgba(0,0,0,1), 0 4px 30px rgba(0,0,0,0.95)', marginBottom: 16 }}>
+              Hoy los grandes inversores<br />
+              <span style={{ color: '#E0B84A', textShadow: '0 1px 3px rgba(0,0,0,1), 0 0 60px rgba(212,168,67,0.35)' }}>te invitan a su mesa.</span>
+            </h1>
+            <p style={{ color: '#B8D0C0', fontSize: 14, lineHeight: 1.75, maxWidth: 520, margin: '0 auto', textShadow: '0 1px 6px rgba(0,0,0,0.95)' }}>
+              No dejes pasar tu oportunidad. Ingresá una acción y los cinco genios
+              te darán su veredicto basado en sus parámetros inamovibles.
+            </p>
           </div>
-          <h1 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', fontSize: 'clamp(1.9rem, 5vw, 3.2rem)', fontWeight: 800, lineHeight: 1.1, color: '#F0F4FF', textShadow: '0 4px 60px rgba(0,0,0,0.8)', marginBottom: 14 }}>
-            Hoy los grandes inversores<br />
-            <span style={{ color: '#D4A843', textShadow: '0 0 80px rgba(212,168,67,0.40)' }}>te invitan a su mesa.</span>
-          </h1>
-          <p style={{ color: '#6A8A72', fontSize: 14, lineHeight: 1.7, maxWidth: 520, margin: '0 auto' }}>
-            No dejes pasar tu oportunidad. Ingresá una acción y los cinco genios
-            te darán su veredicto basado en sus parámetros inamovibles.
-          </p>
         </section>
 
         {/* ════════════════════════════════════════════════════════
@@ -245,28 +254,23 @@ export default function HomePage() {
           {SAGES.map((sage) => (
             <div
               key={`card-${sage.id}`}
-              style={{
-                position: 'absolute', zIndex: 20,
-                ...sage.cardPos,
-              }}
+              style={{ position: 'absolute', zIndex: 20, ...sage.cardPos, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
             >
               <div style={{
                 transform: `rotate(${sage.cardRotate}deg)`,
                 transformOrigin: 'center center',
-                filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.75))',
+                filter: `drop-shadow(0 6px 20px rgba(0,0,0,0.80)) drop-shadow(0 0 8px ${sage.accent}30)`,
                 position: 'relative',
               }}>
                 <PlayingCard suit={sage.suit} label="K" state="face-up" size="md" />
-                {/* Strategy label */}
-                <div style={{
-                  position: 'absolute', bottom: 8, left: 4, right: 4,
-                  background: 'rgba(0,0,0,0.80)', backdropFilter: 'blur(4px)',
-                  borderRadius: 3, padding: '2px 3px',
-                  textAlign: 'center', color: '#E8EDF5',
-                  fontSize: 6, fontWeight: 800, letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                }}>
-                  {sage.cardLabel}
+              </div>
+              {/* Name tag below card */}
+              <div style={{ marginTop: 8, textAlign: 'center', whiteSpace: 'nowrap' }}>
+                <div style={{ color: sage.accent, fontSize: 9, fontWeight: 900, letterSpacing: '0.20em', textTransform: 'uppercase', textShadow: '0 1px 8px rgba(0,0,0,0.95)' }} translate="no">
+                  {sage.name}
+                </div>
+                <div style={{ color: `${sage.accent}90`, fontSize: 7, letterSpacing: '0.12em', textTransform: 'uppercase', marginTop: 1 }}>
+                  {sage.title}
                 </div>
               </div>
             </div>
@@ -286,82 +290,114 @@ export default function HomePage() {
 
         {/* Mobile list */}
         <section className="lg:hidden w-full max-w-md mx-auto px-4 pb-6 space-y-3">
-          <div style={{ color: 'rgba(201,168,76,0.38)', fontSize: 9, letterSpacing: '0.4em', textTransform: 'uppercase', textAlign: 'center', paddingTop: 8, marginBottom: 10 }}>
+          <div style={{ color: 'rgba(201,168,76,0.72)', fontSize: 9, letterSpacing: '0.4em', textTransform: 'uppercase', textAlign: 'center', paddingTop: 8, marginBottom: 10 }}>
             Los Cinco Maestros
           </div>
           {SAGES.map((sage) => (
-            <div key={sage.id} style={{ display: 'flex', alignItems: 'center', gap: 12, background: 'rgba(2,10,5,0.90)', border: '1px solid rgba(201,168,76,0.14)', borderRadius: 12, padding: '10px 14px' }}>
+            <div key={sage.id} style={{ display: 'flex', alignItems: 'center', gap: 12, background: 'rgba(8,4,2,0.94)', border: `1px solid ${sage.accent}50`, borderRadius: 12, padding: '10px 14px' }}>
               <PlayingCard suit={sage.suit} label="K" state="face-up" size="sm" />
               <div>
-                <div style={{ color: sage.accent, fontWeight: 700, fontSize: 12 }} translate="no">{sage.name}</div>
-                <div style={{ color: 'rgba(201,168,76,0.40)', fontSize: 8, textTransform: 'uppercase', letterSpacing: '0.14em' }}>{sage.title}</div>
-                <div style={{ color: '#4A6A52', fontSize: 10, marginTop: 3 }}>{sage.headline}</div>
+                <div style={{ color: sage.accent, fontWeight: 700, fontSize: 13 }} translate="no">{sage.name}</div>
+                <div style={{ color: 'rgba(201,168,76,0.65)', fontSize: 8, textTransform: 'uppercase', letterSpacing: '0.14em' }}>{sage.title}</div>
+                <div style={{ color: '#8AAE96', fontSize: 11, marginTop: 4 }}>{sage.headline}</div>
               </div>
             </div>
           ))}
         </section>
 
-        {/* SEARCH */}
-        <section className="w-full max-w-2xl mx-auto px-4 pb-10">
-          <form onSubmit={onSubmit}>
-            <div ref={wrapperRef} style={{ position: 'relative' }}>
-              <div style={{ position: 'absolute', inset: -3, borderRadius: 20, background: 'radial-gradient(ellipse at 50% 80%, rgba(201,168,76,0.18) 0%, transparent 65%)', filter: 'blur(10px)', pointerEvents: 'none', zIndex: 0 }} />
-              <div style={{ position: 'relative', zIndex: 1, display: 'flex', background: 'rgba(2,8,4,0.97)', borderRadius: 16, border: '2px solid rgba(201,168,76,0.50)', boxShadow: '0 0 0 6px rgba(201,168,76,0.05), 0 24px 80px rgba(0,0,0,0.60)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', paddingLeft: 20, color: 'rgba(201,168,76,0.38)', fontSize: 18, flexShrink: 0 }}>♦</div>
-                <input
-                  type="text" value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  onFocus={() => suggestions.length > 0 && setShowSuggestions(true)}
-                  placeholder="Ticker o empresa  (AAPL, Tesla, Microsoft…)"
-                  maxLength={60} autoComplete="off"
-                  style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', padding: '18px 16px', color: '#E8EDF5', fontSize: 16, minWidth: 0 }}
-                />
-                {loading && (
-                  <div style={{ display: 'flex', alignItems: 'center', paddingRight: 16 }}>
-                    <div style={{ width: 16, height: 16, borderRadius: '50%', border: '2px solid rgba(201,168,76,0.20)', borderTopColor: '#C9A84C', animation: 'spin 0.8s linear infinite' }} />
+        {/* SEARCH — escenario propio, destacado del fondo */}
+        <section className="w-full max-w-2xl mx-auto px-4 pb-6 pt-2">
+
+          {/* Contenedor escenario */}
+          <div style={{
+            position: 'relative',
+            background: 'linear-gradient(160deg, rgba(18,10,3,0.97) 0%, rgba(22,13,4,0.97) 100%)',
+            borderRadius: 20,
+            padding: '28px 28px 22px',
+            border: '1px solid rgba(201,168,76,0.28)',
+            boxShadow: [
+              '0 0 0 1px rgba(201,168,76,0.08)',
+              '0 30px 90px rgba(0,0,0,0.70)',
+              'inset 0 1px 0 rgba(201,168,76,0.12)',
+            ].join(', '),
+          }}>
+            {/* Línea dorada superior */}
+            <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: 2, borderRadius: 2, background: 'linear-gradient(to right, transparent, #C9A84C 30%, #E8C96C 50%, #C9A84C 70%, transparent)' }} />
+
+            {/* Glow ambiental detrás del input */}
+            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '110%', height: '70%', background: 'radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 70%)', pointerEvents: 'none' }} />
+
+            {/* Label invitación */}
+            <div style={{ textAlign: 'center', marginBottom: 18, position: 'relative' }}>
+              <span style={{ color: 'rgba(201,168,76,0.75)', fontSize: 8.5, letterSpacing: '0.50em', textTransform: 'uppercase' }}>
+                ♦ &nbsp; Es tu turno &nbsp; ♦
+              </span>
+            </div>
+
+            <form onSubmit={onSubmit}>
+              <div ref={wrapperRef} style={{ position: 'relative' }}>
+                {/* Input row */}
+                <div style={{ position: 'relative', zIndex: 1, display: 'flex', background: 'rgba(4,12,6,0.98)', borderRadius: 14, border: '2px solid rgba(201,168,76,0.65)', boxShadow: '0 0 0 5px rgba(201,168,76,0.06), 0 8px 40px rgba(0,0,0,0.70)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', paddingLeft: 20, color: '#C9A84C', fontSize: 20, flexShrink: 0, opacity: 0.75 }}>♦</div>
+                  <input
+                    type="text" value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    onFocus={() => suggestions.length > 0 && setShowSuggestions(true)}
+                    placeholder="Ticker o empresa  (AAPL, Tesla, Microsoft…)"
+                    maxLength={60} autoComplete="off"
+                    style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', padding: '20px 16px', color: '#EEF2FF', fontSize: 16, minWidth: 0 }}
+                  />
+                  {loading && (
+                    <div style={{ display: 'flex', alignItems: 'center', paddingRight: 16 }}>
+                      <div style={{ width: 16, height: 16, borderRadius: '50%', border: '2px solid rgba(201,168,76,0.20)', borderTopColor: '#C9A84C', animation: 'spin 0.8s linear infinite' }} />
+                    </div>
+                  )}
+                  <button type="submit" disabled={!query.trim()}
+                    style={{ margin: 6, padding: '13px 28px', borderRadius: 10, fontWeight: 800, fontSize: 11, letterSpacing: '0.10em', textTransform: 'uppercase', flexShrink: 0, transition: 'all 0.2s', background: query.trim() ? 'linear-gradient(135deg, #E0B840, #C9A84C, #A87830)' : 'rgba(201,168,76,0.05)', color: query.trim() ? '#080F04' : 'rgba(201,168,76,0.20)', cursor: query.trim() ? 'pointer' : 'not-allowed', boxShadow: query.trim() ? '0 0 32px rgba(201,168,76,0.38), 0 4px 16px rgba(0,0,0,0.60)' : 'none' }}>
+                    Deal the Hand
+                  </button>
+                </div>
+
+                {showSuggestions && (
+                  <div style={{ position: 'absolute', top: '100%', left: 0, right: 0, marginTop: 8, zIndex: 30, background: '#030A04', border: '1px solid rgba(201,168,76,0.28)', borderRadius: 14, overflow: 'hidden', boxShadow: '0 28px 90px rgba(0,0,0,0.75)' }}>
+                    {suggestions.map((s) => (
+                      <button key={s.symbol} type="button" onClick={() => navigate(s.symbol)}
+                        className="w-full flex items-center gap-4 px-5 py-4 text-left transition-colors hover:bg-[rgba(201,168,76,0.06)]"
+                        style={{ borderBottom: '1px solid rgba(201,168,76,0.07)' }}>
+                        <span translate="no" style={{ color: '#D4A843', fontFamily: 'monospace', fontWeight: 800, fontSize: 14, width: 64, flexShrink: 0 }}>{s.symbol}</span>
+                        <span style={{ color: '#C8D8CC', fontSize: 13, flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.name}</span>
+                        <span style={{ color: '#5A9A72', fontSize: 10, flexShrink: 0 }}>{s.exchange}</span>
+                      </button>
+                    ))}
                   </div>
                 )}
-                <button type="submit" disabled={!query.trim()}
-                  style={{ margin: 6, padding: '12px 26px', borderRadius: 12, fontWeight: 800, fontSize: 11, letterSpacing: '0.10em', textTransform: 'uppercase', flexShrink: 0, transition: 'all 0.2s', background: query.trim() ? 'linear-gradient(135deg, #D9B040, #C9A84C, #A87830)' : 'rgba(201,168,76,0.05)', color: query.trim() ? '#0A1A08' : 'rgba(201,168,76,0.18)', cursor: query.trim() ? 'pointer' : 'not-allowed', boxShadow: query.trim() ? '0 0 28px rgba(201,168,76,0.30)' : 'none' }}>
-                  Deal the Hand
-                </button>
               </div>
-              {showSuggestions && (
-                <div style={{ position: 'absolute', top: '100%', left: 0, right: 0, marginTop: 8, zIndex: 30, background: '#030A04', border: '1px solid rgba(201,168,76,0.28)', borderRadius: 14, overflow: 'hidden', boxShadow: '0 28px 90px rgba(0,0,0,0.75)' }}>
-                  {suggestions.map((s) => (
-                    <button key={s.symbol} type="button" onClick={() => navigate(s.symbol)}
-                      className="w-full flex items-center gap-4 px-5 py-4 text-left transition-colors hover:bg-[rgba(201,168,76,0.06)]"
-                      style={{ borderBottom: '1px solid rgba(201,168,76,0.07)' }}>
-                      <span translate="no" style={{ color: '#D4A843', fontFamily: 'monospace', fontWeight: 800, fontSize: 14, width: 64, flexShrink: 0 }}>{s.symbol}</span>
-                      <span style={{ color: '#C8D8CC', fontSize: 13, flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.name}</span>
-                      <span style={{ color: '#2A5A3A', fontSize: 10, flexShrink: 0 }}>{s.exchange}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
 
-            <div className="flex flex-wrap gap-2 justify-center mt-4 items-center">
-              <span style={{ color: 'rgba(201,168,76,0.28)', fontSize: 9, letterSpacing: '0.35em', textTransform: 'uppercase' }}>Popular:</span>
-              {POPULAR.map((t) => (
-                <button key={t} onClick={() => navigate(t)} translate="no"
-                  style={{ color: 'rgba(201,168,76,0.55)', border: '1px solid rgba(201,168,76,0.16)', background: 'rgba(201,168,76,0.03)', borderRadius: 8, padding: '5px 13px', fontSize: 11, fontFamily: 'monospace', fontWeight: 700, cursor: 'pointer', transition: 'all 0.15s' }}
-                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.10)'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.40)'; e.currentTarget.style.color = '#C9A84C' }}
-                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.03)'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.16)'; e.currentTarget.style.color = 'rgba(201,168,76,0.55)' }}>
-                  {t}
-                </button>
-              ))}
-            </div>
-          </form>
+              <div className="flex flex-wrap gap-2 justify-center mt-4 items-center">
+                <span style={{ color: 'rgba(201,168,76,0.62)', fontSize: 9, letterSpacing: '0.35em', textTransform: 'uppercase' }}>Popular:</span>
+                {POPULAR.map((t) => (
+                  <button key={t} onClick={() => navigate(t)} translate="no"
+                    style={{ color: 'rgba(201,168,76,0.60)', border: '1px solid rgba(201,168,76,0.20)', background: 'rgba(201,168,76,0.04)', borderRadius: 8, padding: '5px 13px', fontSize: 11, fontFamily: 'monospace', fontWeight: 700, cursor: 'pointer', transition: 'all 0.15s' }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.12)'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.45)'; e.currentTarget.style.color = '#D4A843' }}
+                    onMouseLeave={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.04)'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.20)'; e.currentTarget.style.color = 'rgba(201,168,76,0.60)' }}>
+                    {t}
+                  </button>
+                ))}
+              </div>
+            </form>
+          </div>
+        </section>
 
+        {/* TODAY'S HAND */}
+        <section className="w-full max-w-2xl mx-auto px-4 pb-10">
           <Link href="/ideas"
-            style={{ display: 'flex', alignItems: 'center', gap: 16, borderRadius: 16, padding: '16px 22px', marginTop: 16, border: '1px solid rgba(201,168,76,0.18)', background: 'rgba(3,12,5,0.80)', boxShadow: '0 10px 40px rgba(0,0,0,0.45)', transition: 'all 0.2s', textDecoration: 'none' }}
+            style={{ display: 'flex', alignItems: 'center', gap: 16, borderRadius: 16, padding: '16px 22px', border: '1px solid rgba(201,168,76,0.18)', background: 'rgba(3,12,5,0.80)', boxShadow: '0 10px 40px rgba(0,0,0,0.45)', transition: 'all 0.2s', textDecoration: 'none' }}
             onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(201,168,76,0.40)' }}
             onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(201,168,76,0.18)' }}>
             <div style={{ width: 42, height: 42, borderRadius: '50%', flexShrink: 0, background: 'rgba(201,168,76,0.07)', border: '1px solid rgba(201,168,76,0.20)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, color: '#C9A84C' }}>♠</div>
             <div>
               <div style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5', fontSize: 15, fontWeight: 700 }}>Today&apos;s Hand</div>
-              <div style={{ color: '#3A5A42', fontSize: 12, marginTop: 2 }}>Las cinco apuestas que los maestros harían ahora mismo</div>
+              <div style={{ color: '#7A9E88', fontSize: 12, marginTop: 2 }}>Las cinco apuestas que los maestros harían ahora mismo</div>
             </div>
             <div style={{ marginLeft: 'auto', color: 'rgba(201,168,76,0.35)', fontSize: 20 }}>→</div>
           </Link>
@@ -370,8 +406,8 @@ export default function HomePage() {
       </main>
 
       <footer style={{ borderTop: '1px solid rgba(201,168,76,0.08)' }} className="px-6 py-5">
-        <p className="text-center max-w-3xl mx-auto" style={{ color: '#1A3020', fontSize: '0.6rem', lineHeight: 1.8 }}>
-          <strong style={{ color: 'rgba(201,168,76,0.28)' }}>DISCLAIMER:</strong> OBG es una herramienta informativa.
+        <p className="text-center max-w-3xl mx-auto" style={{ color: 'rgba(148,178,156,0.55)', fontSize: '0.6rem', lineHeight: 1.8 }}>
+          <strong style={{ color: 'rgba(201,168,76,0.55)' }}>DISCLAIMER:</strong> OBG es una herramienta informativa.
           Nada en esta plataforma constituye asesoramiento financiero. Siempre consultá a un asesor calificado.
         </p>
       </footer>
@@ -387,34 +423,51 @@ export default function HomePage() {
 function SagePanel({ sage }: { sage: SageEntry }) {
   return (
     <div style={{
-      background: 'linear-gradient(145deg, #030D1E 0%, #05112B 55%, #040E22 100%)',
-      border: `1px solid ${sage.accent}40`,
-      borderRadius: 8,
-      padding: '10px 14px 9px',
-      minWidth: 200, maxWidth: 220,
-      boxShadow: `0 10px 40px rgba(0,0,0,0.80), 0 0 0 0.5px ${sage.accent}18`,
-      backdropFilter: 'blur(10px)',
+      background: 'linear-gradient(145deg, #0E0804 0%, #180C05 55%, #0C0702 100%)',
+      border: `1.5px solid ${sage.accent}80`,
+      borderRadius: 9,
+      padding: '11px 15px 10px',
+      minWidth: 205, maxWidth: 225,
+      boxShadow: [
+        '0 12px 50px rgba(0,0,0,0.88)',
+        `0 0 18px ${sage.accent}14`,
+        `inset 0 1px 0 ${sage.accent}20`,
+      ].join(', '),
     }}>
-      {/* NAME: headline */}
-      <div style={{ marginBottom: 6 }}>
-        <span style={{ color: sage.accent, fontWeight: 900, fontSize: 11.5, textTransform: 'uppercase', letterSpacing: '0.14em', fontFamily: 'var(--font-playfair), Georgia, serif' }} translate="no">
-          {sage.name}:
+      {/* Name + title row */}
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 7, marginBottom: 5 }}>
+        <span style={{
+          color: sage.accent,
+          fontWeight: 900, fontSize: 12,
+          textTransform: 'uppercase', letterSpacing: '0.16em',
+          fontFamily: 'var(--font-playfair), Georgia, serif',
+        }} translate="no">
+          {sage.name}
         </span>
-        {' '}
-        <span style={{ color: '#C0D0C0', fontSize: 10.5, fontWeight: 400, lineHeight: 1.3 }}>
-          {sage.headline}
+        <span style={{
+          color: `${sage.accent}90`,
+          fontSize: 7.5, letterSpacing: '0.10em',
+          textTransform: 'uppercase',
+        }}>
+          {sage.title}
         </span>
       </div>
       {/* Separator */}
-      <div style={{ height: '0.5px', background: `linear-gradient(to right, ${sage.accent}60, transparent)`, marginBottom: 7 }} />
+      <div style={{ height: '0.5px', background: `linear-gradient(to right, ${sage.accent}70, transparent)`, marginBottom: 6 }} />
+      {/* Headline */}
+      <div style={{ color: '#DDD8C8', fontSize: 10.5, lineHeight: 1.40, marginBottom: 7 }}>
+        {sage.headline}
+      </div>
+      {/* Separator */}
+      <div style={{ height: '0.5px', background: `linear-gradient(to right, ${sage.accent}40, transparent)`, marginBottom: 7 }} />
       {/* Metrics */}
-      <div style={{ display: 'flex', gap: 12 }}>
+      <div style={{ display: 'flex', gap: 14 }}>
         {sage.metrics.map((m) => (
           <div key={m.label}>
-            <div style={{ color: 'rgba(160,190,160,0.40)', fontSize: 6.5, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 2 }}>
+            <div style={{ color: `${sage.accent}B0`, fontSize: 6.5, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 2 }}>
               {m.label}
             </div>
-            <div style={{ color: '#D0E8D0', fontSize: 12, fontWeight: 700, fontFamily: '"Fira Code","Courier New",monospace' }}>
+            <div style={{ color: '#F2EAC8', fontSize: 12, fontWeight: 700, fontFamily: '"Fira Code","Courier New",monospace' }}>
               {m.value}
             </div>
           </div>
