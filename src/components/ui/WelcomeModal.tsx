@@ -12,29 +12,29 @@ export interface WelcomeModalProps {
 }
 
 /* ── sequences ─────────────────────────────────────────────────── */
-const HEADLINE = 'Warren Buffett te invita\na su mesa de bridge.'
+const HEADLINE = 'Análisis de inversión real.\nNo simulado. No teórico.'
 // Note: el typewriter renderiza char a char — translate="no" se aplica en el contenedor
-const SUBTITLE  = 'Esta vez te toca a vos.'
-const TAGLINE   = 'Parece un juego. No lo es.'
+const SUBTITLE  = 'Los criterios exactos de los mejores inversores de la historia, aplicados a cualquier acción en segundos.'
+const TAGLINE   = 'La estética es un juego de cartas. El análisis es completamente real.'
 
 const STEPS: { icon: string; color: string; title: string; body: React.ReactNode }[] = [
   {
     icon: '♦',
     color: '#C9A84C',
-    title: 'Vos elegís la acción',
-    body: <>Traés un <span translate="no">ticker</span> a la mesa. Cualquier empresa que cotice en bolsa.</>,
+    title: 'Datos financieros reales',
+    body: <>Cada análisis consume datos actualizados de <span translate="no">Financial Modeling Prep, Yahoo Finance</span> y la <span translate="no">Reserva Federal (FRED)</span>. Balances, flujos de caja, precio, macroeconómicos — todo real.</>,
   },
   {
     icon: '♥',
     color: '#D46060',
-    title: 'Buffett filtra primero',
-    body: <>Solo pasan las empresas con <span translate="no">moat</span> real, retornos consistentes y precio razonable. El estándar es alto.</>,
+    title: 'Filtros basados en criterios publicados',
+    body: <>No inventamos métricas. Aplicamos los criterios exactos que <span translate="no">Buffett, Lynch, Greenblatt, Taleb, Marks y Fink</span> documentaron públicamente durante décadas. Sin interpretación. Sin sesgo.</>,
   },
   {
     icon: '★',
     color: '#8BA4C0',
-    title: 'Los seis maestros emiten su veredicto',
-    body: <><span translate="no">Lynch, Greenblatt, Taleb, Marks y Fink</span> agregan su análisis desde su filosofía inamovible. El veredicto final es colectivo.</>,
+    title: 'Veredicto accionable con precio objetivo',
+    body: <>El resultado incluye calificación (<span translate="no">Strong Buy → Sell</span>), precio objetivo, <span translate="no">stop-loss</span> y ratio <span translate="no">riesgo/recompensa</span>. Información concreta para tomar decisiones.</>,
   },
 ]
 

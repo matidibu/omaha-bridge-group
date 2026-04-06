@@ -195,8 +195,8 @@ export default function HomePage() {
               <span style={{ color: '#E0B84A', textShadow: '0 1px 3px rgba(0,0,0,1), 0 0 60px rgba(212,168,67,0.35)' }}>te invitan a su mesa.</span>
             </h1>
             <p style={{ color: '#B8D0C0', fontSize: 14, lineHeight: 1.75, maxWidth: 520, margin: '0 auto', textShadow: '0 1px 6px rgba(0,0,0,0.95)' }}>
-              No dejes pasar tu oportunidad. Ingresá una acción y los seis genios
-              te darán su veredicto basado en sus parámetros inamovibles.
+              Datos financieros reales. Criterios documentados por los mejores inversores de la historia.
+              Ingresá una acción y obtené un veredicto concreto — precio objetivo, <span translate="no">stop-loss</span> y calificación.
             </p>
           </div>
         </section>
@@ -408,7 +408,7 @@ export default function HomePage() {
             <div style={{ width: 42, height: 42, borderRadius: '50%', flexShrink: 0, background: 'rgba(201,168,76,0.07)', border: '1px solid rgba(201,168,76,0.20)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, color: '#C9A84C' }}>♠</div>
             <div>
               <div translate="no" style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5', fontSize: 15, fontWeight: 700 }}>Today&apos;s Hand</div>
-              <div style={{ color: '#7A9E88', fontSize: 12, marginTop: 2 }}>Las cinco apuestas que los maestros harían ahora mismo</div>
+              <div style={{ color: '#7A9E88', fontSize: 12, marginTop: 2 }}>Las seis apuestas que los maestros harían ahora mismo</div>
             </div>
             <div style={{ marginLeft: 'auto', color: 'rgba(201,168,76,0.35)', fontSize: 20 }}>→</div>
           </Link>
