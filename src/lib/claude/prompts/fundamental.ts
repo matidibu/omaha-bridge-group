@@ -1,5 +1,5 @@
 import { FMPFundamentals } from '@/types/data'
-import { BuffettScore, LynchScore, GreenblattScore, TalebWarnings, MarksContext } from '@/types/sage'
+import { BuffettScore, LynchScore, GreenblattScore, TalebWarnings, MarksContext, FinkAnalysis } from '@/types/sage'
 
 export interface FundamentalCallInput {
   fundamentals: FMPFundamentals
@@ -8,6 +8,7 @@ export interface FundamentalCallInput {
   greenblattScore: GreenblattScore
   talebWarnings: TalebWarnings
   marksContext: MarksContext
+  finkAnalysis: FinkAnalysis
 }
 
 export const FUNDAMENTAL_SYSTEM_PROMPT = `You are the moderator of an investment boardroom meeting. Five legendary investors are present, each analyzing the same stock. Your job is to capture each investor's authentic voice and perspective based on pre-calculated quantitative data.
@@ -15,17 +16,19 @@ export const FUNDAMENTAL_SYSTEM_PROMPT = `You are the moderator of an investment
 RULES:
 - Each investor speaks ONLY in their established style and philosophy
 - Base ALL quotes on the quantitative data provided — no invented facts
+- NEVER mention specific numbers, percentages, or figures in any quote — speak qualitatively only (e.g. say "strong returns on capital" not "ROIC of 18%", say "attractive dividend" not "3.2% yield")
 - Quotes must be 2-4 sentences max, first-person, authentic to each investor's real communication style
 - Warren Buffett: folksy, plain-English, Nebraska wisdom, long-term focus
 - Peter Lynch: enthusiastic, story-based, relatable analogies, "the average investor can understand this"
 - Joel Greenblatt: precise, formula-focused, ranking-obsessed, slightly academic
 - Nassim Taleb: provocative, contrarian, risk-focused, uses terms like "fragile" and "Black Swan"
 - Howard Marks: philosophical, cyclical thinking, "second-level thinking", measured and wise
+- Larry Fink: institutional, visionary, long-term stewardship, references capital flows and stakeholder capitalism, CEO of BlackRock — the world's largest asset manager
 
 Return ONLY valid JSON. No markdown. No explanation outside the JSON.`
 
 export function buildFundamentalPrompt(input: FundamentalCallInput): string {
-  const { fundamentals: f, buffettScore, lynchScore, greenblattScore, talebWarnings, marksContext } = input
+  const { fundamentals: f, buffettScore, lynchScore, greenblattScore, talebWarnings, marksContext, finkAnalysis } = input
 
   return `Analyze ${f.name} (${f.ticker}) for the boardroom meeting.
 
@@ -41,6 +44,7 @@ ${JSON.stringify({
   greenblatt: { earningsYield: (greenblattScore.earningsYield * 100).toFixed(2) + '%', returnOnCapital: (greenblattScore.returnOnCapital * 100).toFixed(1) + '%' },
   taleb: { fragilityLevel: talebWarnings.fragilityLevel, warnings: talebWarnings.warnings, blackSwanRisk: talebWarnings.blackSwanRisk },
   marks: { cyclePosition: marksContext.cyclePosition, riskLevel: marksContext.riskLevel, requiredMarginOfSafety: marksContext.requiredMarginOfSafety + '%', marketNote: marksContext.marketNote },
+  fink: { institutionalGrade: finkAnalysis.institutionalGrade, capitalReturnsScore: finkAnalysis.capitalReturnsScore, governanceScore: finkAnalysis.governanceScore, longTermScore: finkAnalysis.longTermScore, totalShareholderYield: (finkAnalysis.totalShareholderYield * 100).toFixed(2) + '%', esgProxy: finkAnalysis.esgProxy },
 }, null, 2)}
 
 Return this exact JSON structure:
@@ -49,6 +53,7 @@ Return this exact JSON structure:
   "lynch": { "quote": "string" },
   "greenblatt": { "quote": "string" },
   "taleb": { "quote": "string" },
-  "marks": { "quote": "string", "adjustedMarginOfSafety": number }
+  "marks": { "quote": "string", "adjustedMarginOfSafety": number },
+  "fink": { "quote": "string" }
 }`
 }

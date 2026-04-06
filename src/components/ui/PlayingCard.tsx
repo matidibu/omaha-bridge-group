@@ -8,7 +8,7 @@ function suitColor(suit: string): string {
 }
 
 interface PlayingCardProps {
-  suit: '♥' | '♣' | '♦' | '♠' | '★'
+  suit: '♥' | '♣' | '♦' | '♠' | '★' | '✦'
   label?: string
   state?: 'face-up' | 'face-down' | 'discarded' | 'active'
   size?: 'sm' | 'md' | 'lg'

@@ -81,6 +81,19 @@ const SAGE_CONFIG: Record<SageId, {
     ringColor: 'ring-blue-500/25',
     cardBg: 'from-[#0E162C] to-[#080E1E]',
   },
+  fink: {
+    name: 'Larry Fink',
+    title: 'El Arquitecto',
+    subtitle: 'Institutional Capital',
+    suit: '✦',
+    textColor: 'text-violet-400',
+    borderColor: 'border-violet-700/30',
+    bgColor: 'bg-[#0E081E]',
+    bgSpeaking: 'bg-[#140C28]',
+    barColor: 'bg-violet-400',
+    ringColor: 'ring-violet-500/25',
+    cardBg: 'from-[#160E2C] to-[#0E081E]',
+  },
 }
 
 interface SageCardProps {
@@ -140,13 +153,13 @@ export function SageCard({
             className="shrink-0 w-8 h-11 rounded flex flex-col items-center justify-between py-1 shadow-lg"
             style={{ background: 'linear-gradient(145deg, #F8F4EA, #EDE7D0)' }}
           >
-            <span className="text-[10px] font-bold leading-none" style={{ color: cfg.suit === '♥' ? '#C9A84C' : cfg.suit === '♣' ? '#166534' : cfg.suit === '♦' ? '#64748B' : cfg.suit === '★' ? '#1E293B' : '#1E3A5F', fontFamily: 'Georgia, serif' }}>
+            <span className="text-[10px] font-bold leading-none" style={{ color: cfg.suit === '♥' ? '#C9A84C' : cfg.suit === '♣' ? '#166534' : cfg.suit === '♦' ? '#64748B' : cfg.suit === '★' ? '#1E293B' : cfg.suit === '✦' ? '#4C1D95' : '#1E3A5F', fontFamily: 'Georgia, serif' }}>
               {cfg.suit}
             </span>
-            <span className="text-lg leading-none" style={{ color: cfg.suit === '♥' ? '#C9A84C' : cfg.suit === '♣' ? '#166534' : cfg.suit === '♦' ? '#64748B' : cfg.suit === '★' ? '#1E293B' : '#1E3A5F', fontFamily: 'Georgia, serif' }}>
+            <span className="text-lg leading-none" style={{ color: cfg.suit === '♥' ? '#C9A84C' : cfg.suit === '♣' ? '#166534' : cfg.suit === '♦' ? '#64748B' : cfg.suit === '★' ? '#1E293B' : cfg.suit === '✦' ? '#4C1D95' : '#1E3A5F', fontFamily: 'Georgia, serif' }}>
               {cfg.suit}
             </span>
-            <span className="text-[10px] font-bold leading-none rotate-180" style={{ color: cfg.suit === '♥' ? '#C9A84C' : cfg.suit === '♣' ? '#166534' : cfg.suit === '♦' ? '#64748B' : cfg.suit === '★' ? '#1E293B' : '#1E3A5F', fontFamily: 'Georgia, serif' }}>
+            <span className="text-[10px] font-bold leading-none rotate-180" style={{ color: cfg.suit === '♥' ? '#C9A84C' : cfg.suit === '♣' ? '#166534' : cfg.suit === '♦' ? '#64748B' : cfg.suit === '★' ? '#1E293B' : cfg.suit === '✦' ? '#4C1D95' : '#1E3A5F', fontFamily: 'Georgia, serif' }}>
               {cfg.suit}
             </span>
           </div>

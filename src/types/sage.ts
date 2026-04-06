@@ -1,4 +1,4 @@
-export type SageId = 'buffett' | 'lynch' | 'greenblatt' | 'taleb' | 'marks'
+export type SageId = 'buffett' | 'lynch' | 'greenblatt' | 'taleb' | 'marks' | 'fink'
 
 export interface BuffettScore {
   sage: 'buffett'
@@ -50,6 +50,17 @@ export interface TalebWarnings {
   warnings: TalebWarning[]
   quote: string
   blackSwanRisk: 'low' | 'medium' | 'high' | 'extreme'
+}
+
+export interface FinkAnalysis {
+  sage: 'fink'
+  institutionalGrade: 'D' | 'C' | 'B' | 'A' | 'A+'
+  capitalReturnsScore: number
+  governanceScore: number
+  longTermScore: number
+  totalShareholderYield: number
+  esgProxy: 'poor' | 'moderate' | 'good' | 'excellent'
+  quote: string
 }
 
 export interface MarksContext {

@@ -88,6 +88,7 @@ export function FinalVerdict({ verdict, currentPrice }: FinalVerdictProps) {
             { key: 'greenblatt', name: 'Greenblatt', color: 'text-slate-300',   suit: '♦' },
             { key: 'marks',      name: 'Marks',      color: 'text-blue-400',    suit: '♠' },
             { key: 'taleb',      name: 'Taleb',      color: 'text-slate-200',   suit: '★' },
+            { key: 'fink',       name: 'Fink',       color: 'text-violet-400',  suit: '✦' },
           ] as const).map(({ key, name, color, suit }) => (
             <div key={key} className="flex gap-3 text-sm items-start">
               <span className={cn('card-suit text-base shrink-0 mt-0.5', color)}>{suit}</span>

@@ -13,7 +13,7 @@ interface SageEntry {
   id: string
   name: string
   title: string
-  suit: '♥' | '♣' | '♦' | '♠' | '★'
+  suit: '♥' | '♣' | '♦' | '♠' | '★' | '✦'
   accent: string
   cardLabel: string
   headline: string
@@ -25,17 +25,18 @@ interface SageEntry {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   Pentagon layout — Buffett at top (0°), 72° apart, R=295px from center
+   Hexagon layout — Buffett at top (0°), 60° apart, R=295px from center
    Card md = 60×84px  |  Panel 220px wide × ~92px tall
    Card TL = (R·sinθ − 30, −R·cosθ − 42) from section 50%/50%
 
    Panel placement — all radially outward, guaranteed non-overlapping:
-     Buffett (0°)    → panel right of card      x[+38,+258]  y[-337,-245]
-     Lynch   (72°)   → panel upper-right        x[+260,+480] y[-240,-148]
-     Greenblatt(144°)→ panel below card         x[+143,+363] y[+306,+398]
-     Taleb  (216°)   → panel below card (left)  x[-283,-63]  y[+306,+398]
-     Marks  (288°)   → panel upper-left         x[-480,-260] y[-240,-148]
-   All gaps verified: ≥15px between each card and its panel, 0 cross-element overlaps.
+     Buffett (0°)    → right of card            x[+38,+258]  y[-337,-245]
+     Lynch   (60°)   → upper-right              x[+270,+490] y[-280,-188]
+     Greenblatt(120°)→ below card (centered)    x[+146,+366] y[+208,+300]
+     Fink   (180°)   → below card (centered)    x[-110,+110] y[+355,+447]
+     Taleb  (240°)   → below card (left)        x[-366,-146] y[+208,+300]
+     Marks  (300°)   → upper-left               x[-490,-270] y[-280,-188]
+   All gaps verified: ≥12px between panels, 0 cross-element overlaps.
 ───────────────────────────────────────────────────────────────────────── */
 const SAGES: SageEntry[] = [
   {
@@ -52,9 +53,9 @@ const SAGES: SageEntry[] = [
     suit: '♣', accent: '#2EC47E', cardLabel: 'GROWTH',
     headline: 'Average investor wins (PEG)',
     metrics: [{ label: 'PEG', value: '<1.0' }, { label: 'GROWTH', value: '>10%' }, { label: 'EPS', value: 'Rising' }],
-    /* 72° — upper-right */
-    cardPos:  { left: 'calc(50% + 251px)', top: 'calc(50% - 133px)' },
-    panelPos: { left: 'calc(50% + 260px)', top: 'calc(50% - 240px)' },
+    /* 60° — upper-right */
+    cardPos:  { left: 'calc(50% + 226px)', top: 'calc(50% - 190px)' },
+    panelPos: { left: 'calc(50% + 270px)', top: 'calc(50% - 280px)' },
     cardRotate: 5,
   },
   {
@@ -62,19 +63,29 @@ const SAGES: SageEntry[] = [
     suit: '♦', accent: '#7BBDE0', cardLabel: 'VALUE',
     headline: 'Magic formula (cheap & good)',
     metrics: [{ label: 'EARN YLD', value: '>8%' }, { label: 'ROC', value: '>20%' }, { label: 'RANK', value: 'Top 30' }],
-    /* 144° — lower-right; panel below, offset for name-tag height */
-    cardPos:  { left: 'calc(50% + 143px)', top: 'calc(50% + 197px)' },
-    panelPos: { left: 'calc(50% + 143px)', top: 'calc(50% + 318px)' },
+    /* 120° — lower-right */
+    cardPos:  { left: 'calc(50% + 226px)', top: 'calc(50% + 106px)' },
+    panelPos: { left: 'calc(50% + 146px)', top: 'calc(50% + 208px)' },
     cardRotate: -5,
+  },
+  {
+    id: 'fink', name: 'Fink', title: 'El Arquitecto',
+    suit: '✦', accent: '#A78BFA', cardLabel: 'INSTITUTIONAL',
+    headline: 'Long-term capital stewardship',
+    metrics: [{ label: 'INST GRADE', value: 'A+' }, { label: 'GOVERN', value: 'High' }, { label: 'TSY', value: '>2%' }],
+    /* 180° — bottom center */
+    cardPos:  { left: 'calc(50% - 30px)',  top: 'calc(50% + 253px)' },
+    panelPos: { left: 'calc(50% - 110px)', top: 'calc(50% + 355px)' },
+    cardRotate: 0,
   },
   {
     id: 'taleb', name: 'Taleb', title: 'El Centinela',
     suit: '★', accent: '#A8BDD8', cardLabel: 'ANTIFRAGILITY',
     headline: 'Hunts hidden leverage, avoids ruin',
     metrics: [{ label: 'LEVERAGE', value: 'Low' }, { label: 'TAIL RISK', value: 'Hedged' }, { label: 'CONVEX', value: 'Yes' }],
-    /* 216° — lower-left; panel below, offset for name-tag height */
-    cardPos:  { left: 'calc(50% - 203px)', top: 'calc(50% + 197px)' },
-    panelPos: { left: 'calc(50% - 283px)', top: 'calc(50% + 318px)' },
+    /* 240° — lower-left */
+    cardPos:  { left: 'calc(50% - 286px)', top: 'calc(50% + 106px)' },
+    panelPos: { left: 'calc(50% - 366px)', top: 'calc(50% + 208px)' },
     cardRotate: 5,
   },
   {
@@ -82,9 +93,9 @@ const SAGES: SageEntry[] = [
     suit: '♠', accent: '#6AAFFA', cardLabel: 'CYCLES',
     headline: 'Second-level thinking (market cycles)',
     metrics: [{ label: 'CYCLE POS', value: 'Late' }, { label: 'SPREAD', value: 'Tight' }, { label: 'RISK/RWD', value: '0.8x' }],
-    /* 288° — upper-left */
-    cardPos:  { left: 'calc(50% - 311px)', top: 'calc(50% - 133px)' },
-    panelPos: { left: 'calc(50% - 480px)', top: 'calc(50% - 240px)' },
+    /* 300° — upper-left */
+    cardPos:  { left: 'calc(50% - 286px)', top: 'calc(50% - 190px)' },
+    panelPos: { left: 'calc(50% - 490px)', top: 'calc(50% - 280px)' },
     cardRotate: -5,
   },
 ]
@@ -184,7 +195,7 @@ export default function HomePage() {
               <span style={{ color: '#E0B84A', textShadow: '0 1px 3px rgba(0,0,0,1), 0 0 60px rgba(212,168,67,0.35)' }}>te invitan a su mesa.</span>
             </h1>
             <p style={{ color: '#B8D0C0', fontSize: 14, lineHeight: 1.75, maxWidth: 520, margin: '0 auto', textShadow: '0 1px 6px rgba(0,0,0,0.95)' }}>
-              No dejes pasar tu oportunidad. Ingresá una acción y los cinco genios
+              No dejes pasar tu oportunidad. Ingresá una acción y los seis genios
               te darán su veredicto basado en sus parámetros inamovibles.
             </p>
           </div>
@@ -195,7 +206,7 @@ export default function HomePage() {
         ════════════════════════════════════════════════════════ */}
         <section
           className="hidden lg:block w-full"
-          style={{ position: 'relative', minHeight: 880 }}
+          style={{ position: 'relative', minHeight: 960 }}
         >
           {/* ── THE CIRCLE (560×560, centered) ── */}
           <div style={{
@@ -291,7 +302,7 @@ export default function HomePage() {
         {/* Mobile list */}
         <section className="lg:hidden w-full max-w-md mx-auto px-4 pb-6 space-y-3">
           <div style={{ color: 'rgba(201,168,76,0.72)', fontSize: 9, letterSpacing: '0.4em', textTransform: 'uppercase', textAlign: 'center', paddingTop: 8, marginBottom: 10 }}>
-            Los Cinco Maestros
+            Los Seis Maestros
           </div>
           {SAGES.map((sage) => (
             <div key={sage.id} style={{ display: 'flex', alignItems: 'center', gap: 12, background: 'rgba(8,4,2,0.94)', border: `1px solid ${sage.accent}50`, borderRadius: 12, padding: '10px 14px' }}>

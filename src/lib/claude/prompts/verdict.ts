@@ -1,4 +1,4 @@
-import { BuffettScore, LynchScore, GreenblattScore, TalebWarnings, MarksContext } from '@/types/sage'
+import { BuffettScore, LynchScore, GreenblattScore, TalebWarnings, MarksContext, FinkAnalysis } from '@/types/sage'
 import { TechnicalSignals } from '@/types/indicators'
 import { FMPFundamentals } from '@/types/data'
 
@@ -9,6 +9,7 @@ export interface VerdictCallInput {
   greenblatt: GreenblattScore
   taleb: TalebWarnings
   marks: MarksContext
+  fink: FinkAnalysis
   technical: TechnicalSignals
 }
 
@@ -20,10 +21,11 @@ RULES:
 - Short-term verdict: based primarily on technical analysis (timing of entry)
 - Price targets must be grounded in the data (use ATR for stop-loss placement)
 - The "chairman" summary quote should be decisive, authoritative, 3-4 sentences
+- In ALL narrative quotes (chairman and sage closing lines): NEVER mention specific numbers, percentages, or figures — speak qualitatively only
 - Return ONLY valid JSON. No markdown. No text outside JSON.`
 
 export function buildVerdictPrompt(input: VerdictCallInput): string {
-  const { fundamentals: f, buffett, lynch, greenblatt, taleb, marks, technical: t } = input
+  const { fundamentals: f, buffett, lynch, greenblatt, taleb, marks, fink, technical: t } = input
   const ti = t.indicators
 
   return `Deliver the final boardroom verdict for ${f.name} (${f.ticker}).
@@ -34,6 +36,7 @@ SAGE OPINIONS:
 - Greenblatt (earnings yield ${(greenblatt.earningsYield * 100).toFixed(2)}%, ROC ${(greenblatt.returnOnCapital * 100).toFixed(1)}%): "${greenblatt.quote}"
 - Taleb (${taleb.fragilityLevel}, ${taleb.blackSwanRisk} black swan risk, ${taleb.warnings.length} warnings): "${taleb.quote}"
 - Marks (${marks.cyclePosition} cycle, ${marks.riskLevel} risk, requires ${marks.requiredMarginOfSafety}% margin of safety): "${marks.quote}"
+- Fink (institutional grade ${fink.institutionalGrade}, governance ${fink.governanceScore}/100, shareholder yield ${(fink.totalShareholderYield * 100).toFixed(2)}%): "${fink.quote}"
 
 TECHNICAL PICTURE:
 - Current price: $${ti.currentPrice.toFixed(2)}
@@ -78,6 +81,7 @@ Return this exact JSON structure:
     "greenblatt": "final closing line from Greenblatt",
     "taleb": "final closing line from Taleb",
     "marks": "final closing line from Marks",
+    "fink": "final closing line from Fink",
     "chairman": "chairman final verdict summary (3-4 sentences)"
   }
 }`

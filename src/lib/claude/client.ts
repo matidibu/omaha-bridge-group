@@ -16,7 +16,7 @@ export async function callClaude(
 ): Promise<string> {
   const client = getClient()
   const response = await client.chat.completions.create({
-    model: 'gpt-4o',
+    model: 'gpt-4o-mini',
     max_tokens: maxTokens,
     messages: [
       { role: 'system', content: systemPrompt },

@@ -1,6 +1,6 @@
 import { FMPFundamentals, FREDMacro, CEDEARData } from './data'
 import { TechnicalSignals } from './indicators'
-import { BuffettScore, LynchScore, GreenblattScore, TalebWarnings, MarksContext } from './sage'
+import { BuffettScore, LynchScore, GreenblattScore, TalebWarnings, MarksContext, FinkAnalysis } from './sage'
 
 export type AnalysisMode = 'single' | 'compare'
 export type OverallRating = 'strong-buy' | 'buy' | 'watch' | 'hold' | 'avoid' | 'sell'
@@ -28,6 +28,7 @@ export interface SageNarratives {
   greenblatt: string
   taleb: string
   marks: string
+  fink: string
   chairman: string
 }
 
@@ -55,6 +56,7 @@ export interface SingleStockAnalysis {
     greenblatt: GreenblattScore | null
     taleb: TalebWarnings | null
     marks: MarksContext | null
+    fink: FinkAnalysis | null
   } | null
 
   technical: TechnicalSignals | null

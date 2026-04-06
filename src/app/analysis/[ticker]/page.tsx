@@ -59,7 +59,8 @@ export default function AnalysisPage() {
         setTimeout(() => setActiveSage('greenblatt'), 800)
         setTimeout(() => setActiveSage('taleb'), 1600)
         setTimeout(() => setActiveSage('marks'), 2400)
-        setTimeout(() => setActiveSage(null), 3200)
+        setTimeout(() => setActiveSage('fink'), 3200)
+        setTimeout(() => setActiveSage(null), 4000)
       }
 
       if (event.type === 'verdict_ready') {
@@ -140,7 +141,7 @@ export default function AnalysisPage() {
         {phase === 'fetching' && (
           <div className="text-center py-20">
             <div className="flex justify-center gap-3 mb-6">
-              {(['♥', '♣', '♦', '♠', '★'] as const).map((s, i) => (
+              {(['♥', '♣', '♦', '♠', '★', '✦'] as const).map((s, i) => (
                 <div key={s} style={{ animationDelay: `${i * 180}ms`, animation: 'float 2s ease-in-out infinite' }}>
                   <PlayingCard suit={s} state="face-down" size="md" />
                 </div>
@@ -314,6 +315,37 @@ export default function AnalysisPage() {
           </SageRow>
         )}
 
+        {/* ─── FINK ✦ ─── */}
+        {(phase === 'sage_scores' || phase === 'complete') && analysis.passed && (
+          <SageRow
+            suit="✦"
+            state={
+              activeSage === 'fink' ? 'active'
+              : analysis.sageScores?.fink ? 'face-up'
+              : 'face-down'
+            }
+          >
+            <div className="flex-1">
+              <SageCard
+                sage="fink"
+                quote={analysis.sageScores?.fink?.quote ?? ''}
+                score={analysis.sageScores?.fink?.governanceScore}
+                badge={`Grade ${analysis.sageScores?.fink?.institutionalGrade ?? '—'}`}
+                badgeVariant={
+                  analysis.sageScores?.fink?.institutionalGrade === 'A+' || analysis.sageScores?.fink?.institutionalGrade === 'A' ? 'positive' :
+                  analysis.sageScores?.fink?.institutionalGrade === 'D' ? 'negative' : 'neutral'
+                }
+                subtext={(() => {
+                  const y = analysis.sageScores?.fink?.totalShareholderYield
+                  return y != null ? `TSY ${(y * 100).toFixed(2)}%` : undefined
+                })()}
+                isLoading={!analysis.sageScores?.fink}
+                isSpeaking={activeSage === 'fink'}
+              />
+            </div>
+          </SageRow>
+        )}
+
         {/* Technical */}
         {analysis.technical && phase === 'complete' && (
           <div>
@@ -352,7 +384,7 @@ function SageRow({
   state,
   children,
 }: {
-  suit: '♥' | '♣' | '♦' | '♠' | '★'
+  suit: '♥' | '♣' | '♦' | '♠' | '★' | '✦'
   state: 'face-up' | 'face-down' | 'active' | 'discarded'
   children: React.ReactNode
 }) {
@@ -393,6 +425,7 @@ const HAND_CARDS = [
   { id: 'greenblatt', suit: '♦' as const, name: 'Greenblatt' },
   { id: 'marks',      suit: '♠' as const, name: 'Marks' },
   { id: 'taleb',      suit: '★' as const, name: 'Taleb' },
+  { id: 'fink',       suit: '✦' as const, name: 'Fink' },
 ]
 
 function LaManoBanner({ phase, analysis, activeSage }: {
@@ -428,6 +461,11 @@ function LaManoBanner({ phase, analysis, activeSage }: {
       if (activeSage === 'taleb') return 'active'
       if (!analysis.sageScores?.taleb) return 'face-down'
       return analysis.sageScores.taleb.fragilityLevel === 'fragile' ? 'discarded' : 'face-up'
+    }
+    if (id === 'fink') {
+      if (activeSage === 'fink') return 'active'
+      if (!analysis.sageScores?.fink) return 'face-down'
+      return analysis.sageScores.fink.institutionalGrade === 'D' ? 'discarded' : 'face-up'
     }
     return 'face-down'
   }

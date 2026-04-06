@@ -7,6 +7,7 @@ import { computeLynchScore } from '@/lib/sages/lynch'
 import { computeGreenblattScore } from '@/lib/sages/greenblatt'
 import { computeTalebWarnings } from '@/lib/sages/taleb'
 import { computeMarksContext } from '@/lib/sages/marks'
+import { computeFinkAnalysis } from '@/lib/sages/fink'
 import { computeAllIndicators } from '@/lib/indicators'
 import { callClaude, extractJSON } from '@/lib/claude/client'
 import {
@@ -19,7 +20,7 @@ import {
   buildVerdictPrompt,
   VerdictCallInput,
 } from '@/lib/claude/prompts/verdict'
-import { BuffettScore, LynchScore, GreenblattScore, TalebWarnings, MarksContext } from '@/types/sage'
+import { BuffettScore, LynchScore, GreenblattScore, TalebWarnings, MarksContext, FinkAnalysis } from '@/types/sage'
 import { AnalysisVerdict } from '@/types/analysis'
 
 export async function* analyzeSingleStock(
@@ -71,6 +72,7 @@ export async function* analyzeSingleStock(
   const greenblattRaw = computeGreenblattScore(fundamentals)
   const talebRaw = computeTalebWarnings(fundamentals)
   const marksRaw = computeMarksContext(macro)
+  const finkRaw = computeFinkAnalysis(fundamentals)
 
   // Step 4: Claude Call 1 — sage quotes
   const fundamentalInput: FundamentalCallInput = {
@@ -80,6 +82,7 @@ export async function* analyzeSingleStock(
     greenblattScore: greenblattRaw,
     talebWarnings: talebRaw,
     marksContext: marksRaw,
+    finkAnalysis: finkRaw,
   }
 
   const fundamentalRaw = await callClaude(
@@ -94,6 +97,7 @@ export async function* analyzeSingleStock(
     greenblatt: { quote: string }
     taleb: { quote: string }
     marks: { quote: string; adjustedMarginOfSafety: number }
+    fink: { quote: string }
   }>(fundamentalRaw)
 
   const buffettScore: BuffettScore = { ...buffettGateRaw, quote: sageQuotes.buffett.quote }
@@ -101,8 +105,9 @@ export async function* analyzeSingleStock(
   const greenblattScore: GreenblattScore = { ...greenblattRaw, quote: sageQuotes.greenblatt.quote }
   const talebWarnings: TalebWarnings = { ...talebRaw, quote: sageQuotes.taleb.quote }
   const marksContext: MarksContext = { ...marksRaw, quote: sageQuotes.marks.quote }
+  const finkAnalysis: FinkAnalysis = { ...finkRaw, quote: sageQuotes.fink.quote }
 
-  const sageScores = { lynch: lynchScore, greenblatt: greenblattScore, taleb: talebWarnings, marks: marksContext }
+  const sageScores = { lynch: lynchScore, greenblatt: greenblattScore, taleb: talebWarnings, marks: marksContext, fink: finkAnalysis }
 
   yield { type: 'sage_scores', ticker: t, data: { buffettGate: buffettScore, sageScores }, progress: 65 }
 
@@ -114,6 +119,7 @@ export async function* analyzeSingleStock(
     greenblatt: greenblattScore,
     taleb: talebWarnings,
     marks: marksContext,
+    fink: finkAnalysis,
     technical,
   }
 
