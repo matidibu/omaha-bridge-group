@@ -418,8 +418,13 @@ export default function HomePage() {
 
       <footer style={{ borderTop: '1px solid rgba(201,168,76,0.08)' }} className="px-6 py-5">
         <p className="text-center max-w-3xl mx-auto" style={{ color: 'rgba(148,178,156,0.55)', fontSize: '0.6rem', lineHeight: 1.8 }}>
-          <strong style={{ color: 'rgba(201,168,76,0.55)' }}>DISCLAIMER:</strong> OBG es una herramienta informativa.
+          <strong style={{ color: 'rgba(201,168,76,0.55)' }}>DISCLAIMER:</strong> <span translate="no">OBG</span> es una herramienta informativa.
           Nada en esta plataforma constituye asesoramiento financiero. Siempre consultá a un asesor calificado.
+        </p>
+        <p className="text-center mt-2" style={{ fontSize: '0.55rem' }}>
+          <Link href="/privacidad" style={{ color: 'rgba(201,168,76,0.35)' }} className="hover:text-[#C9A84C] transition-colors">
+            Política de Privacidad
+          </Link>
         </p>
       </footer>
       <div style={{ height: 2, background: 'linear-gradient(to right, transparent, rgba(201,168,76,0.35), transparent)' }} />

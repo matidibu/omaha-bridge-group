@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Playfair_Display, Geist, Geist_Mono } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -34,6 +35,12 @@ export default function RootLayout({
       lang="es"
       className={`${playfair.variable} ${geist.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6133557054306983"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       <body className="min-h-full flex flex-col text-[#E8EDF5]">{children}</body>
     </html>
   )
