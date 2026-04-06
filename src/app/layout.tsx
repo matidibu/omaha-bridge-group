@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Playfair_Display, Geist, Geist_Mono } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -42,6 +43,13 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZL175YKVP9" strategy="afterInteractive" />
+      <Script id="gtag-init" strategy="afterInteractive">{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZL175YKVP9');
+      `}</Script>
       <body className="min-h-full flex flex-col text-[#E8EDF5]">{children}</body>
     </html>
   )
