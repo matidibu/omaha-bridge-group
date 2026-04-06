@@ -106,7 +106,7 @@ export default async function AnalisisPage(
                 <span className="ml-3 font-mono text-2xl" style={{ color: '#C9A84C' }}>{t}</span>
               </h1>
               <p className="text-sm mt-1" style={{ color: '#6A7A95' }}>
-                {fundamentals.sector} · Análisis value investing · Actualizado {fmtDate}
+                {fundamentals.sector} · Análisis value investing
               </p>
             </div>
             {verdict && (

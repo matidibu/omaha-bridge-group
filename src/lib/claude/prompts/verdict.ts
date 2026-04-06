@@ -22,6 +22,7 @@ RULES:
 - Price targets must be grounded in the data (use ATR for stop-loss placement)
 - The "chairman" summary quote should be decisive, authoritative, 3-4 sentences
 - In ALL narrative quotes (chairman and sage closing lines): NEVER mention specific numbers, percentages, or figures — speak qualitatively only
+- LANGUAGE: All narrative text (rationale, sageConsensus, narratives, chairman) must be written in Spanish. Technical financial anglicisms may remain in English (e.g. stop loss, earnings yield, free cash flow, moat, Black Swan, stakeholder, momentum, trend). All other text must be in Spanish.
 - Return ONLY valid JSON. No markdown. No text outside JSON.`
 
 export function buildVerdictPrompt(input: VerdictCallInput): string {

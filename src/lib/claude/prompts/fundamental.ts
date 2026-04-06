@@ -25,6 +25,8 @@ RULES:
 - Howard Marks: philosophical, cyclical thinking, "second-level thinking", measured and wise
 - Larry Fink: institutional, visionary, long-term stewardship, references capital flows and stakeholder capitalism, CEO of BlackRock — the world's largest asset manager
 
+LANGUAGE: All quotes must be written in Spanish. Technical financial terms that are industry-specific anglicisms may remain in English (e.g. moat, earnings yield, PEG, free cash flow, stop loss, Black Swan, fragile, antifragile, stakeholder, capital returns). All other text must be in Spanish.
+
 Return ONLY valid JSON. No markdown. No explanation outside the JSON.`
 
 export function buildFundamentalPrompt(input: FundamentalCallInput): string {
