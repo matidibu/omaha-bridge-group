@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { Playfair_Display, Geist, Geist_Mono } from "next/font/google"
-import Script from "next/script"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -22,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Omaha Bridge Group — Five Legends. One Table. Your Edge.",
   description:
-    "Warren Buffett sharpened his mind at the bridge table. We bring that same discipline to your portfolio — five legendary investors analyze any stock and deliver one unbiased verdict.",
+    "Warren Buffett sharpened his mind at the bridge table. We bring that same discipline to your portfolio — six legendary investors analyze any stock and deliver one unbiased verdict.",
 }
 
 export default function RootLayout({
@@ -35,12 +34,14 @@ export default function RootLayout({
       lang="es"
       className={`${playfair.variable} ${geist.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6133557054306983"
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
+      <head>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6133557054306983"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="min-h-full flex flex-col text-[#E8EDF5]">{children}</body>
     </html>
   )
