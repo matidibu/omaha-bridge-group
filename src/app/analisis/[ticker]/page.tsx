@@ -4,17 +4,8 @@ import { notFound } from 'next/navigation'
 import { analyzeToCompletion } from '@/lib/pipeline/analyzeToCompletion'
 import { SingleStockAnalysis } from '@/types/analysis'
 
-export const revalidate = 86400 // 24 hours ISR
+export const revalidate = 86400 // 24 hours ISR — generated on first request, then cached
 export const dynamicParams = true
-
-// ─── Top tickers pre-built at deploy time ────────────────────────────────────
-export function generateStaticParams() {
-  const top = [
-    'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META',
-    'NVDA', 'TSLA', 'JPM', 'V', 'KO',
-  ]
-  return top.map((ticker) => ({ ticker }))
-}
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 export async function generateMetadata(
