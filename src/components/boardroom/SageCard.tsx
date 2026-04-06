@@ -173,7 +173,7 @@ export function SageCard({
             <div className={cn('text-[10px] font-semibold uppercase tracking-wider', cfg.textColor)} style={{ opacity: 0.7 }}>
               {cfg.title}
             </div>
-            <div className="text-[9px] text-[#4A6A54] uppercase tracking-wider mt-0.5">{cfg.subtitle}</div>
+            <div className="text-[9px] text-[#4A6A54] uppercase tracking-wider mt-0.5" translate="no">{cfg.subtitle}</div>
           </div>
 
           {score !== undefined && (

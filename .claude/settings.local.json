@@ -48,7 +48,9 @@
       "Bash(grep -v '^$')",
       "Bash(taskkill /PID 18912 /F)",
       "Bash(cmd /c \"taskkill /PID 18912 /F\")",
-      "Bash(cmd:*)"
+      "Bash(cmd:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }

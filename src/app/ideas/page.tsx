@@ -121,11 +121,11 @@ export default function IdeasPage() {
               <span className="text-[10px] text-[#6A7A95] uppercase tracking-[0.3em]">How the hand is dealt</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#6A7A95]">
-              <div><span className="text-amber-400">♠ Buffett</span> — Quality gate: ROE, ROIC, FCF, margins, debt. Must pass to appear.</div>
-              <div><span className="text-[#C9A84C]">♦ Greenblatt</span> — Magic Formula ranked across all candidates simultaneously.</div>
-              <div><span className="text-emerald-400">♥ Lynch</span> — GARP score: growth at a price worth paying.</div>
-              <div><span className="text-red-400">♣ Taleb</span> — Antifragility check: no hidden leverage or tail risk.</div>
-              <div className="sm:col-span-2"><span className="text-[#C9A84C]">Technical</span> — Overall signal must be bullish or neutral. Bearish technicals are excluded regardless of fundamentals.</div>
+              <div><span translate="no" className="text-amber-400">♠ Buffett</span> — Quality gate: <span translate="no">ROE, ROIC, FCF</span>, margins, debt. Must pass to appear.</div>
+              <div><span translate="no" className="text-[#C9A84C]">♦ Greenblatt</span> — <span translate="no">Magic Formula</span> ranked across all candidates simultaneously.</div>
+              <div><span translate="no" className="text-emerald-400">♥ Lynch</span> — <span translate="no">GARP</span> score: growth at a price worth paying.</div>
+              <div><span translate="no" className="text-red-400">♣ Taleb</span> — <span translate="no">Antifragility</span> check: no hidden <span translate="no">leverage</span> or <span translate="no">tail risk</span>.</div>
+              <div className="sm:col-span-2"><span translate="no" className="text-[#C9A84C]">Technical</span> — Overall signal must be <span translate="no">bullish</span> or <span translate="no">neutral</span>. <span translate="no">Bearish</span> technicals are excluded regardless of fundamentals.</div>
             </div>
           </div>
         )}
@@ -173,7 +173,7 @@ function StockCard({ stock, rank }: { stock: ScreenerStock; rank: number }) {
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-mono font-bold text-[#C9A84C] text-xl">{stock.ticker}</span>
-                <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border ${moat}`}>
+                <span translate="no" className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border ${moat}`}>
                   {stock.moatRating} moat
                 </span>
               </div>
@@ -181,10 +181,10 @@ function StockCard({ stock, rank }: { stock: ScreenerStock; rank: number }) {
               <div className="text-[#4A5A72] text-[10px] uppercase tracking-wider mt-0.5">{stock.sector} · {stock.lynchCategory}</div>
             </div>
             <div className="flex items-center gap-2 flex-wrap">
-              <span className={`text-[10px] font-semibold px-2.5 py-1 rounded-full border ${tech.color}`}>
+              <span translate="no" className={`text-[10px] font-semibold px-2.5 py-1 rounded-full border ${tech.color}`}>
                 {tech.label}
               </span>
-              <span className={`text-[10px] font-semibold capitalize ${FRAGILITY_COLORS[stock.fragilityLevel]}`}>
+              <span translate="no" className={`text-[10px] font-semibold capitalize ${FRAGILITY_COLORS[stock.fragilityLevel]}`}>
                 {stock.fragilityLevel}
               </span>
             </div>
@@ -221,8 +221,8 @@ function StockCard({ stock, rank }: { stock: ScreenerStock; rank: number }) {
 function Metric({ label, value, good }: { label: string; value: string; good: boolean }) {
   return (
     <div>
-      <div className="text-[9px] text-[#4A5A72] uppercase tracking-wider mb-0.5">{label}</div>
-      <div className={`text-sm font-semibold font-mono ${good ? 'text-[#E8EDF5]' : 'text-[#6A7A95]'}`}>
+      <div className="text-[9px] text-[#4A5A72] uppercase tracking-wider mb-0.5" translate="no">{label}</div>
+      <div className={`text-sm font-semibold font-mono ${good ? 'text-[#E8EDF5]' : 'text-[#6A7A95]'}`} translate="no">
         {value}
       </div>
     </div>

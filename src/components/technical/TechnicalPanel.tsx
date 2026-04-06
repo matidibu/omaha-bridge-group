@@ -19,8 +19,8 @@ function SignalBadge({ signal, label }: { signal: IndicatorSignal; label: string
     <div className={cn('flex items-center gap-2 rounded-lg px-3 py-2 border', c.bg, c.border)}>
       <div className={cn('w-2 h-2 rounded-full shrink-0', c.dot)} />
       <div>
-        <div className="text-[10px] text-[#4A5A72] uppercase tracking-wider">{label}</div>
-        <div className={cn('text-xs font-semibold uppercase', c.text)}>{signal}</div>
+        <div className="text-[10px] text-[#4A5A72] uppercase tracking-wider" translate="no">{label}</div>
+        <div className={cn('text-xs font-semibold uppercase', c.text)} translate="no">{signal}</div>
       </div>
     </div>
   )
@@ -32,9 +32,9 @@ function MetricRow({ label, value, signal }: { label: string; value: string; sig
     <div className="flex items-center justify-between py-1.5 border-b border-[#B8922A]/8 last:border-0">
       <div className="flex items-center gap-2">
         <div className={cn('w-1.5 h-1.5 rounded-full shrink-0', dotColor)} />
-        <span className="text-xs text-[#6A7A95]">{label}</span>
+        <span className="text-xs text-[#6A7A95]" translate="no">{label}</span>
       </div>
-      <span className="text-xs font-mono text-[#B4C0D4]">{value}</span>
+      <span className="text-xs font-mono text-[#B4C0D4]" translate="no">{value}</span>
     </div>
   )
 }
@@ -75,7 +75,7 @@ export function TechnicalPanel({ technical }: TechnicalPanelProps) {
 
       {/* Cross signals */}
       {(i.goldenCross || i.deathCross) && (
-        <div className={cn(
+        <div translate="no" className={cn(
           'rounded-lg px-3 py-2 text-xs font-semibold border',
           i.goldenCross
             ? 'bg-emerald-500/10 text-emerald-400 border-emerald-600/25'
@@ -90,25 +90,25 @@ export function TechnicalPanel({ technical }: TechnicalPanelProps) {
       {/* Metrics grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
         <div>
-          <div className="text-[9px] text-[#2A3A54] mb-2 uppercase tracking-[0.3em]">Momentum</div>
+          <div className="text-[9px] text-[#2A3A54] mb-2 uppercase tracking-[0.3em]" translate="no">Momentum</div>
           <MetricRow label="RSI (14)"  value={i.rsi14.toFixed(1)}                                     signal={rsiSignal} />
           <MetricRow label="ADX (14)"  value={`${i.adx14.toFixed(1)} (${i.adxTrend})`}                signal={adxSignal} />
           <MetricRow label="ATR (14)"  value={`$${i.atr14.toFixed(2)} · ${i.atrPercent.toFixed(1)}%`} />
         </div>
         <div>
-          <div className="text-[9px] text-[#2A3A54] mb-2 uppercase tracking-[0.3em]">Trend</div>
+          <div className="text-[9px] text-[#2A3A54] mb-2 uppercase tracking-[0.3em]" translate="no">Trend</div>
           <MetricRow label="EMA 21"  value={`$${i.ema21.toFixed(2)}`}                                                               signal={i.currentPrice > i.ema21 ? 'bullish' : 'bearish'} />
           <MetricRow label="SMA 50"  value={`$${i.sma50.toFixed(2)} (${i.priceVsSma50 > 0 ? '+' : ''}${i.priceVsSma50.toFixed(1)}%)`}    signal={i.priceVsSma50 > 0 ? 'bullish' : 'bearish'} />
           <MetricRow label="SMA 200" value={`$${i.sma200.toFixed(2)} (${i.priceVsSma200 > 0 ? '+' : ''}${i.priceVsSma200.toFixed(1)}%)`}  signal={i.priceVsSma200 > 0 ? 'bullish' : 'bearish'} />
         </div>
         <div className="mt-4">
-          <div className="text-[9px] text-[#2A3A54] mb-2 uppercase tracking-[0.3em]">Volatility</div>
+          <div className="text-[9px] text-[#2A3A54] mb-2 uppercase tracking-[0.3em]" translate="no">Volatility</div>
           <MetricRow label="BB Upper" value={`$${i.bollingerUpper.toFixed(2)}`} />
           <MetricRow label="BB Lower" value={`$${i.bollingerLower.toFixed(2)}`} />
           <MetricRow label="BB %B"    value={`${(i.bollingerPercentB * 100).toFixed(0)}%`} signal={i.bollingerPercentB > 0.8 ? 'bearish' : i.bollingerPercentB < 0.2 ? 'bullish' : 'neutral'} />
         </div>
         <div className="mt-4">
-          <div className="text-[9px] text-[#2A3A54] mb-2 uppercase tracking-[0.3em]">Volume / Flow</div>
+          <div className="text-[9px] text-[#2A3A54] mb-2 uppercase tracking-[0.3em]" translate="no">Volume / Flow</div>
           <MetricRow label="OBV trend"    value={i.obvTrend}                  signal={i.obvTrend === 'rising' ? 'bullish' : i.obvTrend === 'falling' ? 'bearish' : 'neutral'} />
           <MetricRow label="Koncorde"     value={i.koncorde.latestSignal}     signal={koncordeSignal} />
           <MetricRow label="Strong Hands" value={i.koncorde.strongHandsTrend} signal={i.koncorde.strongHandsTrend === 'rising' ? 'bullish' : i.koncorde.strongHandsTrend === 'falling' ? 'bearish' : 'neutral'} />

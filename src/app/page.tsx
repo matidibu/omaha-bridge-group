@@ -363,7 +363,7 @@ export default function HomePage() {
                       <div style={{ width: 16, height: 16, borderRadius: '50%', border: '2px solid rgba(201,168,76,0.20)', borderTopColor: '#C9A84C', animation: 'spin 0.8s linear infinite' }} />
                     </div>
                   )}
-                  <button type="submit" disabled={!query.trim()}
+                  <button type="submit" translate="no" disabled={!query.trim()}
                     style={{ margin: 6, padding: '13px 28px', borderRadius: 10, fontWeight: 800, fontSize: 11, letterSpacing: '0.10em', textTransform: 'uppercase', flexShrink: 0, transition: 'all 0.2s', background: query.trim() ? 'linear-gradient(135deg, #E0B840, #C9A84C, #A87830)' : 'rgba(201,168,76,0.05)', color: query.trim() ? '#080F04' : 'rgba(201,168,76,0.20)', cursor: query.trim() ? 'pointer' : 'not-allowed', boxShadow: query.trim() ? '0 0 32px rgba(201,168,76,0.38), 0 4px 16px rgba(0,0,0,0.60)' : 'none' }}>
                     Deal the Hand
                   </button>
@@ -387,7 +387,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-2 justify-center mt-4 items-center">
                 <span style={{ color: 'rgba(201,168,76,0.62)', fontSize: 9, letterSpacing: '0.35em', textTransform: 'uppercase' }}>Popular:</span>
                 {POPULAR.map((t) => (
-                  <button key={t} onClick={() => navigate(t)} translate="no"
+                  <button key={t} onClick={() => navigate(t)} translate="no" aria-label={t}
                     style={{ color: 'rgba(201,168,76,0.60)', border: '1px solid rgba(201,168,76,0.20)', background: 'rgba(201,168,76,0.04)', borderRadius: 8, padding: '5px 13px', fontSize: 11, fontFamily: 'monospace', fontWeight: 700, cursor: 'pointer', transition: 'all 0.15s' }}
                     onMouseEnter={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.12)'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.45)'; e.currentTarget.style.color = '#D4A843' }}
                     onMouseLeave={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.04)'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.20)'; e.currentTarget.style.color = 'rgba(201,168,76,0.60)' }}>
@@ -407,7 +407,7 @@ export default function HomePage() {
             onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(201,168,76,0.18)' }}>
             <div style={{ width: 42, height: 42, borderRadius: '50%', flexShrink: 0, background: 'rgba(201,168,76,0.07)', border: '1px solid rgba(201,168,76,0.20)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, color: '#C9A84C' }}>♠</div>
             <div>
-              <div style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5', fontSize: 15, fontWeight: 700 }}>Today&apos;s Hand</div>
+              <div translate="no" style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5', fontSize: 15, fontWeight: 700 }}>Today&apos;s Hand</div>
               <div style={{ color: '#7A9E88', fontSize: 12, marginTop: 2 }}>Las cinco apuestas que los maestros harían ahora mismo</div>
             </div>
             <div style={{ marginLeft: 'auto', color: 'rgba(201,168,76,0.35)', fontSize: 20 }}>→</div>
@@ -475,10 +475,10 @@ function SagePanel({ sage }: { sage: SageEntry }) {
       <div style={{ display: 'flex', gap: 14 }}>
         {sage.metrics.map((m) => (
           <div key={m.label}>
-            <div style={{ color: `${sage.accent}B0`, fontSize: 6.5, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 2 }}>
+            <div translate="no" style={{ color: `${sage.accent}B0`, fontSize: 6.5, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 2 }}>
               {m.label}
             </div>
-            <div style={{ color: '#F2EAC8', fontSize: 12, fontWeight: 700, fontFamily: '"Fira Code","Courier New",monospace' }}>
+            <div translate="no" style={{ color: '#F2EAC8', fontSize: 12, fontWeight: 700, fontFamily: '"Fira Code","Courier New",monospace' }}>
               {m.value}
             </div>
           </div>

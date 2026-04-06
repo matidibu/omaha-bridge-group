@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const STORAGE_KEY = 'obg-welcome-v2'
 
@@ -13,27 +13,28 @@ export interface WelcomeModalProps {
 
 /* ── sequences ─────────────────────────────────────────────────── */
 const HEADLINE = 'Warren Buffett te invita\na su mesa de bridge.'
+// Note: el typewriter renderiza char a char — translate="no" se aplica en el contenedor
 const SUBTITLE  = 'Esta vez te toca a vos.'
 const TAGLINE   = 'Parece un juego. No lo es.'
 
-const STEPS = [
+const STEPS: { icon: string; color: string; title: string; body: React.ReactNode }[] = [
   {
     icon: '♦',
     color: '#C9A84C',
     title: 'Vos elegís la acción',
-    body: 'Traés un ticker a la mesa. Cualquier empresa que cotice en bolsa.',
+    body: <>Traés un <span translate="no">ticker</span> a la mesa. Cualquier empresa que cotice en bolsa.</>,
   },
   {
     icon: '♥',
     color: '#D46060',
     title: 'Buffett filtra primero',
-    body: 'Solo pasan las empresas con moat real, retornos consistentes y precio razonable. El estándar es alto.',
+    body: <>Solo pasan las empresas con <span translate="no">moat</span> real, retornos consistentes y precio razonable. El estándar es alto.</>,
   },
   {
     icon: '★',
     color: '#8BA4C0',
-    title: 'Los cinco maestros emiten su veredicto',
-    body: 'Lynch, Greenblatt, Taleb y Marks agregan su análisis desde su filosofía inamovible. El veredicto final es colectivo.',
+    title: 'Los seis maestros emiten su veredicto',
+    body: <><span translate="no">Lynch, Greenblatt, Taleb, Marks y Fink</span> agregan su análisis desde su filosofía inamovible. El veredicto final es colectivo.</>,
   },
 ]
 
@@ -193,7 +194,7 @@ export function WelcomeModal({ forceOpen = false, onClose }: WelcomeModalProps =
             marginBottom: 10,
             minHeight: '2.8em',
             whiteSpace: 'pre-wrap',
-          }}>
+          }} translate="no">
             {headline.split('\n').map((line, i, arr) => (
               <span key={i}>
                 {i === 1

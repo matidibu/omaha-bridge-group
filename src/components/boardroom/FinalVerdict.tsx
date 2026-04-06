@@ -42,6 +42,7 @@ export function FinalVerdict({ verdict, currentPrice }: FinalVerdictProps) {
             <div className="flex items-center gap-4 mb-1">
               <BullBearBadge direction={rating.direction} />
               <span
+                translate="no"
                 className={cn('text-4xl sm:text-5xl font-black tracking-tight', rating.color)}
                 style={{ fontFamily: 'var(--font-playfair), Georgia, serif' }}
               >
@@ -155,6 +156,7 @@ function VerdictPanel({ title, horizon, output, currentPrice, accent }: {
         <div className="text-[10px] text-[#4A5A72] font-mono">{horizon}</div>
       </div>
       <div
+        translate="no"
         className={cn('text-2xl font-black uppercase mb-4 tracking-wide', actionColor)}
         style={{ fontFamily: 'var(--font-playfair), Georgia, serif' }}
       >
@@ -162,19 +164,19 @@ function VerdictPanel({ title, horizon, output, currentPrice, accent }: {
       </div>
       <div className="grid grid-cols-3 gap-3 mb-4">
         <div>
-          <div className="text-[10px] text-[#4A5A72] mb-1 uppercase tracking-wider">Target</div>
+          <div className="text-[10px] text-[#4A5A72] mb-1 uppercase tracking-wider" translate="no">Target</div>
           <div className="font-semibold text-[#E8EDF5] text-sm">${output.priceTarget.toFixed(2)}</div>
           <div className="text-xs text-emerald-400 font-mono">+{output.targetUpside.toFixed(1)}%</div>
         </div>
         <div>
-          <div className="text-[10px] text-[#4A5A72] mb-1 uppercase tracking-wider">Stop</div>
+          <div className="text-[10px] text-[#4A5A72] mb-1 uppercase tracking-wider" translate="no">Stop-Loss</div>
           <div className="font-semibold text-[#E8EDF5] text-sm">${output.stopLoss.toFixed(2)}</div>
           <div className="text-xs text-red-400 font-mono">
             -{((currentPrice - output.stopLoss) / currentPrice * 100).toFixed(1)}%
           </div>
         </div>
         <div>
-          <div className="text-[10px] text-[#4A5A72] mb-1 uppercase tracking-wider">R/R</div>
+          <div className="text-[10px] text-[#4A5A72] mb-1 uppercase tracking-wider" translate="no">R/R</div>
           <div className="font-semibold text-[#C9A84C] text-sm">{output.riskReward.toFixed(1)}x</div>
         </div>
       </div>
