@@ -2,17 +2,32 @@
 const YahooFinance = require('yahoo-finance2').default
 
 import { FMPFundamentals, IncomeStatement, BalanceSheet, CashFlowStatement } from '@/types/data'
+import { fetchWithRetry } from '@/lib/retry'
 
 // yahoo-finance2 v3 requires instantiation — static calls throw
 const yf = new YahooFinance({ suppressNotices: ['yahooSurvey'] })
 
+// In-memory cache: fundamentals are stable intraday, 1-hour TTL
+const _fundamentalsCache = new Map<string, { data: FMPFundamentals; expiresAt: number }>()
+const FUNDAMENTALS_TTL = 60 * 60 * 1000
+
 export async function fetchFundamentals(ticker: string): Promise<FMPFundamentals> {
-  const [quote, summary, finSeries, balSeries, cfSeries] = await Promise.all([
-    yf.quote(ticker),
-    yf.quoteSummary(ticker, { modules: ['assetProfile', 'defaultKeyStatistics', 'summaryDetail'] }),
-    yf.fundamentalsTimeSeries(ticker, { period1: '2015-01-01', module: 'financials', type: 'annual' }),
-    yf.fundamentalsTimeSeries(ticker, { period1: '2015-01-01', module: 'balance-sheet', type: 'annual' }),
-    yf.fundamentalsTimeSeries(ticker, { period1: '2015-01-01', module: 'cash-flow', type: 'annual' }),
+  const cached = _fundamentalsCache.get(ticker)
+  if (cached && Date.now() < cached.expiresAt) return cached.data
+
+  const data = await _fetchFromYahoo(ticker)
+  _fundamentalsCache.set(ticker, { data, expiresAt: Date.now() + FUNDAMENTALS_TTL })
+  return data
+}
+
+async function _fetchFromYahoo(ticker: string): Promise<FMPFundamentals> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [quote, summary, finSeries, balSeries, cfSeries]: any[] = await Promise.all([
+    fetchWithRetry(() => yf.quote(ticker)),
+    fetchWithRetry(() => yf.quoteSummary(ticker, { modules: ['assetProfile', 'defaultKeyStatistics', 'summaryDetail'] })),
+    fetchWithRetry(() => yf.fundamentalsTimeSeries(ticker, { period1: '2015-01-01', module: 'financials', type: 'annual' })),
+    fetchWithRetry(() => yf.fundamentalsTimeSeries(ticker, { period1: '2015-01-01', module: 'balance-sheet', type: 'annual' })),
+    fetchWithRetry(() => yf.fundamentalsTimeSeries(ticker, { period1: '2015-01-01', module: 'cash-flow', type: 'annual' })),
   ])
 
   // fundamentalsTimeSeries returns oldest→newest; reverse for newest-first convention

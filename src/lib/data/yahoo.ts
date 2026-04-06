@@ -3,6 +3,7 @@ const YahooFinanceClass = require('yahoo-finance2').default
 // yahoo-finance2 v3 requires instantiation — static calls throw
 const yahooFinance = new YahooFinanceClass({ suppressNotices: ['yahooSurvey'] })
 import { OHLCVCandle } from '@/types/data'
+import { fetchWithRetry } from '@/lib/retry'
 
 interface YahooQuote {
   date: Date
@@ -18,11 +19,12 @@ export async function fetchOHLCV(ticker: string, days = 500): Promise<OHLCVCandl
   const startDate = new Date()
   startDate.setDate(startDate.getDate() - days)
 
-  const result = await yahooFinance.chart(ticker, {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const result: any = await fetchWithRetry(() => yahooFinance.chart(ticker, {
     period1: startDate,
     period2: endDate,
     interval: '1d',
-  })
+  }))
 
   const quotes: YahooQuote[] = result.quotes ?? []
   return quotes
