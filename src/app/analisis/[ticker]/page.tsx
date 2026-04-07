@@ -3,9 +3,71 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { analyzeToCompletion } from '@/lib/pipeline/analyzeToCompletion'
 import { SingleStockAnalysis } from '@/types/analysis'
+import { CEDEAR_MAP } from '@/lib/data/cedear'
 
 export const revalidate = 86400 // 24 hours ISR — generated on first request, then cached
 export const dynamicParams = true
+
+// Curated related tickers for "Ver también" internal links
+const RELATED: Record<string, string[]> = {
+  // Tech
+  AAPL:  ['MSFT', 'GOOGL', 'NVDA', 'META', 'AMZN'],
+  MSFT:  ['AAPL', 'GOOGL', 'NVDA', 'AMZN', 'ADBE'],
+  GOOGL: ['AAPL', 'MSFT', 'META', 'AMZN', 'NFLX'],
+  NVDA:  ['AMD',  'MSFT', 'AAPL', 'GOOGL', 'META'],
+  META:  ['GOOGL','AAPL', 'AMZN', 'NFLX',  'MSFT'],
+  AMZN:  ['MSFT', 'GOOGL','META', 'AAPL',  'COST'],
+  AMD:   ['NVDA', 'INTC', 'MSFT', 'AAPL',  'GOOGL'],
+  ADBE:  ['MSFT', 'ORCL', 'INTU', 'NVDA',  'AAPL'],
+  ORCL:  ['MSFT', 'ADBE', 'INTU', 'IBM',   'CSCO'],
+  INTU:  ['MSFT', 'ORCL', 'ADBE', 'AAPL',  'V'],
+  INTC:  ['NVDA', 'AMD',  'MSFT', 'AAPL',  'CSCO'],
+  CSCO:  ['INTC', 'MSFT', 'IBM',  'ORCL',  'HON'],
+  IBM:   ['MSFT', 'ORCL', 'CSCO', 'INTU',  'CAT'],
+  // Consumer
+  TSLA:  ['NVDA', 'AAPL', 'META', 'AMZN',  'NKE'],
+  NFLX:  ['DIS',  'META', 'GOOGL','AMZN',  'AAPL'],
+  DIS:   ['NFLX', 'SBUX', 'MCD',  'NKE',   'KO'],
+  MCD:   ['SBUX', 'KO',   'PEP',  'DIS',   'WMT'],
+  SBUX:  ['MCD',  'KO',   'PEP',  'NKE',   'DIS'],
+  NKE:   ['SBUX', 'MCD',  'KO',   'WMT',   'DIS'],
+  WMT:   ['KO',   'PEP',  'COST', 'MCD',   'PG'],
+  KO:    ['PEP',  'MCD',  'SBUX', 'WMT',   'PG'],
+  PEP:   ['KO',   'MCD',  'WMT',  'COST',  'PG'],
+  COST:  ['WMT',  'PEP',  'KO',   'PG',    'MCD'],
+  // Finance
+  JPM:   ['V',    'MA',   'GS',   'BAC',   'AXP'],
+  V:     ['MA',   'JPM',  'AXP',  'GS',    'SPGI'],
+  MA:    ['V',    'JPM',  'AXP',  'SPGI',  'MCO'],
+  GS:    ['JPM',  'BAC',  'V',    'MA',    'SPGI'],
+  BAC:   ['JPM',  'GS',   'V',    'MA',    'AXP'],
+  AXP:   ['V',    'MA',   'JPM',  'GS',    'SPGI'],
+  SPGI:  ['MCO',  'V',    'MA',   'JPM',   'GS'],
+  MCO:   ['SPGI', 'V',    'MA',   'JPM',   'GS'],
+  // Health
+  LLY:   ['UNH',  'TMO',  'ISRG', 'ABT',   'JNJ'],
+  UNH:   ['LLY',  'TMO',  'ABT',  'JNJ',   'PFE'],
+  TMO:   ['UNH',  'LLY',  'ISRG', 'ABT',   'JNJ'],
+  ISRG:  ['TMO',  'LLY',  'UNH',  'ABT',   'JNJ'],
+  ABT:   ['JNJ',  'PFE',  'LLY',  'TMO',   'UNH'],
+  JNJ:   ['PFE',  'ABT',  'LLY',  'UNH',   'TMO'],
+  PFE:   ['JNJ',  'ABT',  'LLY',  'UNH',   'TMO'],
+  // Other
+  MELI:  ['BABA', 'AMZN', 'AAPL', 'GOOGL', 'META'],
+  BABA:  ['MELI', 'AMZN', 'NVDA', 'GOOGL', 'META'],
+  XOM:   ['CAT',  'HON',  'PG',   'KO',    'WMT'],
+  CAT:   ['HON',  'ITW',  'XOM',  'IBM',   'GS'],
+  HON:   ['CAT',  'ITW',  'XOM',  'MSFT',  'GS'],
+  ITW:   ['HON',  'CAT',  'XOM',  'PG',    'MMM'],
+  PG:    ['KO',   'PEP',  'CL',   'WMT',   'COST'],
+  CL:    ['PG',   'KO',   'PEP',  'WMT',   'COST'],
+}
+
+const FALLBACK_RELATED = ['AAPL', 'MSFT', 'NVDA', 'JPM', 'KO']
+
+function getRelated(ticker: string): string[] {
+  return (RELATED[ticker] ?? FALLBACK_RELATED).slice(0, 5)
+}
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 export async function generateMetadata(
@@ -13,13 +75,19 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { ticker } = await params
   const t = ticker.toUpperCase()
+  const hasCedear = !!CEDEAR_MAP[t]
+  const cedearNote = hasCedear
+    ? ` Incluye precio CEDEAR en pesos, CCL implícito y prima/descuento vs NYSE para inversores argentinos.`
+    : ''
   return {
     title: `Análisis ${t} — Value Investing | Omaha Bridge Group`,
-    description: `Los 6 maestros del value investing analizan ${t}. Filtro Buffett, PEG Lynch, Magic Formula Greenblatt, riesgo Taleb, ciclo Marks y calidad institucional Fink. Actualizado diariamente.`,
+    description: `Los 6 maestros del value investing analizan ${t}. Filtro Buffett, PEG Lynch, Magic Formula Greenblatt, riesgo Taleb, ciclo Marks y calidad Fink. Actualizado diariamente.${cedearNote}`,
     alternates: { canonical: `/analisis/${t}` },
     openGraph: {
       title: `${t} — Análisis Value Investing | Omaha Bridge Group`,
-      description: `¿Vale la pena invertir en ${t}? Seis leyendas del value investing analizan la acción y emiten un veredicto unificado.`,
+      description: hasCedear
+        ? `¿Vale la pena invertir en ${t}? Los 6 maestros del value investing emiten su veredicto. Con datos de CEDEAR para el mercado argentino.`
+        : `¿Vale la pena invertir en ${t}? Seis leyendas del value investing analizan la acción y emiten un veredicto unificado.`,
       type: 'article',
     },
   }
@@ -82,9 +150,9 @@ export default async function AnalisisPage(
       {/* Header */}
       <header style={{ borderBottom: '1px solid rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.9)' }}
         className="px-4 py-3 flex items-center justify-between sticky top-0 z-10 backdrop-blur">
-        <Link href="/" className="text-xs uppercase tracking-wider hover:text-[#C9A84C] transition-colors"
+        <Link href="/analisis" className="text-xs uppercase tracking-wider hover:text-[#C9A84C] transition-colors"
           style={{ color: '#6A7A95' }}>
-          ← Inicio
+          ← Análisis
         </Link>
         <span className="text-xs uppercase tracking-widest" style={{ color: 'rgba(201,168,76,0.6)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           Omaha Bridge Group
@@ -399,6 +467,36 @@ export default async function AnalisisPage(
             </section>
           </>
         )}
+
+        <Divider />
+
+        {/* ── Ver también ── */}
+        <section>
+          <h2 className="text-xs uppercase tracking-widest mb-4"
+            style={{ color: 'rgba(201,168,76,0.5)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            Ver también
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {getRelated(t).map((rel) => (
+              <Link
+                key={rel}
+                href={`/analisis/${rel}`}
+                className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+                style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}
+                translate="no"
+              >
+                {rel}
+              </Link>
+            ))}
+            <Link
+              href="/analisis"
+              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              style={{ color: '#4A5A65', borderColor: 'rgba(201,168,76,0.08)', background: 'rgba(7,43,24,0.3)' }}
+            >
+              Ver todas →
+            </Link>
+          </div>
+        </section>
 
         <Divider />
 

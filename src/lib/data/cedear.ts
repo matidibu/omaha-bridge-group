@@ -11,7 +11,7 @@ import { fetchWithRetry } from '@/lib/retry'
  * Update when splits, reverse splits, or BYMA adjustments occur.
  * Source: https://www.rankia.com.ar/blog/cedear/6752496-listado-ratio-conversion-cedear-argentina
  */
-const CEDEAR_MAP: Record<string, { cedearTicker: string; ratio: number }> = {
+export const CEDEAR_MAP: Record<string, { cedearTicker: string; ratio: number }> = {
   AAPL:  { cedearTicker: 'AAPL.BA',  ratio: 20  },
   MSFT:  { cedearTicker: 'MSFT.BA',  ratio: 30  },
   GOOGL: { cedearTicker: 'GOOGL.BA', ratio: 58  },
