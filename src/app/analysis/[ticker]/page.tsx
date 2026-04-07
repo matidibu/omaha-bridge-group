@@ -117,10 +117,14 @@ export default function AnalysisPage() {
           <button
             onClick={toggleArgentina}
             title={modoArgentina ? 'Desactivar Modo Argentina' : 'Activar Modo Argentina'}
-            className="text-base transition-opacity"
-            style={{ opacity: modoArgentina ? 1 : 0.35 }}
+            className="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full border transition-all"
+            style={{
+              color: modoArgentina ? '#74b9e8' : '#4A5A72',
+              borderColor: modoArgentina ? 'rgba(116,185,232,0.4)' : 'rgba(74,90,114,0.3)',
+              background: modoArgentina ? 'rgba(116,185,232,0.08)' : 'transparent',
+            }}
           >
-            🇦🇷
+            🇦🇷 AR
           </button>
         </div>
       </header>
@@ -373,6 +377,22 @@ export default function AnalysisPage() {
               currentPrice={analysis.fundamentals.currentPrice}
             />
           </div>
+        )}
+
+        {/* Callout para inversor argentino — aparece cuando el modo no está activo */}
+        {phase === 'complete' && !modoArgentina && analysis.cedear && (
+          <button
+            onClick={toggleArgentina}
+            className="w-full text-left rounded-xl border px-4 py-3 transition-all hover:opacity-80"
+            style={{ borderColor: 'rgba(116,185,232,0.2)', background: 'rgba(116,185,232,0.04)' }}
+          >
+            <span className="text-sm" style={{ color: '#74b9e8' }}>
+              🇦🇷 <strong>¿Invertís desde Argentina?</strong>
+            </span>
+            <span className="text-xs ml-2" style={{ color: '#4A7A95' }}>
+              Activá el Modo AR para ver el CEDEAR en BYMA y el dólar CCL implícito →
+            </span>
+          </button>
         )}
 
         {/* CEDEAR panel — solo visible en Modo Argentina */}

@@ -68,7 +68,7 @@ export async function fetchCEDEARData(
     const [cclRate, cedearQuote] = await Promise.all([
       fetchCCLRate(),
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      fetchWithRetry<any>(() => yf.quote(cedearInfo.cedearTicker)),
+      fetchWithRetry<any>(() => yf.quote(cedearInfo.cedearTicker), 1), // 1 attempt — CEDEAR is optional data
     ])
 
     const cedearPrice: number = cedearQuote.regularMarketPrice ?? 0
