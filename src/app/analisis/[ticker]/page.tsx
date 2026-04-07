@@ -394,7 +394,7 @@ export default async function AnalisisPage(
                 />
               </div>
               <p className="text-xs" style={{ color: '#4A5A72' }}>
-                Ratio {analysis.cedear.ratio}:1 · Precio implícito USD ${analysis.cedear.impliedUSDPrice.toFixed(2)} vs NYSE ${fundamentals.currentPrice.toFixed(2)}
+                Ratio {analysis.cedear.ratio}:1 · Precio implícito USD ${analysis.cedear.impliedUSDPrice.toFixed(2)} vs NYSE ${fundamentals.currentPrice.toFixed(2)} · Cotizaciones BYMA con posible demora · Solo con fines informativos
               </p>
             </section>
           </>

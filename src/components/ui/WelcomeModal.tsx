@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 
-const STORAGE_KEY = 'obg-welcome-v2'
+const STORAGE_KEY = 'obg-welcome-v3'
 
 export interface WelcomeModalProps {
   /** Si es true, abre el modal independientemente del localStorage */
@@ -19,22 +19,28 @@ const TAGLINE   = 'La estética es un juego de cartas. El análisis es completam
 
 const STEPS: { icon: string; color: string; title: string; body: React.ReactNode }[] = [
   {
-    icon: '♦',
-    color: '#C9A84C',
-    title: 'Datos financieros reales',
-    body: <>Cada análisis consume datos actualizados de <span translate="no">Financial Modeling Prep, Yahoo Finance</span> y la <span translate="no">Reserva Federal (FRED)</span>. Balances, flujos de caja, precio, macroeconómicos — todo real.</>,
-  },
-  {
     icon: '♥',
     color: '#D46060',
-    title: 'Filtros basados en criterios publicados',
-    body: <>No inventamos métricas. Aplicamos los criterios exactos que <span translate="no">Buffett, Lynch, Greenblatt, Taleb, Marks y Fink</span> documentaron públicamente durante décadas. Sin interpretación. Sin sesgo.</>,
+    title: 'Seis maestros, una mesa',
+    body: <>Buffett evalúa la calidad del negocio y el <span translate="no">moat</span>. Lynch busca crecimiento a buen precio (<span translate="no">GARP</span>). Greenblatt aplica la <span translate="no">Magic Formula</span>. Taleb mide antifragilidad y riesgo de cola. Marks analiza el ciclo de mercado. Fink evalúa la calidad institucional. Cada uno vota — vos ves el consenso.</>,
   },
   {
     icon: '★',
     color: '#8BA4C0',
-    title: 'Veredicto accionable con precio objetivo',
-    body: <>El resultado incluye calificación (<span translate="no">Strong Buy → Sell</span>), precio objetivo, <span translate="no">stop-loss</span> y ratio <span translate="no">riesgo/recompensa</span>. Información concreta para tomar decisiones.</>,
+    title: 'El toro, el oso y el veredicto',
+    body: <>Al terminar el análisis, el Chairman emite el veredicto final: 🐂 <strong style={{ color: '#22c55e' }}>Bull</strong> (comprar), 🐻 <strong style={{ color: '#ef4444' }}>Bear</strong> (evitar) o neutro. Incluye precio objetivo, <span translate="no">stop-loss</span> y ratio <span translate="no">riesgo/recompensa</span> para largo y corto plazo.</>,
+  },
+  {
+    icon: '♦',
+    color: '#C9A84C',
+    title: 'Datos reales, no simulados',
+    body: <>Cada análisis consume datos de <span translate="no">Yahoo Finance</span> y la <span translate="no">Reserva Federal (FRED)</span>. Balances, flujos de caja, precio actual, indicadores macro — todo en tiempo real. La narrativa de cada sage es generada por IA sobre esos datos concretos.</>,
+  },
+  {
+    icon: '🇦🇷',
+    color: '#74b9e8',
+    title: 'Modo Argentina — CEDEAR y CCL',
+    body: <>Si invertís desde Argentina, activá el <strong style={{ color: '#74b9e8' }}>Modo AR</strong> tocando la bandera en el header del análisis. Verás el precio del <span translate="no">CEDEAR</span> en BYMA y el dólar CCL implícito que surge de esa cotización.</>,
   },
 ]
 

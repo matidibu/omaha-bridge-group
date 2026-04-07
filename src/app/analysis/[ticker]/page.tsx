@@ -383,15 +383,20 @@ export default function AnalysisPage() {
         {phase === 'complete' && !modoArgentina && analysis.cedear && (
           <button
             onClick={toggleArgentina}
-            className="w-full text-left rounded-xl border px-4 py-3 transition-all hover:opacity-80"
-            style={{ borderColor: 'rgba(116,185,232,0.2)', background: 'rgba(116,185,232,0.04)' }}
+            className="w-full text-left rounded-xl border px-5 py-4 transition-all hover:opacity-90"
+            style={{ borderColor: 'rgba(116,185,232,0.25)', background: 'linear-gradient(135deg, rgba(116,185,232,0.06), rgba(116,185,232,0.02))' }}
           >
-            <span className="text-sm" style={{ color: '#74b9e8' }}>
-              🇦🇷 <strong>¿Invertís desde Argentina?</strong>
-            </span>
-            <span className="text-xs ml-2" style={{ color: '#4A7A95' }}>
-              Activá el Modo AR para ver el CEDEAR en BYMA y el dólar CCL implícito →
-            </span>
+            <div className="flex items-center gap-4">
+              <span className="text-4xl leading-none shrink-0">🇦🇷</span>
+              <div>
+                <div className="text-sm font-semibold mb-0.5" style={{ color: '#74b9e8' }}>
+                  ¿Invertís desde Argentina?
+                </div>
+                <div className="text-xs" style={{ color: '#4A7A95' }}>
+                  Activá el <strong style={{ color: '#74b9e8' }}>Modo AR</strong> para ver el CEDEAR en BYMA y estimar el dólar CCL implícito. Tocá acá para activarlo →
+                </div>
+              </div>
+            </div>
           </button>
         )}
 
@@ -490,7 +495,7 @@ function CEDEARPanel({ cedear, usdPrice, ticker }: { cedear: CEDEARData; usdPric
         </div>
       </div>
       <div className="text-xs" style={{ color: '#4A5A72' }}>
-        Ratio {cedear.ratio}:1 · Precio implícito USD ${cedear.impliedUSDPrice.toFixed(2)} vs NYSE ${usdPrice.toFixed(2)} · Datos en tiempo real BYMA
+        Ratio {cedear.ratio}:1 · Precio implícito USD ${cedear.impliedUSDPrice.toFixed(2)} vs NYSE ${usdPrice.toFixed(2)} · Cotizaciones BYMA con posible demora · Solo con fines informativos
       </div>
     </div>
   )
