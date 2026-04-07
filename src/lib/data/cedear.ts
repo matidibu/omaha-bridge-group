@@ -72,13 +72,22 @@ export async function fetchCEDEARData(
     ])
 
     const cedearPrice: number = cedearQuote.regularMarketPrice ?? 0
-    if (!cedearPrice || !cclRate) return null
+    if (!cedearPrice) return null
 
-    const impliedUSDPrice = (cedearPrice * cedearInfo.ratio) / cclRate
-    const premiumDiscount = usdPrice > 0 ? (impliedUSDPrice - usdPrice) / usdPrice : 0
+    // If dolarapi failed (cclRate = 0), derive CCL from this CEDEAR itself
+    const effectiveCCL = cclRate > 0
+      ? cclRate
+      : usdPrice > 0 ? (cedearPrice * cedearInfo.ratio) / usdPrice : 0
+
+    if (!effectiveCCL) return null
+
+    const impliedUSDPrice = (cedearPrice * cedearInfo.ratio) / effectiveCCL
+    const premiumDiscount = cclRate > 0 && usdPrice > 0
+      ? (impliedUSDPrice - usdPrice) / usdPrice
+      : 0
 
     return {
-      cclRate,
+      cclRate: effectiveCCL,
       cedearTicker: cedearInfo.cedearTicker,
       cedearPrice,
       impliedUSDPrice,
