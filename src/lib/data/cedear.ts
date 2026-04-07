@@ -7,23 +7,25 @@ import { fetchWithRetry } from '@/lib/retry'
 
 /**
  * CEDEAR ratio table: how many CEDEAR units = 1 underlying NYSE/NASDAQ share.
- * Ratios set by CVSA/BYMA. Verify at https://www.byma.com.ar if updating.
+ * Ratios verified from Rankia/BYMA official table — April 2026.
+ * Update when splits, reverse splits, or BYMA adjustments occur.
+ * Source: https://www.rankia.com.ar/blog/cedear/6752496-listado-ratio-conversion-cedear-argentina
  */
 const CEDEAR_MAP: Record<string, { cedearTicker: string; ratio: number }> = {
-  AAPL:  { cedearTicker: 'AAPL.BA',  ratio: 10 },
-  MSFT:  { cedearTicker: 'MSFT.BA',  ratio: 10 },
-  GOOGL: { cedearTicker: 'GOOGL.BA', ratio: 10 },
-  AMZN:  { cedearTicker: 'AMZN.BA',  ratio: 10 },
-  META:  { cedearTicker: 'META.BA',  ratio: 20 },
-  TSLA:  { cedearTicker: 'TSLA.BA',  ratio: 10 },
-  NVDA:  { cedearTicker: 'NVDA.BA',  ratio: 10 },
-  JPM:   { cedearTicker: 'JPM.BA',   ratio: 10 },
-  V:     { cedearTicker: 'V.BA',     ratio: 15 },
-  KO:    { cedearTicker: 'KO.BA',    ratio: 3  },
-  MA:    { cedearTicker: 'MA.BA',    ratio: 20 },
-  ADBE:  { cedearTicker: 'ADBE.BA',  ratio: 10 },
-  SPGI:  { cedearTicker: 'SPGI.BA',  ratio: 10 },
-  UNH:   { cedearTicker: 'UNH.BA',   ratio: 10 },
+  AAPL:  { cedearTicker: 'AAPL.BA',  ratio: 20  },
+  MSFT:  { cedearTicker: 'MSFT.BA',  ratio: 30  },
+  GOOGL: { cedearTicker: 'GOOGL.BA', ratio: 58  },
+  AMZN:  { cedearTicker: 'AMZN.BA',  ratio: 144 },
+  META:  { cedearTicker: 'META.BA',  ratio: 24  },
+  TSLA:  { cedearTicker: 'TSLA.BA',  ratio: 15  },
+  NVDA:  { cedearTicker: 'NVDA.BA',  ratio: 24  },
+  JPM:   { cedearTicker: 'JPM.BA',   ratio: 15  },
+  V:     { cedearTicker: 'V.BA',     ratio: 18  },
+  KO:    { cedearTicker: 'KO.BA',    ratio: 5   },
+  MA:    { cedearTicker: 'MA.BA',    ratio: 33  },
+  ADBE:  { cedearTicker: 'ADBE.BA',  ratio: 44  },
+  SPGI:  { cedearTicker: 'SPGI.BA',  ratio: 45  },
+  UNH:   { cedearTicker: 'UNH.BA',   ratio: 33  },
 }
 
 // CCL rate cache — 1 hour TTL
