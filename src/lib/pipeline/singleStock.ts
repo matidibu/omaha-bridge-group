@@ -41,6 +41,7 @@ export async function* analyzeSingleStock(
   const buffettGateRaw = runBuffettGate(fundamentals)
 
   if (!buffettGateRaw.passed) {
+    const cedear = await fetchCEDEARData(t, fundamentals.currentPrice)
     const result: SingleStockAnalysis = {
       id,
       ticker: t,
@@ -54,6 +55,7 @@ export async function* analyzeSingleStock(
       verdict: null,
       fundamentals,
       macro,
+      ...(cedear ? { cedear } : {}),
     }
     yield { type: 'buffett_gate', ticker: t, data: result, progress: 100 }
     yield { type: 'complete', ticker: t, data: result, progress: 100 }
