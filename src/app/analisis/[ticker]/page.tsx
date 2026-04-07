@@ -376,6 +376,30 @@ export default async function AnalisisPage(
           </div>
         </section>
 
+        {/* ── CEDEAR ── */}
+        {analysis.cedear && (
+          <>
+            <Divider />
+            <section>
+              <h2 className="text-base font-semibold mb-4" style={{ color: '#C9A84C', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+                🇦🇷 CEDEAR — Mercado Argentino
+              </h2>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+                <Metric label="Ticker BYMA" value={analysis.cedear.cedearTicker} />
+                <Metric label="Precio ARS" value={`$${analysis.cedear.cedearPrice.toLocaleString('es-AR', { maximumFractionDigits: 0 })}`} />
+                <Metric label="CCL implícito" value={`$${analysis.cedear.cclRate.toLocaleString('es-AR', { maximumFractionDigits: 0 })}`} />
+                <Metric
+                  label={analysis.cedear.premiumDiscount > 0 ? 'Prima vs NYSE' : 'Descuento vs NYSE'}
+                  value={`${analysis.cedear.premiumDiscount > 0 ? '+' : ''}${(analysis.cedear.premiumDiscount * 100).toFixed(1)}%`}
+                />
+              </div>
+              <p className="text-xs" style={{ color: '#4A5A72' }}>
+                Ratio {analysis.cedear.ratio}:1 · Precio implícito USD ${analysis.cedear.impliedUSDPrice.toFixed(2)} vs NYSE ${fundamentals.currentPrice.toFixed(2)}
+              </p>
+            </section>
+          </>
+        )}
+
         <Divider />
 
         {/* ── CTA ── */}

@@ -365,6 +365,14 @@ export default function AnalysisPage() {
           </div>
         )}
 
+        {/* CEDEAR panel */}
+        {phase === 'complete' && analysis.cedear && (
+          <div>
+            <SectionLabel suits="🇦🇷" label="CEDEAR — Mercado Argentino" />
+            <CEDEARPanel cedear={analysis.cedear} usdPrice={analysis.fundamentals?.currentPrice ?? 0} ticker={ticker} />
+          </div>
+        )}
+
       </div>
 
       <footer className="border-t border-[#C9A84C]/10 px-6 py-4 mt-8">
@@ -414,6 +422,41 @@ function SectionLabel({ suits, label }: { suits: string; label: string }) {
       <span className="card-suit text-sm" style={{ color: 'rgba(201,168,76,0.35)' }}>{suits}</span>
       <div className="text-[10px] uppercase tracking-[0.3em]" style={{ color: '#4A5A72' }}>{label}</div>
       <div className="flex-1 h-px" style={{ background: 'rgba(201,168,76,0.1)' }} />
+    </div>
+  )
+}
+
+import { CEDEARData } from '@/types/data'
+
+function CEDEARPanel({ cedear, usdPrice, ticker }: { cedear: CEDEARData; usdPrice: number; ticker: string }) {
+  const isPremium = cedear.premiumDiscount > 0
+  const pctColor = isPremium ? '#f87171' : '#22c55e'
+  const pctLabel = isPremium ? 'prima' : 'descuento'
+  const pctAbs = Math.abs(cedear.premiumDiscount * 100).toFixed(1)
+
+  return (
+    <div className="rounded-xl border p-5 space-y-4" style={{ borderColor: 'rgba(201,168,76,0.12)', background: 'rgba(7,43,24,0.5)' }}>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="rounded-lg px-3 py-2.5" style={{ background: 'rgba(7,43,24,0.7)', border: '1px solid rgba(201,168,76,0.08)' }}>
+          <div className="text-xs mb-0.5" style={{ color: '#4A5A72' }}>Ticker BYMA</div>
+          <div className="text-sm font-mono font-semibold" style={{ color: '#C9A84C' }}>{cedear.cedearTicker}</div>
+        </div>
+        <div className="rounded-lg px-3 py-2.5" style={{ background: 'rgba(7,43,24,0.7)', border: '1px solid rgba(201,168,76,0.08)' }}>
+          <div className="text-xs mb-0.5" style={{ color: '#4A5A72' }}>Precio en ARS</div>
+          <div className="text-sm font-mono font-semibold" style={{ color: '#E8EDF5' }}>${cedear.cedearPrice.toLocaleString('es-AR', { maximumFractionDigits: 0 })}</div>
+        </div>
+        <div className="rounded-lg px-3 py-2.5" style={{ background: 'rgba(7,43,24,0.7)', border: '1px solid rgba(201,168,76,0.08)' }}>
+          <div className="text-xs mb-0.5" style={{ color: '#4A5A72' }}>CCL implícito</div>
+          <div className="text-sm font-mono font-semibold" style={{ color: '#E8EDF5' }}>${cedear.cclRate.toLocaleString('es-AR', { maximumFractionDigits: 0 })}</div>
+        </div>
+        <div className="rounded-lg px-3 py-2.5" style={{ background: 'rgba(7,43,24,0.7)', border: '1px solid rgba(201,168,76,0.08)' }}>
+          <div className="text-xs mb-0.5" style={{ color: '#4A5A72' }}>vs NYSE ({pctLabel})</div>
+          <div className="text-sm font-mono font-semibold" style={{ color: pctColor }}>{isPremium ? '+' : '-'}{pctAbs}%</div>
+        </div>
+      </div>
+      <div className="text-xs" style={{ color: '#4A5A72' }}>
+        Ratio {cedear.ratio}:1 · Precio implícito USD ${cedear.impliedUSDPrice.toFixed(2)} vs NYSE ${usdPrice.toFixed(2)} · Datos en tiempo real BYMA
+      </div>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import { AnalysisRequest, SingleStockAnalysis, StreamEvent } from '@/types/analy
 import { fetchFundamentals } from '@/lib/data/fmp'
 import { fetchOHLCV } from '@/lib/data/yahoo'
 import { fetchMacro } from '@/lib/data/fred'
+import { fetchCEDEARData } from '@/lib/data/cedear'
 import { runBuffettGate } from '@/lib/sages/buffett'
 import { computeLynchScore } from '@/lib/sages/lynch'
 import { computeGreenblattScore } from '@/lib/sages/greenblatt'
@@ -123,11 +124,11 @@ export async function* analyzeSingleStock(
     technical,
   }
 
-  const verdictRaw = await callClaude(
-    VERDICT_SYSTEM_PROMPT,
-    buildVerdictPrompt(verdictInput),
-    2500,
-  )
+  // Step 5: Claude Call 2 + CEDEAR fetch in parallel
+  const [verdictRaw, cedear] = await Promise.all([
+    callClaude(VERDICT_SYSTEM_PROMPT, buildVerdictPrompt(verdictInput), 2500),
+    fetchCEDEARData(t, fundamentals.currentPrice),
+  ])
 
   const verdict = extractJSON<AnalysisVerdict>(verdictRaw)
 
@@ -146,6 +147,7 @@ export async function* analyzeSingleStock(
     verdict,
     fundamentals,
     macro,
+    ...(cedear ? { cedear } : {}),
   }
 
   yield { type: 'complete', ticker: t, data: result, progress: 100 }
