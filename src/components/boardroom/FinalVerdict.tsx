@@ -107,27 +107,42 @@ export function FinalVerdict({ verdict, currentPrice }: FinalVerdictProps) {
 
 function BullBearBadge({ direction }: { direction: 'bull' | 'bear' | 'neutral' }) {
   if (direction === 'bull') return (
-    <div className="flex flex-col items-center gap-0.5">
-      <BullIcon className="w-12 h-8 text-emerald-500" />
-      <span className="text-[10px] font-bold text-emerald-500 tracking-widest">BULL</span>
+    <div style={{
+      width: 58, height: 58, borderRadius: '50%', flexShrink: 0,
+      background: 'radial-gradient(circle at 38% 35%, rgba(22,101,52,0.55) 0%, rgba(5,14,8,0.90) 100%)',
+      border: '1.5px solid rgba(34,197,94,0.38)',
+      boxShadow: '0 0 22px rgba(34,197,94,0.13), 0 0 6px rgba(34,197,94,0.08), inset 0 1px 0 rgba(34,197,94,0.10)',
+      display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 2,
+    }}>
+      <BullIcon className="w-8 h-8 text-emerald-400" />
+      <span style={{ fontSize: 6.5, fontWeight: 900, color: '#4ade80', letterSpacing: '0.20em', lineHeight: 1 }}>BULL</span>
     </div>
   )
   if (direction === 'bear') return (
-    <div className="flex flex-col items-center gap-0.5">
-      <BearIcon className="w-12 h-8 text-red-500" />
-      <span className="text-[10px] font-bold text-red-500 tracking-widest">BEAR</span>
+    <div style={{
+      width: 58, height: 58, borderRadius: '50%', flexShrink: 0,
+      background: 'radial-gradient(circle at 38% 35%, rgba(127,29,29,0.55) 0%, rgba(14,5,5,0.90) 100%)',
+      border: '1.5px solid rgba(248,113,113,0.38)',
+      boxShadow: '0 0 22px rgba(239,68,68,0.13), 0 0 6px rgba(239,68,68,0.08), inset 0 1px 0 rgba(239,68,68,0.10)',
+      display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 2,
+    }}>
+      <BearIcon className="w-8 h-8 text-red-400" />
+      <span style={{ fontSize: 6.5, fontWeight: 900, color: '#f87171', letterSpacing: '0.20em', lineHeight: 1 }}>BEAR</span>
     </div>
   )
   return (
-    <div className="flex flex-col items-center gap-0.5">
-      <div className="w-12 h-8 flex items-center justify-center">
-        <div className="flex gap-1 items-center">
-          <BullIcon className="w-5 h-4 text-emerald-600/60" />
-          <span className="text-[#C9A84C]/40 text-xs">/</span>
-          <BearIcon className="w-5 h-4 text-red-600/60" />
-        </div>
+    <div style={{
+      width: 58, height: 58, borderRadius: '50%', flexShrink: 0,
+      background: 'radial-gradient(circle at 38% 35%, rgba(100,74,14,0.40) 0%, rgba(8,6,2,0.88) 100%)',
+      border: '1.5px solid rgba(201,168,76,0.25)',
+      boxShadow: '0 0 16px rgba(201,168,76,0.08), inset 0 1px 0 rgba(201,168,76,0.07)',
+      display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 2,
+    }}>
+      <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+        <BullIcon className="w-5 h-5 text-emerald-600/50" />
+        <BearIcon className="w-5 h-5 text-red-600/50" />
       </div>
-      <span className="text-[10px] font-bold text-[#C9A84C] tracking-widest">NEUTRAL</span>
+      <span style={{ fontSize: 6.5, fontWeight: 900, color: 'rgba(201,168,76,0.65)', letterSpacing: '0.18em', lineHeight: 1 }}>NEUTRAL</span>
     </div>
   )
 }

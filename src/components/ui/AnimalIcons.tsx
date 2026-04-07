@@ -1,48 +1,37 @@
-// Elegant SVG animal icons — no emojis
+// Premium heraldic animal icons — front-facing, reads clearly at any size
 
 export function BullIcon({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 240 150"
+      viewBox="0 0 100 86"
       className={className}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Bull"
     >
-      {/* Tail */}
-      <path d="M 22 80 C 8 66 5 48 16 38 L 20 47 C 13 53 15 66 22 74 Z" />
-      {/* Rump */}
-      <ellipse cx="44" cy="86" rx="24" ry="20" />
-      {/* Main body */}
-      <ellipse cx="98" cy="92" rx="60" ry="30" />
-      {/* Shoulder hump */}
-      <ellipse cx="60" cy="76" rx="28" ry="24" />
-      {/* Neck */}
-      <path d="M 138 74 C 148 60 154 48 157 40 L 167 42 C 168 52 164 66 155 76 Z" />
-      {/* Head */}
-      <ellipse cx="178" cy="46" rx="26" ry="19" />
-      {/* Snout */}
-      <ellipse cx="200" cy="55" rx="13" ry="10" />
-      {/* Left horn */}
-      <path d="M 164 32 L 150 10 L 159 13 L 170 32 Z" />
+      {/* Left horn — sweeps up and outward */}
+      <path d="M 28 28 C 18 20 10 8 14 1 C 17 9 22 16 30 22 Z" />
       {/* Right horn */}
-      <path d="M 182 30 L 188 8 L 197 12 L 187 30 Z" />
-      {/* Eye */}
-      <circle cx="188" cy="42" r="3.5" fill="white" />
-      <circle cx="189" cy="43" r="2" />
-      {/* Nostril */}
-      <ellipse cx="205" cy="58" rx="3" ry="2.5" opacity="0.45" />
-      {/* Front legs */}
-      <rect x="68" y="116" width="13" height="30" rx="5" />
-      <rect x="88" y="118" width="13" height="28" rx="5" />
-      {/* Back legs */}
-      <rect x="112" y="118" width="13" height="28" rx="5" />
-      <rect x="132" y="116" width="13" height="30" rx="5" />
-      {/* Hooves */}
-      <rect x="66" y="142" width="17" height="5" rx="2" opacity="0.7" />
-      <rect x="86" y="142" width="17" height="5" rx="2" opacity="0.7" />
-      <rect x="110" y="142" width="17" height="5" rx="2" opacity="0.7" />
-      <rect x="130" y="142" width="17" height="5" rx="2" opacity="0.7" />
+      <path d="M 72 28 C 82 20 90 8 86 1 C 83 9 78 16 70 22 Z" />
+      {/* Head */}
+      <ellipse cx="50" cy="42" rx="33" ry="27" />
+      {/* Shoulder mass */}
+      <path d="M 17 64 C 12 72 11 80 14 86 L 86 86 C 89 80 88 72 83 64 Q 67 72 50 72 Q 33 72 17 64 Z" />
+      {/* Snout overlay */}
+      <ellipse cx="50" cy="55" rx="19" ry="13" opacity="0.30" />
+      {/* Left eye */}
+      <circle cx="33" cy="36" r="6.5" fill="white" />
+      <circle cx="34" cy="37" r="3.8" />
+      <circle cx="33.5" cy="35.5" r="1.2" fill="white" />
+      {/* Right eye */}
+      <circle cx="67" cy="36" r="6.5" fill="white" />
+      <circle cx="68" cy="37" r="3.8" />
+      <circle cx="67.5" cy="35.5" r="1.2" fill="white" />
+      {/* Nostrils */}
+      <ellipse cx="41" cy="56" rx="4.5" ry="3.5" opacity="0.50" />
+      <ellipse cx="59" cy="56" rx="4.5" ry="3.5" opacity="0.50" />
+      {/* Nose ring */}
+      <path d="M 42 64 Q 50 70 58 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" opacity="0.28" />
     </svg>
   )
 }
@@ -50,43 +39,42 @@ export function BullIcon({ className }: { className?: string }) {
 export function BearIcon({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 240 155"
+      viewBox="0 0 100 92"
       className={className}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Bear"
     >
-      {/* Hindquarters */}
-      <circle cx="52" cy="98" r="32" />
-      {/* Body */}
-      <ellipse cx="108" cy="102" rx="66" ry="40" />
-      {/* Shoulder mass */}
-      <circle cx="158" cy="90" r="28" />
-      {/* Head */}
-      <circle cx="194" cy="72" r="36" />
       {/* Left ear */}
-      <circle cx="174" cy="42" r="15" />
-      <circle cx="174" cy="42" r="9" opacity="0.5" />
+      <circle cx="21" cy="20" r="15" />
+      <circle cx="21" cy="20" r="9" opacity="0.42" />
       {/* Right ear */}
-      <circle cx="210" cy="40" r="15" />
-      <circle cx="210" cy="40" r="9" opacity="0.5" />
+      <circle cx="79" cy="20" r="15" />
+      <circle cx="79" cy="20" r="9" opacity="0.42" />
+      {/* Head */}
+      <circle cx="50" cy="46" r="35" />
+      {/* Body / neck mass */}
+      <path d="M 16 74 C 10 82 9 88 12 92 L 88 92 C 91 88 90 82 84 74 Q 68 83 50 83 Q 32 83 16 74 Z" />
       {/* Muzzle */}
-      <ellipse cx="216" cy="82" rx="17" ry="13" opacity="0.65" />
+      <ellipse cx="50" cy="58" rx="19" ry="15" opacity="0.32" />
       {/* Nose */}
-      <ellipse cx="218" cy="74" r="7" opacity="0.5" />
-      {/* Eye */}
-      <circle cx="181" cy="63" r="6" fill="white" />
-      <circle cx="182" cy="64" r="3.5" />
-      {/* Front paws */}
-      <rect x="48" y="128" width="18" height="26" rx="7" />
-      <rect x="78" y="132" width="18" height="22" rx="7" />
-      {/* Back paws */}
-      <rect x="116" y="132" width="18" height="22" rx="7" />
-      <rect x="150" y="128" width="18" height="26" rx="7" />
-      {/* Claws front-left */}
-      <path d="M 49 154 L 52 158 M 55 154 L 58 158 M 61 154 L 64 158" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.6" />
-      {/* Claws front-right */}
-      <path d="M 79 154 L 82 158 M 85 154 L 88 158 M 91 154 L 94 158" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.6" />
+      <ellipse cx="50" cy="48" rx="10" ry="7.5" opacity="0.52" />
+      {/* Left eye */}
+      <circle cx="31" cy="37" r="6.5" fill="white" />
+      <circle cx="32" cy="38" r="3.8" />
+      <circle cx="31.5" cy="36.5" r="1.2" fill="white" />
+      {/* Right eye */}
+      <circle cx="69" cy="37" r="6.5" fill="white" />
+      <circle cx="70" cy="38" r="3.8" />
+      <circle cx="69.5" cy="36.5" r="1.2" fill="white" />
+      {/* Mouth */}
+      <path d="M 42 64 Q 50 71 58 64" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" opacity="0.32" />
+      {/* Claws left */}
+      <path d="M 13 90 L 9 100 M 20 92 L 17 102 M 28 92 L 26 102"
+        stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.45" />
+      {/* Claws right */}
+      <path d="M 87 90 L 91 100 M 80 92 L 83 102 M 72 92 L 74 102"
+        stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" opacity="0.45" />
     </svg>
   )
 }
