@@ -34,6 +34,33 @@ const CEDEAR_MAP: Record<string, { cedearTicker: string; ratio: number }> = {
   NFLX:  { cedearTicker: 'NFLX.BA',  ratio: 48  },
   AMD:   { cedearTicker: 'AMD.BA',   ratio: 10  },
   WMT:   { cedearTicker: 'WMT.BA',   ratio: 18  },
+  // Screener candidates
+  ORCL:  { cedearTicker: 'ORCL.BA',  ratio: 3   },
+  INTU:  { cedearTicker: 'INTU.BA',  ratio: 22  },
+  AXP:   { cedearTicker: 'AXP.BA',   ratio: 15  },
+  MCO:   { cedearTicker: 'MCO.BA',   ratio: 22  },
+  PEP:   { cedearTicker: 'PEP.BA',   ratio: 12  },
+  PG:    { cedearTicker: 'PG.BA',    ratio: 12  },
+  CL:    { cedearTicker: 'CL.BA',    ratio: 3   },
+  COST:  { cedearTicker: 'COST.BA',  ratio: 48  },
+  MCD:   { cedearTicker: 'MCD.BA',   ratio: 22  },
+  TMO:   { cedearTicker: 'TMO.BA',   ratio: 22  },
+  ISRG:  { cedearTicker: 'ISRG.BA',  ratio: 30  },
+  ABT:   { cedearTicker: 'ABT.BA',   ratio: 10  },
+  HON:   { cedearTicker: 'HON.BA',   ratio: 12  },
+  ITW:   { cedearTicker: 'ITW.BA',   ratio: 18  },
+  // Other popular
+  BAC:   { cedearTicker: 'BAC.BA',   ratio: 4   },
+  GS:    { cedearTicker: 'GS.BA',    ratio: 13  },
+  JNJ:   { cedearTicker: 'JNJ.BA',   ratio: 15  },
+  PFE:   { cedearTicker: 'PFE.BA',   ratio: 4   },
+  LLY:   { cedearTicker: 'LLY.BA',   ratio: 56  },
+  XOM:   { cedearTicker: 'XOM.BA',   ratio: 10  },
+  INTC:  { cedearTicker: 'INTC.BA',  ratio: 5   },
+  CSCO:  { cedearTicker: 'CSCO.BA',  ratio: 5   },
+  IBM:   { cedearTicker: 'IBM.BA',   ratio: 15  },
+  HD:    { cedearTicker: 'HD.BA',    ratio: 32  },
+  CAT:   { cedearTicker: 'CAT.BA',   ratio: 20  },
 }
 
 // CCL rate cache — 1 hour TTL
