@@ -9,6 +9,7 @@ import { FinalVerdict } from '@/components/boardroom/FinalVerdict'
 import { Logo } from '@/components/ui/Logo'
 import { PlayingCard } from '@/components/ui/PlayingCard'
 import Link from 'next/link'
+import { useModoArgentina } from '@/lib/hooks/useModoArgentina'
 
 type Phase =
   | 'idle'
@@ -93,6 +94,7 @@ export default function AnalysisPage() {
   }, [ticker])
 
   const isLoading = phase !== 'complete' && phase !== 'error'
+  const { active: modoArgentina, toggle: toggleArgentina } = useModoArgentina()
 
   return (
     <div className="min-h-screen flex flex-col text-[#E8EDF5]">
@@ -112,6 +114,14 @@ export default function AnalysisPage() {
           ) : (
             <span className="text-[10px] text-emerald-400 uppercase tracking-wider">Completo</span>
           )}
+          <button
+            onClick={toggleArgentina}
+            title={modoArgentina ? 'Desactivar Modo Argentina' : 'Activar Modo Argentina'}
+            className="text-base transition-opacity"
+            style={{ opacity: modoArgentina ? 1 : 0.35 }}
+          >
+            🇦🇷
+          </button>
         </div>
       </header>
 
@@ -365,10 +375,15 @@ export default function AnalysisPage() {
           </div>
         )}
 
-        {/* CEDEAR panel */}
-        {phase === 'complete' && analysis.cedear && (
+        {/* CEDEAR panel — solo visible en Modo Argentina */}
+        {phase === 'complete' && modoArgentina && analysis.cedear && (
           <div>
             <SectionLabel suits="🇦🇷" label="CEDEAR — Mercado Argentino" />
+            {!analysis.passed && (
+              <p className="text-xs mb-3 px-1" style={{ color: '#6A7A95' }}>
+                Este activo no supera el filtro de calidad Buffett. El panel CEDEAR se muestra únicamente para que puedas consultar el dólar CCL implícito — no como recomendación de inversión.
+              </p>
+            )}
             <CEDEARPanel cedear={analysis.cedear} usdPrice={analysis.fundamentals?.currentPrice ?? 0} ticker={ticker} />
           </div>
         )}
