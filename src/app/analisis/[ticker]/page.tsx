@@ -8,65 +8,25 @@ import { CEDEAR_MAP } from '@/lib/data/cedear'
 export const revalidate = 86400 // 24 hours ISR — generated on first request, then cached
 export const dynamicParams = true
 
-// Curated related tickers for "Ver también" internal links
+// "Ver también" links — only point to the 10 cached pages to avoid
+// accidentally seeding ISR pages outside the indexed set.
 const RELATED: Record<string, string[]> = {
-  // Tech
-  AAPL:  ['MSFT', 'GOOGL', 'NVDA', 'META', 'AMZN'],
-  MSFT:  ['AAPL', 'GOOGL', 'NVDA', 'AMZN', 'ADBE'],
-  GOOGL: ['AAPL', 'MSFT', 'META', 'AMZN', 'NFLX'],
-  NVDA:  ['AMD',  'MSFT', 'AAPL', 'GOOGL', 'META'],
-  META:  ['GOOGL','AAPL', 'AMZN', 'NFLX',  'MSFT'],
-  AMZN:  ['MSFT', 'GOOGL','META', 'AAPL',  'COST'],
-  AMD:   ['NVDA', 'INTC', 'MSFT', 'AAPL',  'GOOGL'],
-  ADBE:  ['MSFT', 'ORCL', 'INTU', 'NVDA',  'AAPL'],
-  ORCL:  ['MSFT', 'ADBE', 'INTU', 'IBM',   'CSCO'],
-  INTU:  ['MSFT', 'ORCL', 'ADBE', 'AAPL',  'V'],
-  INTC:  ['NVDA', 'AMD',  'MSFT', 'AAPL',  'CSCO'],
-  CSCO:  ['INTC', 'MSFT', 'IBM',  'ORCL',  'HON'],
-  IBM:   ['MSFT', 'ORCL', 'CSCO', 'INTU',  'CAT'],
-  // Consumer
-  TSLA:  ['NVDA', 'AAPL', 'META', 'AMZN',  'NKE'],
-  NFLX:  ['DIS',  'META', 'GOOGL','AMZN',  'AAPL'],
-  DIS:   ['NFLX', 'SBUX', 'MCD',  'NKE',   'KO'],
-  MCD:   ['SBUX', 'KO',   'PEP',  'DIS',   'WMT'],
-  SBUX:  ['MCD',  'KO',   'PEP',  'NKE',   'DIS'],
-  NKE:   ['SBUX', 'MCD',  'KO',   'WMT',   'DIS'],
-  WMT:   ['KO',   'PEP',  'COST', 'MCD',   'PG'],
-  KO:    ['PEP',  'MCD',  'SBUX', 'WMT',   'PG'],
-  PEP:   ['KO',   'MCD',  'WMT',  'COST',  'PG'],
-  COST:  ['WMT',  'PEP',  'KO',   'PG',    'MCD'],
-  // Finance
-  JPM:   ['V',    'MA',   'GS',   'BAC',   'AXP'],
-  V:     ['MA',   'JPM',  'AXP',  'GS',    'SPGI'],
-  MA:    ['V',    'JPM',  'AXP',  'SPGI',  'MCO'],
-  GS:    ['JPM',  'BAC',  'V',    'MA',    'SPGI'],
-  BAC:   ['JPM',  'GS',   'V',    'MA',    'AXP'],
-  AXP:   ['V',    'MA',   'JPM',  'GS',    'SPGI'],
-  SPGI:  ['MCO',  'V',    'MA',   'JPM',   'GS'],
-  MCO:   ['SPGI', 'V',    'MA',   'JPM',   'GS'],
-  // Health
-  LLY:   ['UNH',  'TMO',  'ISRG', 'ABT',   'JNJ'],
-  UNH:   ['LLY',  'TMO',  'ABT',  'JNJ',   'PFE'],
-  TMO:   ['UNH',  'LLY',  'ISRG', 'ABT',   'JNJ'],
-  ISRG:  ['TMO',  'LLY',  'UNH',  'ABT',   'JNJ'],
-  ABT:   ['JNJ',  'PFE',  'LLY',  'TMO',   'UNH'],
-  JNJ:   ['PFE',  'ABT',  'LLY',  'UNH',   'TMO'],
-  PFE:   ['JNJ',  'ABT',  'LLY',  'UNH',   'TMO'],
-  // Other
-  MELI:  ['BABA', 'AMZN', 'AAPL', 'GOOGL', 'META'],
-  BABA:  ['MELI', 'AMZN', 'NVDA', 'GOOGL', 'META'],
-  XOM:   ['CAT',  'HON',  'PG',   'KO',    'WMT'],
-  CAT:   ['HON',  'ITW',  'XOM',  'IBM',   'GS'],
-  HON:   ['CAT',  'ITW',  'XOM',  'MSFT',  'GS'],
-  ITW:   ['HON',  'CAT',  'XOM',  'PG',    'MMM'],
-  PG:    ['KO',   'PEP',  'CL',   'WMT',   'COST'],
-  CL:    ['PG',   'KO',   'PEP',  'WMT',   'COST'],
+  AAPL:  ['MSFT', 'GOOGL', 'NVDA',  'META',  'AMZN'],
+  MSFT:  ['AAPL', 'GOOGL', 'NVDA',  'AMZN',  'JPM' ],
+  GOOGL: ['AAPL', 'MSFT',  'META',  'AMZN',  'NVDA'],
+  NVDA:  ['AAPL', 'MSFT',  'GOOGL', 'META',  'TSLA'],
+  META:  ['GOOGL','AAPL',  'AMZN',  'NVDA',  'MSFT'],
+  AMZN:  ['MSFT', 'GOOGL', 'META',  'AAPL',  'NVDA'],
+  TSLA:  ['NVDA', 'AAPL',  'META',  'AMZN',  'MSFT'],
+  JPM:   ['V',    'MSFT',  'KO',    'AAPL',  'AMZN'],
+  V:     ['JPM',  'MSFT',  'KO',    'AAPL',  'META'],
+  KO:    ['V',    'JPM',   'MSFT',  'AAPL',  'AMZN'],
 }
 
 const FALLBACK_RELATED = ['AAPL', 'MSFT', 'NVDA', 'JPM', 'KO']
 
 function getRelated(ticker: string): string[] {
-  return (RELATED[ticker] ?? FALLBACK_RELATED).slice(0, 5)
+  return (RELATED[ticker] ?? FALLBACK_RELATED).filter(r => r !== ticker).slice(0, 5)
 }
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────

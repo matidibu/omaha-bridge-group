@@ -2,19 +2,12 @@ import { MetadataRoute } from 'next'
 
 const base = 'https://omaha-bridge-group.vercel.app'
 
-// Tier 1 — highest search volume (mega caps + Argentine CEDEAR favourites)
-const TIER1_TICKERS = [
+// 10 showcase tickers — cached analysis pages indexed by Google.
+// Kept intentionally small: users who search other tickers find the hub
+// and are directed to the live analysis, preserving the interactive experience.
+const CACHED_TICKERS = [
   'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META',
-  'NVDA', 'TSLA', 'JPM', 'V', 'KO',
-  'MELI', 'MA',   'NFLX', 'AMD',  'LLY',
-]
-
-// Tier 2 — strong search volume, popular CEDEARs
-const TIER2_TICKERS = [
-  'DIS',  'SBUX', 'NKE',  'WMT',  'MCD',
-  'BAC',  'GS',   'JNJ',  'PFE',  'BABA',
-  'COST', 'UNH',  'ADBE', 'XOM',  'PG',
-  'PEP',  'ORCL', 'AXP',  'SPGI', 'CAT',
+  'NVDA', 'TSLA', 'JPM',   'V',    'KO',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -25,19 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/privacidad`,    lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
   ]
 
-  const tier1Routes: MetadataRoute.Sitemap = TIER1_TICKERS.map((ticker) => ({
+  const tickerRoutes: MetadataRoute.Sitemap = CACHED_TICKERS.map((ticker) => ({
     url: `${base}/analisis/${ticker}`,
     lastModified: new Date(),
     changeFrequency: 'daily',
     priority: 0.85,
   }))
 
-  const tier2Routes: MetadataRoute.Sitemap = TIER2_TICKERS.map((ticker) => ({
-    url: `${base}/analisis/${ticker}`,
-    lastModified: new Date(),
-    changeFrequency: 'daily',
-    priority: 0.75,
-  }))
-
-  return [...staticRoutes, ...tier1Routes, ...tier2Routes]
+  return [...staticRoutes, ...tickerRoutes]
 }
