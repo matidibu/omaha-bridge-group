@@ -51,7 +51,7 @@ export async function* analyzeSingleStock(
       name: fundamentals.name,
       analyzedAt: new Date().toISOString(),
       mode: 'single',
-      buffettGate: { ...buffettGateRaw, quote: `I wouldn't touch ${fundamentals.name}. The numbers simply don't justify it — ${buffettGateRaw.failReasons[0]?.toLowerCase()}.` },
+      buffettGate: { ...buffettGateRaw, quote: `No tocaría ${fundamentals.name}. Los números no lo justifican — ${buffettGateRaw.failReasons[0]}.` },
       passed: false,
       sageScores: null,
       technical: null,

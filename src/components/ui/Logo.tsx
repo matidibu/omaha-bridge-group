@@ -34,7 +34,7 @@ export function Logo({ className, size = 'md', tagline = true }: LogoProps) {
     )
   }
 
-  const imgSize = size === 'sm' ? 32 : 42
+  const imgSize = size === 'sm' ? 80 : 100
 
   return (
     <div className={cn('flex items-center gap-2.5 select-none', className)}>
@@ -54,7 +54,7 @@ export function Logo({ className, size = 'md', tagline = true }: LogoProps) {
           className="font-bold uppercase text-[#C9A84C] leading-none"
           style={{
             fontFamily: 'var(--font-playfair), Georgia, serif',
-            fontSize: size === 'sm' ? '0.7rem' : '0.8rem',
+            fontSize: size === 'sm' ? '0.9rem' : '1.05rem',
             letterSpacing: '0.28em',
           }}
         >

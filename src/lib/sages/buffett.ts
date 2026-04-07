@@ -11,24 +11,24 @@ export function runBuffettGate(f: FMPFundamentals): BuffettScore {
 
   // 1. ROE > 15% (ideally > 20%)
   const roeOk = f.roe >= 0.15
-  if (!roeOk) failReasons.push(`ROE ${(f.roe * 100).toFixed(1)}% below 15% threshold`)
+  if (!roeOk) failReasons.push(`ROE ${(f.roe * 100).toFixed(1)}% por debajo del umbral del 15%`)
 
   // 2. ROIC > 12%
   const roicOk = f.roic >= 0.12
-  if (!roicOk) failReasons.push(`ROIC ${(f.roic * 100).toFixed(1)}% below 12% threshold`)
+  if (!roicOk) failReasons.push(`ROIC ${(f.roic * 100).toFixed(1)}% por debajo del umbral del 12%`)
 
   // 3. Consistent FCF (at least 70% of available years positive)
   const totalFCFYears = f.cashFlowStatements.length
   const positiveFCFYears = f.cashFlowStatements.filter((s) => s.freeCashFlow > 0).length
   const fcfThreshold = Math.max(Math.round(totalFCFYears * 0.7), 1)
   const fcfOk = positiveFCFYears >= fcfThreshold
-  if (!fcfOk) failReasons.push(`Only ${positiveFCFYears}/${totalFCFYears} years of positive free cash flow`)
+  if (!fcfOk) failReasons.push(`Solo ${positiveFCFYears}/${totalFCFYears} años con flujo de caja libre positivo`)
 
   // 4. Debt/Equity < 2.0 — Buffett cares about manageable debt, not a hard 1.0 cutoff.
   // Companies like KO and AAPL carry D/E > 1.0 due to capital-efficient buyback programs
   // while generating dominant FCF. The meaningful threshold is 2.0.
   const debtOk = f.debtToEquity < 2.0
-  if (!debtOk) failReasons.push(`Debt/Equity ${f.debtToEquity.toFixed(2)} exceeds 2.0 limit`)
+  if (!debtOk) failReasons.push(`Deuda/Patrimonio ${f.debtToEquity.toFixed(2)} supera el límite de 2.0`)
 
   // 5. Gross margin stability: avg > 35% and not deteriorating
   const margins = f.incomeStatements.map((s) =>
@@ -38,7 +38,7 @@ export function runBuffettGate(f: FMPFundamentals): BuffettScore {
     ? margins.reduce((a, b) => a + b, 0) / margins.length
     : 0
   const marginOk = avgMargin >= 0.35
-  if (!marginOk) failReasons.push(`Avg gross margin ${(avgMargin * 100).toFixed(1)}% below 35% threshold`)
+  if (!marginOk) failReasons.push(`Margen bruto promedio ${(avgMargin * 100).toFixed(1)}% por debajo del umbral del 35%`)
 
   // Moat rating
   let moatRating: BuffettScore['moatRating'] = 'none'

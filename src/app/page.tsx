@@ -158,12 +158,12 @@ export default function HomePage() {
       <header style={{ borderBottom: '1px solid rgba(201,168,76,0.13)', background: 'rgba(6,2,1,0.90)', backdropFilter: 'blur(14px)', position: 'sticky', top: 0, zIndex: 50 }}
         className="px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div style={{ width: 36, height: 36, borderRadius: '50%', overflow: 'hidden', position: 'relative', flexShrink: 0, boxShadow: '0 0 0 1.5px rgba(201,168,76,0.55), 0 0 20px rgba(201,168,76,0.20)' }}>
+          <div style={{ width: 120, height: 120, borderRadius: '50%', overflow: 'hidden', position: 'relative', flexShrink: 0, boxShadow: '0 0 0 2px rgba(201,168,76,0.60), 0 0 36px rgba(201,168,76,0.35)' }}>
             <Image src="/obg-logo-new.png" alt="OBG" fill className="object-cover scale-[1.2]" />
           </div>
           <div className="hidden sm:block">
-            <div style={{ color: '#C9A84C', fontSize: 10, letterSpacing: '0.38em', textTransform: 'uppercase', fontFamily: 'var(--font-playfair), Georgia, serif', fontWeight: 700 }}>Omaha Bridge Group</div>
-            <div style={{ color: 'rgba(201,168,76,0.60)', fontSize: 7, letterSpacing: '0.30em', textTransform: 'uppercase' }}>Investment Intelligence</div>
+            <div style={{ color: '#C9A84C', fontSize: 15, letterSpacing: '0.38em', textTransform: 'uppercase', fontFamily: 'var(--font-playfair), Georgia, serif', fontWeight: 700 }}>Omaha Bridge Group</div>
+            <div style={{ color: 'rgba(201,168,76,0.60)', fontSize: 10, letterSpacing: '0.30em', textTransform: 'uppercase' }}>Investment Intelligence</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
