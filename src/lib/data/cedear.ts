@@ -26,6 +26,14 @@ const CEDEAR_MAP: Record<string, { cedearTicker: string; ratio: number }> = {
   ADBE:  { cedearTicker: 'ADBE.BA',  ratio: 44  },
   SPGI:  { cedearTicker: 'SPGI.BA',  ratio: 45  },
   UNH:   { cedearTicker: 'UNH.BA',   ratio: 33  },
+  BABA:  { cedearTicker: 'BABA.BA',  ratio: 9   },
+  MELI:  { cedearTicker: 'MELI.BA',  ratio: 120 },
+  NKE:   { cedearTicker: 'NKE.BA',   ratio: 12  },
+  SBUX:  { cedearTicker: 'SBUX.BA',  ratio: 12  },
+  DIS:   { cedearTicker: 'DIS.BA',   ratio: 12  },
+  NFLX:  { cedearTicker: 'NFLX.BA',  ratio: 48  },
+  AMD:   { cedearTicker: 'AMD.BA',   ratio: 10  },
+  WMT:   { cedearTicker: 'WMT.BA',   ratio: 18  },
 }
 
 // CCL rate cache — 1 hour TTL
