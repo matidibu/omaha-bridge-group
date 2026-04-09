@@ -103,16 +103,18 @@ export default function AnalysisPage() {
         <Link href="/" className="text-xs text-[#6A7A95] hover:text-[#C9A84C] transition-colors tracking-wider uppercase">
           ← Volver
         </Link>
-        <Logo size="sm" tagline={false} onDark />
+        <div className="hidden sm:block">
+          <Logo size="sm" tagline={false} onDark />
+        </div>
         <div className="flex items-center gap-3">
           <span className="font-mono font-bold text-[#C9A84C] text-base tracking-wider">{ticker}</span>
           {analysis.name && (
             <span className="text-xs text-[#6A7A95] hidden sm:block">{analysis.name}</span>
           )}
           {isLoading ? (
-            <span className="text-[10px] text-[#C9A84C] animate-pulse uppercase tracking-wider">Analizando…</span>
+            <span className="hidden sm:inline text-[10px] text-[#C9A84C] animate-pulse uppercase tracking-wider">Analizando…</span>
           ) : (
-            <span className="text-[10px] text-emerald-400 uppercase tracking-wider">Completo</span>
+            <span className="hidden sm:inline text-[10px] text-emerald-400 uppercase tracking-wider">Completo</span>
           )}
           <button
             onClick={toggleArgentina}
@@ -154,10 +156,11 @@ export default function AnalysisPage() {
         {/* Fetching — cards face-down loading */}
         {phase === 'fetching' && (
           <div className="text-center py-20">
-            <div className="flex justify-center gap-3 mb-6">
+            <div className="flex justify-center gap-1.5 sm:gap-3 mb-6">
               {(['♥', '♣', '♦', '♠', '★', '✦'] as const).map((s, i) => (
                 <div key={s} style={{ animationDelay: `${i * 180}ms`, animation: 'float 2s ease-in-out infinite' }}>
-                  <PlayingCard suit={s} state="face-down" size="md" />
+                  <div className="sm:hidden"><PlayingCard suit={s} state="face-down" size="sm" /></div>
+                  <div className="hidden sm:block"><PlayingCard suit={s} state="face-down" size="md" /></div>
                 </div>
               ))}
             </div>
@@ -555,7 +558,7 @@ function LaManoBanner({ phase, analysis, activeSage }: {
 
   return (
     <div className="border-b border-[#C9A84C]/10 bg-[#072B18]/60 backdrop-blur-sm px-4 py-3">
-      <div className="max-w-5xl mx-auto flex items-end justify-center gap-4 sm:gap-8">
+      <div className="max-w-5xl mx-auto flex items-end justify-center gap-2 sm:gap-8">
         {HAND_CARDS.map((card) => {
           const state = getState(card.id)
           return (

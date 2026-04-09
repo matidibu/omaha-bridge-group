@@ -149,16 +149,16 @@ export default function HomePage() {
   function onSubmit(e: React.FormEvent) { e.preventDefault(); const t = query.trim().toUpperCase(); if (t) navigate(t) }
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: LIBRARY_BG, backgroundAttachment: 'fixed' }}>
+    <div className="min-h-screen flex flex-col" style={{ background: LIBRARY_BG }}>
       <WelcomeModal forceOpen={helpOpen} onClose={() => setHelpOpen(false)} />
 
       <div style={{ height: 2, background: 'linear-gradient(to right, transparent, #B8922A 30%, #E8C96C 50%, #B8922A 70%, transparent)' }} />
 
       {/* HEADER */}
       <header style={{ borderBottom: '1px solid rgba(201,168,76,0.13)', background: 'rgba(6,2,1,0.90)', backdropFilter: 'blur(14px)', position: 'sticky', top: 0, zIndex: 50 }}
-        className="px-6 py-3 flex items-center justify-between">
+        className="px-3 sm:px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div style={{ width: 120, height: 120, borderRadius: '50%', overflow: 'hidden', position: 'relative', flexShrink: 0, boxShadow: '0 0 0 2px rgba(201,168,76,0.60), 0 0 36px rgba(201,168,76,0.35)' }}>
+          <div className="w-12 h-12 sm:w-[120px] sm:h-[120px] shrink-0" style={{ borderRadius: '50%', overflow: 'hidden', position: 'relative', boxShadow: '0 0 0 2px rgba(201,168,76,0.60), 0 0 36px rgba(201,168,76,0.35)' }}>
             <Image src="/obg-logo-new.png" alt="OBG" fill className="object-cover scale-[1.2]" />
           </div>
           <div className="hidden sm:block">
@@ -169,13 +169,13 @@ export default function HomePage() {
         <div className="flex items-center gap-2">
           <button
             onClick={() => setHelpOpen(true)}
-            style={{ color: 'rgba(201,168,76,0.60)', fontSize: 9, letterSpacing: '0.25em', textTransform: 'uppercase', border: '1px solid rgba(201,168,76,0.22)', borderRadius: 6, padding: '6px 14px', background: 'rgba(201,168,76,0.03)', cursor: 'pointer', transition: 'all 0.2s', fontFamily: 'inherit' }}
+            style={{ color: 'rgba(201,168,76,0.60)', fontSize: 9, letterSpacing: '0.25em', textTransform: 'uppercase', border: '1px solid rgba(201,168,76,0.22)', borderRadius: 6, padding: '6px 10px', background: 'rgba(201,168,76,0.03)', cursor: 'pointer', transition: 'all 0.2s', fontFamily: 'inherit', whiteSpace: 'nowrap' }}
             onMouseEnter={e => { e.currentTarget.style.color = '#C9A84C'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.50)' }}
             onMouseLeave={e => { e.currentTarget.style.color = 'rgba(201,168,76,0.60)'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.22)' }}
           >Reglamento</button>
-          <Link href="/ideas" style={{ color: 'rgba(201,168,76,0.60)', fontSize: 9, letterSpacing: '0.25em', textTransform: 'uppercase', border: '1px solid rgba(201,168,76,0.22)', borderRadius: 6, padding: '6px 16px', background: 'rgba(201,168,76,0.03)' }}
+          <Link href="/ideas" style={{ color: 'rgba(201,168,76,0.60)', fontSize: 9, letterSpacing: '0.25em', textTransform: 'uppercase', border: '1px solid rgba(201,168,76,0.22)', borderRadius: 6, padding: '6px 10px', background: 'rgba(201,168,76,0.03)', whiteSpace: 'nowrap' }}
             className="hover:text-[#C9A84C] hover:border-[#C9A84C]/50 transition-all">
-            Today&apos;s Hand <span style={{ opacity: 0.5 }}>♠</span>
+            <span className="hidden sm:inline">Today&apos;s Hand </span><span style={{ opacity: 0.5 }}>♠</span>
           </Link>
         </div>
       </header>
@@ -364,8 +364,9 @@ export default function HomePage() {
                     </div>
                   )}
                   <button type="submit" translate="no" disabled={!query.trim()}
-                    style={{ margin: 6, padding: '13px 28px', borderRadius: 10, fontWeight: 800, fontSize: 11, letterSpacing: '0.10em', textTransform: 'uppercase', flexShrink: 0, transition: 'all 0.2s', background: query.trim() ? 'linear-gradient(135deg, #E0B840, #C9A84C, #A87830)' : 'rgba(201,168,76,0.05)', color: query.trim() ? '#080F04' : 'rgba(201,168,76,0.20)', cursor: query.trim() ? 'pointer' : 'not-allowed', boxShadow: query.trim() ? '0 0 32px rgba(201,168,76,0.38), 0 4px 16px rgba(0,0,0,0.60)' : 'none' }}>
-                    Deal the Hand
+                    style={{ margin: 6, padding: '13px 16px', borderRadius: 10, fontWeight: 800, fontSize: 11, letterSpacing: '0.10em', textTransform: 'uppercase', flexShrink: 0, transition: 'all 0.2s', background: query.trim() ? 'linear-gradient(135deg, #E0B840, #C9A84C, #A87830)' : 'rgba(201,168,76,0.05)', color: query.trim() ? '#080F04' : 'rgba(201,168,76,0.20)', cursor: query.trim() ? 'pointer' : 'not-allowed', boxShadow: query.trim() ? '0 0 32px rgba(201,168,76,0.38), 0 4px 16px rgba(0,0,0,0.60)' : 'none', whiteSpace: 'nowrap' }}
+                    className="sm:!px-7">
+                    <span className="hidden sm:inline">Deal the </span>Hand
                   </button>
                 </div>
 
