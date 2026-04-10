@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   title: "Omaha Bridge Group — Five Legends. One Table. Your Edge.",
   description:
     "Warren Buffett sharpened his mind at the bridge table. We bring that same discipline to your portfolio — six legendary investors analyze any stock and deliver one unbiased verdict.",
+  icons: {
+    icon: "/obg-logo-new.png",
+    apple: "/obg-logo-new.png",
+  },
 }
 
 export default function RootLayout({
