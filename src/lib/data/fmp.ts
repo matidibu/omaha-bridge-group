@@ -11,12 +11,22 @@ const yf = new YahooFinance({ suppressNotices: ['yahooSurvey'] })
 const _fundamentalsCache = new Map<string, { data: FMPFundamentals; expiresAt: number }>()
 const FUNDAMENTALS_TTL = 60 * 60 * 1000
 
+// Data is "suspicious" if the company has revenue but zero margins across the board —
+// typically means Yahoo Finance returned incomplete data for a financial-sector ticker.
+function _isSuspiciousData(data: FMPFundamentals): boolean {
+  const hasRevenue = (data.incomeStatements[0]?.revenue ?? 0) > 0
+  const hasAnyMargin = data.grossMargin !== 0 || data.operatingMargin !== 0 || data.netMargin !== 0
+  return hasRevenue && !hasAnyMargin
+}
+
 export async function fetchFundamentals(ticker: string): Promise<FMPFundamentals> {
   const cached = _fundamentalsCache.get(ticker)
   if (cached && Date.now() < cached.expiresAt) return cached.data
 
   const data = await _fetchFromYahoo(ticker)
-  _fundamentalsCache.set(ticker, { data, expiresAt: Date.now() + FUNDAMENTALS_TTL })
+  // Only cache if data looks complete; suspicious data gets a 5-min TTL so it retries soon.
+  const ttl = _isSuspiciousData(data) ? 5 * 60 * 1000 : FUNDAMENTALS_TTL
+  _fundamentalsCache.set(ticker, { data, expiresAt: Date.now() + ttl })
   return data
 }
 
@@ -60,16 +70,20 @@ async function _fetchFromYahoo(ticker: string): Promise<FMPFundamentals> {
   const grossProfit: number = f0.grossProfit ?? 0
   const operatingIncome: number = f0.operatingIncome ?? 0
 
+
   const enterpriseValue: number =
     summary.defaultKeyStatistics?.enterpriseValue ?? (marketCap + totalDebt - cash)
 
   // Ratios
   const roe = equity !== 0 ? netIncome / equity : 0
   const roa = totalAssets !== 0 ? netIncome / totalAssets : 0
-  const nopat = ebit * (1 - taxRate)
+  // For financial companies (banks, fintechs), EBIT is often not reported.
+  // Fall back to net income as a proxy for NOPAT (already after-tax).
+  const nopat = ebit !== 0 ? ebit * (1 - taxRate) : netIncome
+  const nopatForCapital = ebit !== 0 ? ebit : netIncome
   const roic = investedCapital > 0 ? nopat / investedCapital : 0
-  const returnOnCapital = (wc + netPPE) > 0 ? ebit / (wc + netPPE) : 0
-  const earningsYield = enterpriseValue > 0 ? ebit / enterpriseValue : 0
+  const returnOnCapital = (wc + netPPE) > 0 ? nopatForCapital / (wc + netPPE) : 0
+  const earningsYield = enterpriseValue > 0 ? nopatForCapital / enterpriseValue : 0
   const grossMargin = revenue > 0 ? grossProfit / revenue : 0
   const operatingMargin = revenue > 0 ? operatingIncome / revenue : 0
   const netMargin = revenue > 0 ? netIncome / revenue : 0
@@ -99,7 +113,7 @@ async function _fetchFromYahoo(ticker: string): Promise<FMPFundamentals> {
   const incomeStatements: IncomeStatement[] = fin.map((s) => ({
     year: new Date(s.date).getFullYear(),
     revenue: s.totalRevenue ?? 0,
-    grossProfit: s.grossProfit ?? 0,
+    grossProfit: s.grossProfit ?? 0,  // 0 = not reported (financial companies); callers must handle this
     operatingIncome: s.operatingIncome ?? 0,
     netIncome: s.netIncome ?? 0,
     eps: s.dilutedEPS ?? s.basicEPS ?? 0,

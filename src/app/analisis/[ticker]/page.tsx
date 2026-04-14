@@ -152,7 +152,7 @@ export default async function AnalisisPage(
             <Metric label="Precio" value={`$${fundamentals.currentPrice.toFixed(2)}`} />
             <Metric label="P/E" value={fundamentals.pe > 0 ? fundamentals.pe.toFixed(1) : 'N/A'} />
             <Metric label="ROE" value={fmt(fundamentals.roe)} />
-            <Metric label="Margen bruto" value={fmt(fundamentals.grossMargin)} />
+            <Metric label="Margen bruto" value={fundamentals.grossMargin !== 0 ? fmt(fundamentals.grossMargin) : 'N/A'} />
           </div>
         </section>
 
@@ -210,8 +210,8 @@ export default async function AnalisisPage(
                 <SageHeading name="Joel Greenblatt" role="Magic Formula — Earnings Yield + ROC" suit="♦" />
                 <Quote text={sageScores.greenblatt.quote} />
                 <div className="mt-3 grid grid-cols-2 gap-3">
-                  <Metric label="Earnings Yield" value={fmt(sageScores.greenblatt.earningsYield)} />
-                  <Metric label="Return on Capital" value={fmt(sageScores.greenblatt.returnOnCapital)} />
+                  <Metric label="Earnings Yield" value={sageScores.greenblatt.earningsYield !== 0 ? fmt(sageScores.greenblatt.earningsYield) : 'N/A'} />
+                  <Metric label="Return on Capital" value={sageScores.greenblatt.returnOnCapital !== 0 ? fmt(sageScores.greenblatt.returnOnCapital) : 'N/A'} />
                 </div>
               </section>
             )}
@@ -395,7 +395,7 @@ export default async function AnalisisPage(
             <Metric label="Market Cap" value={`$${(fundamentals.marketCap / 1e9).toFixed(1)}B`} />
             <Metric label="EV/EBITDA" value={fundamentals.evEbitda.toFixed(1)} />
             <Metric label="P/B" value={fundamentals.pbv.toFixed(2)} />
-            <Metric label="Margen operativo" value={fmt(fundamentals.operatingMargin)} />
+            <Metric label="Margen operativo" value={fundamentals.operatingMargin !== 0 ? fmt(fundamentals.operatingMargin) : 'N/A'} />
             <Metric label="Margen neto" value={fmt(fundamentals.netMargin)} />
             <Metric label="ROA" value={fmt(fundamentals.roa)} />
             <Metric label="Crecimiento EPS 5a" value={fmt(fundamentals.epsGrowth5y)} />

@@ -38,12 +38,21 @@ QUANTITATIVE DATA:
 ${JSON.stringify({
   company: { name: f.name, sector: f.sector, industry: f.industry, marketCap: (f.marketCap / 1e9).toFixed(2) + 'B' },
   valuation: { pe: f.pe, forwardPE: f.forwardPE, peg: f.peg, evEbitda: f.evEbitda, pbv: f.pbv },
-  quality: { roe: (f.roe * 100).toFixed(1) + '%', roic: (f.roic * 100).toFixed(1) + '%', grossMargin: (f.grossMargin * 100).toFixed(1) + '%', operatingMargin: (f.operatingMargin * 100).toFixed(1) + '%' },
+  quality: {
+      roe: (f.roe * 100).toFixed(1) + '%',
+      roic: (f.roic * 100).toFixed(1) + '%',
+      grossMargin: f.grossMargin !== 0 ? (f.grossMargin * 100).toFixed(1) + '%' : 'N/A (not reported for financial companies)',
+      operatingMargin: f.operatingMargin !== 0 ? (f.operatingMargin * 100).toFixed(1) + '%' : 'N/A (not reported for financial companies)',
+      netMargin: (f.netMargin * 100).toFixed(1) + '%',
+    },
   growth: { revenueGrowth5y: (f.revenueGrowth5y * 100).toFixed(1) + '%', epsGrowth5y: (f.epsGrowth5y * 100).toFixed(1) + '%' },
   balance: { debtToEquity: f.debtToEquity.toFixed(2), debtToEbitda: f.debtToEbitda.toFixed(1), currentRatio: f.currentRatio.toFixed(2), interestCoverage: f.interestCoverageRatio.toFixed(1) },
   buffettGate: { passed: buffettScore.passed, moatRating: buffettScore.moatRating, qualityScore: buffettScore.qualityScore, failReasons: buffettScore.failReasons },
   lynch: { pegRatio: lynchScore.pegRatio.toFixed(2), garpScore: lynchScore.garpScore, stockCategory: lynchScore.stockCategory },
-  greenblatt: { earningsYield: (greenblattScore.earningsYield * 100).toFixed(2) + '%', returnOnCapital: (greenblattScore.returnOnCapital * 100).toFixed(1) + '%' },
+  greenblatt: {
+      earningsYield: greenblattScore.earningsYield !== 0 ? (greenblattScore.earningsYield * 100).toFixed(2) + '%' : 'N/A',
+      returnOnCapital: greenblattScore.returnOnCapital !== 0 ? (greenblattScore.returnOnCapital * 100).toFixed(1) + '%' : 'N/A (not applicable — financial company)',
+    },
   taleb: { fragilityLevel: talebWarnings.fragilityLevel, warnings: talebWarnings.warnings, blackSwanRisk: talebWarnings.blackSwanRisk },
   marks: { cyclePosition: marksContext.cyclePosition, riskLevel: marksContext.riskLevel, requiredMarginOfSafety: marksContext.requiredMarginOfSafety + '%', marketNote: marksContext.marketNote },
   fink: { institutionalGrade: finkAnalysis.institutionalGrade, capitalReturnsScore: finkAnalysis.capitalReturnsScore, governanceScore: finkAnalysis.governanceScore, longTermScore: finkAnalysis.longTermScore, totalShareholderYield: (finkAnalysis.totalShareholderYield * 100).toFixed(2) + '%', esgProxy: finkAnalysis.esgProxy },

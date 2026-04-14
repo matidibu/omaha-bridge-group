@@ -194,7 +194,7 @@ function StockCard({ stock, rank }: { stock: ScreenerStock; rank: number }) {
           <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 mb-4">
             <Metric label="ROE" value={`${(stock.roe * 100).toFixed(1)}%`} good={stock.roe >= 0.20} />
             <Metric label="ROIC" value={`${(stock.roic * 100).toFixed(1)}%`} good={stock.roic >= 0.15} />
-            <Metric label="Gross Margin" value={`${(stock.grossMargin * 100).toFixed(1)}%`} good={stock.grossMargin >= 0.40} />
+            <Metric label="Gross Margin" value={stock.grossMargin !== 0 ? `${(stock.grossMargin * 100).toFixed(1)}%` : 'N/A'} good={stock.grossMargin >= 0.40} />
             <Metric label="D/E" value={stock.debtToEquity.toFixed(2)} good={stock.debtToEquity < 1.0} />
             <Metric label="PEG" value={stock.peg > 0 ? stock.peg.toFixed(2) : '—'} good={stock.peg > 0 && stock.peg < 1.5} />
             <Metric label="Magic #" value={`${stock.magicFormulaScore}`} good={stock.magicFormulaScore >= 60} />

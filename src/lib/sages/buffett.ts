@@ -30,20 +30,26 @@ export function runBuffettGate(f: FMPFundamentals): BuffettScore {
   const debtOk = f.debtToEquity < 2.0
   if (!debtOk) failReasons.push(`Deuda/Patrimonio ${f.debtToEquity.toFixed(2)} supera el límite de 2.0`)
 
-  // 5. Gross margin stability: avg > 35% and not deteriorating
-  const margins = f.incomeStatements.map((s) =>
+  // 5. Gross margin stability: avg > 35% (Buffett's original threshold)
+  // Financial companies (banks, fintechs) don't have a gross profit line — skip this
+  // check rather than computing a meaningless proxy that would give wrong results.
+  const rawGrossMargins = f.incomeStatements.map((s) =>
     s.revenue > 0 ? s.grossProfit / s.revenue : 0
   )
-  const avgMargin = margins.length > 0
-    ? margins.reduce((a, b) => a + b, 0) / margins.length
-    : 0
-  const marginOk = avgMargin >= 0.35
-  if (!marginOk) failReasons.push(`Margen bruto promedio ${(avgMargin * 100).toFixed(1)}% por debajo del umbral del 35%`)
+  // Detect if gross profit data is genuinely absent (all years show grossProfit == netIncome,
+  // meaning the fallback was used, or all values are implausibly low for a profitable company).
+  const hasGrossProfitData = f.incomeStatements.some((s) => s.grossProfit !== s.netIncome && s.grossProfit > 0)
+  const avgMargin = hasGrossProfitData && rawGrossMargins.length > 0
+    ? rawGrossMargins.reduce((a, b) => a + b, 0) / rawGrossMargins.length
+    : null  // null = data not available, skip the check
+  const marginOk = avgMargin === null ? true : avgMargin >= 0.35
+  if (avgMargin !== null && !marginOk)
+    failReasons.push(`Margen bruto promedio ${(avgMargin * 100).toFixed(1)}% por debajo del umbral del 35%`)
 
   // Moat rating
   let moatRating: BuffettScore['moatRating'] = 'none'
   if (failReasons.length === 0) {
-    moatRating = f.roe >= 0.25 && f.roic >= 0.20 && avgMargin >= 0.50 ? 'wide' : 'narrow'
+    moatRating = f.roe >= 0.25 && f.roic >= 0.20 && (avgMargin === null || avgMargin >= 0.50) ? 'wide' : 'narrow'
   }
 
   // Quality score 0-100
@@ -52,7 +58,7 @@ export function runBuffettGate(f: FMPFundamentals): BuffettScore {
     (roicOk ? 20 : f.roic / 0.12 * 20) +
     (fcfOk ? 20 : positiveFCFYears / fcfThreshold * 20) +
     (debtOk ? 20 : Math.max(0, (2.0 - f.debtToEquity) / 2.0 * 20)) +
-    (marginOk ? 20 : avgMargin / 0.35 * 20)
+    (avgMargin === null ? 20 : marginOk ? 20 : avgMargin / 0.35 * 20)
   )
 
   const passed = failReasons.length === 0
@@ -68,7 +74,7 @@ export function runBuffettGate(f: FMPFundamentals): BuffettScore {
       roe: f.roe,
       roic: f.roic,
       debtToEquity: f.debtToEquity,
-      grossMarginStability: avgMargin,
+      grossMarginStability: avgMargin ?? -1,  // -1 = not applicable (no gross profit data)
       fcfYield: f.freeCashFlowYield,
       consistentFCF: positiveFCFYears,
     },

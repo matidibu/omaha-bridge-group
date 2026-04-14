@@ -267,9 +267,9 @@ export default function AnalysisPage() {
               <SageCard
                 sage="greenblatt"
                 quote={analysis.sageScores?.greenblatt?.quote ?? ''}
-                badge={`EY ${((analysis.sageScores?.greenblatt?.earningsYield ?? 0) * 100).toFixed(1)}%`}
+                badge={analysis.sageScores?.greenblatt?.earningsYield ? `EY ${(analysis.sageScores.greenblatt.earningsYield * 100).toFixed(1)}%` : 'EY N/A'}
                 badgeVariant="neutral"
-                subtext={`ROC ${((analysis.sageScores?.greenblatt?.returnOnCapital ?? 0) * 100).toFixed(1)}%`}
+                subtext={analysis.sageScores?.greenblatt?.returnOnCapital ? `ROC ${(analysis.sageScores.greenblatt.returnOnCapital * 100).toFixed(1)}%` : 'ROC N/A'}
                 isLoading={!analysis.sageScores?.greenblatt}
                 isSpeaking={activeSage === 'greenblatt'}
               />
