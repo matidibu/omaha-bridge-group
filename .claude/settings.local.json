@@ -50,7 +50,26 @@
       "Bash(cmd /c \"taskkill /PID 18912 /F\")",
       "Bash(cmd:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(wc:*)",
+      "WebSearch",
+      "WebFetch(domain:logos-serviciosfinancieros.com.ar)",
+      "WebFetch(domain:www.rankia.com.ar)",
+      "WebFetch(domain:www.bymadata.com.ar)",
+      "WebFetch(domain:www.byma.com.ar)",
+      "Bash(ffmpeg -i \"C:/Users/matia/Downloads/GlobalHome2.mp4\" -vf \"fps=1\" \"C:/Users/matia/Downloads/gha_frame_%03d.png\")",
+      "Bash(grep -E \"\\\\.tsx$\")",
+      "Bash(grep -v \"//\")",
+      "Bash(head -60 /c/dev/global-home-assist/src/app/itinerario/[slug]/page.tsx)",
+      "Bash(head -40 /c/dev/global-home-assist/src/app/destino/[slug]/page.tsx)",
+      "Bash(npx next:*)",
+      "Bash(xargs grep:*)",
+      "Bash(curl:*)",
+      "Bash(netstat -ano)",
+      "Bash(awk '{print $5}')",
+      "Bash(xargs -r taskkill /PID /F)",
+      "Bash(curl -s --retry 10 --retry-delay 1 --retry-connrefused http://localhost:3000/)",
+      "Read(//tmp/**)"
     ]
   }
 }

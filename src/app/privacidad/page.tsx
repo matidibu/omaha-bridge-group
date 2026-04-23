@@ -4,6 +4,7 @@ import { Logo } from '@/components/ui/Logo'
 export const metadata = {
   title: 'Política de Privacidad — Omaha Bridge Group',
   description: 'Política de privacidad y uso de datos de Omaha Bridge Group.',
+  alternates: { canonical: 'https://omaha-bridge-group.vercel.app/privacidad' },
 }
 
 export default function PrivacidadPage() {
