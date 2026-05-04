@@ -93,6 +93,10 @@ export default function NosotrosPage() {
           © 2025 <span translate="no">Omaha Bridge Group</span>. Todos los derechos reservados.{' '}
           <Link href="/" className="text-[#C9A84C]/60 hover:text-[#C9A84C]">Inicio</Link>
           {' · '}
+          <Link href="/guias" className="text-[#C9A84C]/60 hover:text-[#C9A84C]">Guías</Link>
+          {' · '}
+          <Link href="/analisis" className="text-[#C9A84C]/60 hover:text-[#C9A84C]">Análisis</Link>
+          {' · '}
           <Link href="/privacidad" className="text-[#C9A84C]/60 hover:text-[#C9A84C]">Privacidad</Link>
         </p>
       </footer>

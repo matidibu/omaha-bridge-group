@@ -450,12 +450,16 @@ export default function HomePage() {
           Nada en esta plataforma constituye asesoramiento financiero. Siempre consultá a un asesor calificado.
         </p>
         <p className="text-center mt-2" style={{ fontSize: '0.55rem' }}>
+          <Link href="/guias" style={{ color: 'rgba(201,168,76,0.35)' }} className="hover:text-[#C9A84C] transition-colors">
+            Guías
+          </Link>
+          <span style={{ color: 'rgba(201,168,76,0.20)', margin: '0 8px' }}>·</span>
           <Link href="/privacidad" style={{ color: 'rgba(201,168,76,0.35)' }} className="hover:text-[#C9A84C] transition-colors">
-            Política de Privacidad
+            Privacidad
           </Link>
           <span style={{ color: 'rgba(201,168,76,0.20)', margin: '0 8px' }}>·</span>
           <Link href="/nosotros" style={{ color: 'rgba(201,168,76,0.35)' }} className="hover:text-[#C9A84C] transition-colors">
-            Sobre el proyecto
+            Nosotros
           </Link>
           <span style={{ color: 'rgba(201,168,76,0.20)', margin: '0 8px' }}>·</span>
           <a href="mailto:diburzimatias@gmail.com" style={{ color: 'rgba(201,168,76,0.35)' }} className="hover:text-[#C9A84C] transition-colors" translate="no">

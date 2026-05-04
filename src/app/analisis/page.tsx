@@ -219,6 +219,10 @@ export default function AnalisisIndexPage() {
             <p>Cada análisis aplica los criterios exactos de <strong style={{ color: '#8A9A85' }}>Warren Buffett</strong> (calidad del negocio y moat), <strong style={{ color: '#8A9A85' }}>Peter Lynch</strong> (crecimiento a precio razonable, PEG), <strong style={{ color: '#8A9A85' }}>Joel Greenblatt</strong> (Magic Formula: earnings yield + retorno sobre capital), <strong style={{ color: '#8A9A85' }}>Nassim Taleb</strong> (antifragilidad y riesgo de cola), <strong style={{ color: '#8A9A85' }}>Howard Marks</strong> (posición en el ciclo de mercado) y <strong style={{ color: '#8A9A85' }}>Larry Fink</strong> (calidad institucional y gobierno corporativo).</p>
             <p>El análisis usa datos reales: balances, flujos de caja, indicadores técnicos e indicadores macro de la Reserva Federal. Se actualiza automáticamente cada 24 horas.</p>
             <p>Para inversores argentinos: cuando existe CEDEAR disponible en BYMA, se muestra el precio en pesos, el CCL implícito y la prima o descuento respecto al precio en NYSE.</p>
+            <p className="pt-1">
+              ¿Querés entender los criterios de cada maestro en detalle?{' '}
+              <Link href="/guias" className="hover:underline" style={{ color: '#C9A84C' }}>Leé las guías de value investing →</Link>
+            </p>
           </div>
         </section>
 
