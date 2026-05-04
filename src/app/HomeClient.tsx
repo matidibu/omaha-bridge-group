@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { PlayingCard } from '@/components/ui/PlayingCard'
 import { WelcomeModal } from '@/components/ui/WelcomeModal'
+import { AdUnit } from '@/components/ui/AdUnit'
 
 interface Suggestion { symbol: string; name: string; exchange: string }
 
@@ -400,6 +401,32 @@ export default function HomePage() {
           </div>
         </section>
 
+        <div className="w-full max-w-2xl mx-auto px-4">
+          <AdUnit slot="4821093756" />
+        </div>
+
+        {/* HOW IT WORKS */}
+        <section className="w-full max-w-2xl mx-auto px-4 pb-6">
+          <div style={{ borderTop: '1px solid rgba(201,168,76,0.12)', paddingTop: 28 }}>
+            <div style={{ color: 'rgba(201,168,76,0.65)', fontSize: 8, letterSpacing: '0.50em', textTransform: 'uppercase', textAlign: 'center', marginBottom: 20 }}>
+              ♦ &nbsp; Cómo funciona &nbsp; ♦
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { num: '01', title: 'Ingresás un ticker', desc: 'Cualquier acción listada en EE.UU.: AAPL, NVDA, BRK.B, Tesla…' },
+                { num: '02', title: 'Datos financieros reales', desc: 'Obtenemos métricas en tiempo real de FMP, Yahoo Finance y FRED.' },
+                { num: '03', title: 'Veredicto concreto', desc: 'Precio objetivo, stop-loss y calificación de 6 grandes inversores.' },
+              ].map(({ num, title, desc }) => (
+                <div key={num} style={{ background: 'rgba(8,4,2,0.80)', border: '1px solid rgba(201,168,76,0.14)', borderRadius: 14, padding: '18px 20px' }}>
+                  <div style={{ color: 'rgba(201,168,76,0.35)', fontSize: 28, fontWeight: 900, fontFamily: '"Fira Code","Courier New",monospace', lineHeight: 1 }}>{num}</div>
+                  <div style={{ color: '#E0B84A', fontWeight: 700, fontSize: 13, marginTop: 8, marginBottom: 6 }}>{title}</div>
+                  <div style={{ color: '#7A9E88', fontSize: 12, lineHeight: 1.6 }}>{desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* TODAY'S HAND */}
         <section className="w-full max-w-2xl mx-auto px-4 pb-10">
           <Link href="/ideas"
@@ -426,6 +453,14 @@ export default function HomePage() {
           <Link href="/privacidad" style={{ color: 'rgba(201,168,76,0.35)' }} className="hover:text-[#C9A84C] transition-colors">
             Política de Privacidad
           </Link>
+          <span style={{ color: 'rgba(201,168,76,0.20)', margin: '0 8px' }}>·</span>
+          <Link href="/nosotros" style={{ color: 'rgba(201,168,76,0.35)' }} className="hover:text-[#C9A84C] transition-colors">
+            Sobre el proyecto
+          </Link>
+          <span style={{ color: 'rgba(201,168,76,0.20)', margin: '0 8px' }}>·</span>
+          <a href="mailto:diburzimatias@gmail.com" style={{ color: 'rgba(201,168,76,0.35)' }} className="hover:text-[#C9A84C] transition-colors" translate="no">
+            Contacto
+          </a>
         </p>
       </footer>
       <div style={{ height: 2, background: 'linear-gradient(to right, transparent, rgba(201,168,76,0.35), transparent)' }} />

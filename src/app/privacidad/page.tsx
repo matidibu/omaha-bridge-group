@@ -108,7 +108,10 @@ export default function PrivacidadPage() {
           <section>
             <h2 className="text-[#C9A84C] font-semibold text-base mb-3">9. Contacto</h2>
             <p>
-              Si tenés preguntas sobre esta política, podés escribirnos a través de los canales indicados en el sitio.
+              Si tenés preguntas sobre esta política, podés escribirnos a{' '}
+              <a href="mailto:diburzimatias@gmail.com" className="text-[#C9A84C] hover:underline" translate="no">
+                diburzimatias@gmail.com
+              </a>.
             </p>
           </section>
 
@@ -119,6 +122,8 @@ export default function PrivacidadPage() {
         <p className="text-center text-xs text-[#4A5A72]">
           © 2025 <span translate="no">Omaha Bridge Group</span>. Todos los derechos reservados.{' '}
           <Link href="/" className="text-[#C9A84C]/60 hover:text-[#C9A84C]">Inicio</Link>
+          {' · '}
+          <Link href="/nosotros" className="text-[#C9A84C]/60 hover:text-[#C9A84C]">Nosotros</Link>
         </p>
       </footer>
     </div>

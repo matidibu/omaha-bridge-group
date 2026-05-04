@@ -6,6 +6,7 @@ import { SingleStockAnalysis, StreamEvent } from '@/types/analysis'
 import { SageCard } from '@/components/boardroom/SageCard'
 import { TechnicalPanel } from '@/components/technical/TechnicalPanel'
 import { FinalVerdict } from '@/components/boardroom/FinalVerdict'
+import { AdUnit } from '@/components/ui/AdUnit'
 import { Logo } from '@/components/ui/Logo'
 import { PlayingCard } from '@/components/ui/PlayingCard'
 import Link from 'next/link'
@@ -361,6 +362,10 @@ export default function AnalysisPage() {
               />
             </div>
           </SageRow>
+        )}
+
+        {(phase === 'sage_scores' || phase === 'complete') && analysis.passed && (
+          <AdUnit slot="6317829450" />
         )}
 
         {/* Technical */}
