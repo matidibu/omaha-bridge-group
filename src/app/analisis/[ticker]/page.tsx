@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { analyzeToCompletion } from '@/lib/pipeline/analyzeToCompletion'
 import { SingleStockAnalysis } from '@/types/analysis'
 import { CEDEAR_MAP } from '@/lib/data/cedear'
+import { AdUnit } from '@/components/ui/AdUnit'
 
 export const revalidate = 86400 // 24 hours ISR — generated on first request, then cached
 export const dynamicParams = true
@@ -155,6 +156,8 @@ export default async function AnalisisPage(
             <Metric label="Margen bruto" value={fundamentals.grossMargin !== 0 ? fmt(fundamentals.grossMargin) : 'N/A'} />
           </div>
         </section>
+
+        <AdUnit slot="6317829450" />
 
         <Divider />
 
@@ -427,6 +430,8 @@ export default async function AnalisisPage(
             </section>
           </>
         )}
+
+        <AdUnit slot="4821093756" />
 
         <Divider />
 
