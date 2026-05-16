@@ -36,6 +36,8 @@ export function GuiasShell({ children, backHref = '/guias', backLabel = '← Gu�
           {' · '}
           <Link href="/analisis" className="hover:text-[#C9A84C] transition-colors" style={{ color: 'rgba(201,168,76,0.45)' }}>Análisis</Link>
           {' · '}
+          <Link href="/cartas-en-mesa" className="hover:text-[#C9A84C] transition-colors" style={{ color: 'rgba(201,168,76,0.45)' }}>Cartas en Mesa</Link>
+          {' · '}
           <Link href="/nosotros" className="hover:text-[#C9A84C] transition-colors" style={{ color: 'rgba(201,168,76,0.45)' }}>Nosotros</Link>
           {' · '}
           <Link href="/privacidad" className="hover:text-[#C9A84C] transition-colors" style={{ color: 'rgba(201,168,76,0.45)' }}>Privacidad</Link>

@@ -12,10 +12,11 @@ const CACHED_TICKERS = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: base,                    lastModified: new Date(), changeFrequency: 'daily',   priority: 1.0 },
-    { url: `${base}/ideas`,         lastModified: new Date(), changeFrequency: 'daily',   priority: 0.9 },
-    { url: `${base}/analisis`,      lastModified: new Date(), changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${base}/privacidad`,    lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
+    { url: base,                          lastModified: new Date(), changeFrequency: 'daily',   priority: 1.0 },
+    { url: `${base}/ideas`,               lastModified: new Date(), changeFrequency: 'daily',   priority: 0.9 },
+    { url: `${base}/cartas-en-mesa`,      lastModified: new Date(), changeFrequency: 'daily',   priority: 0.85 },
+    { url: `${base}/analisis`,            lastModified: new Date(), changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${base}/privacidad`,          lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
   ]
 
   const tickerRoutes: MetadataRoute.Sitemap = CACHED_TICKERS.map((ticker) => ({

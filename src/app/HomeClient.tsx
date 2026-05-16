@@ -178,6 +178,10 @@ export default function HomePage() {
             className="hover:text-[#C9A84C] hover:border-[#C9A84C]/50 transition-all">
             <span className="hidden sm:inline">Today&apos;s Hand </span><span style={{ opacity: 0.5 }}>♠</span>
           </Link>
+          <Link href="/cartas-en-mesa" style={{ color: 'rgba(201,168,76,0.60)', fontSize: 9, letterSpacing: '0.25em', textTransform: 'uppercase', border: '1px solid rgba(201,168,76,0.22)', borderRadius: 6, padding: '6px 10px', background: 'rgba(201,168,76,0.03)', whiteSpace: 'nowrap' }}
+            className="hover:text-[#C9A84C] hover:border-[#C9A84C]/50 transition-all">
+            <span className="hidden sm:inline">Cartas en Mesa </span><span style={{ opacity: 0.5 }}>♦</span>
+          </Link>
         </div>
       </header>
 
