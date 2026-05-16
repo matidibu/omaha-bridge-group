@@ -21,10 +21,10 @@ export const metadata: Metadata = {
 
 /* ── helpers ── */
 
-function formatValue(thousands: number): string {
-  const m = thousands / 1000
-  if (m >= 1000) return `$${(m / 1000).toFixed(1)}bn`
-  return `$${m.toFixed(0)}M`
+function formatValue(usd: number): string {
+  if (usd >= 1_000_000_000) return `$${(usd / 1_000_000_000).toFixed(1)}bn`
+  if (usd >= 1_000_000) return `$${(usd / 1_000_000).toFixed(0)}M`
+  return `$${(usd / 1_000).toFixed(0)}K`
 }
 
 function getPeriodLabel(reportPeriod: string): string {

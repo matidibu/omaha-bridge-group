@@ -3,10 +3,10 @@
 import Link from 'next/link'
 import type { Holding } from '@/lib/sec13f'
 
-function formatValue(thousands: number): string {
-  const m = thousands / 1000
-  if (m >= 1000) return `$${(m / 1000).toFixed(1)}bn`
-  return `$${m.toFixed(0)}M`
+function formatValue(usd: number): string {
+  if (usd >= 1_000_000_000) return `$${(usd / 1_000_000_000).toFixed(1)}bn`
+  if (usd >= 1_000_000) return `$${(usd / 1_000_000).toFixed(0)}M`
+  return `$${(usd / 1_000).toFixed(0)}K`
 }
 
 export function HoldingCard({ h, color }: { h: Holding; color: string }) {

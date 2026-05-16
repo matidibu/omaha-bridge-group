@@ -5,7 +5,7 @@ export interface Holding {
   name: string
   ticker: string | null
   cusip: string
-  value: number      // thousands USD
+  value: number      // USD (actual dollars as reported in 13F XML)
   shares: number
   portfolioPct: number
 }
@@ -21,7 +21,7 @@ export interface InvestorPortfolio {
   strategy: string
   filingDate: string
   reportPeriod: string
-  totalValue: number // thousands USD
+  totalValue: number // USD (actual dollars)
   holdings: Holding[]
   error?: string
 }
@@ -41,7 +41,7 @@ const SUPERINVESTORS = [
     id: 'ackman',
     name: 'Bill Ackman',
     fund: 'Pershing Square Capital',
-    cik: '1286043',
+    cik: '1336528',
     color: '#60A5FA',
     symbol: '♣',
     description: 'Activista de alta convicción',
@@ -127,34 +127,35 @@ async function _fetchPortfolio(investor: typeof SUPERINVESTORS[number]): Promise
     if (!subRes.ok) return { ...base, error: `SEC submissions error ${subRes.status}` }
     const sub = await subRes.json()
 
-    const forms: string[] = sub.filings.recent.form
-    const accessions: string[] = sub.filings.recent.accessionNumber
-    const dates: string[] = sub.filings.recent.filingDate
+    const r = sub.filings.recent
+    const forms: string[] = r.form
+    const accessions: string[] = r.accessionNumber
+    const dates: string[] = r.filingDate
+    const reportDates: string[] = r.reportDate ?? []
     const idx = forms.findIndex(f => f === '13F-HR')
     if (idx === -1) return { ...base, error: 'No 13F-HR filing found' }
 
     const accession: string = accessions[idx]
     const filingDate: string = dates[idx]
+    const reportPeriod: string = reportDates[idx] ?? ''
     const accNoDashes = accession.replace(/-/g, '')
 
-    // Get filing index to find infotable document
+    // Parse HTML filing index to find the raw infotable XML filename
     let infotableFile = 'infotable.xml'
-    let reportPeriod = ''
     try {
       const idxRes = await fetch(
-        `https://www.sec.gov/Archives/edgar/data/${investor.cik}/${accNoDashes}/${accession}-index.json`,
+        `https://www.sec.gov/Archives/edgar/data/${investor.cik}/${accNoDashes}/${accession}-index.html`,
         { headers: SEC_HEADERS, next: { revalidate: 86400 } }
       )
       if (idxRes.ok) {
-        const idxData = await idxRes.json()
-        reportPeriod = idxData.reportDate ?? idxData.periodOfReport ?? ''
-        const docs: Array<{ type: string; document: string }> = idxData.documents ?? []
-        const infoDoc =
-          docs.find(d => d.type === 'INFORMATION TABLE') ??
-          docs.find(d => /infotable/i.test(d.document))
-        if (infoDoc) infotableFile = infoDoc.document
+        const html = await idxRes.text()
+        // Match raw XML link (no subdirectory) followed by INFORMATION TABLE in the same table row
+        const m = html.match(
+          /href="\/Archives\/edgar\/data\/\d+\/\d+\/([^/\s"]+\.xml)"[^>]*>[^<]+<\/a>\s*<\/td>\s*<td[^>]*>\s*INFORMATION TABLE/i
+        )
+        if (m) infotableFile = m[1]
       }
-    } catch { /* use defaults */ }
+    } catch { /* use default infotable.xml */ }
 
     const xmlRes = await fetch(
       `https://www.sec.gov/Archives/edgar/data/${investor.cik}/${accNoDashes}/${infotableFile}`,
