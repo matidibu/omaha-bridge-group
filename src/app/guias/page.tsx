@@ -3,17 +3,17 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Guías de value investing — Buffett, Lynch, Greenblatt | Omaha Bridge Group',
-  description: 'Aprendé los métodos exactos de Warren Buffett, Peter Lynch, Joel Greenblatt, Nassim Taleb, Howard Marks y Larry Fink. Guías de inversión en español.',
+  title: 'Guías de value investing — Buffett, Lynch, Greenblatt y más | Omaha Bridge Group',
+  description: 'Guías completas de inversión en español: los métodos de Buffett, Lynch, Greenblatt, Taleb, Marks y Fink, más conceptos esenciales como FCF, margen de seguridad, moat, CEDEARs y psicología del inversor.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias' },
   openGraph: {
-    title: 'Guías de value investing — Los 6 maestros | Omaha Bridge Group',
-    description: 'Seis métodos de inversión documentados en profundidad: Buffett, Lynch, Greenblatt, Taleb, Marks y Fink. En español.',
+    title: 'Guías de value investing | Omaha Bridge Group',
+    description: '20 guías de inversión en español: los 6 maestros del value investing y los conceptos esenciales para analizar acciones.',
     type: 'website',
   },
 }
 
-const ARTICLES = [
+const SAGES = [
   {
     slug: 'buffett-criterios',
     sage: 'Warren Buffett',
@@ -70,6 +70,107 @@ const ARTICLES = [
   },
 ]
 
+const CONCEPTS = [
+  {
+    slug: 'flujo-de-caja-libre',
+    title: 'Flujo de caja libre (FCF)',
+    desc: 'La métrica más honesta de un negocio: el dinero real que genera para sus dueños cada año.',
+    readTime: '8 min',
+    tag: 'Valoración',
+  },
+  {
+    slug: 'margen-de-seguridad',
+    title: 'El margen de seguridad',
+    desc: 'Las tres palabras más importantes del value investing: nunca pagar el valor completo de un activo.',
+    readTime: '7 min',
+    tag: 'Principios',
+  },
+  {
+    slug: 'tipos-de-moat',
+    title: 'Los cuatro tipos de moat',
+    desc: 'Marca, costos de cambio, efecto de red y ventaja de costos: cómo identificar ventajas competitivas reales.',
+    readTime: '9 min',
+    tag: 'Análisis competitivo',
+  },
+  {
+    slug: 'precio-vs-valor',
+    title: 'Precio vs valor',
+    desc: 'La distinción que define al inversor inteligente: el mercado fija precios erróneos con frecuencia.',
+    readTime: '7 min',
+    tag: 'Principios',
+  },
+  {
+    slug: 'interes-compuesto',
+    title: 'El interés compuesto',
+    desc: 'Por qué el tiempo es el mejor activo del inversor y cómo el compuesto transforma rendimientos modestos en riqueza.',
+    readTime: '7 min',
+    tag: 'Fundamentos',
+  },
+  {
+    slug: 'psicologia-del-inversor',
+    title: 'Psicología del inversor',
+    desc: 'Los sesgos que llevan a comprar caro, vender barato y repetir los mismos errores.',
+    readTime: '8 min',
+    tag: 'Conducta',
+  },
+  {
+    slug: 'errores-comunes-value-investing',
+    title: 'Los 7 errores más comunes',
+    desc: 'Trampas de valor, sobre-diversificación, EBITDA engañoso: los errores que cometen incluso inversores experimentados.',
+    readTime: '9 min',
+    tag: 'Errores',
+  },
+  {
+    slug: 'deuda-en-value-investing',
+    title: 'Deuda en value investing',
+    desc: 'Cuándo la deuda destruye valor y cuándo es irrelevante. Las métricas para evaluar el riesgo financiero.',
+    readTime: '8 min',
+    tag: 'Riesgo',
+  },
+  {
+    slug: 'como-leer-un-balance',
+    title: 'Cómo leer un balance general',
+    desc: 'Activos, pasivos y patrimonio neto: cómo extraer lo que importa del balance para evaluar la salud financiera.',
+    readTime: '8 min',
+    tag: 'Estados financieros',
+  },
+  {
+    slug: 'como-evaluar-un-ceo',
+    title: 'Cómo evaluar a un CEO',
+    desc: 'Señales de gestión excelente y mediocre: asignación de capital, lenguaje honesto y compensación alineada.',
+    readTime: '7 min',
+    tag: 'Gobierno corporativo',
+  },
+  {
+    slug: 'como-analizar-bancos',
+    title: 'Cómo analizar bancos',
+    desc: 'NIM, ROE, ratio de eficiencia, NPL y capital Tier 1: las métricas específicas del sector financiero.',
+    readTime: '9 min',
+    tag: 'Análisis sectorial',
+  },
+  {
+    slug: 'como-analizar-saas',
+    title: 'Cómo analizar empresas SaaS',
+    desc: 'ARR, churn, Net Revenue Retention y LTV/CAC: el vocabulario y las métricas del software como servicio.',
+    readTime: '9 min',
+    tag: 'Análisis sectorial',
+  },
+  {
+    slug: 'como-analizar-empresas-energeticas',
+    title: 'Cómo analizar empresas energéticas',
+    desc: 'Lifting cost, reservas, FCF en distintos escenarios de precio: cómo analizar petroleras y gasistas.',
+    readTime: '8 min',
+    tag: 'Análisis sectorial',
+  },
+  {
+    slug: 'cedears-guia-completa',
+    title: '🇦🇷 CEDEARs: guía completa',
+    desc: 'Cómo funcionan los CEDEARs, el CCL implícito, prima/descuento y cómo invertir en acciones globales desde Argentina.',
+    readTime: '8 min',
+    tag: 'Mercado argentino',
+  },
+]
+
 export default function GuiasIndexPage() {
   return (
     <GuiasShell backHref="/" backLabel="← Inicio">
@@ -80,35 +181,116 @@ export default function GuiasIndexPage() {
         </p>
         <h1 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#EEF2FF' }}
           className="text-3xl sm:text-4xl font-bold mb-4 leading-tight">
-          Los métodos de los 6 maestros
+          Guías de value investing
         </h1>
         <p className="text-sm max-w-xl mx-auto leading-relaxed" style={{ color: '#6A8A75' }}>
-          El value investing no es una fórmula única. Es un conjunto de filosofías desarrolladas a lo largo de décadas por inversores que batieron al mercado de formas distintas. Estas guías explican cómo piensa cada uno y cómo Omaha Bridge Group aplica su método a cada análisis.
+          Treinta guías escritas en español que explican los métodos de los 6 maestros, los conceptos esenciales y las estrategias para analizar cualquier acción con criterios fundamentales.
         </p>
       </section>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-14">
-        {ARTICLES.map(({ slug, sage, symbol, color, title, desc, readTime }) => (
-          <Link
-            key={slug}
-            href={`/guias/${slug}`}
-            className="group rounded-xl border p-5 flex flex-col gap-3 transition-all hover:border-[#C9A84C]/30 hover:bg-[#C9A84C]/5"
-            style={{ borderColor: `${color}20`, background: 'rgba(7,43,24,0.4)' }}
-          >
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-mono" style={{ color }}>{symbol} {sage}</span>
-              <span className="text-xs" style={{ color: '#3A5A45' }}>{readTime}</span>
-            </div>
-            <h2 className="font-bold text-base leading-tight group-hover:text-[#C9A84C] transition-colors"
-              style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5' }}>
-              {title}
-            </h2>
-            <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
-            <span className="text-xs mt-auto" style={{ color: `${color}80` }}>Leer guía →</span>
-          </Link>
-        ))}
-      </div>
+      {/* ── Los 6 maestros ── */}
+      <section className="mb-14">
+        <h2 className="text-xs uppercase tracking-widest mb-5 pb-2"
+          style={{ color: 'rgba(201,168,76,0.5)', borderBottom: '1px solid rgba(201,168,76,0.1)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+          Los 6 maestros
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {SAGES.map(({ slug, sage, symbol, color, title, desc, readTime }) => (
+            <Link
+              key={slug}
+              href={`/guias/${slug}`}
+              className="group rounded-xl border p-5 flex flex-col gap-3 transition-all hover:border-[#C9A84C]/30 hover:bg-[#C9A84C]/5"
+              style={{ borderColor: `${color}20`, background: 'rgba(7,43,24,0.4)' }}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono" style={{ color }}>{symbol} {sage}</span>
+                <span className="text-xs" style={{ color: '#3A5A45' }}>{readTime}</span>
+              </div>
+              <h3 className="font-bold text-base leading-tight group-hover:text-[#C9A84C] transition-colors"
+                style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5' }}>
+                {title}
+              </h3>
+              <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
+              <span className="text-xs mt-auto" style={{ color: `${color}80` }}>Leer guía →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
+      {/* ── Conceptos esenciales ── */}
+      <section className="mb-14">
+        <h2 className="text-xs uppercase tracking-widest mb-5 pb-2"
+          style={{ color: 'rgba(201,168,76,0.5)', borderBottom: '1px solid rgba(201,168,76,0.1)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+          Conceptos esenciales
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {CONCEPTS.map(({ slug, title, desc, readTime, tag }) => (
+            <Link
+              key={slug}
+              href={`/guias/${slug}`}
+              className="group rounded-xl border p-5 flex flex-col gap-2 transition-all hover:border-[#C9A84C]/30 hover:bg-[#C9A84C]/5"
+              style={{ borderColor: 'rgba(201,168,76,0.12)', background: 'rgba(7,43,24,0.3)' }}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
+                  {tag}
+                </span>
+                <span className="text-xs" style={{ color: '#3A5A45' }}>{readTime}</span>
+              </div>
+              <h3 className="font-bold text-base leading-tight group-hover:text-[#C9A84C] transition-colors"
+                style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5' }}>
+                {title}
+              </h3>
+              <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
+              <span className="text-xs mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Valoración y estrategia ── */}
+      <section className="mb-14">
+        <h2 className="text-xs uppercase tracking-widest mb-5 pb-2"
+          style={{ color: 'rgba(201,168,76,0.5)', borderBottom: '1px solid rgba(201,168,76,0.1)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+          Valoración y estrategia
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { slug: 'dcf-valoracion', title: 'DCF: cómo valorar una empresa', desc: 'La fórmula de Buffett: proyectar flujo de caja libre futuro y descontarlo. Cómo calcular valor intrínseco.', readTime: '9 min', tag: 'Valoración' },
+            { slug: 'roe-roa-roic', title: 'ROE, ROA y ROIC', desc: 'Tres métricas de rentabilidad. Cuál mide qué, cuál es trampa, por qué Buffett prefiere ROIC.', readTime: '8 min', tag: 'Métricas' },
+            { slug: 'ev-ebitda', title: 'EV/EBITDA: cómo usarlo correctamente', desc: 'El múltiplo que todos usan. Cuándo es útil, dónde falla, y por qué necesitas FCF después.', readTime: '8 min', tag: 'Múltiplos' },
+            { slug: 'dividendos-value-investing', title: 'Dividendos en value investing', desc: 'No todos los dividendos son iguales. Dividend yield, payout ratio, sostenibilidad. Cuándo confiar.', readTime: '8 min', tag: 'Estrategia' },
+            { slug: 'small-caps', title: 'Small caps: oportunidades y riesgos', desc: 'Empresas pequeñas, ignoradas por fondos masivos. Dónde están las ineficiencias de mercado.', readTime: '9 min', tag: 'Estrategia' },
+            { slug: 'value-investing-argentina', title: '🇦🇷 Value investing en Argentina', desc: 'Value investing en contexto local. Dólares, CEDEARs, ciclos políticos y macro volatilidad.', readTime: '10 min', tag: 'Local' },
+            { slug: 'riesgo-vs-volatilidad', title: 'Riesgo vs volatilidad', desc: 'No son lo mismo. Volatilidad es oportunidad para quien tiene disciplina. El riesgo es si quiebra.', readTime: '8 min', tag: 'Mentalidad' },
+            { slug: 'analisis-tecnico-vs-fundamental', title: 'Análisis técnico vs fundamental', desc: 'Uno mira gráficos. Otro mira negocios. Por qué Buffett ignora los charts.', readTime: '7 min', tag: 'Métodos' },
+            { slug: 'el-largo-plazo', title: 'El largo plazo como ventaja', desc: 'Buffett 99% de su fortuna al interés compuesto en 60 años. Por qué el tiempo amplifica ventajas.', readTime: '8 min', tag: 'Mentalidad' },
+            { slug: 'como-analizar-consumo-masivo', title: 'Cómo analizar consumo masivo', desc: 'Marca, moat, márgenes. Las características de empresas como Coca-Cola que las hacen valiosas.', readTime: '9 min', tag: 'Sectorial' },
+          ].map(({ slug, title, desc, readTime, tag }) => (
+            <Link
+              key={slug}
+              href={`/guias/${slug}`}
+              className="group rounded-xl border p-5 flex flex-col gap-2 transition-all hover:border-[#C9A84C]/30 hover:bg-[#C9A84C]/5"
+              style={{ borderColor: 'rgba(201,168,76,0.12)', background: 'rgba(7,43,24,0.3)' }}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
+                  {tag}
+                </span>
+                <span className="text-xs" style={{ color: '#3A5A45' }}>{readTime}</span>
+              </div>
+              <h3 className="font-bold text-base leading-tight group-hover:text-[#C9A84C] transition-colors"
+                style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5' }}>
+                {title}
+              </h3>
+              <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
+              <span className="text-xs mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Qué es el value investing ── */}
       <section className="rounded-xl border p-6 mb-10" style={{ borderColor: 'rgba(201,168,76,0.12)', background: 'rgba(7,43,24,0.4)' }}>
         <h2 className="text-base font-semibold mb-3" style={{ color: '#C9A84C', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           ¿Qué es el value investing?
@@ -121,7 +303,7 @@ export default function GuiasIndexPage() {
             La idea fue sistematizada por Benjamin Graham en los años treinta, pero sus discípulos la expandieron en direcciones distintas: Buffett incorporó la calidad del negocio, Lynch agregó el crecimiento como variable central, Greenblatt la convirtió en un sistema mecánico, Taleb introdujo el riesgo de cola como filtro de supervivencia, Marks añadió la dimensión cíclica, y Fink aportó la perspectiva institucional y de largo plazo.
           </p>
           <p>
-            Cada guía de esta sección explica un método en detalle y muestra cómo Omaha Bridge Group lo aplica para generar los análisis que ves en la plataforma.
+            Las treinta guías explican métodos, conceptos y estrategias que aplicamos en Omaha Bridge Group para generar los análisis que ves en la plataforma. Desde los criterios de los 6 maestros hasta técnicas de valoración y análisis sectorial.
           </p>
         </div>
       </section>

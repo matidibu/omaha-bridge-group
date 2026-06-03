@@ -17,7 +17,12 @@ const COLOR = '#2EC47E'
 
 export default function PegLynchPage() {
   return (
-    <GuiasShell>
+    <GuiasShell articleMeta={{
+      title: 'El método GARP de Peter Lynch — Ratio PEG y crecimiento',
+      description: 'Cómo Peter Lynch usó el ratio PEG para encontrar empresas de crecimiento a precio razonable. Las seis categorías de acciones y el método GARP explicados.',
+      publishDate: '2025-01-15',
+      url: 'https://omaha-bridge-group.vercel.app/guias/peg-peter-lynch',
+    }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ♣ &nbsp; Peter Lynch · El Explorador

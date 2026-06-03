@@ -17,7 +17,12 @@ const COLOR = '#7BBDE0'
 
 export default function MagicFormulaPage() {
   return (
-    <GuiasShell>
+    <GuiasShell articleMeta={{
+      title: 'La Magic Formula de Joel Greenblatt — Earnings Yield y ROC',
+      description: 'Cómo funciona la Magic Formula de Greenblatt: earnings yield, return on capital, el sistema de ranking y por qué supera al S&P 500 a largo plazo.',
+      publishDate: '2025-01-15',
+      url: 'https://omaha-bridge-group.vercel.app/guias/magic-formula-greenblatt',
+    }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ♦ &nbsp; Joel Greenblatt · El Cuantitativo

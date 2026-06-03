@@ -17,7 +17,12 @@ const COLOR = '#A8BDD8'
 
 export default function AntifragilidadTalebPage() {
   return (
-    <GuiasShell>
+    <GuiasShell articleMeta={{
+      title: 'Antifragilidad según Nassim Taleb — Detectar fragilidad corporativa',
+      description: 'Cómo Nassim Taleb define fragilidad, robustez y antifragilidad en empresas. Señales de riesgo oculto: deuda, concentración, márgenes delgados y cisnes negros.',
+      publishDate: '2025-01-15',
+      url: 'https://omaha-bridge-group.vercel.app/guias/antifragilidad-taleb',
+    }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ★ &nbsp; Nassim Taleb · El Centinela

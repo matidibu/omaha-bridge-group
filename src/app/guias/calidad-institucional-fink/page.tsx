@@ -17,7 +17,12 @@ const COLOR = '#A78BFA'
 
 export default function CalidadInstitucionalFinkPage() {
   return (
-    <GuiasShell>
+    <GuiasShell articleMeta={{
+      title: 'Calidad institucional según Larry Fink — Gobernanza y largo plazo',
+      description: 'La perspectiva del fundador de BlackRock: por qué el gobierno corporativo, el largo plazo y el retorno total al accionista determinan la calidad de una inversión.',
+      publishDate: '2025-01-15',
+      url: 'https://omaha-bridge-group.vercel.app/guias/calidad-institucional-fink',
+    }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ✦ &nbsp; Larry Fink · El Institucional

@@ -17,7 +17,12 @@ const COLOR = '#6AAFFA'
 
 export default function CiclosHowardMarksPage() {
   return (
-    <GuiasShell>
+    <GuiasShell articleMeta={{
+      title: 'Los ciclos de mercado de Howard Marks — Cómo posicionarse',
+      description: 'La filosofía cíclica de Howard Marks y Oaktree Capital: cómo saber en qué fase del ciclo estamos, y por qué eso determina el riesgo/retorno de cualquier inversión.',
+      publishDate: '2025-01-15',
+      url: 'https://omaha-bridge-group.vercel.app/guias/ciclos-howard-marks',
+    }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ♠ &nbsp; Howard Marks · El Estratega
