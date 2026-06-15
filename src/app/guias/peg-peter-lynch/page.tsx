@@ -22,6 +22,9 @@ export default function PegLynchPage() {
       description: 'Cómo Peter Lynch usó el ratio PEG para encontrar empresas de crecimiento a precio razonable. Las seis categorías de acciones y el método GARP explicados.',
       publishDate: '2025-01-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/peg-peter-lynch',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'peter lynch, peg ratio, growth at reasonable price',
+      readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

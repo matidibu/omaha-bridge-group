@@ -22,6 +22,9 @@ export default function ValueInvestingArgentinaPage() {
       description: 'Invertir en Argentina es distinto. Cómo adaptar value investing al contexto local sin abandonar principios. Cuándo invertir en pesos.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/value-investing-argentina',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'value investing argentina, mercado local, cedears',
+      readingTimeMinutes: 10,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

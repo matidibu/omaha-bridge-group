@@ -22,6 +22,9 @@ export default function DividendosValueInvestingPage() {
       description: 'No todos los dividendos son iguales. Guía completa sobre dividend yield, dividend growth, payout ratio, sostenibilidad y cómo Buffett elige empresas.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/dividendos-value-investing',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'dividendos, rendimiento, política de dividendos',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

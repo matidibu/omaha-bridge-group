@@ -22,6 +22,9 @@ export default function DeudaEnValueInvestingPage() {
       description: 'No toda deuda es igual. Cómo evaluar la carga financiera de una empresa usando deuda/EBITDA, cobertura de intereses y flujo de caja libre. Cuándo la deuda es un riesgo fatal y cuándo es indiferente.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/deuda-en-value-investing',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'deuda empresarial, leverage, risk assessment',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

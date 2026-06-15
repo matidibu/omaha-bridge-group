@@ -22,6 +22,9 @@ export default function InteresCompuestoPage() {
       description: 'Einstein lo llamó la octava maravilla del mundo. Buffett debe el 99% de su fortuna a tenerlo después de los 52 años. Cómo el interés compuesto transforma rendimientos modestos en riqueza extraordinaria.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/interes-compuesto',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'compounding, poder del interés compuesto, crecimiento',
+      readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

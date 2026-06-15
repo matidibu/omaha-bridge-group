@@ -22,6 +22,9 @@ export default function TiposDeMoatPage() {
       description: 'Qué es un moat, cómo identificarlo y por qué las empresas con ventaja competitiva sostenible superan al mercado a largo plazo. Los cuatro tipos de foso según Morningstar y Buffett.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/tipos-de-moat',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'moat, ventaja competitiva, durabilidad',
+      readingTimeMinutes: 9,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

@@ -22,6 +22,9 @@ export default function ElLargoPlazoPage() {
       description: 'Buffett atribuye su fortuna 99% al interés compuesto + 60 años de paciencia. El largo plazo amplifica ventajas fundamentales.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/el-largo-plazo',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'inversión a largo plazo, paciencia, compounding',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

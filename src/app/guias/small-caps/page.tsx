@@ -22,6 +22,9 @@ export default function SmallCapsPage() {
       description: 'Las empresas pequeñas son ignoradas por fondos masivos. Eso crea ineficiencias. Guía sobre riesgos, liquidez y análisis.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/small-caps',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'small caps, empresas pequeñas, oportunidades',
+      readingTimeMinutes: 9,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

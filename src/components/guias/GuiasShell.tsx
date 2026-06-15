@@ -6,7 +6,15 @@ export function GuiasShell({ children, backHref = '/guias', backLabel = '← Gu�
   children: ReactNode
   backHref?: string
   backLabel?: string
-  articleMeta?: { title: string; description: string; publishDate: string; url: string }
+  articleMeta?: {
+    title: string
+    description: string
+    publishDate: string
+    url: string
+    image?: string
+    keywords?: string
+    readingTimeMinutes?: number
+  }
 }) {
   return (
     <div className="min-h-screen flex flex-col" style={{ background: '#051A10', color: '#E8EDF5' }}>
@@ -19,14 +27,27 @@ export function GuiasShell({ children, backHref = '/guias', backLabel = '← Gu�
               '@type': 'Article',
               headline: articleMeta.title,
               description: articleMeta.description,
+              image: articleMeta.image || 'https://omaha-bridge-group.vercel.app/og-image.png',
               author: {
                 '@type': 'Organization',
                 name: 'Omaha Bridge Group',
+                url: 'https://omaha-bridge-group.vercel.app',
               },
               datePublished: articleMeta.publishDate,
               dateModified: articleMeta.publishDate,
               url: articleMeta.url,
               inLanguage: 'es',
+              keywords: articleMeta.keywords || 'value investing, análisis fundamental',
+              articleSection: 'Inversión',
+              timeRequired: articleMeta.readingTimeMinutes ? `PT${articleMeta.readingTimeMinutes}M` : 'PT8M',
+              publisher: {
+                '@type': 'Organization',
+                name: 'Omaha Bridge Group',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://omaha-bridge-group.vercel.app/logo.png',
+                },
+              },
             }),
           }}
         />

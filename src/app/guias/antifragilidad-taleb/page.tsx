@@ -22,6 +22,9 @@ export default function AntifragilidadTalebPage() {
       description: 'Cómo Nassim Taleb define fragilidad, robustez y antifragilidad en empresas. Señales de riesgo oculto: deuda, concentración, márgenes delgados y cisnes negros.',
       publishDate: '2025-01-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/antifragilidad-taleb',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'antifragilidad, nassim taleb, riesgo sistémico',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

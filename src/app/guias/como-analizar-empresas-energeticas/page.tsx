@@ -22,6 +22,9 @@ export default function ComoAnalizarEnergeticasPage() {
       description: 'Las empresas de energía tienen ciclos, reservas y capex intensivos que requieren métricas específicas. Guía para analizar petroleras, gasistas y energéticas con criterios value investing.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-empresas-energeticas',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'energía, utilities, análisis sectorial',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

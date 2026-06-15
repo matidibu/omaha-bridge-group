@@ -22,6 +22,9 @@ export default function ComoAnalizarConsumoMasivoPage() {
       description: 'Las empresas de bienes de consumo tienen características únicas. Moats de marca, márgenes predecibles, demanda inelástica.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-consumo-masivo',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'consumo masivo, moat, empresas de consumo',
+      readingTimeMinutes: 9,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

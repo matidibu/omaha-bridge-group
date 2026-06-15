@@ -22,6 +22,9 @@ export default function EvEbitdaPage() {
       description: 'EV/EBITDA es la métrica más usada en el mundo corporativo para valorar empresas. Qué significa, por qué es útil, cuándo es una trampa, y cómo Buffett la usa diferente.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/ev-ebitda',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'evurl: 'https://omaha-bridge-group.vercel.app/guias/ev-ebitda',ebitda, múltiplos, valuación relativa',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

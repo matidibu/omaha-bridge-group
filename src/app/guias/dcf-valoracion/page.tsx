@@ -22,6 +22,9 @@ export default function DcfValoracionPage() {
       description: 'La fórmula de Buffett: proyectar el flujo de caja libre futuro de una empresa, descontarlo a valor presente, y comprar cuando hay margen de seguridad.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/dcf-valoracion',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'dcf, descuento de flujos, valoración de empresas',
+      readingTimeMinutes: 9,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

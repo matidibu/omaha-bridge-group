@@ -22,6 +22,9 @@ export default function RiesgoVsVolatilidadPage() {
       description: 'La volatilidad es el enemigo del trader. Para el inversor value, es oportunidad. Diferencia entre riesgo real y movimiento de precio.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/riesgo-vs-volatilidad',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'riesgo, volatilidad, medición de riesgo',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

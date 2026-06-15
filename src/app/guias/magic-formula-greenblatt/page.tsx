@@ -22,6 +22,9 @@ export default function MagicFormulaPage() {
       description: 'Cómo funciona la Magic Formula de Greenblatt: earnings yield, return on capital, el sistema de ranking y por qué supera al S&P 500 a largo plazo.',
       publishDate: '2025-01-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/magic-formula-greenblatt',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'magic formula, joel greenblatt, earnings yield, return on capital, value investing',
+      readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

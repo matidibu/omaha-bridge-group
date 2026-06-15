@@ -22,6 +22,9 @@ export default function ErroresComunesPage() {
       description: 'Comprar trampas de valor, ignorar la calidad por el precio, no respetar el margen de seguridad, exceso de diversificación: los errores que cometen incluso los inversores experimentados.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/errores-comunes-value-investing',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'errores de inversión, sesgos, lecciones',
+      readingTimeMinutes: 9,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

@@ -22,6 +22,9 @@ export default function RoeRoaRoicPage() {
       description: 'Tres métricas de rentabilidad que confunden a los inversores. ROE mide retorno sobre el patrimonio, ROA sobre los activos, ROIC sobre el capital invertido. Cuál usar, cuál es trampa, y por qué Buffett prefiere ROIC.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/roe-roa-roic',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'roe, roa, roic, métricas de retorno',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

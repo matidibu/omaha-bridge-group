@@ -22,6 +22,9 @@ export default function BuffettCriteriosPage() {
       description: 'Los cinco criterios exactos con los que Warren Buffett evalúa cualquier empresa: moat, ROIC, gestión honesta, precio con margen de seguridad y comprensión del negocio.',
       publishDate: '2025-01-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/buffett-criterios',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'Warren Buffett, valor intrínseco, moat, ROIC, margen de seguridad, análisis fundamental, value investing',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

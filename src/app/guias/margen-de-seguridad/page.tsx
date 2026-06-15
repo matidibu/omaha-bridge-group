@@ -22,6 +22,9 @@ export default function MargenDeSeguridad() {
       description: 'El concepto más importante del value investing según Benjamin Graham y Warren Buffett. Qué es el margen de seguridad, cómo calcularlo y por qué protege al inversor contra el error.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/margen-de-seguridad',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'margen de seguridad, graham, precio vs valor',
+      readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

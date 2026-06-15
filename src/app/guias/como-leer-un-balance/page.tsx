@@ -22,6 +22,9 @@ export default function ComoLeerUnBalancePage() {
       description: 'El balance general revela la fortaleza financiera de una empresa. Activos, pasivos y patrimonio neto explicados con ejemplos reales y las señales de alerta que debe buscar todo inversor value.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-leer-un-balance',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'estados financieros, balance sheet, contabilidad',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

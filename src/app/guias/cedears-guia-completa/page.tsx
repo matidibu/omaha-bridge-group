@@ -22,6 +22,9 @@ export default function CedearsGuiaCompletaPage() {
       description: 'Qué son los CEDEARs, cómo funcionan, cómo calcular el CCL implícito y si tiene sentido comprar CEDEARs o acciones directamente. Guía práctica para inversores argentinos que quieren acceder al mercado internacional.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/cedears-guia-completa',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'cedears, inversión argentina, mercado local',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

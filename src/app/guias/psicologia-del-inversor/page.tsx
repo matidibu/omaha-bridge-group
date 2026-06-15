@@ -22,6 +22,9 @@ export default function PsicologiaDelInversorPage() {
       description: 'Los errores de inversión más costosos no vienen del análisis incorrecto sino de la psicología. Aversión a la pérdida, sesgo de confirmación, anclaje y pensamiento de manada: cómo reconocerlos y combatirlos.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/psicologia-del-inversor',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'psicología del mercado, sesgo, emoción',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

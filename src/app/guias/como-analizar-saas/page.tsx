@@ -22,6 +22,9 @@ export default function ComoAnalizarSaasPage() {
       description: 'Las empresas de software como servicio tienen métricas únicas. Guía completa para analizar SaaS: ARR, churn, Net Revenue Retention, LTV/CAC ratio y márgenes de contribución.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-saas',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'saas, modelos de software, análisis de tecnología',
+      readingTimeMinutes: 9,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

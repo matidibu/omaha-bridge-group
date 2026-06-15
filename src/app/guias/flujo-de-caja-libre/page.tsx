@@ -22,6 +22,9 @@ export default function FlujoDeCajaLibrePage() {
       description: 'Por qué Warren Buffett ignora las ganancias contables y se enfoca en el flujo de caja libre. Qué es el FCF, cómo calcularlo y por qué revela la verdad de un negocio.',
       publishDate: '2025-01-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/flujo-de-caja-libre',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'free cash flow, fcf yield, análisis de caja',
+      readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

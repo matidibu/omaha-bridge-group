@@ -22,6 +22,9 @@ export default function PrecioVsValorPage() {
       description: 'El mercado fija un precio cada día. Ese precio no es el valor. Entender la diferencia entre precio y valor es la base de toda inversión inteligente.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/precio-vs-valor',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'precio, valor, mercado, especulación',
+      readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

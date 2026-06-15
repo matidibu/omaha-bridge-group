@@ -22,6 +22,9 @@ export default function AnalisisTecnicoVsFundamentalPage() {
       description: 'El análisis técnico pretende predecir precios estudiando patrones. El análisis fundamental estudia el negocio. Por qué uno funciona para traders, otro para inversores.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/analisis-tecnico-vs-fundamental',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'análisis técnico, análisis fundamental, value investing',
+      readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

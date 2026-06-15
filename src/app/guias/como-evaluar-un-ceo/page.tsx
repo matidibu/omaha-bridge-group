@@ -22,6 +22,9 @@ export default function ComoEvaluarUnCeoPage() {
       description: 'Warren Buffett lee cartas anuales con atención forense. Señales de un directivo honesto y orientado al largo plazo vs uno que manipula expectativas. Asignación de capital, lenguaje y compensación ejecutiva.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-evaluar-un-ceo',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'gestión empresarial, liderazgo, análisis de calidad',
+      readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

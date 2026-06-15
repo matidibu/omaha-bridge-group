@@ -22,6 +22,9 @@ export default function CiclosHowardMarksPage() {
       description: 'La filosofía cíclica de Howard Marks y Oaktree Capital: cómo saber en qué fase del ciclo estamos, y por qué eso determina el riesgo/retorno de cualquier inversión.',
       publishDate: '2025-01-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/ciclos-howard-marks',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'howard marks, ciclos de mercado, contra-ciclista',
+      readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>

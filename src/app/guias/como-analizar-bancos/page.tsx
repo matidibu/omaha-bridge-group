@@ -22,6 +22,9 @@ export default function ComoAnalizarBancosPage() {
       description: 'Los bancos tienen estados financieros únicos que requieren métricas distintas: NIM, ROE, ratio de eficiencia, NPL, Tier 1 capital. Guía completa para analizar bancos con criterios de value investing.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-bancos',
+      image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
+      keywords: 'análisis de bancos, ratios bancarios, value investing',
+      readingTimeMinutes: 9,
     }}>
       <div className="mb-10">
         <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
