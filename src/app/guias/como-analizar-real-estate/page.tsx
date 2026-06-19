@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo analizar REIT e inversiones inmobiliarias — FFO vs distribuciones | Omaha Bridge Group',
-  description: 'Guía para invertir en bienes raíces: por qué el FFO (Funds From Operations) importa más que earnings, cómo evaluamos la calidad de inquilinos y por qué las distribuciones pueden ser humo.',
+  title: 'El dividendo del REIT que desaparece cuando baja la tasa de interés | Omaha Bridge Group',
+  description: 'Rendimiento del 7%... pero viene del endeudamiento. Cómo diferenciar distribuciones reales de ilusiones de dinero.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-real-estate' },
   openGraph: {
     title: 'Cómo analizar REITs e inversiones inmobiliarias | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#6B7280'
 export default function AnalizarRealEstatePage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo analizar REIT e inversiones inmobiliarias — FFO vs distribuciones',
-      description: 'Guía para invertir en real estate: FFO, capex recurrente y calidad de inquilinos. Por qué las distribuciones generosas pueden ser un red flag.',
+      title: 'El dividendo que desaparece: REITs con distribuciones que no duran',
+      description: 'Rendimiento atractivo pero el FFO no lo soporta. Cómo detectar REITs que están comiendo capital.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-real-estate',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo analizar empresas de Retail — Márgenes, rotación e inventario | Omaha Bridge Group',
-  description: 'Guía para invertir en retail: por qué la rotación de inventario importa más que la ganancia neta, cómo detectar obsolescencia de stock y por qué el real estate importa tanto como el comercio.',
+  title: 'La tienda que se ve próspera pero muere en 6 meses: cómo detectarla | Omaha Bridge Group',
+  description: 'Retail: ventas altas, dinero cero. Cómo los inventarios mueren en los estantes. La métrica que predice el colapso: rotación de stock.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-retail' },
   openGraph: {
     title: 'Cómo analizar empresas de Retail | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#E84C89'
 export default function AnalizarRetailPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo analizar empresas de Retail — Márgenes, rotación e inventario',
-      description: 'Guía para invertir en retail: rotación de inventario, márgenes de tienda y por qué el real estate es crítico en este sector.',
+      title: 'La tienda próspera que muere sin dinero: cómo leer los signos',
+      description: 'Ventas enormes, dinero cero. El secreto: rotación de inventario. Cómo detectar tiendas con ropa vieja en los estantes.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-retail',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

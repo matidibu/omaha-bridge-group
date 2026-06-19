@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo analizar empresas de energía: petróleo, gas y utilities | Omaha Bridge Group',
-  description: 'Guía para invertir en energía: cómo evaluar reservas de petróleo, costos de extracción y ciclos de commodity. Por qué el sector es cíclico y demanda cuidado.',
+  title: 'Oil a $150 ganas fortuna, a $40 pierdes todo: la ruleta rusa de la energía | Omaha Bridge Group',
+  description: 'Energía = ciclos extremos. Cómo sobrevivir. Cómo invertir sin quedar destruido cuando el precio cae.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-energia' },
   openGraph: {
     title: 'Cómo analizar empresas de Energía | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#F97316'
 export default function AnalizarEnergiaPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo analizar empresas de energía: petróleo, gas y utilities',
-      description: 'Guía para invertir en energía: reservas, costos de extracción y ciclos. Por qué es un sector cíclico que requiere disciplina.',
+      title: 'Energía: la ruleta rusa de los commodities',
+      description: 'Oil determina todo. Cómo distinguir petroleras que mueren de las que sobreviven ciclos.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-energia',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

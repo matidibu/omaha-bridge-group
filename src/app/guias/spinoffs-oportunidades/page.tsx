@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Spinoffs: cómo capturar valor cuando una empresa se divide | Omaha Bridge Group',
-  description: 'Qué son los spinoffs corporativos y por qué crean oportunidades de inversión. Cómo Berkshire aprovecha spinoffs para obtener ganancias extraordinarias.',
+  title: 'Cuando 1+1=3: cómo ganar dinero gratis cuando una empresa se divide | Omaha Bridge Group',
+  description: 'Una compañía se divide, el mercado infravalúa la pequeña, tú ganas la diferencia. El arbitrage de spinoffs explicado.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/spinoffs-oportunidades' },
   openGraph: {
     title: 'Spinoffs: oportunidades de valor | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#06B6D4'
 export default function SpinoffsPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Spinoffs: cómo capturar valor cuando una empresa se divide',
-      description: 'Qué son los spinoffs y por qué crean oportunidades. Cómo Buffett y otros inversores sofisticados los aprovechan.',
+      title: 'Spinoff: cuando 1+1=3 y el mercado no lo ve',
+      description: 'Cómo capturar el spread entre valor combinado e individual de dos empresas.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/spinoffs-oportunidades',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

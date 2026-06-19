@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Altman Z-Score: predecir la bancarrota de una empresa | Omaha Bridge Group',
-  description: 'Qué es el Z-Score de Altman y cómo usarlo para detectar empresas en riesgo de quiebra. Una fórmula que predijo correctamente la mayoría de quiebras desde 1968.',
+  title: 'Los números que predicen la quiebra antes de que nadie lo vea | Omaha Bridge Group',
+  description: 'Z-Score: 72% de precisión prediciendo quiebras un año antes. Los números que Altman vio en 1968 y siguen siendo iguales hoy.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/altman-z-score' },
   openGraph: {
     title: 'Altman Z-Score | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#8B5CF6'
 export default function AltmanZScorePage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Altman Z-Score: predecir la bancarrota de una empresa',
-      description: 'Qué es el Z-Score de Altman y cómo calcularlo. La fórmula que predice quiebras correctamente en 72% de casos un año antes.',
+      title: 'Los números que ven la quiebra venir: Altman Z-Score',
+      description: '72% de precisión un año antes. Los números que Altman formuló en 1968 y siguen siendo iguales.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/altman-z-score',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

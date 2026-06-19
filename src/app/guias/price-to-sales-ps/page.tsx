@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Ratio Price-to-Sales (P/S): valuación basada en ingresos | Omaha Bridge Group',
-  description: 'Qué es el ratio P/S y por qué es más difícil de manipular que P/E. Cuándo confiar en P/S para encontrar gangas.',
+  title: 'La métrica que casi nadie puede falsificar: price-to-sales | Omaha Bridge Group',
+  description: 'P/S es dinero real: lo que entró al banco. Earnings son contabilidad. Por qué P/S bajo es mucho más seguro.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/price-to-sales-ps' },
   openGraph: {
     title: 'Ratio Price-to-Sales (P/S) | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#EF4444'
 export default function PriceToSalesPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Ratio Price-to-Sales (P/S): valuación basada en ingresos',
-      description: 'Qué es el ratio P/S, por qué es difícil de manipular y cuándo usarlo para encontrar gangas. P/S vs P/E.',
+      title: 'La métrica imposible de falsificar: price-to-sales',
+      description: 'Earnings pueden ser ilusión. Ingresos son dinero real. Por qué P/S bajo es mucho más de confiar.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/price-to-sales-ps',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

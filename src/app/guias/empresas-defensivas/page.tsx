@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Acciones defensivas: empresas que protegen capital en crisis | Omaha Bridge Group',
-  description: 'Qué son acciones defensivas y por qué mantienen valor en recesiones. Utilities, consumo masivo y pharma. Cómo identificarlas.',
+  title: 'Tu paraguas en la tormenta: acciones que bajan menos cuando todo cae | Omaha Bridge Group',
+  description: 'Gente sigue comprando jabón en crisis. Sigue pagando luz. Esas empresas son defensa cuando el mercado colapsa.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/empresas-defensivas' },
   openGraph: {
     title: 'Acciones defensivas (Defensive stocks) | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#10B981'
 export default function DefensiveStocksPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Acciones defensivas: empresas que protegen capital en crisis',
-      description: 'Qué son acciones defensivas y por qué funcionan en recesiones. Características de negocios defensivos.',
+      title: 'Tu paraguas en la tormenta: empresas defensivas',
+      description: 'Cuando cae 50%, estas caen 30%. Cómo construir defensa.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/empresas-defensivas',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Earnings vs Cash: por qué las ganancias pueden ser ilusión | Omaha Bridge Group',
-  description: 'La diferencia entre earnings contables (paper profits) y cash flow real. Por qué una empresa puede reportar $1B de ganancias pero no tener dinero.',
+  title: 'La ilusión más cara: $1B en ganancias, dinero cero en el banco | Omaha Bridge Group',
+  description: 'Earnings: lo que la contabilidad dice. Cash: lo que realmente hay. Cómo detectar empresas que reportan ganancias pero no tienen dinero.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/earnings-vs-cash' },
   openGraph: {
     title: 'Earnings vs Cash: lo que importa | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#EC4899'
 export default function EarningsVsCashPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Earnings vs Cash: por qué las ganancias pueden ser ilusión',
-      description: 'Diferencia entre earnings contables y flujo de caja real. Por qué empresas muy rentables pueden quebrar por falta de dinero.',
+      title: 'Ganancias gigantes, dinero cero: la ilusión más cara',
+      description: 'Por qué una empresa puede reportar $1B de ganancias y quebrar por falta de dinero.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/earnings-vs-cash',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

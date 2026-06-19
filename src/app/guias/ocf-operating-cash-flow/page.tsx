@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Operating Cash Flow (OCF): el dinero real que genera el negocio | Omaha Bridge Group',
-  description: 'Qué es OCF, cómo se calcula y por qué es más honesto que earnings. La diferencia entre earnings y cash flow: el error más costoso de los inversores.',
+  title: 'El dinero que importa: Operating Cash Flow vs earnings | Omaha Bridge Group',
+  description: 'OCF es dinero que realmente circuló. Earnings es lo que la contabilidad dice. Cómo ver la diferencia.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/ocf-operating-cash-flow' },
   openGraph: {
     title: 'Operating Cash Flow (OCF) | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#10B981'
 export default function OCFPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Operating Cash Flow (OCF): el dinero real que genera el negocio',
-      description: 'Qué es OCF, cómo se calcula y por qué importa más que earnings contables. La diferencia entre ganancias netas y flujo de caja operativo.',
+      title: 'El dinero que importa: OCF vs earnings',
+      description: 'Dinero real que circuló vs números contables. Cómo ver la diferencia que los CEOs esconden.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/ocf-operating-cash-flow',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

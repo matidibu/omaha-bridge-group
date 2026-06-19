@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'EBITDA vs FCF — Por qué el flujo de caja libre es lo que importa | Omaha Bridge Group',
-  description: 'Entiende la diferencia crítica entre EBITDA y Free Cash Flow. Por qué los CEOs hablan de EBITDA y por qué los inversores inteligentes miran FCF. Qué métrica es honesta y por qué.',
+  title: 'Por qué el CEO te miente con EBITDA (y cómo ver la verdad detrás) | Omaha Bridge Group',
+  description: 'La métrica que hace brillar a los CEOs: EBITDA. La que revela la realidad: FCF. Cómo diferenciar ilusión de dinero real en menos de 5 minutos.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/ebitda-vs-fcf' },
   openGraph: {
     title: 'EBITDA vs FCF | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function EBITDAVsFCFPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'EBITDA vs FCF — Por qué el flujo de caja libre es lo que importa',
-      description: 'Entiende la diferencia crítica entre EBITDA y Free Cash Flow. Por qué los CEOs hablan de EBITDA y por qué los inversores inteligentes miran FCF.',
+      title: 'Por qué el CEO te miente con EBITDA (y cómo ver la verdad detrás)',
+      description: 'EBITDA: el número que brilla. FCF: el que importa. Cómo detectar cuándo un CEO está usando palabras mágicas para esconder la realidad.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/ebitda-vs-fcf',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

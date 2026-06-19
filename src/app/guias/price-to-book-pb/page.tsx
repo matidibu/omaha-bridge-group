@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Ratio Price-to-Book (P/B): cuándo una acción es barata según el balance | Omaha Bridge Group',
-  description: 'Qué es el ratio P/B, cuándo es confiable y cuándo es una trampa. Por qué un P/B bajo puede ser una ganga o un value trap.',
+  title: 'El secreto de Graham: comprar empresas por menos de lo que valen | Omaha Bridge Group',
+  description: 'P/B menor a 1 = comprar con descuento. Pero ojo: a veces es ganga, a veces es trampa. Cómo diferenciar.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/price-to-book-pb' },
   openGraph: {
     title: 'Ratio Price-to-Book (P/B) | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#6366F1'
 export default function PriceToBookPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Ratio Price-to-Book (P/B): cuándo una acción es barata según el balance',
-      description: 'Qué es el ratio P/B, cómo calcularlo y cuándo confiar en él. Por qué P/B bajo no siempre significa ganga.',
+      title: 'El secreto de Graham: P/B bajo es comprar con descuento',
+      description: 'Pero un P/B bajo con ROIC bajo es la trampa más cara. Cómo no caer.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/price-to-book-pb',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

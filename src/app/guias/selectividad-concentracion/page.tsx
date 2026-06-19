@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Selectividad y concentración: cuántas acciones comprar | Omaha Bridge Group',
-  description: 'Por qué Buffett compra pocas acciones pero las conoce muy bien. Cómo la selectividad aumenta retornos. Portafolio concentrado vs diversificado.',
+  title: 'Menos es más: por qué Buffett tiene 5 posiciones gigantes, no 100 | Omaha Bridge Group',
+  description: '5 acciones excelentes vencen 100 mediocres. Cómo la selectividad multiplica retornos versus la diversificación que los diluye.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/selectividad-concentracion' },
   openGraph: {
     title: 'Selectividad y concentración en inversión | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#F59E0B'
 export default function SelectividadPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Selectividad y concentración: cuántas acciones comprar',
-      description: 'Por qué Buffett compra pocas acciones. Cómo la selectividad y concentración aumentan retornos.',
+      title: 'Menos es más: 5 acciones excelentes vs 100 mediocres',
+      description: 'La selectividad de Buffett: concentración en lo mejor, no diversificación en lo mediocre.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/selectividad-concentracion',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

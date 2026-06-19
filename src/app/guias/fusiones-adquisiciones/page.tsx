@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Fusiones y adquisiciones: cómo invertir en eventos M&A | Omaha Bridge Group',
-  description: 'Estrategia para invertir en fusiones y adquisiciones. Cómo evaluar si el precio es justo, arbitrage y riesgo de deal break.',
+  title: 'El spread de la fusión: dinero esperando ser reclamado en cada deal | Omaha Bridge Group',
+  description: 'Empresa A ofrece $100, mercado cotiza a $97. El $3 es tuyo si el deal cierra. Cómo evaluar el riesgo.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/fusiones-adquisiciones' },
   openGraph: {
     title: 'Fusiones y adquisiciones (M&A) | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#8B5CF6'
 export default function M&APage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Fusiones y adquisiciones: cómo invertir en eventos M&A',
-      description: 'Estrategia de inversión en M&A, arbitrage de eventos y riesgo de deal break. Cómo evaluar si una compra es buena inversión.',
+      title: 'El spread de la fusión: dinero en el diferencial',
+      description: 'Cómo capturar el spread entre oferta y precio de mercado sin morir en el intento.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/fusiones-adquisiciones',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

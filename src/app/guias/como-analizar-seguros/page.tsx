@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo analizar empresas de seguros — Ratios y suscripción | Omaha Bridge Group',
-  description: 'Guía para invertir en seguros: cómo entender combined ratio, float e inversión de reservas. Por qué Buffett ama seguros pero solo los buenos.',
+  title: 'El dinero gratis de Buffett: cómo funcionan realmente los seguros | Omaha Bridge Group',
+  description: 'Reciben dinero hoy, pagan mañana. Ese "float" es dinero gratis mientras se invierte. Por qué Buffett ama seguros.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-seguros' },
   openGraph: {
     title: 'Cómo analizar empresas de Seguros | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#7C3AED'
 export default function AnalizarSeguroPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo analizar empresas de seguros — Ratios y suscripción',
-      description: 'Guía para invertir en seguros: combined ratio, underwriting profit y float. Por qué Buffett invierte en seguros pero solo los excelentes.',
+      title: 'El dinero gratis de Buffett: seguros desde adentro',
+      description: 'Float: dinero para invertir antes de tener que pagar siniestros. Cómo diferenciar seguros buenos de mediocres.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-seguros',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Compounding: la variable del tiempo en inversión | Omaha Bridge Group',
-  description: 'Por qué el compounding es la fuerza más poderosa en inversión. Cómo $10k compuestos a 12% anual se convierten en $1M. El tiempo es tu mejor aliado.',
+  title: 'La paciencia al final se paga: cómo $10k se convierten en $1M (si esperas) | Omaha Bridge Group',
+  description: 'El secreto que Buffett repite hace 60 años. No es el retorno anual, es el número de años. La geometría gana a la aritmética: el compounding explicado.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/compounding-variable-del-tiempo' },
   openGraph: {
     title: 'Compounding: el poder del tiempo | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#06B6D4'
 export default function CompoundingPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Compounding: la variable del tiempo en inversión',
-      description: 'Por qué el compounding es la fuerza más poderosa. Cómo el tiempo convierte retornos pequeños en riqueza exponencial.',
+      title: 'La paciencia al final se paga: $10k a $1M (si esperas 50 años)',
+      description: 'El compounding: la fuerza más silenciosa de la riqueza. Por qué los primeros 10 años generan poco y los últimos 20 generan todo.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/compounding-variable-del-tiempo',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

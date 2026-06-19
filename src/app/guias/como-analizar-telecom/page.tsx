@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo analizar empresas de Telecomunicaciones — Churn, ARPU y capex | Omaha Bridge Group',
-  description: 'Guía para invertir en telecom: por qué el churn (abandono de clientes) es más importante que earnings, cómo ARPU determina el valor real, y por qué el capex es insostenible.',
+  title: 'El cliente que se va: cómo el churn destruye lo que parece estable | Omaha Bridge Group',
+  description: 'Una telecom pierde 2% de clientes mensual = 24% anual. Necesita agregar 200k clientes mes solo para no retroceder. El negocio del cliente que huye.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-telecom' },
   openGraph: {
     title: 'Cómo analizar empresas de Telecomunicaciones | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#F59E0B'
 export default function AnalizarTelecomPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo analizar empresas de Telecomunicaciones — Churn, ARPU y capex',
-      description: 'Guía para invertir en telecom: churn rate, ARPU y capex de infraestructura. Por qué estas métricas determinan si la acción es inversión o trampa.',
+      title: 'El negocio del cliente que se va: telecom desde adentro',
+      description: 'Churn subiendo, ARPU bajando, capex infinito. Cómo una telecom que parece sólida se desmorona.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-telecom',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

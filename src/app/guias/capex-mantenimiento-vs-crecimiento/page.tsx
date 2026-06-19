@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Capex de mantenimiento vs crecimiento: qué es inversión real | Omaha Bridge Group',
-  description: 'Diferencia entre capex de mantenimiento (necesario) y capex de crecimiento (opcional). Cómo los CEOs usan esta distinción para inflar ganancias.',
+  title: 'Cómo los CEOs esconden gastos enormes con palabras mágicas | Omaha Bridge Group',
+  description: '"Eso es capex de crecimiento" = gasto que no genera dinero pero lo llaman inversión. Cómo detectar la trampa.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/capex-mantenimiento-vs-crecimiento' },
   openGraph: {
     title: 'Capex: Mantenimiento vs Crecimiento | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#F59E0B'
 export default function CapexPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Capex de mantenimiento vs crecimiento: qué es inversión real',
-      description: 'Diferencia entre capex de mantenimiento y crecimiento. Cómo identificar cuál es cuál y por qué los CEOs los confunden.',
+      title: 'El gasto que el CEO llama "inversión": capex escondido',
+      description: 'Cómo diferenciar capex que importa de gasto que importa.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/capex-mantenimiento-vs-crecimiento',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

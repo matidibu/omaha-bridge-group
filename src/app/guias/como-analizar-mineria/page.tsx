@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo analizar empresas mineras — Costos, reservas y ciclos | Omaha Bridge Group',
-  description: 'Guía para invertir en minería: por qué el costo de extracción importa más que la producción, cómo evaluar reservas, y por qué el ciclo de commodities determina todo.',
+  title: 'Oro brillante hoy, quiebra mañana: vivir en los ciclos de commodities | Omaha Bridge Group',
+  description: 'Minería a $1500/oz gana, a $900/oz pierde. El ciclo define todo. Cómo diferenciar minas que sobreviven de minas que cierran.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-mineria' },
   openGraph: {
     title: 'Cómo analizar empresas mineras | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#A16207'
 export default function AnalizarMineriePage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo analizar empresas mineras — Costos, reservas y ciclos',
-      description: 'Guía para invertir en minería: costos de extracción, reservas y ciclos de commodities. Por qué una mina con alta producción puede ser rentable a $1000/oz pero no a $800/oz.',
+      title: 'Oro a $1500 ganas fortuna, a $900 pierdes todo: vivir el ciclo',
+      description: 'Minería: la ruleta rusa de los commodities. Cómo detectar minas que sobreviven crisis.',
       publishDate: '2025-06-19',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-mineria',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
