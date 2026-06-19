@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Análisis técnico vs análisis fundamental: por qué Buffett ignora los gráficos | Omaha Bridge Group',
-  description: 'El análisis técnico pretende predecir precios estudiando patrones históricos. El análisis fundamental estudia el negocio. Guía sobre por qué uno funciona para traders y el otro para inversores value.',
+  title: 'Gráficos vs realidad: por qué uno gana y el otro pierde | Omaha Bridge Group',
+  description: 'Análisis técnico: linda distracción. Fundamental: donde está el dinero. Cómo diferenciar.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/analisis-tecnico-vs-fundamental' },
   openGraph: {
     title: 'Análisis técnico vs fundamental | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function AnalisisTecnicoVsFundamentalPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Análisis técnico vs análisis fundamental: por qué Buffett ignora los gráficos',
-      description: 'El análisis técnico pretende predecir precios estudiando patrones. El análisis fundamental estudia el negocio. Por qué uno funciona para traders, otro para inversores.',
+      title: 'Gráficos que prometen, realidad que decepciona',
+      description: 'Por qué los gráficos no predicen. Por qué Buffett estudia el negocio.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/analisis-tecnico-vs-fundamental',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Small caps y value investing: dónde encuentran oportunidades los inversores | Omaha Bridge Group',
-  description: 'Las empresas pequeñas son ignoradas por fondos masivos. Eso crea ineficiencias que el inversor individual puede explotar. Guía sobre riesgos, liquidez y cómo analizar small caps.',
+  title: 'Las pequeñas que nadie sigue: donde está el alfa real | Omaha Bridge Group',
+  description: 'Ignoradas por fondos grandes. Valoradas por genius. Cómo encontrarlas. Los riesgos que nadie menciona.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/small-caps' },
   openGraph: {
     title: 'Small caps y value investing | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function SmallCapsPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Small caps y value investing: dónde encuentran oportunidades los inversores',
-      description: 'Las empresas pequeñas son ignoradas por fondos masivos. Eso crea ineficiencias. Guía sobre riesgos, liquidez y análisis.',
+      title: 'Small caps: donde el alfa viene a morir (o prosperar)',
+      description: 'Por qué fondos las ignoran. Cómo encontrar los diamantes reales.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/small-caps',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

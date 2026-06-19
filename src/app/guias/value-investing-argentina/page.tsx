@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Value investing en Argentina: dólares, CEDEARs y ciclos económicos | Omaha Bridge Group',
-  description: 'Invertir en Argentina es distinto. Inflación, devaluación, ciclos políticos, controles de cambio. Cómo adaptar value investing al contexto local sin abandonar los principios. Cuándo invertir en pesos, cuándo en dólares.',
+  title: 'Value investing en Argentina: donde la inflación mata millones | Omaha Bridge Group',
+  description: 'La inflación es el enemigo número 1. Cómo ajustar criterios. Cuándo pesos, cuándo dólares, cuándo CEDEARs.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/value-investing-argentina' },
   openGraph: {
     title: 'Value investing en Argentina | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function ValueInvestingArgentinaPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Value investing en Argentina: dólares, CEDEARs y ciclos económicos',
-      description: 'Invertir en Argentina es distinto. Cómo adaptar value investing al contexto local sin abandonar principios. Cuándo invertir en pesos.',
+      title: 'Value investing argentino: adaptación a la inflación',
+      description: 'Cómo ajustar criterios cuando el dinero pierde valor. Pesos vs dólares.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/value-investing-argentina',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

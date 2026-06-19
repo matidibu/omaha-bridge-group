@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Dividendos y value investing: inversión para generar ingresos | Omaha Bridge Group',
-  description: 'No todos los dividendos son iguales. Guía completa sobre dividend yield, dividend growth, payout ratio, sostenibilidad y cómo Buffett elige empresas que reparten dividendos.',
+  title: 'Dividendos: dinero que baja mientras otros ganan fortuna | Omaha Bridge Group',
+  description: 'Rendimiento 5% pero la acción cae 20%. Cómo no caer en la trampa. Por qué Buffett desconfía de dividendos altos.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/dividendos-value-investing' },
   openGraph: {
     title: 'Dividendos y value investing | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function DividendosValueInvestingPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Dividendos y value investing: inversión para generar ingresos',
-      description: 'No todos los dividendos son iguales. Guía completa sobre dividend yield, dividend growth, payout ratio, sostenibilidad y cómo Buffett elige empresas.',
+      title: 'Dividendos atractivos que esconden caídas',
+      description: 'Por qué rendimiento alto = riesgo alto. Cómo no caer.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/dividendos-value-investing',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

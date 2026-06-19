@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'DCF: cómo valorar una empresa con el flujo de caja descontado | Omaha Bridge Group',
-  description: 'La fórmula de Buffett: proyectar el flujo de caja libre futuro de una empresa, descontarlo a valor presente, y comprar cuando hay margen de seguridad. Guía completa del DCF para inversores.',
+  title: 'La fórmula que Buffett usa para fijar precio: DCF sin magia | Omaha Bridge Group',
+  description: 'DCF: cómo calcular valor real. Cómo Buffett predice futuro. Cómo saber si una acción es cara o barata.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/dcf-valoracion' },
   openGraph: {
     title: 'DCF: cómo valorar una empresa | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function DcfValoracionPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'DCF: cómo valorar una empresa con el flujo de caja descontado',
-      description: 'La fórmula de Buffett: proyectar el flujo de caja libre futuro de una empresa, descontarlo a valor presente, y comprar cuando hay margen de seguridad.',
+      title: 'DCF: la fórmula que Buffett usa para fijar precio',
+      description: 'Cómo proyectar futuro. Cómo calcular valor real. Cómo saber si es caro o barato.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/dcf-valoracion',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

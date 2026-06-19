@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo analizar acciones bancarias — Métricas clave | Omaha Bridge Group',
-  description: 'Los bancos tienen estados financieros únicos que requieren métricas distintas: NIM, ROE, ratio de eficiencia, NPL, Tier 1 capital. Guía completa para analizar bancos con criterios de value investing.',
+  title: 'Los bancos que colapsan: cómo verlo en el balance | Omaha Bridge Group',
+  description: 'Capital ratios, provisiones, NPA: los números que predicen colapsos. Cómo 2008 muestra quién quiebra en la próxima.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-bancos' },
   openGraph: {
     title: 'Cómo analizar acciones bancarias | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function ComoAnalizarBancosPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo analizar acciones bancarias — Métricas clave',
-      description: 'Los bancos tienen estados financieros únicos que requieren métricas distintas: NIM, ROE, ratio de eficiencia, NPL, Tier 1 capital. Guía completa para analizar bancos con criterios de value investing.',
+      title: 'Qué bancos colapsan: cómo verlo primero',
+      description: 'NPL, capital ratios: los números que predicen. Cómo evitar 2008 otra vez.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-bancos',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

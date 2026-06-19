@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo evaluar a un CEO: señales de gestión excelente y mediocre | Omaha Bridge Group',
-  description: 'Warren Buffett lee cartas anuales con atención forense. Señales de un directivo honesto y orientado al largo plazo vs uno que manipula expectativas. Asignación de capital, lenguaje y compensación ejecutiva.',
+  title: 'Cómo detectar si el CEO te está robando | Omaha Bridge Group',
+  description: 'Los signos de un CEO genio vs un CEO ladrón. Cómo Buffett lee el carácter. Cómo no caer en la trampa.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-evaluar-un-ceo' },
   openGraph: {
     title: 'Cómo evaluar a un CEO | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function ComoEvaluarUnCeoPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo evaluar a un CEO: señales de gestión excelente y mediocre',
-      description: 'Warren Buffett lee cartas anuales con atención forense. Señales de un directivo honesto y orientado al largo plazo vs uno que manipula expectativas. Asignación de capital, lenguaje y compensación ejecutiva.',
+      title: 'CEO: genio o ladrón. Cómo ver la diferencia',
+      description: 'Cómo Buffett lee a los CEOs. Cómo evitar los traidores.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-evaluar-un-ceo',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

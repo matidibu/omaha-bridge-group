@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Riesgo vs volatilidad: por qué Buffett no le teme a las caídas | Omaha Bridge Group',
-  description: 'La volatilidad es el enemigo del trader. Para el inversor value, es oportunidad. Cuál es la diferencia entre riesgo real y movimiento de precio. Por qué el descuento que genera la volatilidad es tu mejor amigo.',
+  title: 'La volatilidad no es riesgo: el error que cuesta fortunas | Omaha Bridge Group',
+  description: 'Caída 50% ≠ riesgo 50%. Cómo pensar en riesgo real. Por qué Buffett compra cuando cae.'
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/riesgo-vs-volatilidad' },
   openGraph: {
     title: 'Riesgo vs volatilidad | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function RiesgoVsVolatilidadPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Riesgo vs volatilidad: por qué Buffett no le teme a las caídas',
-      description: 'La volatilidad es el enemigo del trader. Para el inversor value, es oportunidad. Diferencia entre riesgo real y movimiento de precio.',
+      title: 'Volatilidad vs Riesgo: por qué Buffett ama las caídas',
+      description: 'Cómo pensar en riesgo real. Cómo convertir volatilidad en oportunidad.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/riesgo-vs-volatilidad',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'CEDEARs: guía completa para inversores argentinos | Omaha Bridge Group',
-  description: 'Qué son los CEDEARs, cómo funcionan, cómo calcular el CCL implícito y si tiene sentido comprar CEDEARs o acciones directamente. Guía práctica para inversores argentinos que quieren acceder al mercado internacional.',
+  title: 'CEDEARS: cómo invertir en Wall Street desde Argentina | Omaha Bridge Group',
+  description: 'Acciones de Wall Street sin salir de Argentina. Cómo funcionan. Ventajas. Riesgos. Cómo empezar hoy.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/cedears-guia-completa' },
   openGraph: {
     title: 'CEDEARs: guía completa | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function CedearsGuiaCompletaPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'CEDEARs: guía completa para inversores argentinos',
-      description: 'Qué son los CEDEARs, cómo funcionan, cómo calcular el CCL implícito y si tiene sentido comprar CEDEARs o acciones directamente. Guía práctica para inversores argentinos que quieren acceder al mercado internacional.',
+      title: 'CEDEARs: Wall Street desde Argentina',
+      description: 'Cómo funcionan. Ventajas. Riesgos. Cómo empezar.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/cedears-guia-completa',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

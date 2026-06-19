@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'EV/EBITDA: el múltiplo que todos usan (y en qué falla) | Omaha Bridge Group',
-  description: 'EV/EBITDA es la métrica más usada en el mundo corporativo para valorar empresas. Qué significa, por qué es útil, cuándo es una trampa, y cómo Buffett la usa diferente de los banqueros de inversión.',
+  title: 'EV/EBITDA: la trampa más elegante del mercado | Omaha Bridge Group',
+  description: 'Este ratio es hermoso. Es también mentira. Cómo detectar cuándo es confiable y cuándo es engaño de banquero.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/ev-ebitda' },
   openGraph: {
     title: 'EV/EBITDA: cómo usarlo correctamente | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function EvEbitdaPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'EV/EBITDA: el múltiplo que todos usan (y en qué falla)',
-      description: 'EV/EBITDA es la métrica más usada en el mundo corporativo para valorar empresas. Qué significa, por qué es útil, cuándo es una trampa, y cómo Buffett la usa diferente.',
+      title: 'EV/EBITDA: la métrica elegante que miente',
+      description: 'Cómo los banqueros la usan para vender. Cómo Buffett la desconfía.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/ev-ebitda',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

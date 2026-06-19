@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Flujo de caja libre (FCF): la métrica que más importa | Omaha Bridge Group',
-  description: 'Por qué Warren Buffett ignora las ganancias contables y se enfoca en el flujo de caja libre. Qué es el FCF, cómo calcularlo y por qué revela la verdad de un negocio.',
+  title: 'El dinero que realmente importa: FCF es lo único que cuenta | Omaha Bridge Group',
+  description: 'Buffett mira solo FCF. Cuando entiendes por qué, todo cambia. Cómo calcular el dinero real que genera un negocio.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/flujo-de-caja-libre' },
   openGraph: {
     title: 'Flujo de caja libre (FCF) | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function FlujoDeCajaLibrePage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Flujo de caja libre (FCF): la métrica que más importa',
-      description: 'Por qué Warren Buffett ignora las ganancias contables y se enfoca en el flujo de caja libre. Qué es el FCF, cómo calcularlo y por qué revela la verdad de un negocio.',
+      title: 'El único número que importa: Free Cash Flow',
+      description: 'Por qué Buffett ignora earnings y mira solo FCF. Cuando lo entiendas, todo cambia.',
       publishDate: '2025-01-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/flujo-de-caja-libre',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

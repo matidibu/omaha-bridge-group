@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'ROE, ROA y ROIC: qué miden y cuál importa para invertir | Omaha Bridge Group',
-  description: 'Tres métricas de rentabilidad que confunden a los inversores. ROE mide retorno sobre el patrimonio, ROA sobre los activos, ROIC sobre el capital invertido. Cuál usar, cuál es trampa, y por qué Buffett prefiere ROIC.',
+  title: 'Los ratios que revelan si el CEO es genio o ladrón | Omaha Bridge Group',
+  description: 'ROE, ROA, ROIC: los números que ven la verdad detrás del CEO. Cuál confía, cuál es trampa. Por qué Buffett mira solo ROIC.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/roe-roa-roic' },
   openGraph: {
     title: 'ROE, ROA y ROIC: cuál métrica importa | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function RoeRoaRoicPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'ROE, ROA y ROIC: qué miden y cuál importa para invertir',
-      description: 'Tres métricas de rentabilidad que confunden a los inversores. ROE mide retorno sobre el patrimonio, ROA sobre los activos, ROIC sobre el capital invertido. Cuál usar, cuál es trampa, y por qué Buffett prefiere ROIC.',
+      title: 'ROE, ROA, ROIC: cuál es verdad, cuál es trampa',
+      description: 'Cómo saber si el CEO es genio o está engañando. Por qué Buffett mira solo ROIC.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/roe-roa-roic',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

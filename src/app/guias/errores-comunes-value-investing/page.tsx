@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Los 7 errores más comunes del inversor value | Omaha Bridge Group',
-  description: 'Comprar trampas de valor, ignorar la calidad por el precio, no respetar el margen de seguridad, exceso de diversificación: los errores que cometen incluso los inversores experimentados.',
+  title: 'Los 10 errores que destruyen carteras (y cómo evitarlos) | Omaha Bridge Group',
+  description: 'Los errores que comete el 99% de value investors. Cómo no ser parte del 99%. Cómo aprender sin perder millones.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/errores-comunes-value-investing' },
   openGraph: {
     title: 'Los 7 errores más comunes del inversor value | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function ErroresComunesPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Los 7 errores más comunes del inversor value',
-      description: 'Comprar trampas de valor, ignorar la calidad por el precio, no respetar el margen de seguridad, exceso de diversificación: los errores que cometen incluso los inversores experimentados.',
+      title: 'Los 7 errores que destruyen carteras',
+      description: 'Qué hace mal el 99% de value investors. Cómo no ser parte del 99%.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/errores-comunes-value-investing',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

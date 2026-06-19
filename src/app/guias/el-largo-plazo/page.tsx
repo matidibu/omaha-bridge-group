@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El largo plazo: por qué el tiempo es tu mejor activo en inversión | Omaha Bridge Group',
-  description: 'Buffett atribuye su fortuna 99% al interés compuesto + 60 años de paciencia. El largo plazo amplifica las pequeñas ventajas fundamentales. Por qué es ventaja comparativa del inversor individual frente a fondos.',
+  title: 'La obsesión que hace ricos: por qué el corto plazo arruina | Omaha Bridge Group',
+  description: '20 años gana a 5 años, siempre. Cómo resistir la tentación. El superpoder del inversor individual.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/el-largo-plazo' },
   openGraph: {
     title: 'El largo plazo como ventaja | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function ElLargoPlazoPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'El largo plazo: por qué el tiempo es tu mejor activo en inversión',
-      description: 'Buffett atribuye su fortuna 99% al interés compuesto + 60 años de paciencia. El largo plazo amplifica ventajas fundamentales.',
+      title: 'El largo plazo: la obsesión de Buffett',
+      description: '60 años de paciencia = 99% de fortuna. Cómo resistir la tentación del corto.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/el-largo-plazo',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Calidad institucional según Larry Fink — Corporate governance y TSR | Omaha Bridge Group',
-  description: 'Aprende el marco de Larry Fink (BlackRock) para evaluar calidad institucional: gobierno corporativo, horizonte de largo plazo, y retorno total al accionista. El inversor institucional en acción.',
+  title: 'El framework secreto de BlackRock para no perder dinero | Omaha Bridge Group',
+  description: 'Cómo Fink evalúa CEO y gobernanza. Cómo ver calidad institucional que otros no ven. Los números que importan a los que manejan $10 billones.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/calidad-institucional-fink' },
   openGraph: {
     title: 'Calidad institucional según Larry Fink | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#A78BFA'
 export default function CalidadInstitucionalFinkPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Calidad institucional según Larry Fink — Corporate governance y TSR',
-      description: 'Aprende el marco de Larry Fink (BlackRock) para evaluar calidad institucional: gobierno corporativo, horizonte de largo plazo, y retorno total al accionista.',
+      title: 'Cómo BlackRock ve calidad: el framework de Fink',
+      description: 'Governance, long-term thinking, TSR: los números de Fink. Cómo aplicarlos.',
       publishDate: '2025-01-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/calidad-institucional-fink',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

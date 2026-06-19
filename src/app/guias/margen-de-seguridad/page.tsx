@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El margen de seguridad: comprar con descuento sobre el valor real | Omaha Bridge Group',
-  description: 'El concepto más importante del value investing según Benjamin Graham y Warren Buffett. Qué es el margen de seguridad, cómo calcularlo y por qué protege al inversor contra el error.',
+  title: 'El concepto que separa inversores de ludópatas | Omaha Bridge Group',
+  description: 'Margen de seguridad: comprar $100 por $70. Cómo Graham y Buffett se hacen ricos con esto. Por qué es lo único que importa.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/margen-de-seguridad' },
   openGraph: {
     title: 'El margen de seguridad | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function MargenDeSeguridad() {
   return (
     <GuiasShell articleMeta={{
-      title: 'El margen de seguridad: comprar con descuento sobre el valor real',
-      description: 'El concepto más importante del value investing según Benjamin Graham y Warren Buffett. Qué es el margen de seguridad, cómo calcularlo y por qué protege al inversor contra el error.',
+      title: 'Margen de seguridad: la protección que los principiantes ignoran',
+      description: 'Compra $100 por $70, no por $99. Cómo Buffett y Graham nunca pierden.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/margen-de-seguridad',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

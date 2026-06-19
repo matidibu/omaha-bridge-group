@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'La Magic Formula de Joel Greenblatt — Earnings Yield y ROC | Omaha Bridge Group',
-  description: 'Cómo funciona la Magic Formula de Greenblatt: earnings yield, return on capital, el sistema de ranking y por qué supera al S&P 500 a largo plazo.',
+  title: 'La fórmula mágica que bate al S&P 500: números vs intuición | Omaha Bridge Group',
+  description: 'La fórmula de Greenblatt que batió el mercado 16 años. Cómo funciona. Por qué casi nadie la usa.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/magic-formula-greenblatt' },
   openGraph: {
     title: 'La Magic Formula de Greenblatt | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#7BBDE0'
 export default function MagicFormulaPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'La Magic Formula de Joel Greenblatt — Earnings Yield y ROC',
-      description: 'Cómo funciona la Magic Formula de Greenblatt: earnings yield, return on capital, el sistema de ranking y por qué supera al S&P 500 a largo plazo.',
+      title: 'La fórmula que batió el S&P 500 durante 16 años',
+      description: 'Greenblatt: earnings yield + ROC = dinero. Cómo funciona. Por qué sigue funcionando.',
       publishDate: '2025-01-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/magic-formula-greenblatt',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

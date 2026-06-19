@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Precio vs valor: la distinción que define al inversor inteligente | Omaha Bridge Group',
-  description: 'El mercado fija un precio cada día. Ese precio no es el valor. Entender la diferencia entre precio y valor es la base de toda inversión inteligente.',
+  title: 'El Sr. Mercado está loco: cómo aprovecharse de su locura | Omaha Bridge Group',
+  description: 'Cada día el Sr. Mercado ofrece precios distintos. Buffett compra cuando ofrece barato, vende cuando ofrece caro. Cómo ver lo que él ve.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/precio-vs-valor' },
   openGraph: {
     title: 'Precio vs valor | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function PrecioVsValorPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Precio vs valor: la distinción que define al inversor inteligente',
-      description: 'El mercado fija un precio cada día. Ese precio no es el valor. Entender la diferencia entre precio y valor es la base de toda inversión inteligente.',
+      title: 'Precio vs Valor: el Sr. Mercado está loco',
+      description: 'Buffett ve lo que el Sr. Mercado no: la diferencia. Cómo verla tú también.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/precio-vs-valor',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

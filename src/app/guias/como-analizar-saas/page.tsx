@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo analizar empresas SaaS — ARR, churn, NRR y LTV/CAC | Omaha Bridge Group',
-  description: 'Las empresas de software como servicio tienen métricas únicas. Guía completa para analizar SaaS: ARR, churn, Net Revenue Retention, LTV/CAC ratio y márgenes de contribución.',
+  title: 'SaaS: la ilusión de crecimiento infinito | Omaha Bridge Group',
+  description: 'Ingresos recurrentes suena mágico. Pero 95% de SaaS quiebra. Cómo distinguir la verdadera de la ilusión. Magic metrics.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-saas' },
   openGraph: {
     title: 'Cómo analizar empresas SaaS | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function ComoAnalizarSaasPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo analizar empresas SaaS — ARR, churn, NRR y LTV/CAC',
-      description: 'Las empresas de software como servicio tienen métricas únicas. Guía completa para analizar SaaS: ARR, churn, Net Revenue Retention, LTV/CAC ratio y márgenes de contribución.',
+      title: 'SaaS ilusión: crecimiento que no dura',
+      description: 'ARR, churn, NRR: los magic metrics. Cómo ver cuál es verdadero.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-saas',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

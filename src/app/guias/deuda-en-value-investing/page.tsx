@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Deuda en value investing: cuándo preocupa y cuándo no | Omaha Bridge Group',
-  description: 'No toda deuda es igual. Cómo evaluar la carga financiera de una empresa usando deuda/EBITDA, cobertura de intereses y flujo de caja libre. Cuándo la deuda es un riesgo fatal y cuándo es indiferente.',
+  title: 'Deuda: el veneno que mata empresas silenciosamente | Omaha Bridge Group',
+  description: 'Una empresa rentable + deuda alta = dinamita. Cómo ver la bomba antes de que explote. Buffett y la deuda: la regla número 1.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/deuda-en-value-investing' },
   openGraph: {
     title: 'Deuda en value investing | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function DeudaEnValueInvestingPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Deuda en value investing: cuándo preocupa y cuándo no',
-      description: 'No toda deuda es igual. Cómo evaluar la carga financiera de una empresa usando deuda/EBITDA, cobertura de intereses y flujo de caja libre. Cuándo la deuda es un riesgo fatal y cuándo es indiferente.',
+      title: 'Deuda alta + rentabilidad = bomba de tiempo',
+      description: 'Cómo ver cuándo la deuda es peligrosa. Cómo Buffett la evita.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/deuda-en-value-investing',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

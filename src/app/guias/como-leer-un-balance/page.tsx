@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo leer un balance general — Guía para inversores | Omaha Bridge Group',
-  description: 'El balance general revela la fortaleza financiera de una empresa. Activos, pasivos y patrimonio neto explicados con ejemplos reales y las señales de alerta que debe buscar todo inversor value.',
+  title: 'Los números que los CEOs no quieren que veas | Omaha Bridge Group',
+  description: 'El balance: donde está la verdad. Cómo leerlo. Cómo ver lo que los CEOs esconden.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-leer-un-balance' },
   openGraph: {
     title: 'Cómo leer un balance general | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function ComoLeerUnBalancePage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo leer un balance general — Guía para inversores',
-      description: 'El balance general revela la fortaleza financiera de una empresa. Activos, pasivos y patrimonio neto explicados con ejemplos reales y las señales de alerta que debe buscar todo inversor value.',
+      title: 'El balance: donde está la verdad',
+      description: 'Cómo leerlo. Cómo ver lo que los CEOs esconden.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-leer-un-balance',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

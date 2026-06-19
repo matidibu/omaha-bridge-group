@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo analizar empresas de consumo masivo: marca, moat y márgenes | Omaha Bridge Group',
-  description: 'Las empresas de bienes de consumo (Coca-Cola, Nestlé, P&G) tienen características únicas. Moats de marca intangibles, márgenes predecibles, demanda inelástica. Guía para analizarlas con criterios value.',
+  title: 'Consumo masivo: cómo vender más a gente que es pobre | Omaha Bridge Group',
+  description: 'Márgenes finos, volumen gigante. Moat de marca. Cómo ver quién gana.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-consumo-masivo' },
   openGraph: {
     title: 'Cómo analizar consumo masivo | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function ComoAnalizarConsumoMasivoPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo analizar empresas de consumo masivo: marca, moat y márgenes',
-      description: 'Las empresas de bienes de consumo tienen características únicas. Moats de marca, márgenes predecibles, demanda inelástica.',
+      title: 'Consumo masivo: marca que vende a volumen',
+      description: 'Cómo ver quién tiene moat real. Cómo no confundir volumen con rentabilidad.',
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-consumo-masivo',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

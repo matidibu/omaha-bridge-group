@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El interés compuesto: por qué el tiempo es el mejor activo del inversor | Omaha Bridge Group',
-  description: 'Einstein lo llamó la octava maravilla del mundo. Buffett debe el 99% de su fortuna a tenerlo después de los 52 años. Cómo el interés compuesto transforma rendimientos modestos en riqueza extraordinaria.',
+  title: 'El 8vo maravilla del mundo: cómo convertir $1 en fortuna | Omaha Bridge Group',
+  description: 'Einstein: "La 8va maravilla del mundo es el interés compuesto". Cómo funciona. Cómo convertir $1 en millones.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/interes-compuesto' },
   openGraph: {
     title: 'El interés compuesto | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function InteresCompuestoPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'El interés compuesto: por qué el tiempo es el mejor activo del inversor',
-      description: 'Einstein lo llamó la octava maravilla del mundo. Buffett debe el 99% de su fortuna a tenerlo después de los 52 años. Cómo el interés compuesto transforma rendimientos modestos en riqueza extraordinaria.',
+      title: 'La 8va maravilla del mundo: cómo ganar mientras duermes',
+      description: 'Interés compuesto: Einstein dijo que era lo más poderoso. Cómo funciona. Cómo usarlo.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/interes-compuesto',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
