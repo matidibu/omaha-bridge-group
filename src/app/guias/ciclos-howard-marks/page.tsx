@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Los ciclos de mercado de Howard Marks — Cómo posicionarse | Omaha Bridge Group',
-  description: 'La filosofía cíclica de Howard Marks y Oaktree Capital: cómo saber en qué fase del ciclo estamos, y por qué eso determina el riesgo/retorno de cualquier inversión.',
+  title: 'Los ciclos de mercado de Howard Marks — Posicionamiento contracíclico | Omaha Bridge Group',
+  description: 'Descubre cómo Howard Marks y Oaktree Capital identifican las fases del ciclo económico para posicionarse estratégicamente. Cómo saber dónde estás en el ciclo y por qué eso determina riesgo y retorno.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/ciclos-howard-marks' },
   openGraph: {
     title: 'Los ciclos de mercado de Howard Marks | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#6AAFFA'
 export default function CiclosHowardMarksPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Los ciclos de mercado de Howard Marks — Cómo posicionarse',
-      description: 'La filosofía cíclica de Howard Marks y Oaktree Capital: cómo saber en qué fase del ciclo estamos, y por qué eso determina el riesgo/retorno de cualquier inversión.',
+      title: 'Los ciclos de mercado de Howard Marks — Posicionamiento contracíclico',
+      description: 'Descubre cómo Howard Marks y Oaktree Capital identifican las fases del ciclo económico para posicionarse estratégicamente.',
       publishDate: '2025-01-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/ciclos-howard-marks',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo analiza Warren Buffett una acción — Guía completa | Omaha Bridge Group',
-  description: 'Los cinco criterios exactos con los que Warren Buffett evalúa cualquier empresa: moat, ROIC, gestión honesta, precio con margen de seguridad y comprensión del negocio.',
+  title: 'Los 5 criterios de Warren Buffett para evaluar acciones — Guía completa | Omaha Bridge Group',
+  description: 'Aprende los cinco criterios exactos que Warren Buffett usa para analizar cualquier empresa: moat competitivo, ROIC, gestión honesta, margen de seguridad y círculo de competencia. Value investing según el maestro.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/buffett-criterios' },
   openGraph: {
     title: 'Cómo analiza Buffett una acción | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#D4A843'
 export default function BuffettCriteriosPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Cómo analiza Warren Buffett una acción — Guía completa',
-      description: 'Los cinco criterios exactos con los que Warren Buffett evalúa cualquier empresa: moat, ROIC, gestión honesta, precio con margen de seguridad y comprensión del negocio.',
+      title: 'Los 5 criterios de Warren Buffett para evaluar acciones — Guía completa',
+      description: 'Aprende los cinco criterios exactos que Warren Buffett usa para analizar cualquier empresa: moat competitivo, ROIC, gestión honesta, margen de seguridad y círculo de competencia.',
       publishDate: '2025-01-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/buffett-criterios',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',

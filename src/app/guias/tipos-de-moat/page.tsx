@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Los cuatro tipos de foso competitivo (moat) | Omaha Bridge Group',
-  description: 'Qué es un moat, cómo identificarlo y por qué las empresas con ventaja competitiva sostenible superan al mercado a largo plazo. Los cuatro tipos de foso según Morningstar y Buffett.',
+  title: 'Los 4 tipos de foso competitivo (moat) — Ventaja sostenible | Omaha Bridge Group',
+  description: 'Guía completa sobre los cuatro tipos de moat competitivo: marca, costos de cambio, efecto de red y economías de escala. Cómo identificar ventajas durables y qué empresas las tienen.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/tipos-de-moat' },
   openGraph: {
     title: 'Los cuatro tipos de foso competitivo | Omaha Bridge Group',
@@ -18,8 +18,8 @@ const COLOR = '#C9A84C'
 export default function TiposDeMoatPage() {
   return (
     <GuiasShell articleMeta={{
-      title: 'Los cuatro tipos de foso competitivo (moat)',
-      description: 'Qué es un moat, cómo identificarlo y por qué las empresas con ventaja competitiva sostenible superan al mercado a largo plazo. Los cuatro tipos de foso según Morningstar y Buffett.',
+      title: 'Los 4 tipos de foso competitivo (moat) — Ventaja sostenible',
+      description: 'Guía completa sobre los cuatro tipos de moat competitivo: marca, costos de cambio, efecto de red y economías de escala.',
       publishDate: '2025-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/tipos-de-moat',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
