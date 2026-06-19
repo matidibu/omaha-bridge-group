@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /*.json$
+
+Sitemap: https://omaha-bridge-group.vercel.app/sitemap.xml
