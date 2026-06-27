@@ -4,7 +4,7 @@ import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
   title: 'La volatilidad no es riesgo: el error que cuesta fortunas | Omaha Bridge Group',
-  description: 'Caída 50% ≠ riesgo 50%. Cómo pensar en riesgo real. Por qué Buffett compra cuando cae.'
+  description: 'Caída 50% ≠ riesgo 50%. Cómo pensar en riesgo real. Por qué Buffett compra cuando cae.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/riesgo-vs-volatilidad' },
   openGraph: {
     title: 'Riesgo vs volatilidad | Omaha Bridge Group',

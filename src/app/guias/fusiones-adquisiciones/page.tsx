@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const COLOR = '#8B5CF6'
 
-export default function M&APage() {
+export default function MAPage() {
   return (
     <GuiasShell articleMeta={{
       title: 'El spread de la fusión: dinero en el diferencial',

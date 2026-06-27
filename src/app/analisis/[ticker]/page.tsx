@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { analyzeToCompletion } from '@/lib/pipeline/analyzeToCompletion'
 import { SingleStockAnalysis } from '@/types/analysis'
 import { CEDEAR_MAP } from '@/lib/data/cedear'
+import { COMPANY_PROFILES } from '@/lib/data/companyProfiles'
 import { AdUnit } from '@/components/ui/AdUnit'
 
 export const revalidate = 86400 // 24 hours ISR — generated on first request, then cached
@@ -29,6 +30,21 @@ const FALLBACK_RELATED = ['AAPL', 'MSFT', 'NVDA', 'JPM', 'KO']
 function getRelated(ticker: string): string[] {
   return (RELATED[ticker] ?? FALLBACK_RELATED).filter(r => r !== ticker).slice(0, 5)
 }
+
+// Guías de value investing relevantes para cada ticker
+const RELATED_GUIDES: Record<string, { slug: string; label: string }[]> = {
+  AAPL:  [{ slug: 'tipos-de-moat', label: 'Tipos de moat' }, { slug: 'buffett-criterios', label: '♥ Criterios Buffett' }, { slug: 'flujo-de-caja-libre', label: 'FCF' }],
+  MSFT:  [{ slug: 'como-analizar-saas', label: 'Analizar SaaS' }, { slug: 'tipos-de-moat', label: 'Tipos de moat' }, { slug: 'flujo-de-caja-libre', label: 'FCF' }],
+  GOOGL: [{ slug: 'tipos-de-moat', label: 'Tipos de moat' }, { slug: 'precio-vs-valor', label: 'Precio vs valor' }, { slug: 'flujo-de-caja-libre', label: 'FCF' }],
+  AMZN:  [{ slug: 'como-analizar-saas', label: 'Analizar SaaS' }, { slug: 'flujo-de-caja-libre', label: 'FCF' }, { slug: 'errores-comunes-value-investing', label: 'Errores comunes' }],
+  META:  [{ slug: 'tipos-de-moat', label: 'Tipos de moat' }, { slug: 'margen-de-seguridad', label: 'Margen de seguridad' }, { slug: 'precio-vs-valor', label: 'Precio vs valor' }],
+  NVDA:  [{ slug: 'tipos-de-moat', label: 'Tipos de moat' }, { slug: 'ciclos-howard-marks', label: '♠ Ciclos Marks' }, { slug: 'psicologia-del-inversor', label: 'Psicología del inversor' }],
+  TSLA:  [{ slug: 'precio-vs-valor', label: 'Precio vs valor' }, { slug: 'ciclos-howard-marks', label: '♠ Ciclos Marks' }, { slug: 'errores-comunes-value-investing', label: 'Errores comunes' }],
+  JPM:   [{ slug: 'como-analizar-bancos', label: 'Analizar bancos' }, { slug: 'deuda-en-value-investing', label: 'Deuda en inversión' }, { slug: 'buffett-criterios', label: '♥ Criterios Buffett' }],
+  V:     [{ slug: 'tipos-de-moat', label: 'Tipos de moat' }, { slug: 'flujo-de-caja-libre', label: 'FCF' }, { slug: 'interes-compuesto', label: 'Interés compuesto' }],
+  KO:    [{ slug: 'buffett-criterios', label: '♥ Criterios Buffett' }, { slug: 'tipos-de-moat', label: 'Tipos de moat' }, { slug: 'margen-de-seguridad', label: 'Margen de seguridad' }],
+}
+const FALLBACK_GUIDES = [{ slug: 'buffett-criterios', label: '♥ Criterios Buffett' }, { slug: 'flujo-de-caja-libre', label: 'FCF' }, { slug: 'margen-de-seguridad', label: 'Margen de seguridad' }]
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 export async function generateMetadata(
@@ -407,6 +423,52 @@ export default async function AnalisisPage(
           </div>
         </section>
 
+        {/* ── Sobre la empresa ── */}
+        {COMPANY_PROFILES[t] && (() => {
+          const profile = COMPANY_PROFILES[t]
+          return (
+            <>
+              <Divider />
+              <section>
+                <h2 className="text-base font-semibold mb-4" style={{ color: '#C9A84C', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+                  Sobre la empresa
+                </h2>
+
+                {/* Meta row */}
+                <div className="flex flex-wrap gap-3 mb-5">
+                  {[
+                    { label: 'Fundada', value: profile.founded },
+                    { label: 'Sede', value: profile.headquarters },
+                    { label: 'Sector', value: profile.sector },
+                  ].map(({ label, value }) => (
+                    <div key={label} className="px-3 py-1.5 rounded-lg text-xs" style={{ background: 'rgba(7,43,24,0.5)', border: '1px solid rgba(201,168,76,0.08)' }}>
+                      <span style={{ color: '#4A5A72' }}>{label}: </span>
+                      <span style={{ color: '#B4C0D4' }}>{value}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Intro paragraphs */}
+                <div className="space-y-3 text-sm leading-relaxed mb-5" style={{ color: '#B4C0D4' }}>
+                  {profile.intro.map((p, i) => <p key={i}>{p}</p>)}
+                </div>
+
+                {/* Business model */}
+                <div className="rounded-lg p-4 mb-4" style={{ background: 'rgba(7,43,24,0.5)', border: '1px solid rgba(201,168,76,0.08)' }}>
+                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: 'rgba(201,168,76,0.5)' }}>Modelo de negocio</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#8A9A85' }}>{profile.businessModel}</p>
+                </div>
+
+                {/* Value investor angle */}
+                <div className="rounded-lg p-4" style={{ background: 'rgba(7,43,24,0.4)', border: '1px solid rgba(201,168,76,0.12)' }}>
+                  <p className="text-xs uppercase tracking-widest mb-2" style={{ color: 'rgba(201,168,76,0.5)' }}>Perspectiva value investing</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#8A9A85' }}>{profile.valueInvestorAngle}</p>
+                </div>
+              </section>
+            </>
+          )
+        })()}
+
         {/* ── CEDEAR ── */}
         {analysis.cedear && (
           <>
@@ -462,6 +524,35 @@ export default async function AnalisisPage(
             </Link>
           </div>
         </section>
+
+        {/* ── Guías relacionadas ── */}
+        {(RELATED_GUIDES[t] ?? FALLBACK_GUIDES).length > 0 && (
+          <section>
+            <h2 className="text-xs uppercase tracking-widest mb-4"
+              style={{ color: 'rgba(201,168,76,0.5)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+              Guías de value investing
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {(RELATED_GUIDES[t] ?? FALLBACK_GUIDES).map(({ slug, label }) => (
+                <Link
+                  key={slug}
+                  href={`/guias/${slug}`}
+                  className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+                  style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}
+                >
+                  {label}
+                </Link>
+              ))}
+              <Link
+                href="/guias"
+                className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+                style={{ color: '#4A5A65', borderColor: 'rgba(201,168,76,0.08)', background: 'rgba(7,43,24,0.3)' }}
+              >
+                Ver todas las guías →
+              </Link>
+            </div>
+          </section>
+        )}
 
         <Divider />
 

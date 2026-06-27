@@ -66,7 +66,7 @@ export default function OCFPage() {
 
         <section>
           <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
-            Por qué OCF > Net Income (casi siempre)
+            Por qué OCF &gt; Net Income (casi siempre)
           </h2>
           <p>
             Una empresa reporta $100M en net income. Pero OCF es $120M. ¿Por qué? Porque depreciación fue $30M (gasto no-efectivo que se sumó de vuelta), y cambios de working capital fueron solo $10M.

@@ -1,0 +1,16 @@
+
+> omaha-bridge-group@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.2 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.8.136:3000
+- Environments: .env.local
+✓ Ready in 6.4s
+
+○ Compiling / ...
+ GET / 200 in 8.9s (next.js: 8.1s, application-code: 803ms)
+○ Compiling /_not-found/page ...
+ POST /api/cronograma/generar-30d 404 in 55s (next.js: 52s, application-code: 2.8s)
+✓ Finished filesystem cache database compaction in 11.0s
+ POST /api/cronograma/generar-30d 404 in 1565ms (next.js: 816ms, application-code: 749ms)

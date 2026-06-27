@@ -69,7 +69,28 @@
       "Bash(awk '{print $5}')",
       "Bash(xargs -r taskkill /PID /F)",
       "Bash(curl -s --retry 10 --retry-delay 1 --retry-connrefused http://localhost:3000/)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Skill(schedule)",
+      "Bash(git diff *)",
+      "Bash(Get-Content C:\\\\dev\\\\Omaha-Bridge-Group\\\\.env.local)",
+      "Bash(Select-String -Pattern \"ADSENSE|NEXT_PUBLIC_ADSENSE|GOOGLE\")",
+      "Bash(vercel env *)",
+      "Bash(vercel link *)",
+      "Bash(vercel *)",
+      "WebFetch(domain:www.dataroma.com)",
+      "Bash(Get-ChildItem -Path \"C:\\\\dev\\\\Omaha-Bridge-Group\" -Force)",
+      "Bash(Select-Object Name, FullName)",
+      "Bash(pkill -f \"npm run dev\")",
+      "Bash(git reset *)",
+      "Bash(Get-ChildItem -Path \"src/components\" -Force)",
+      "Bash(Select-Object Name)",
+      "Bash(Get-ChildItem -Path \"src\" -Force)",
+      "Bash(chromium-cli --headless --screenshot --output=/tmp/analysis.png \"http://localhost:3001/analisis/AAPL\")",
+      "Bash(git restore *)",
+      "WebFetch(domain:omaha-bridge-group.vercel.app)",
+      "Skill(run)",
+      "Bash(chromium-cli *)",
+      "Bash(pkill *)"
     ]
   }
 }

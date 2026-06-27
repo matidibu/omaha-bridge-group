@@ -23,7 +23,7 @@ export default function EvEbitdaPage() {
       publishDate: '2026-05-15',
       url: 'https://omaha-bridge-group.vercel.app/guias/ev-ebitda',
       image: 'https://omaha-bridge-group.vercel.app/og-guias.png',
-      keywords: 'evurl: 'https://omaha-bridge-group.vercel.app/guias/ev-ebitda',ebitda, múltiplos, valuación relativa',
+      keywords: 'ev-ebitda, múltiplos, valuación relativa',
       readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
