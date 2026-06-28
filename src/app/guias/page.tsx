@@ -184,7 +184,7 @@ export default function GuiasIndexPage() {
           Guías de value investing
         </h1>
         <p className="text-sm max-w-xl mx-auto leading-relaxed" style={{ color: '#6A8A75' }}>
-          Treinta guías escritas en español que explican los métodos de los 6 maestros, los conceptos esenciales y las estrategias para analizar cualquier acción con criterios fundamentales.
+          Cuarenta y ocho guías escritas en español que explican los métodos de los 6 maestros, conceptos esenciales, estrategias de valoración, análisis sectorial y el pensamiento detrás de cada decisión de inversión.
         </p>
       </section>
 
@@ -259,13 +259,98 @@ export default function GuiasIndexPage() {
             { slug: 'dcf-valoracion', title: 'DCF: cómo valorar una empresa', desc: 'La fórmula de Buffett: proyectar flujo de caja libre futuro y descontarlo. Cómo calcular valor intrínseco.', readTime: '9 min', tag: 'Valoración' },
             { slug: 'roe-roa-roic', title: 'ROE, ROA y ROIC', desc: 'Tres métricas de rentabilidad. Cuál mide qué, cuál es trampa, por qué Buffett prefiere ROIC.', readTime: '8 min', tag: 'Métricas' },
             { slug: 'ev-ebitda', title: 'EV/EBITDA: cómo usarlo correctamente', desc: 'El múltiplo que todos usan. Cuándo es útil, dónde falla, y por qué necesitas FCF después.', readTime: '8 min', tag: 'Múltiplos' },
+            { slug: 'ebitda-vs-fcf', title: 'Por qué el CEO te miente con EBITDA', desc: 'La métrica que hace brillar a los CEOs: EBITDA. La que revela la realidad: FCF. La diferencia entre ilusión y dinero real.', readTime: '7 min', tag: 'Engaños' },
+            { slug: 'ocf-operating-cash-flow', title: 'El dinero que importa: OCF vs earnings', desc: 'OCF es dinero que realmente circuló. Earnings es lo que la contabilidad dice. Cómo ver la diferencia.', readTime: '7 min', tag: 'Flujo de caja' },
+            { slug: 'earnings-vs-cash', title: 'La ilusión de $1B en ganancias sin dinero', desc: 'Earnings: lo que la contabilidad dice. Cash: lo que realmente hay. Cómo detectar la trampa.', readTime: '7 min', tag: 'Estados financieros' },
+            { slug: 'price-to-book-pb', title: 'El secreto de Graham: comprar con descuento', desc: 'P/B menor a 1 = ganga... a veces. Cómo diferenciar oportunidad de trampa.', readTime: '7 min', tag: 'Múltiplos' },
+            { slug: 'price-to-sales-ps', title: 'La métrica que nadie puede falsificar', desc: 'P/S es dinero real: lo que entró al banco. Earnings son contabilidad. Por qué P/S bajo es más seguro.', readTime: '7 min', tag: 'Múltiplos' },
             { slug: 'dividendos-value-investing', title: 'Dividendos en value investing', desc: 'No todos los dividendos son iguales. Dividend yield, payout ratio, sostenibilidad. Cuándo confiar.', readTime: '8 min', tag: 'Estrategia' },
+            { slug: 'capex-mantenimiento-vs-crecimiento', title: 'Cómo los CEOs esconden gastos enormes', desc: '"Capex de crecimiento" = gasto que no genera dinero pero lo llaman inversión. Cómo detectar la trampa.', readTime: '7 min', tag: 'Análisis' },
+          ].map(({ slug, title, desc, readTime, tag }) => (
+            <Link
+              key={slug}
+              href={`/guias/${slug}`}
+              className="group rounded-xl border p-5 flex flex-col gap-2 transition-all hover:border-[#C9A84C]/30 hover:bg-[#C9A84C]/5"
+              style={{ borderColor: 'rgba(201,168,76,0.12)', background: 'rgba(7,43,24,0.3)' }}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
+                  {tag}
+                </span>
+                <span className="text-xs" style={{ color: '#3A5A45' }}>{readTime}</span>
+              </div>
+              <h3 className="font-bold text-base leading-tight group-hover:text-[#C9A84C] transition-colors"
+                style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5' }}>
+                {title}
+              </h3>
+              <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
+              <span className="text-xs mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Análisis sectorial ── */}
+      <section className="mb-14">
+        <h2 className="text-xs uppercase tracking-widest mb-5 pb-2"
+          style={{ color: 'rgba(201,168,76,0.5)', borderBottom: '1px solid rgba(201,168,76,0.1)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+          Análisis sectorial
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { slug: 'como-analizar-consumo-masivo', title: 'Cómo analizar consumo masivo', desc: 'Marca, moat, márgenes. Las características de empresas como Coca-Cola que las hacen valiosas.', readTime: '9 min', tag: 'Sectorial' },
+            { slug: 'como-analizar-retail', title: 'La tienda que muere en 6 meses', desc: 'Retail: ventas altas, dinero cero. Cómo los inventarios mueren en los estantes. La métrica que predice el colapso.', readTime: '8 min', tag: 'Sectorial' },
+            { slug: 'como-analizar-real-estate', title: 'El dividendo del REIT que desaparece', desc: 'Rendimiento del 7%... pero viene del endeudamiento. Cómo diferenciar distribuciones reales de ilusiones.', readTime: '8 min', tag: 'Sectorial' },
+            { slug: 'como-analizar-telecom', title: 'El cliente que se va: el churn', desc: 'Una telecom pierde 2% de clientes mensual = 24% anual. El negocio del cliente que huye.', readTime: '8 min', tag: 'Sectorial' },
+            { slug: 'como-analizar-mineria', title: 'Oro brillante hoy, quiebra mañana', desc: 'Minería a $1500/oz gana, a $900/oz pierde. El ciclo define todo. Cómo diferenciar minas que sobreviven.', readTime: '9 min', tag: 'Sectorial' },
+            { slug: 'como-analizar-energia', title: 'Oil a $150 ganas, a $40 pierdes todo', desc: 'Energía = ciclos extremos. Cómo sobrevivir. Cómo invertir sin quedar destruido cuando el precio cae.', readTime: '9 min', tag: 'Sectorial' },
+            { slug: 'como-analizar-seguros', title: 'El dinero gratis de Buffett', desc: 'Reciben dinero hoy, pagan mañana. Ese "float" es dinero gratis mientras se invierte. Por qué Buffett ama seguros.', readTime: '8 min', tag: 'Sectorial' },
+            { slug: 'como-analizar-bancos', title: 'Cómo analizar bancos', desc: 'NIM, ROE, ratio de eficiencia, NPL y capital Tier 1: las métricas específicas del sector financiero.', readTime: '9 min', tag: 'Sectorial' },
+            { slug: 'como-analizar-saas', title: 'Cómo analizar empresas SaaS', desc: 'ARR, churn, Net Revenue Retention y LTV/CAC: el vocabulario y las métricas del software como servicio.', readTime: '9 min', tag: 'Sectorial' },
+            { slug: 'como-analizar-empresas-energeticas', title: 'Cómo analizar empresas energéticas', desc: 'Lifting cost, reservas, FCF en distintos escenarios de precio: cómo analizar petroleras y gasistas.', readTime: '8 min', tag: 'Sectorial' },
+          ].map(({ slug, title, desc, readTime, tag }) => (
+            <Link
+              key={slug}
+              href={`/guias/${slug}`}
+              className="group rounded-xl border p-5 flex flex-col gap-2 transition-all hover:border-[#C9A84C]/30 hover:bg-[#C9A84C]/5"
+              style={{ borderColor: 'rgba(201,168,76,0.12)', background: 'rgba(7,43,24,0.3)' }}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
+                  {tag}
+                </span>
+                <span className="text-xs" style={{ color: '#3A5A45' }}>{readTime}</span>
+              </div>
+              <h3 className="font-bold text-base leading-tight group-hover:text-[#C9A84C] transition-colors"
+                style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5' }}>
+                {title}
+              </h3>
+              <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
+              <span className="text-xs mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Estrategia e inversión avanzada ── */}
+      <section className="mb-14">
+        <h2 className="text-xs uppercase tracking-widest mb-5 pb-2"
+          style={{ color: 'rgba(201,168,76,0.5)', borderBottom: '1px solid rgba(201,168,76,0.1)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+          Estrategia e inversión avanzada
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
             { slug: 'small-caps', title: 'Small caps: oportunidades y riesgos', desc: 'Empresas pequeñas, ignoradas por fondos masivos. Dónde están las ineficiencias de mercado.', readTime: '9 min', tag: 'Estrategia' },
             { slug: 'value-investing-argentina', title: '🇦🇷 Value investing en Argentina', desc: 'Value investing en contexto local. Dólares, CEDEARs, ciclos políticos y macro volatilidad.', readTime: '10 min', tag: 'Local' },
+            { slug: 'selectividad-concentracion', title: 'Menos es más: concentración vs diversificación', desc: '5 acciones excelentes vencen 100 mediocres. Cómo la selectividad multiplica retornos.', readTime: '8 min', tag: 'Estrategia' },
             { slug: 'riesgo-vs-volatilidad', title: 'Riesgo vs volatilidad', desc: 'No son lo mismo. Volatilidad es oportunidad para quien tiene disciplina. El riesgo es si quiebra.', readTime: '8 min', tag: 'Mentalidad' },
             { slug: 'analisis-tecnico-vs-fundamental', title: 'Análisis técnico vs fundamental', desc: 'Uno mira gráficos. Otro mira negocios. Por qué Buffett ignora los charts.', readTime: '7 min', tag: 'Métodos' },
             { slug: 'el-largo-plazo', title: 'El largo plazo como ventaja', desc: 'Buffett 99% de su fortuna al interés compuesto en 60 años. Por qué el tiempo amplifica ventajas.', readTime: '8 min', tag: 'Mentalidad' },
-            { slug: 'como-analizar-consumo-masivo', title: 'Cómo analizar consumo masivo', desc: 'Marca, moat, márgenes. Las características de empresas como Coca-Cola que las hacen valiosas.', readTime: '9 min', tag: 'Sectorial' },
+            { slug: 'spinoffs-oportunidades', title: 'Cuando 1+1=3: spinoffs', desc: 'Una compañía se divide, el mercado infravalúa la pequeña, tú ganas la diferencia. Arbitrage de spinoffs.', readTime: '8 min', tag: 'Oportunidades' },
+            { slug: 'fusiones-adquisiciones', title: 'El spread de la fusión: dinero esperando', desc: 'Empresa A ofrece $100, mercado cotiza a $97. El $3 es tuyo si el deal cierra. Cómo evaluar el riesgo.', readTime: '8 min', tag: 'Oportunidades' },
+            { slug: 'empresas-defensivas', title: 'Tu paraguas en la tormenta', desc: 'Gente sigue comprando jabón en crisis. Esas empresas son defensa cuando el mercado colapsa.', readTime: '8 min', tag: 'Mentalidad' },
+            { slug: 'altman-z-score', title: 'Los números que predicen la quiebra', desc: 'Z-Score: 72% de precisión prediciendo quiebras un año antes. Los números que predice Altman.', readTime: '8 min', tag: 'Riesgo' },
+            { slug: 'compounding-variable-del-tiempo', title: 'La paciencia se paga: $10k → $1M', desc: 'El secreto que Buffett repite hace 60 años. No es el retorno anual, es el número de años.', readTime: '8 min', tag: 'Mentalidad' },
           ].map(({ slug, title, desc, readTime, tag }) => (
             <Link
               key={slug}
