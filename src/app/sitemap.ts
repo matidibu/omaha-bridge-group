@@ -19,6 +19,8 @@ const guides = [
 
 const tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META', 'NVDA', 'TSLA', 'JPM', 'V', 'KO']
 
+export const revalidate = 3600 // Cache sitemap for 1 hour, refreshed every hour
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const today = new Date().toISOString().split('T')[0]
 
