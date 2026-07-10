@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Logo } from '@/components/ui/Logo'
 
 export const metadata = {
-  title: 'Política de Privacidad',
+  title: 'Política de privacidad',
   description: 'Política de privacidad y uso de datos de Omaha Bridge Group.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/privacidad' },
 }

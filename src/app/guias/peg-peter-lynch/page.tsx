@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: "Lynch's revenge: cómo ganar buscando donde nadie mira | Omaha Bridge Group",
+  title: "Lynch's revenge: cómo ganar buscando donde nadie mira",
   description: 'El ratio PEG que Lynch usó para batir el mercado 13 años seguidos. Por qué sigue funcionando cuando el P/E falla.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/peg-peter-lynch' },
   openGraph: {
