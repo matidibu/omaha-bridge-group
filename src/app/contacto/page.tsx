@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Logo } from '@/components/ui/Logo'
 
 export const metadata: Metadata = {
-  title: 'Contacto — Omaha Bridge Group',
+  title: 'Contacto',
   description: 'Ponte en contacto con el equipo de Omaha Bridge Group. Preguntas, sugerencias, reportes de errores.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/contacto' },
 }

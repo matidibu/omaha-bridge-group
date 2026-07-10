@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Nosotros — Omaha Bridge Group',
+  title: 'Nosotros',
   description: 'Conocé el proyecto detrás de Omaha Bridge Group: qué es, cómo funciona y quién lo desarrolla.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/nosotros' },
 }
