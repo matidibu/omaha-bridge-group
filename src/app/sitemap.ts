@@ -1,79 +1,51 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
 
-const base = 'https://omaha-bridge-group.vercel.app'
+const BASE_URL = 'https://omaha-bridge-group.vercel.app'
 
-// 10 showcase tickers — cached analysis pages indexed by Google.
-// Kept intentionally small: users who search other tickers find the hub
-// and are directed to the live analysis, preserving the interactive experience.
-const CACHED_TICKERS = [
-  'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META',
-  'NVDA', 'TSLA', 'JPM',   'V',    'KO',
+const guides = [
+  'buffett-criterios', 'magic-formula-greenblatt', 'peg-peter-lynch', 'antifragilidad-taleb',
+  'ciclos-howard-marks', 'calidad-institucional-fink', 'flujo-de-caja-libre', 'margen-de-seguridad',
+  'tipos-de-moat', 'precio-vs-valor', 'interes-compuesto', 'psicologia-del-inversor',
+  'errores-comunes-value-investing', 'deuda-en-value-investing', 'como-leer-un-balance', 'como-evaluar-un-ceo',
+  'como-analizar-bancos', 'como-analizar-saas', 'como-analizar-empresas-energeticas', 'cedears-guia-completa',
+  'dcf-valoracion', 'roe-roa-roic', 'ev-ebitda', 'dividendos-value-investing', 'small-caps',
+  'value-investing-argentina', 'riesgo-vs-volatilidad', 'analisis-tecnico-vs-fundamental', 'el-largo-plazo',
+  'como-analizar-consumo-masivo', 'ebitda-vs-fcf', 'como-analizar-retail', 'como-analizar-real-estate',
+  'como-analizar-telecom', 'como-analizar-mineria', 'ocf-operating-cash-flow', 'price-to-book-pb',
+  'price-to-sales-ps', 'altman-z-score', 'compounding-variable-del-tiempo', 'selectividad-concentracion',
+  'spinoffs-oportunidades', 'fusiones-adquisiciones', 'empresas-defensivas', 'earnings-vs-cash',
+  'capex-mantenimiento-vs-crecimiento', 'como-analizar-seguros', 'como-analizar-energia',
 ]
 
-// 30 guides on value investing
-const GUIDES = [
-  // Los 6 maestros
-  'buffett-criterios',
-  'magic-formula-greenblatt',
-  'peg-peter-lynch',
-  'antifragilidad-taleb',
-  'ciclos-howard-marks',
-  'calidad-institucional-fink',
-  // Conceptos esenciales
-  'flujo-de-caja-libre',
-  'margen-de-seguridad',
-  'tipos-de-moat',
-  'precio-vs-valor',
-  'interes-compuesto',
-  'psicologia-del-inversor',
-  'errores-comunes-value-investing',
-  'deuda-en-value-investing',
-  'como-leer-un-balance',
-  'como-evaluar-un-ceo',
-  'como-analizar-bancos',
-  'como-analizar-saas',
-  'como-analizar-empresas-energeticas',
-  'cedears-guia-completa',
-  // Valoración y estrategia
-  'dcf-valoracion',
-  'roe-roa-roic',
-  'ev-ebitda',
-  'dividendos-value-investing',
-  'small-caps',
-  'value-investing-argentina',
-  'riesgo-vs-volatilidad',
-  'analisis-tecnico-vs-fundamental',
-  'el-largo-plazo',
-  'como-analizar-consumo-masivo',
-]
+const tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META', 'NVDA', 'TSLA', 'JPM', 'V', 'KO']
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Use fixed date without milliseconds to avoid Google parser issues
-  const pubDate = new Date('2026-06-03')
+  const today = new Date().toISOString().split('T')[0]
 
-  const staticRoutes: MetadataRoute.Sitemap = [
-    { url: base,                          lastModified: pubDate, changeFrequency: 'daily',   priority: 1.0 },
-    { url: `${base}/guias`,               lastModified: pubDate, changeFrequency: 'weekly',  priority: 0.95 },
-    { url: `${base}/ideas`,               lastModified: pubDate, changeFrequency: 'daily',   priority: 0.9 },
-    { url: `${base}/cartas-en-mesa`,      lastModified: pubDate, changeFrequency: 'daily',   priority: 0.85 },
-    { url: `${base}/analisis`,            lastModified: pubDate, changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${base}/nosotros`,            lastModified: pubDate, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/privacidad`,          lastModified: pubDate, changeFrequency: 'monthly', priority: 0.3 },
+  const staticPages: MetadataRoute.Sitemap = [
+    { url: BASE_URL, lastModified: today, changeFrequency: 'weekly', priority: 1 },
+    { url: `${BASE_URL}/guias`, lastModified: today, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${BASE_URL}/ideas`, lastModified: today, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/cartas-en-mesa`, lastModified: today, changeFrequency: 'daily', priority: 0.85 },
+    { url: `${BASE_URL}/analisis`, lastModified: today, changeFrequency: 'daily', priority: 0.8 },
+    { url: `${BASE_URL}/nosotros`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE_URL}/contacto`, lastModified: today, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE_URL}/privacidad`, lastModified: today, changeFrequency: 'monthly', priority: 0.3 },
   ]
 
-  const guideRoutes: MetadataRoute.Sitemap = GUIDES.map((slug) => ({
-    url: `${base}/guias/${slug}`,
-    lastModified: pubDate,
-    changeFrequency: 'monthly',
+  const guidePages = guides.map((guide) => ({
+    url: `${BASE_URL}/guias/${guide}`,
+    lastModified: today,
+    changeFrequency: 'monthly' as const,
     priority: 0.9,
   }))
 
-  const tickerRoutes: MetadataRoute.Sitemap = CACHED_TICKERS.map((ticker) => ({
-    url: `${base}/analisis/${ticker}`,
-    lastModified: pubDate,
-    changeFrequency: 'daily',
+  const tickerPages = tickers.map((ticker) => ({
+    url: `${BASE_URL}/analisis/${ticker}`,
+    lastModified: today,
+    changeFrequency: 'daily' as const,
     priority: 0.85,
   }))
 
-  return [...staticRoutes, ...guideRoutes, ...tickerRoutes]
+  return [...staticPages, ...guidePages, ...tickerPages]
 }
