@@ -27,7 +27,7 @@ export default function SpinoffsPage() {
       readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ★ &nbsp; Oportunidades · M&A
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function SpinoffsPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Cuando una compañía se divide en dos, el mercado típicamente infravalúa la empresa más pequeña que emerge. Los grandes fondos no pueden comprarla (es muy pequeña). El mercado no la cubre (es demasiado nueva). Eso genera oportunidad.

@@ -27,7 +27,7 @@ export default function BuffettCriteriosPage() {
       readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ♥ &nbsp; Warren Buffett · El Anfitrión
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function BuffettCriteriosPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Warren Buffett no analiza acciones. Analiza negocios. Esa distinción, aparentemente menor, define su filosofía desde que leyó <em>Security Analysis</em> de Benjamin Graham a los 19 años y decidió que el precio de mercado era sólo una opinión — mientras que el valor del negocio era un hecho que se podía calcular.
@@ -150,7 +150,7 @@ export default function BuffettCriteriosPage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Otras guías</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Otras guías</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'magic-formula-greenblatt', label: '♦ Greenblatt' },
@@ -160,7 +160,7 @@ export default function BuffettCriteriosPage() {
             { slug: 'calidad-institucional-fink', label: '✦ Fink' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

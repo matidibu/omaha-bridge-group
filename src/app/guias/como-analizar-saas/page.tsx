@@ -27,7 +27,7 @@ export default function ComoAnalizarSaasPage() {
       readingTimeMinutes: 9,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           Conceptos esenciales · Análisis sectorial
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function ComoAnalizarSaasPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           El software como servicio (<span translate="no">SaaS</span>) cambió fundamentalmente la economía del negocio de software. En lugar de vender licencias únicas, las empresas cobran suscripciones recurrentes. Eso transforma el estado de resultados, hace irrelevantes algunas métricas tradicionales, y convierte otras — desconocidas para la mayoría de los inversores — en los indicadores centrales del negocio.
@@ -152,7 +152,7 @@ export default function ComoAnalizarSaasPage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Guías relacionadas</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Guías relacionadas</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'buffett-criterios', label: '♥ Criterios Buffett' },
@@ -162,7 +162,7 @@ export default function ComoAnalizarSaasPage() {
             { slug: 'flujo-de-caja-libre', label: 'Flujo de caja libre' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

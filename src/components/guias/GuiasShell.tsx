@@ -53,21 +53,21 @@ export function GuiasShell({ children, backHref = '/guias', backLabel = '← Gu�
         />
       )}
       <header style={{ borderBottom: '1px solid rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.9)' }}
-        className="px-4 py-3 flex items-center justify-between sticky top-0 z-10 backdrop-blur">
-        <Link href={backHref} className="text-xs uppercase tracking-wider hover:text-[#C9A84C] transition-colors"
+        className="px-3 md:px-4 py-3 flex items-center justify-between sticky top-0 z-10 backdrop-blur">
+        <Link href={backHref} className="text-xs md:text-sm uppercase tracking-wider hover:text-[#C9A84C] transition-colors"
           style={{ color: '#6A7A95' }}>
           {backLabel}
         </Link>
-        <span className="text-xs uppercase tracking-widest" style={{ color: 'rgba(201,168,76,0.6)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+        <span className="text-xs md:text-sm uppercase tracking-widest" style={{ color: 'rgba(201,168,76,0.6)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           Omaha Bridge Group
         </span>
-        <Link href="/" className="text-xs px-3 py-1 rounded-full border transition-colors hover:bg-[#C9A84C]/10"
+        <Link href="/" className="text-xs md:text-sm px-3 py-1 rounded-full border transition-colors hover:bg-[#C9A84C]/10"
           style={{ color: '#C9A84C', borderColor: 'rgba(201,168,76,0.3)' }}>
-          Analizar →
+          <span className="hidden sm:inline">Analizar →</span><span className="sm:hidden">→</span>
         </Link>
       </header>
 
-      <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-12">
+      <main className="flex-1 max-w-3xl mx-auto w-full px-4 md:px-6 py-8 md:py-12">
         {articleMeta && (
           <p className="text-xs mb-6" style={{ color: '#3A5A45' }}>
             Actualizado: {new Date(articleMeta.publishDate).toLocaleDateString('es-ES', { month: 'long', year: 'numeric' })}
@@ -77,18 +77,14 @@ export function GuiasShell({ children, backHref = '/guias', backLabel = '← Gu�
         {articleMeta && <AdUnit slot="6317829450" />}
       </main>
 
-      <footer style={{ borderTop: '1px solid rgba(201,168,76,0.10)' }} className="px-6 py-5">
-        <p className="text-center text-xs" style={{ color: '#4A5A72' }}>
-          © 2025 <span translate="no">Omaha Bridge Group</span>. Todos los derechos reservados.{' '}
+      <footer style={{ borderTop: '1px solid rgba(201,168,76,0.10)' }} className="px-4 md:px-6 py-5">
+        <p className="text-center text-xs md:text-sm" style={{ color: '#4A5A72' }}>
+          © 2025 <span translate="no">Omaha Bridge Group</span>. {' '}
           <Link href="/" className="hover:text-[#C9A84C] transition-colors" style={{ color: 'rgba(201,168,76,0.45)' }}>Inicio</Link>
           {' · '}
           <Link href="/guias" className="hover:text-[#C9A84C] transition-colors" style={{ color: 'rgba(201,168,76,0.45)' }}>Guías</Link>
           {' · '}
-          <Link href="/analisis" className="hover:text-[#C9A84C] transition-colors" style={{ color: 'rgba(201,168,76,0.45)' }}>Análisis</Link>
-          {' · '}
-          <Link href="/cartas-en-mesa" className="hover:text-[#C9A84C] transition-colors" style={{ color: 'rgba(201,168,76,0.45)' }}>Cartas en Mesa</Link>
-          {' · '}
-          <Link href="/nosotros" className="hover:text-[#C9A84C] transition-colors" style={{ color: 'rgba(201,168,76,0.45)' }}>Nosotros</Link>
+          <Link href="/contacto" className="hover:text-[#C9A84C] transition-colors" style={{ color: 'rgba(201,168,76,0.45)' }}>Contacto</Link>
           {' · '}
           <Link href="/privacidad" className="hover:text-[#C9A84C] transition-colors" style={{ color: 'rgba(201,168,76,0.45)' }}>Privacidad</Link>
         </p>

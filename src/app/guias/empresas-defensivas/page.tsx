@@ -27,7 +27,7 @@ export default function DefensiveStocksPage() {
       readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ♥ &nbsp; Estrategia · Protección
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function DefensiveStocksPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Una acción defensiva es un negocio donde la demanda es relativamente constante sin importar ciclo económico. Ingresos bajan menos en crisis. Precios caen menos. Volatilidad baja.

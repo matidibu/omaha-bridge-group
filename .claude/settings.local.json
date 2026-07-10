@@ -90,7 +90,10 @@
       "WebFetch(domain:omaha-bridge-group.vercel.app)",
       "Skill(run)",
       "Bash(chromium-cli *)",
-      "Bash(pkill *)"
+      "Bash(pkill *)",
+      "PowerShell(& \"C:\\\\Users\\\\matia\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--dev-Omaha-Bridge-Group\\\\73d87640-834d-4941-95d4-316d30394e2f\\\\scratchpad\\\\indexnow-submit.ps1\")",
+      "PowerShell(head *)",
+      "Bash(xargs ls -lh)"
     ]
   }
 }

@@ -27,7 +27,7 @@ export default function CapexPage() {
       readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ♣ &nbsp; Análisis · Capex
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function CapexPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Capex de mantenimiento es inversión que necesitás hacer o el negocio cae. Capex de crecimiento es inversión que hacés para escalar. La línea entre ambas es borrosa y los CEOs la aprovechan.
@@ -96,7 +96,7 @@ export default function CapexPage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Análisis de inversión</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Análisis de inversión</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'flujo-de-caja-libre', label: 'FCF' },
@@ -104,7 +104,7 @@ export default function CapexPage() {
             { slug: 'como-leer-un-balance', label: 'Balance' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

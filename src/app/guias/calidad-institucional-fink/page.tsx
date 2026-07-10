@@ -27,7 +27,7 @@ export default function CalidadInstitucionalFinkPage() {
       readingTimeMinutes: 6,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ✦ &nbsp; Larry Fink · El Institucional
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function CalidadInstitucionalFinkPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Larry Fink co-fundó <span translate="no">BlackRock</span> en 1988, desde una única habitación en Manhattan, y lo construyó hasta convertirlo en el gestor de activos más grande del mundo, con más de 10 billones de dólares bajo gestión. Cuando Fink habla, los CEOs de las empresas más grandes del mundo escuchan — porque <span translate="no">BlackRock</span> es accionista de casi todas ellas.
@@ -104,8 +104,8 @@ export default function CalidadInstitucionalFinkPage() {
               },
             ].map(({ criterion, detail }) => (
               <div key={criterion} className="rounded-lg p-3" style={{ background: 'rgba(7,43,24,0.5)', border: '1px solid rgba(167,139,250,0.08)' }}>
-                <div className="text-xs font-semibold mb-1" style={{ color: COLOR }}>{criterion}</div>
-                <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{detail}</p>
+                <div className="text-sm md:text-base font-semibold mb-1" style={{ color: COLOR }}>{criterion}</div>
+                <p className="text-sm md:text-base leading-relaxed" style={{ color: '#5A7A65' }}>{detail}</p>
               </div>
             ))}
           </div>
@@ -146,7 +146,7 @@ export default function CalidadInstitucionalFinkPage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Otras guías</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Otras guías</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'buffett-criterios', label: '♥ Buffett' },
@@ -156,7 +156,7 @@ export default function CalidadInstitucionalFinkPage() {
             { slug: 'ciclos-howard-marks', label: '♠ Marks' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

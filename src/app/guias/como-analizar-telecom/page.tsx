@@ -27,7 +27,7 @@ export default function AnalizarTelecomPage() {
       readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ★ &nbsp; Análisis Sectorial · Infraestructura
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function AnalizarTelecomPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Las telecomunicaciones parecen negocios de dinero fácil: cobran por mes, tienen clientes "atrapados". La verdad es más incómoda: el churn (cambio de proveedor) destruye ingresos, el capex nunca termina, y la tecnología cambia cada 5 años.
@@ -120,7 +120,7 @@ export default function AnalizarTelecomPage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Más análisis de infraestructura</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Más análisis de infraestructura</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'flujo-de-caja-libre', label: 'FCF' },
@@ -128,7 +128,7 @@ export default function AnalizarTelecomPage() {
             { slug: 'dividendos-value-investing', label: 'Dividendos' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

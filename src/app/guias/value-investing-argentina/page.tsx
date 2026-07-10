@@ -27,7 +27,7 @@ export default function ValueInvestingArgentinaPage() {
       readingTimeMinutes: 10,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           🇦🇷 Contexto local · Estrategia
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function ValueInvestingArgentinaPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Un value investor en USA proyecta FCF de una empresa a 10 años. En Argentina, proyectar a 3 años ya es optimista. La razón: variables macro que en países desarrollados son estables (tipo de cambio, inflación, estabilidad política) aquí son dinámicas y pueden destruir el mejor análisis fundamental en semanas.
@@ -108,7 +108,7 @@ export default function ValueInvestingArgentinaPage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Guías relacionadas</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Guías relacionadas</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'cedears-guia-completa', label: 'CEDEARs' },
@@ -118,7 +118,7 @@ export default function ValueInvestingArgentinaPage() {
             { slug: 'buffett-criterios', label: '♥ Criterios Buffett' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

@@ -27,7 +27,7 @@ export default function CiclosHowardMarksPage() {
       readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ♠ &nbsp; Howard Marks · El Estratega
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function CiclosHowardMarksPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Howard Marks co-fundó Oaktree Capital en 1995 y lo convirtió en uno de los fondos de deuda más respetados del mundo, con más de 180.000 millones de dólares bajo gestión. Su contribución al pensamiento inversor no es una fórmula ni un ratio: es una forma de pensar sobre el mercado como sistema cíclico.
@@ -100,7 +100,7 @@ export default function CiclosHowardMarksPage() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-4 mt-3">
             <div className="rounded-lg p-4" style={{ background: 'rgba(248,113,113,0.06)', border: '1px solid rgba(248,113,113,0.12)' }}>
-              <div className="text-xs font-semibold mb-2" style={{ color: '#f87171' }}>Señales de techo del ciclo</div>
+              <div className="text-sm md:text-base font-semibold mb-2" style={{ color: '#f87171' }}>Señales de techo del ciclo</div>
               <ul className="space-y-1.5 text-xs" style={{ color: '#7A8A95' }}>
                 <li>— Optimismo generalizado: &quot;los fundamentos justifican los precios&quot;</li>
                 <li>— IPOs de empresas sin ganancias a múltiplos altos</li>
@@ -110,7 +110,7 @@ export default function CiclosHowardMarksPage() {
               </ul>
             </div>
             <div className="rounded-lg p-4" style={{ background: 'rgba(46,196,126,0.06)', border: '1px solid rgba(46,196,126,0.12)' }}>
-              <div className="text-xs font-semibold mb-2" style={{ color: '#2EC47E' }}>Señales de piso del ciclo</div>
+              <div className="text-sm md:text-base font-semibold mb-2" style={{ color: '#2EC47E' }}>Señales de piso del ciclo</div>
               <ul className="space-y-1.5 text-xs" style={{ color: '#7A8A95' }}>
                 <li>— Pesimismo universal: &quot;todo va a seguir cayendo&quot;</li>
                 <li>— Empresas de calidad a 7-8x ganancias</li>
@@ -153,7 +153,7 @@ export default function CiclosHowardMarksPage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Otras guías</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Otras guías</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'buffett-criterios', label: '♥ Buffett' },
@@ -163,7 +163,7 @@ export default function CiclosHowardMarksPage() {
             { slug: 'calidad-institucional-fink', label: '✦ Fink' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

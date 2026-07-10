@@ -27,7 +27,7 @@ export default function DeudaEnValueInvestingPage() {
       readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           Conceptos esenciales · Análisis de riesgo
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function DeudaEnValueInvestingPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Existe una idea popular en las finanzas corporativas de que la deuda puede "optimizar" la estructura de capital de una empresa: reduce impuestos (los intereses son deducibles), amplifica el retorno sobre el capital propio y "disciplina" a la gerencia. Hay algo de verdad en eso. Pero para el inversor de largo plazo, la deuda tiene un costo que los modelos académicos suelen subestimar: aumenta la fragilidad ante eventos imprevistos.
@@ -139,7 +139,7 @@ export default function DeudaEnValueInvestingPage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Guías relacionadas</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Guías relacionadas</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'antifragilidad-taleb', label: '★ Taleb' },
@@ -149,7 +149,7 @@ export default function DeudaEnValueInvestingPage() {
             { slug: 'errores-comunes-value-investing', label: 'Errores comunes' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

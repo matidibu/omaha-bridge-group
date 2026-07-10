@@ -27,7 +27,7 @@ export default function PegLynchPage() {
       readingTimeMinutes: 7,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ♣ &nbsp; Peter Lynch · El Explorador
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function PegLynchPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Peter Lynch gestionó el Fondo Magellan de <span translate="no">Fidelity</span> entre 1977 y 1990. En esos trece años convirtió $18 millones en $14.000 millones, con un retorno anualizado del 29,2%. Es uno de los registros más extraordinarios en la historia de la gestión activa de fondos.
@@ -114,8 +114,8 @@ export default function PegLynchPage() {
               { name: 'Asset plays', desc: 'Empresas que tienen activos ocultos que el mercado no está valorando: inmuebles, patentes, subsidiarias no consolidadas.' },
             ].map(({ name, desc }) => (
               <div key={name} className="rounded-lg p-3" style={{ background: 'rgba(7,43,24,0.5)', border: '1px solid rgba(46,196,126,0.08)' }}>
-                <span className="text-xs font-semibold" translate="no" style={{ color: '#2EC47E' }}>{name}</span>
-                <p className="text-xs mt-1" style={{ color: '#5A7A65' }}>{desc}</p>
+                <span className="text-sm md:text-base font-semibold" translate="no" style={{ color: '#2EC47E' }}>{name}</span>
+                <p className="text-sm md:text-base mt-1" style={{ color: '#5A7A65' }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -152,7 +152,7 @@ export default function PegLynchPage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Otras guías</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Otras guías</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'buffett-criterios', label: '♥ Buffett' },
@@ -162,7 +162,7 @@ export default function PegLynchPage() {
             { slug: 'calidad-institucional-fink', label: '✦ Fink' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

@@ -176,7 +176,7 @@ export default function GuiasIndexPage() {
     <GuiasShell backHref="/" backLabel="← Inicio">
 
       <section className="text-center mb-14">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>
           ♣ &nbsp; Guías de inversión &nbsp; ♣
         </p>
         <h1 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#EEF2FF' }}
@@ -190,7 +190,7 @@ export default function GuiasIndexPage() {
 
       {/* ── Los 6 maestros ── */}
       <section className="mb-14">
-        <h2 className="text-xs uppercase tracking-widest mb-5 pb-2"
+        <h2 className="text-sm md:text-base uppercase tracking-widest mb-5 pb-2"
           style={{ color: 'rgba(201,168,76,0.5)', borderBottom: '1px solid rgba(201,168,76,0.1)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           Los 6 maestros
         </h2>
@@ -203,15 +203,15 @@ export default function GuiasIndexPage() {
               style={{ borderColor: `${color}20`, background: 'rgba(7,43,24,0.4)' }}
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono" style={{ color }}>{symbol} {sage}</span>
-                <span className="text-xs" style={{ color: '#3A5A45' }}>{readTime}</span>
+                <span className="text-sm md:text-base font-mono" style={{ color }}>{symbol} {sage}</span>
+                <span className="text-sm md:text-base" style={{ color: '#3A5A45' }}>{readTime}</span>
               </div>
               <h3 className="font-bold text-base leading-tight group-hover:text-[#C9A84C] transition-colors"
                 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5' }}>
                 {title}
               </h3>
-              <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
-              <span className="text-xs mt-auto" style={{ color: `${color}80` }}>Leer guía →</span>
+              <p className="text-sm md:text-base leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
+              <span className="text-sm md:text-base mt-auto" style={{ color: `${color}80` }}>Leer guía →</span>
             </Link>
           ))}
         </div>
@@ -219,7 +219,7 @@ export default function GuiasIndexPage() {
 
       {/* ── Conceptos esenciales ── */}
       <section className="mb-14">
-        <h2 className="text-xs uppercase tracking-widest mb-5 pb-2"
+        <h2 className="text-sm md:text-base uppercase tracking-widest mb-5 pb-2"
           style={{ color: 'rgba(201,168,76,0.5)', borderBottom: '1px solid rgba(201,168,76,0.1)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           Conceptos esenciales
         </h2>
@@ -232,17 +232,17 @@ export default function GuiasIndexPage() {
               style={{ borderColor: 'rgba(201,168,76,0.12)', background: 'rgba(7,43,24,0.3)' }}
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
+                <span className="text-sm md:text-base px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
                   {tag}
                 </span>
-                <span className="text-xs" style={{ color: '#3A5A45' }}>{readTime}</span>
+                <span className="text-sm md:text-base" style={{ color: '#3A5A45' }}>{readTime}</span>
               </div>
               <h3 className="font-bold text-base leading-tight group-hover:text-[#C9A84C] transition-colors"
                 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5' }}>
                 {title}
               </h3>
-              <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
-              <span className="text-xs mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
+              <p className="text-sm md:text-base leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
+              <span className="text-sm md:text-base mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
             </Link>
           ))}
         </div>
@@ -250,7 +250,7 @@ export default function GuiasIndexPage() {
 
       {/* ── Valoración y estrategia ── */}
       <section className="mb-14">
-        <h2 className="text-xs uppercase tracking-widest mb-5 pb-2"
+        <h2 className="text-sm md:text-base uppercase tracking-widest mb-5 pb-2"
           style={{ color: 'rgba(201,168,76,0.5)', borderBottom: '1px solid rgba(201,168,76,0.1)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           Valoración y estrategia
         </h2>
@@ -274,17 +274,17 @@ export default function GuiasIndexPage() {
               style={{ borderColor: 'rgba(201,168,76,0.12)', background: 'rgba(7,43,24,0.3)' }}
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
+                <span className="text-sm md:text-base px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
                   {tag}
                 </span>
-                <span className="text-xs" style={{ color: '#3A5A45' }}>{readTime}</span>
+                <span className="text-sm md:text-base" style={{ color: '#3A5A45' }}>{readTime}</span>
               </div>
               <h3 className="font-bold text-base leading-tight group-hover:text-[#C9A84C] transition-colors"
                 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5' }}>
                 {title}
               </h3>
-              <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
-              <span className="text-xs mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
+              <p className="text-sm md:text-base leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
+              <span className="text-sm md:text-base mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
             </Link>
           ))}
         </div>
@@ -292,7 +292,7 @@ export default function GuiasIndexPage() {
 
       {/* ── Análisis sectorial ── */}
       <section className="mb-14">
-        <h2 className="text-xs uppercase tracking-widest mb-5 pb-2"
+        <h2 className="text-sm md:text-base uppercase tracking-widest mb-5 pb-2"
           style={{ color: 'rgba(201,168,76,0.5)', borderBottom: '1px solid rgba(201,168,76,0.1)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           Análisis sectorial
         </h2>
@@ -316,17 +316,17 @@ export default function GuiasIndexPage() {
               style={{ borderColor: 'rgba(201,168,76,0.12)', background: 'rgba(7,43,24,0.3)' }}
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
+                <span className="text-sm md:text-base px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
                   {tag}
                 </span>
-                <span className="text-xs" style={{ color: '#3A5A45' }}>{readTime}</span>
+                <span className="text-sm md:text-base" style={{ color: '#3A5A45' }}>{readTime}</span>
               </div>
               <h3 className="font-bold text-base leading-tight group-hover:text-[#C9A84C] transition-colors"
                 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5' }}>
                 {title}
               </h3>
-              <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
-              <span className="text-xs mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
+              <p className="text-sm md:text-base leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
+              <span className="text-sm md:text-base mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
             </Link>
           ))}
         </div>
@@ -334,7 +334,7 @@ export default function GuiasIndexPage() {
 
       {/* ── Estrategia e inversión avanzada ── */}
       <section className="mb-14">
-        <h2 className="text-xs uppercase tracking-widest mb-5 pb-2"
+        <h2 className="text-sm md:text-base uppercase tracking-widest mb-5 pb-2"
           style={{ color: 'rgba(201,168,76,0.5)', borderBottom: '1px solid rgba(201,168,76,0.1)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           Estrategia e inversión avanzada
         </h2>
@@ -359,17 +359,17 @@ export default function GuiasIndexPage() {
               style={{ borderColor: 'rgba(201,168,76,0.12)', background: 'rgba(7,43,24,0.3)' }}
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
+                <span className="text-sm md:text-base px-2 py-0.5 rounded-full" style={{ color: 'rgba(201,168,76,0.6)', background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.12)' }}>
                   {tag}
                 </span>
-                <span className="text-xs" style={{ color: '#3A5A45' }}>{readTime}</span>
+                <span className="text-sm md:text-base" style={{ color: '#3A5A45' }}>{readTime}</span>
               </div>
               <h3 className="font-bold text-base leading-tight group-hover:text-[#C9A84C] transition-colors"
                 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', color: '#E8EDF5' }}>
                 {title}
               </h3>
-              <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
-              <span className="text-xs mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
+              <p className="text-sm md:text-base leading-relaxed" style={{ color: '#5A7A65' }}>{desc}</p>
+              <span className="text-sm md:text-base mt-auto" style={{ color: 'rgba(201,168,76,0.5)' }}>Leer guía →</span>
             </Link>
           ))}
         </div>
@@ -380,7 +380,7 @@ export default function GuiasIndexPage() {
         <h2 className="text-base font-semibold mb-3" style={{ color: '#C9A84C', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           ¿Qué es el value investing?
         </h2>
-        <div className="space-y-3 text-sm leading-relaxed" style={{ color: '#6A8A75' }}>
+        <div className="space-y-3 text-base md:text-lg leading-relaxed" style={{ color: '#6A8A75' }}>
           <p>
             El value investing es la disciplina de invertir en empresas cuyo precio de mercado está por debajo de su valor intrínseco. No se trata de adivinar qué acción va a subir mañana, sino de entender cuánto vale un negocio y comprarlo con margen de seguridad.
           </p>

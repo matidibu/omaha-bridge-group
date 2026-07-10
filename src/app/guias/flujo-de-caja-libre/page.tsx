@@ -27,7 +27,7 @@ export default function FlujoDeCajaLibrePage() {
       readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           Conceptos esenciales · Valoración
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function FlujoDeCajaLibrePage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Hay una pregunta que Buffett se hace antes de analizar cualquier empresa: ¿cuánto dinero real genera este negocio para sus dueños cada año? No cuánto "reporta" en ganancias. No cuánto aparece en el estado de resultados. Cuánto queda en la caja después de pagar todos los costos, incluidas las inversiones necesarias para mantener el negocio en funcionamiento.
@@ -78,7 +78,7 @@ export default function FlujoDeCajaLibrePage() {
             <p className="font-mono text-sm" style={{ color: '#E8EDF5' }}>
               FCF = Flujo operativo — Capex
             </p>
-            <p className="text-xs mt-2" style={{ color: '#6A8A75' }}>
+            <p className="text-sm md:text-base mt-2" style={{ color: '#6A8A75' }}>
               Capex = capital expenditures = inversiones en activos fijos necesarios para mantener o expandir el negocio
             </p>
           </div>
@@ -116,7 +116,7 @@ export default function FlujoDeCajaLibrePage() {
             <p className="font-mono text-sm" style={{ color: '#E8EDF5' }}>
               FCF Yield = FCF anual / Capitalización bursátil
             </p>
-            <p className="text-xs mt-2" style={{ color: '#6A8A75' }}>
+            <p className="text-sm md:text-base mt-2" style={{ color: '#6A8A75' }}>
               O, más precisamente, FCF / Enterprise Value para incorporar la deuda neta
             </p>
           </div>
@@ -165,7 +165,7 @@ export default function FlujoDeCajaLibrePage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Guías relacionadas</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Guías relacionadas</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'buffett-criterios', label: '♥ Criterios Buffett' },
@@ -175,7 +175,7 @@ export default function FlujoDeCajaLibrePage() {
             { slug: 'tipos-de-moat', label: 'Tipos de moat' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

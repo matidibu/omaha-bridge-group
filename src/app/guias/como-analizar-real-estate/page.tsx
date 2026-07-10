@@ -27,7 +27,7 @@ export default function AnalizarRealEstatePage() {
       readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ♠ &nbsp; Análisis Sectorial · Inmobiliario
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function AnalizarRealEstatePage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           El real estate atrae a inversores de ingresos con promesas de distribuciones altas. Pero un edificio que genera $100M en alquiler requiere $40M en capex, mantenimiento y reparaciones. La diferencia es lo que el propietario realmente se queda.
@@ -107,7 +107,7 @@ export default function AnalizarRealEstatePage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Más análisis sectorial</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Más análisis sectorial</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'dividendos-value-investing', label: 'Dividendos' },
@@ -115,7 +115,7 @@ export default function AnalizarRealEstatePage() {
             { slug: 'deuda-en-value-investing', label: 'Deuda' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

@@ -27,7 +27,7 @@ export default function AntifragilidadTalebPage() {
       readingTimeMinutes: 8,
     }}>
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: COLOR }}>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-3" style={{ color: COLOR }}>
           ★ &nbsp; Nassim Taleb · El Centinela
         </p>
         <h1 className="text-3xl font-bold leading-tight mb-3"
@@ -46,7 +46,7 @@ export default function AntifragilidadTalebPage() {
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', marginBottom: '2rem' }} />
 
-      <div className="space-y-8 text-sm leading-relaxed" style={{ color: '#B4C0D4' }}>
+      <div className="space-y-8 text-base md:text-lg leading-relaxed" style={{ color: '#B4C0D4' }}>
 
         <p>
           Nassim Taleb no es un inversor tradicional. Es un filósofo del riesgo que pasó años como trader de opciones en Wall Street antes de dedicarse a escribir. Sus libros — <em>The Black Swan</em> (2007), <em>Antifragile</em> (2012) — cambiaron cómo los gestores de riesgo piensan sobre la incertidumbre. Su premisa central: la mayoría de los modelos financieros están sistemáticamente equivocados porque subestiman la probabilidad y el impacto de los eventos extremos.
@@ -74,19 +74,19 @@ export default function AntifragilidadTalebPage() {
           <div className="mt-4 space-y-3">
             <div className="rounded-lg p-4" style={{ background: 'rgba(248,113,113,0.06)', border: '1px solid rgba(248,113,113,0.15)' }}>
               <div className="font-semibold text-xs mb-1" style={{ color: '#f87171' }}>Frágil</div>
-              <p className="text-xs leading-relaxed" style={{ color: '#7A8A95' }}>
+              <p className="text-sm md:text-base leading-relaxed" style={{ color: '#7A8A95' }}>
                 Se deteriora con el estrés. Una empresa con mucha deuda, márgenes finos y cliente concentrado es frágil: un shock pequeño la puede destruir. Buscan estabilidad aparente pero acumulan riesgo invisible.
               </p>
             </div>
             <div className="rounded-lg p-4" style={{ background: 'rgba(201,168,76,0.06)', border: '1px solid rgba(201,168,76,0.15)' }}>
               <div className="font-semibold text-xs mb-1" style={{ color: '#C9A84C' }}>Robusto</div>
-              <p className="text-xs leading-relaxed" style={{ color: '#7A8A95' }}>
+              <p className="text-sm md:text-base leading-relaxed" style={{ color: '#7A8A95' }}>
                 Resiste el estrés sin deteriorarse. Empresas con caja neta, ingresos diversificados y márgenes amplios. Sobreviven los shocks pero no necesariamente se benefician de ellos.
               </p>
             </div>
             <div className="rounded-lg p-4" style={{ background: 'rgba(168,189,216,0.06)', border: '1px solid rgba(168,189,216,0.15)' }}>
               <div className="font-semibold text-xs mb-1" style={{ color: COLOR }}>Antifrágil</div>
-              <p className="text-xs leading-relaxed" style={{ color: '#7A8A95' }}>
+              <p className="text-sm md:text-base leading-relaxed" style={{ color: '#7A8A95' }}>
                 Gana con el estrés. Empresas que se fortalecen cuando sus competidores se debilitan: pueden adquirir talento, clientes y activos a precios de crisis. Amazon salió más fuerte de 2008. Visa salió más fuerte de la pandemia.
               </p>
             </div>
@@ -122,8 +122,8 @@ export default function AntifragilidadTalebPage() {
               },
             ].map(({ signal, detail }) => (
               <div key={signal} className="rounded-lg p-3" style={{ background: 'rgba(7,43,24,0.5)', border: '1px solid rgba(168,189,216,0.08)' }}>
-                <div className="text-xs font-semibold mb-1" style={{ color: COLOR }}>{signal}</div>
-                <p className="text-xs leading-relaxed" style={{ color: '#5A7A65' }}>{detail}</p>
+                <div className="text-sm md:text-base font-semibold mb-1" style={{ color: COLOR }}>{signal}</div>
+                <p className="text-sm md:text-base leading-relaxed" style={{ color: '#5A7A65' }}>{detail}</p>
               </div>
             ))}
           </div>
@@ -163,7 +163,7 @@ export default function AntifragilidadTalebPage() {
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
 
       <section className="mb-8">
-        <p className="text-xs uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Otras guías</p>
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Otras guías</p>
         <div className="flex flex-wrap gap-2">
           {[
             { slug: 'buffett-criterios', label: '♥ Buffett' },
@@ -173,7 +173,7 @@ export default function AntifragilidadTalebPage() {
             { slug: 'calidad-institucional-fink', label: '✦ Fink' },
           ].map(({ slug, label }) => (
             <Link key={slug} href={`/guias/${slug}`}
-              className="text-xs px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
               style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
               {label}
             </Link>

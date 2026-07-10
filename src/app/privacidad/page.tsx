@@ -119,11 +119,13 @@ export default function PrivacidadPage() {
       </main>
 
       <footer className="border-t border-[#C9A84C]/10 px-6 py-4">
-        <p className="text-center text-xs text-[#4A5A72]">
+        <p className="text-center text-xs md:text-sm text-[#4A5A72]">
           © 2025 <span translate="no">Omaha Bridge Group</span>. Todos los derechos reservados.{' '}
           <Link href="/" className="text-[#C9A84C]/60 hover:text-[#C9A84C]">Inicio</Link>
           {' · '}
           <Link href="/nosotros" className="text-[#C9A84C]/60 hover:text-[#C9A84C]">Nosotros</Link>
+          {' · '}
+          <Link href="/contacto" className="text-[#C9A84C]/60 hover:text-[#C9A84C]">Contacto</Link>
         </p>
       </footer>
     </div>
