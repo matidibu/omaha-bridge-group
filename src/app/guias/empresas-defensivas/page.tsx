@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Tu paraguas en la tormenta: acciones que bajan menos cuando todo cae | Omaha Bridge Group',
+  title: 'Tu paraguas en la tormenta: acciones que bajan menos cuando todo cae',
   description: 'Gente sigue comprando jabón en crisis. Sigue pagando luz. Esas empresas son defensa cuando el mercado colapsa.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/empresas-defensivas' },
   openGraph: {
-    title: 'Acciones defensivas (Defensive stocks) | Omaha Bridge Group',
+    title: 'Acciones defensivas (Defensive stocks)',
     description: 'Las empresas que la gente compra en crisis. Qué las hace diferentes.',
     type: 'article',
   },

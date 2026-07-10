@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Oro brillante hoy, quiebra mañana: vivir en los ciclos de commodities | Omaha Bridge Group',
+  title: 'Oro brillante hoy, quiebra mañana: vivir en los ciclos de commodities',
   description: 'Minería a $1500/oz gana, a $900/oz pierde. El ciclo define todo. Cómo diferenciar minas que sobreviven de minas que cierran.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-mineria' },
   openGraph: {
-    title: 'Cómo analizar empresas mineras | Omaha Bridge Group',
+    title: 'Cómo analizar empresas mineras',
     description: 'Costos de extracción, reservas, vida útil de minas. Lo que los inversores en minería necesitan saber.',
     type: 'article',
   },

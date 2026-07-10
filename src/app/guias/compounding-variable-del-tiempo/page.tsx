@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'La paciencia al final se paga: cómo $10k se convierten en $1M (si esperas) | Omaha Bridge Group',
+  title: 'La paciencia al final se paga: cómo $10k se convierten en $1M (si esperas)',
   description: 'El secreto que Buffett repite hace 60 años. No es el retorno anual, es el número de años. La geometría gana a la aritmética: el compounding explicado.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/compounding-variable-del-tiempo' },
   openGraph: {
-    title: 'Compounding: el poder del tiempo | Omaha Bridge Group',
+    title: 'Compounding: el poder del tiempo',
     description: 'La variable que hace ricos es el tiempo. Inversión en 30 años vs inversión en 5.',
     type: 'article',
   },

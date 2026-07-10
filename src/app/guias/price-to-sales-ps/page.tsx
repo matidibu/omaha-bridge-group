@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'La métrica que casi nadie puede falsificar: price-to-sales | Omaha Bridge Group',
+  title: 'La métrica que casi nadie puede falsificar: price-to-sales',
   description: 'P/S es dinero real: lo que entró al banco. Earnings son contabilidad. Por qué P/S bajo es mucho más seguro.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/price-to-sales-ps' },
   openGraph: {
-    title: 'Ratio Price-to-Sales (P/S) | Omaha Bridge Group',
+    title: 'Ratio Price-to-Sales (P/S)',
     description: 'Precio dividido ventas. Difícil de manipular porque las ventas son la realidad.',
     type: 'article',
   },

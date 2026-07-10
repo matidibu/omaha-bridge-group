@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'EV/EBITDA: la trampa más elegante del mercado | Omaha Bridge Group',
+  title: 'EV/EBITDA: la trampa más elegante del mercado',
   description: 'Este ratio es hermoso. Es también mentira. Cómo detectar cuándo es confiable y cuándo es engaño de banquero.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/ev-ebitda' },
   openGraph: {
-    title: 'EV/EBITDA: cómo usarlo correctamente | Omaha Bridge Group',
+    title: 'EV/EBITDA: cómo usarlo correctamente',
     description: 'La métrica favorita de los banqueros que value investors desconfían. Cuándo confiar, cuándo dudar.',
     type: 'article',
   },

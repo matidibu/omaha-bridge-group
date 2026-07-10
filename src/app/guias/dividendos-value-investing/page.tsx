@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Dividendos: dinero que baja mientras otros ganan fortuna | Omaha Bridge Group',
+  title: 'Dividendos: dinero que baja mientras otros ganan fortuna',
   description: 'Rendimiento 5% pero la acción cae 20%. Cómo no caer en la trampa. Por qué Buffett desconfía de dividendos altos.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/dividendos-value-investing' },
   openGraph: {
-    title: 'Dividendos y value investing | Omaha Bridge Group',
+    title: 'Dividendos y value investing',
     description: 'Cómo invertir en empresas que reparten dividendos sin caer en trampas de yield alto y baja calidad.',
     type: 'article',
   },

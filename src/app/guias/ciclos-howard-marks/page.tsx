@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El ciclo que nadie ve: cómo posicionarse ANTES de que quiebre | Omaha Bridge Group',
+  title: 'El ciclo que nadie ve: cómo posicionarse ANTES de que quiebre',
   description: 'Marks: no puedes predecir cuándo, pero sí dónde. Cómo saber en qué fase del ciclo estás. Cómo ganar dinero mientras otros pierden.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/ciclos-howard-marks' },
   openGraph: {
-    title: 'Los ciclos de mercado de Howard Marks | Omaha Bridge Group',
+    title: 'Los ciclos de mercado de Howard Marks',
     description: 'No podés predecir cuándo, pero podés saber dónde estás. La filosofía de ciclos de Oaktree Capital.',
     type: 'article',
   },

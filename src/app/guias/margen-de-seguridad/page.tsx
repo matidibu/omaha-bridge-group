@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El concepto que separa inversores de ludópatas | Omaha Bridge Group',
+  title: 'El concepto que separa inversores de ludópatas',
   description: 'Margen de seguridad: comprar $100 por $70. Cómo Graham y Buffett se hacen ricos con esto. Por qué es lo único que importa.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/margen-de-seguridad' },
   openGraph: {
-    title: 'El margen de seguridad | Omaha Bridge Group',
+    title: 'El margen de seguridad',
     description: 'El concepto central del value investing: nunca pagar el valor completo de un activo. Siempre exigir descuento.',
     type: 'article',
   },

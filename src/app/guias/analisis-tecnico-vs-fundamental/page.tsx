@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Gráficos vs realidad: por qué uno gana y el otro pierde | Omaha Bridge Group',
+  title: 'Gráficos vs realidad: por qué uno gana y el otro pierde',
   description: 'Análisis técnico: linda distracción. Fundamental: donde está el dinero. Cómo diferenciar.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/analisis-tecnico-vs-fundamental' },
   openGraph: {
-    title: 'Análisis técnico vs fundamental | Omaha Bridge Group',
+    title: 'Análisis técnico vs fundamental',
     description: 'Dos enfoques distintos. Uno no funciona para inversores de largo plazo.',
     type: 'article',
   },

@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Los 4 fosos que hacen inmortales a las empresas | Omaha Bridge Group',
+  title: 'Los 4 fosos que hacen inmortales a las empresas',
   description: 'Moat: el que protege márgenes durante décadas. Los 4 tipos. Cómo verlos. Cómo ganar cuando otros no ven.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/tipos-de-moat' },
   openGraph: {
-    title: 'Los cuatro tipos de foso competitivo | Omaha Bridge Group',
+    title: 'Los cuatro tipos de foso competitivo',
     description: 'Marca, costos de cambio, efecto de red y ventaja de costos: los cuatro moats que protegen márgenes durante décadas.',
     type: 'article',
   },

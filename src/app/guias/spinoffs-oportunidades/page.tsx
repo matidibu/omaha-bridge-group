@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cuando 1+1=3: cómo ganar dinero gratis cuando una empresa se divide | Omaha Bridge Group',
+  title: 'Cuando 1+1=3: cómo ganar dinero gratis cuando una empresa se divide',
   description: 'Una compañía se divide, el mercado infravalúa la pequeña, tú ganas la diferencia. El arbitrage de spinoffs explicado.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/spinoffs-oportunidades' },
   openGraph: {
-    title: 'Spinoffs: oportunidades de valor | Omaha Bridge Group',
+    title: 'Spinoffs: oportunidades de valor',
     description: 'Cuando una empresa se divide, típicamente genera alfa. Por qué y cómo invertir.',
     type: 'article',
   },

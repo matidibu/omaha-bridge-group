@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Los números que predicen la quiebra antes de que nadie lo vea | Omaha Bridge Group',
+  title: 'Los números que predicen la quiebra antes de que nadie lo vea',
   description: 'Z-Score: 72% de precisión prediciendo quiebras un año antes. Los números que Altman vio en 1968 y siguen siendo iguales hoy.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/altman-z-score' },
   openGraph: {
-    title: 'Altman Z-Score | Omaha Bridge Group',
+    title: 'Altman Z-Score',
     description: 'La métrica que detecta empresas camino a la quiebra. Evita disasters.',
     type: 'article',
   },

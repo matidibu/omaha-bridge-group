@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Las pequeñas que nadie sigue: donde está el alfa real | Omaha Bridge Group',
+  title: 'Las pequeñas que nadie sigue: donde está el alfa real',
   description: 'Ignoradas por fondos grandes. Valoradas por genius. Cómo encontrarlas. Los riesgos que nadie menciona.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/small-caps' },
   openGraph: {
-    title: 'Small caps y value investing | Omaha Bridge Group',
+    title: 'Small caps y value investing',
     description: 'Por qué las empresas pequeñas ofrecen las mejores oportunidades (y los mayores riesgos) al inversor value.',
     type: 'article',
   },

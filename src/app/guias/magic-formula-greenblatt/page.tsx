@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'La fórmula mágica que bate al S&P 500: números vs intuición | Omaha Bridge Group',
+  title: 'La fórmula mágica que bate al S&P 500: números vs intuición',
   description: 'La fórmula de Greenblatt que batió el mercado 16 años. Cómo funciona. Por qué casi nadie la usa.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/magic-formula-greenblatt' },
   openGraph: {
-    title: 'La Magic Formula de Greenblatt | Omaha Bridge Group',
+    title: 'La Magic Formula de Greenblatt',
     description: 'Earnings yield + return on capital: el sistema de inversión cuantitativo que bate al mercado.',
     type: 'article',
   },

@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El dinero que realmente importa: FCF es lo único que cuenta | Omaha Bridge Group',
+  title: 'El dinero que realmente importa: FCF es lo único que cuenta',
   description: 'Buffett mira solo FCF. Cuando entiendes por qué, todo cambia. Cómo calcular el dinero real que genera un negocio.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/flujo-de-caja-libre' },
   openGraph: {
-    title: 'Flujo de caja libre (FCF) | Omaha Bridge Group',
+    title: 'Flujo de caja libre (FCF)',
     description: 'El FCF es el dinero real que genera un negocio. Cómo calcularlo y por qué es más honesto que el beneficio neto.',
     type: 'article',
   },

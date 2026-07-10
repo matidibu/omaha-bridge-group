@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Por qué el CEO te miente con EBITDA (y cómo ver la verdad detrás) | Omaha Bridge Group',
+  title: 'Por qué el CEO te miente con EBITDA (y cómo ver la verdad detrás)',
   description: 'La métrica que hace brillar a los CEOs: EBITDA. La que revela la realidad: FCF. Cómo diferenciar ilusión de dinero real en menos de 5 minutos.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/ebitda-vs-fcf' },
   openGraph: {
-    title: 'EBITDA vs FCF | Omaha Bridge Group',
+    title: 'EBITDA vs FCF',
     description: 'La métrica que importa: flujo de caja libre, no ganancias contables.',
     type: 'article',
   },

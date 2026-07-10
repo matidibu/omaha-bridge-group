@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo los CEOs esconden gastos enormes con palabras mágicas | Omaha Bridge Group',
+  title: 'Cómo los CEOs esconden gastos enormes con palabras mágicas',
   description: '"Eso es capex de crecimiento" = gasto que no genera dinero pero lo llaman inversión. Cómo detectar la trampa.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/capex-mantenimiento-vs-crecimiento' },
   openGraph: {
-    title: 'Capex: Mantenimiento vs Crecimiento | Omaha Bridge Group',
+    title: 'Capex: Mantenimiento vs Crecimiento',
     description: 'Una mina que reemplaza equipo viejo = mantenimiento. Una mina que agrega nuevo equipo = crecimiento. La diferencia es crítica.',
     type: 'article',
   },

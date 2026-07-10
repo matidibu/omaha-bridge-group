@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'La fórmula que Buffett usa para fijar precio: DCF sin magia | Omaha Bridge Group',
+  title: 'La fórmula que Buffett usa para fijar precio: DCF sin magia',
   description: 'DCF: cómo calcular valor real. Cómo Buffett predice futuro. Cómo saber si una acción es cara o barata.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/dcf-valoracion' },
   openGraph: {
-    title: 'DCF: cómo valorar una empresa | Omaha Bridge Group',
+    title: 'DCF: cómo valorar una empresa',
     description: 'Proyectar flujo de caja, elegir tasa de descuento, calcular valor intrínseco. El método de Buffett para determinar si una acción es cara o barata.',
     type: 'article',
   },

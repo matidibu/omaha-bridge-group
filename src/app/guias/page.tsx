@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Guías de value investing | Omaha Bridge Group',
+  title: 'Guías de value investing',
   description: 'Guías completas de inversión en español: los métodos de Buffett, Lynch, Greenblatt, Taleb, Marks y Fink, más conceptos esenciales como FCF, margen de seguridad, moat, CEDEARs y psicología del inversor.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias' },
   openGraph: {
-    title: 'Guías de value investing | Omaha Bridge Group',
+    title: 'Guías de value investing',
     description: 'Cuarenta y ocho guías de inversión en español: los 6 maestros del value investing y análisis sectorial para invertir con criterios fundamentales.',
     type: 'website',
   },

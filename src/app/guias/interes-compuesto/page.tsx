@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El 8vo maravilla del mundo: cómo convertir $1 en fortuna | Omaha Bridge Group',
+  title: 'El 8vo maravilla del mundo: cómo convertir $1 en fortuna',
   description: 'Einstein: "La 8va maravilla del mundo es el interés compuesto". Cómo funciona. Cómo convertir $1 en millones.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/interes-compuesto' },
   openGraph: {
-    title: 'El interés compuesto | Omaha Bridge Group',
+    title: 'El interés compuesto',
     description: 'El único factor que convierte rendimientos ordinarios en riqueza extraordinaria: el tiempo y la paciencia.',
     type: 'article',
   },

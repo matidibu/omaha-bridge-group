@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Psicología del inversor: los sesgos que destruyen rendimientos | Omaha Bridge Group',
+  title: 'Psicología del inversor: los sesgos que destruyen rendimientos',
   description: 'Los errores de inversión más costosos no vienen del análisis incorrecto sino de la psicología. Aversión a la pérdida, sesgo de confirmación, anclaje y pensamiento de manada: cómo reconocerlos y combatirlos.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/psicologia-del-inversor' },
   openGraph: {
-    title: 'Psicología del inversor | Omaha Bridge Group',
+    title: 'Psicología del inversor',
     description: 'Los sesgos cognitivos que llevan a comprar caro, vender barato y repetir los mismos errores.',
     type: 'article',
   },

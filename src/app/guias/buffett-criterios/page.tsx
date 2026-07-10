@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Los 5 criterios secretos de Buffett para nunca comprar basura | Omaha Bridge Group',
+  title: 'Los 5 criterios secretos de Buffett para nunca comprar basura',
   description: 'Lo que Buffett realmente busca antes de meter $1 billón. Cómo ve lo que el mercado no ve. Los 5 filtros que salvan dinero.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/buffett-criterios' },
   openGraph: {
-    title: 'Cómo analiza Buffett una acción | Omaha Bridge Group',
+    title: 'Cómo analiza Buffett una acción',
     description: 'Guía completa del método Buffett: moat, ROIC, margen de seguridad y gestión de calidad.',
     type: 'article',
   },

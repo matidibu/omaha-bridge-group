@@ -98,7 +98,8 @@
       "Bash(bash /tmp/verify.sh)",
       "Artifact",
       "Bash(git checkout *)",
-      "Bash(xargs echo \"Total de URLs:\")"
+      "Bash(xargs echo \"Total de URLs:\")",
+      "Bash(xargs echo \"Total URLs:\")"
     ]
   }
 }

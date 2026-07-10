@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'La tienda que se ve próspera pero muere en 6 meses: cómo detectarla | Omaha Bridge Group',
+  title: 'La tienda que se ve próspera pero muere en 6 meses: cómo detectarla',
   description: 'Retail: ventas altas, dinero cero. Cómo los inventarios mueren en los estantes. La métrica que predice el colapso: rotación de stock.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-retail' },
   openGraph: {
-    title: 'Cómo analizar empresas de Retail | Omaha Bridge Group',
+    title: 'Cómo analizar empresas de Retail',
     description: 'Rotación de inventario, márgenes de tienda, y comparables inmobiliarios. Lo que los inversores en retail necesitan saber.',
     type: 'article',
   },

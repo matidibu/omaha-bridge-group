@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Los ratios que revelan si el CEO es genio o ladrón | Omaha Bridge Group',
+  title: 'Los ratios que revelan si el CEO es genio o ladrón',
   description: 'ROE, ROA, ROIC: los números que ven la verdad detrás del CEO. Cuál confía, cuál es trampa. Por qué Buffett mira solo ROIC.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/roe-roa-roic' },
   openGraph: {
-    title: 'ROE, ROA y ROIC: cuál métrica importa | Omaha Bridge Group',
+    title: 'ROE, ROA y ROIC: cuál métrica importa',
     description: 'Las tres métricas de retorno explicadas, sus trampa s, y cuál deberías usar realmente para invertir.',
     type: 'article',
   },

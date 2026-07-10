@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'La obsesión que hace ricos: por qué el corto plazo arruina | Omaha Bridge Group',
+  title: 'La obsesión que hace ricos: por qué el corto plazo arruina',
   description: '20 años gana a 5 años, siempre. Cómo resistir la tentación. El superpoder del inversor individual.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/el-largo-plazo' },
   openGraph: {
-    title: 'El largo plazo como ventaja | Omaha Bridge Group',
+    title: 'El largo plazo como ventaja',
     description: 'Si fondos de millones ponen plazo 3 años, vos con plazo infinito tienes ventaja estructural.',
     type: 'article',
   },

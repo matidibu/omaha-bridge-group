@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El secreto de Graham: comprar empresas por menos de lo que valen | Omaha Bridge Group',
+  title: 'El secreto de Graham: comprar empresas por menos de lo que valen',
   description: 'P/B menor a 1 = comprar con descuento. Pero ojo: a veces es ganga, a veces es trampa. Cómo diferenciar.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/price-to-book-pb' },
   openGraph: {
-    title: 'Ratio Price-to-Book (P/B) | Omaha Bridge Group',
+    title: 'Ratio Price-to-Book (P/B)',
     description: 'Precio vs Valor en el Balance. Cuándo P/B bajo significa ganga.',
     type: 'article',
   },

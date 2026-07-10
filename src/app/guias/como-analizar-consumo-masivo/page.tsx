@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Consumo masivo: cómo vender más a gente que es pobre | Omaha Bridge Group',
+  title: 'Consumo masivo: cómo vender más a gente que es pobre',
   description: 'Márgenes finos, volumen gigante. Moat de marca. Cómo ver quién gana.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-consumo-masivo' },
   openGraph: {
-    title: 'Cómo analizar consumo masivo | Omaha Bridge Group',
+    title: 'Cómo analizar consumo masivo',
     description: 'Marca, moat, márgenes. Las tres cosas que definen empresas de consumo excelentes versus mediocres.',
     type: 'article',
   },

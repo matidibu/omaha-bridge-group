@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El Sr. Mercado está loco: cómo aprovecharse de su locura | Omaha Bridge Group',
+  title: 'El Sr. Mercado está loco: cómo aprovecharse de su locura',
   description: 'Cada día el Sr. Mercado ofrece precios distintos. Buffett compra cuando ofrece barato, vende cuando ofrece caro. Cómo ver lo que él ve.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/precio-vs-valor' },
   openGraph: {
-    title: 'Precio vs valor | Omaha Bridge Group',
+    title: 'Precio vs valor',
     description: 'El Sr. Mercado ofrece precios distintos cada día. El inversor inteligente sabe cuándo el precio es ridículo respecto al valor.',
     type: 'article',
   },

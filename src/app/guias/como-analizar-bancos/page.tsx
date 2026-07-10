@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Los bancos que colapsan: cómo verlo en el balance | Omaha Bridge Group',
+  title: 'Los bancos que colapsan: cómo verlo en el balance',
   description: 'Capital ratios, provisiones, NPA: los números que predicen colapsos. Cómo 2008 muestra quién quiebra en la próxima.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-bancos' },
   openGraph: {
-    title: 'Cómo analizar acciones bancarias | Omaha Bridge Group',
+    title: 'Cómo analizar acciones bancarias',
     description: 'NIM, ROE, ratio de eficiencia y capital Tier 1: las métricas que importan para evaluar un banco.',
     type: 'article',
   },

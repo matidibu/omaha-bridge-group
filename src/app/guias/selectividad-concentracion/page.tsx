@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Menos es más: por qué Buffett tiene 5 posiciones gigantes, no 100 | Omaha Bridge Group',
+  title: 'Menos es más: por qué Buffett tiene 5 posiciones gigantes, no 100',
   description: '5 acciones excelentes vencen 100 mediocres. Cómo la selectividad multiplica retornos versus la diversificación que los diluye.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/selectividad-concentracion' },
   openGraph: {
-    title: 'Selectividad y concentración en inversión | Omaha Bridge Group',
+    title: 'Selectividad y concentración en inversión',
     description: 'Menos es más. 10 acciones muy buenas baten a 100 acciones mediocres.',
     type: 'article',
   },

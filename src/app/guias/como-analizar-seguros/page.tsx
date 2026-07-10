@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El dinero gratis de Buffett: cómo funcionan realmente los seguros | Omaha Bridge Group',
+  title: 'El dinero gratis de Buffett: cómo funcionan realmente los seguros',
   description: 'Reciben dinero hoy, pagan mañana. Ese "float" es dinero gratis mientras se invierte. Por qué Buffett ama seguros.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-seguros' },
   openGraph: {
-    title: 'Cómo analizar empresas de Seguros | Omaha Bridge Group',
+    title: 'Cómo analizar empresas de Seguros',
     description: 'Combined ratio, underwriting profit, float. Lo que necesitas saber sobre seguros.',
     type: 'article',
   },

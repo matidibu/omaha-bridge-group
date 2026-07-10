@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El framework secreto de BlackRock para no perder dinero | Omaha Bridge Group',
+  title: 'El framework secreto de BlackRock para no perder dinero',
   description: 'Cómo Fink evalúa CEO y gobernanza. Cómo ver calidad institucional que otros no ven. Los números que importan a los que manejan $10 billones.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/calidad-institucional-fink' },
   openGraph: {
-    title: 'Calidad institucional según Larry Fink | Omaha Bridge Group',
+    title: 'Calidad institucional según Larry Fink',
     description: 'El marco de Fink para evaluar gobernanza, largo plazo y retorno total al accionista.',
     type: 'article',
   },

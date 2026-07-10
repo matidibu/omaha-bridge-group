@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'El ratio PEG que Lynch usó para batir el mercado 13 años seguidos. Por qué sigue funcionando cuando el P/E falla.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/peg-peter-lynch' },
   openGraph: {
-    title: 'El ratio PEG de Peter Lynch | Omaha Bridge Group',
+    title: 'El ratio PEG de Peter Lynch',
     description: 'GARP: Growth at a Reasonable Price. El método de Lynch para invertir en crecimiento sin pagar de más.',
     type: 'article',
   },

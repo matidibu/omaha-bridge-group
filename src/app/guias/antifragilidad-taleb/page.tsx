@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'La empresa que sobrevive crisis: cómo detectar fragilidad oculta | Omaha Bridge Group',
+  title: 'La empresa que sobrevive crisis: cómo detectar fragilidad oculta',
   description: 'Taleb: fragilidad vs robustez. Cómo ver el riesgo que nadie ve. Cómo diferenciar empresas que colapsan de empresas que prosperan.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/antifragilidad-taleb' },
   openGraph: {
-    title: 'Antifragilidad según Nassim Taleb | Omaha Bridge Group',
+    title: 'Antifragilidad según Nassim Taleb',
     description: 'Cómo detectar fragilidad corporativa antes de que un evento extremo la destruya.',
     type: 'article',
   },

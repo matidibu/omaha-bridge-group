@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'La ilusión más cara: $1B en ganancias, dinero cero en el banco | Omaha Bridge Group',
+  title: 'La ilusión más cara: $1B en ganancias, dinero cero en el banco',
   description: 'Earnings: lo que la contabilidad dice. Cash: lo que realmente hay. Cómo detectar empresas que reportan ganancias pero no tienen dinero.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/earnings-vs-cash' },
   openGraph: {
-    title: 'Earnings vs Cash: lo que importa | Omaha Bridge Group',
+    title: 'Earnings vs Cash: lo que importa',
     description: 'Ganancias pueden ser contabilidad. Cash es realidad. Buffett ve primero el cash.',
     type: 'article',
   },

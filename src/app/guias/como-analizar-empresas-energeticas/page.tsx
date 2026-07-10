@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo analizar empresas energéticas — EV/EBITDA, reservas y FCF | Omaha Bridge Group',
+  title: 'Cómo analizar empresas energéticas — EV/EBITDA, reservas y FCF',
   description: 'Las empresas de energía tienen ciclos, reservas y capex intensivos que requieren métricas específicas. Guía para analizar petroleras, gasistas y energéticas con criterios value investing.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-empresas-energeticas' },
   openGraph: {
-    title: 'Cómo analizar empresas energéticas | Omaha Bridge Group',
+    title: 'Cómo analizar empresas energéticas',
     description: 'Reservas, lifting cost, FCF breakeven y ciclos de commodities: el análisis value de empresas de energía.',
     type: 'article',
   },

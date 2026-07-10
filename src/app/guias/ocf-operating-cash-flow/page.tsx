@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El dinero que importa: Operating Cash Flow vs earnings | Omaha Bridge Group',
+  title: 'El dinero que importa: Operating Cash Flow vs earnings',
   description: 'OCF es dinero que realmente circuló. Earnings es lo que la contabilidad dice. Cómo ver la diferencia.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/ocf-operating-cash-flow' },
   openGraph: {
-    title: 'Operating Cash Flow (OCF) | Omaha Bridge Group',
+    title: 'Operating Cash Flow (OCF)',
     description: 'El flujo operativo es el dinero real. Todo lo demás es contabilidad.',
     type: 'article',
   },

@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Cómo detectar si el CEO te está robando | Omaha Bridge Group',
+  title: 'Cómo detectar si el CEO te está robando',
   description: 'Los signos de un CEO genio vs un CEO ladrón. Cómo Buffett lee el carácter. Cómo no caer en la trampa.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-evaluar-un-ceo' },
   openGraph: {
-    title: 'Cómo evaluar a un CEO | Omaha Bridge Group',
+    title: 'Cómo evaluar a un CEO',
     description: 'Las señales que distinguen a un directivo excelente de uno mediocre: asignación de capital, honestidad y horizonte temporal.',
     type: 'article',
   },

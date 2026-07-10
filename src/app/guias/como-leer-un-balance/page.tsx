@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Los números que los CEOs no quieren que veas | Omaha Bridge Group',
+  title: 'Los números que los CEOs no quieren que veas',
   description: 'El balance: donde está la verdad. Cómo leerlo. Cómo ver lo que los CEOs esconden.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-leer-un-balance' },
   openGraph: {
-    title: 'Cómo leer un balance general | Omaha Bridge Group',
+    title: 'Cómo leer un balance general',
     description: 'Activos, pasivos y patrimonio neto: cómo extraer lo que importa del balance para evaluar la salud financiera de una empresa.',
     type: 'article',
   },

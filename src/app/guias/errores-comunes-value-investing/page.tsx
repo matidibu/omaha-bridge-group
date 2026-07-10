@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Los 10 errores que destruyen carteras (y cómo evitarlos) | Omaha Bridge Group',
+  title: 'Los 10 errores que destruyen carteras (y cómo evitarlos)',
   description: 'Los errores que comete el 99% de value investors. Cómo no ser parte del 99%. Cómo aprender sin perder millones.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/errores-comunes-value-investing' },
   openGraph: {
-    title: 'Los 7 errores más comunes del inversor value | Omaha Bridge Group',
+    title: 'Los 7 errores más comunes del inversor value',
     description: 'Las trampas de valor, el exceso de diversificación y otros errores que destruyen rendimientos a largo plazo.',
     type: 'article',
   },

@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El spread de la fusión: dinero esperando ser reclamado en cada deal | Omaha Bridge Group',
+  title: 'El spread de la fusión: dinero esperando ser reclamado en cada deal',
   description: 'Empresa A ofrece $100, mercado cotiza a $97. El $3 es tuyo si el deal cierra. Cómo evaluar el riesgo.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/fusiones-adquisiciones' },
   openGraph: {
-    title: 'Fusiones y adquisiciones (M&A) | Omaha Bridge Group',
+    title: 'Fusiones y adquisiciones (M&A)',
     description: 'Cuando dos empresas se fusionan, hay dinero en el spread entre precio oferta y precio de mercado.',
     type: 'article',
   },

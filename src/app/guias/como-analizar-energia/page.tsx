@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Oil a $150 ganas fortuna, a $40 pierdes todo: la ruleta rusa de la energía | Omaha Bridge Group',
+  title: 'Oil a $150 ganas fortuna, a $40 pierdes todo: la ruleta rusa de la energía',
   description: 'Energía = ciclos extremos. Cómo sobrevivir. Cómo invertir sin quedar destruido cuando el precio cae.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-energia' },
   openGraph: {
-    title: 'Cómo analizar empresas de Energía | Omaha Bridge Group',
+    title: 'Cómo analizar empresas de Energía',
     description: 'Reservas probadas, costos de extracción, y ciclos de precio. Todo lo que necesitas sobre energía.',
     type: 'article',
   },

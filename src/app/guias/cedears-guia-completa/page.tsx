@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'CEDEARS: cómo invertir en Wall Street desde Argentina | Omaha Bridge Group',
+  title: 'CEDEARS: cómo invertir en Wall Street desde Argentina',
   description: 'Acciones de Wall Street sin salir de Argentina. Cómo funcionan. Ventajas. Riesgos. Cómo empezar hoy.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/cedears-guia-completa' },
   openGraph: {
-    title: 'CEDEARs: guía completa | Omaha Bridge Group',
+    title: 'CEDEARs: guía completa',
     description: 'Todo lo que necesitás saber sobre CEDEARs: ratio, CCL implícito, prima/descuento y cómo invertir en acciones globales desde Argentina.',
     type: 'article',
   },

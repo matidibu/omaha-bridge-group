@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El cliente que se va: cómo el churn destruye lo que parece estable | Omaha Bridge Group',
+  title: 'El cliente que se va: cómo el churn destruye lo que parece estable',
   description: 'Una telecom pierde 2% de clientes mensual = 24% anual. Necesita agregar 200k clientes mes solo para no retroceder. El negocio del cliente que huye.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-telecom' },
   openGraph: {
-    title: 'Cómo analizar empresas de Telecomunicaciones | Omaha Bridge Group',
+    title: 'Cómo analizar empresas de Telecomunicaciones',
     description: 'Churn rate, ARPU, capex de infraestructura. Lo que los inversores en telecom necesitan saber.',
     type: 'article',
   },

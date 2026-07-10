@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'El dividendo del REIT que desaparece cuando baja la tasa de interés | Omaha Bridge Group',
+  title: 'El dividendo del REIT que desaparece cuando baja la tasa de interés',
   description: 'Rendimiento del 7%... pero viene del endeudamiento. Cómo diferenciar distribuciones reales de ilusiones de dinero.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-real-estate' },
   openGraph: {
-    title: 'Cómo analizar REITs e inversiones inmobiliarias | Omaha Bridge Group',
+    title: 'Cómo analizar REITs e inversiones inmobiliarias',
     description: 'FFO, capex recurrente, y calidad de inquilinos. Todo lo que necesitas saber sobre real estate.',
     type: 'article',
   },

@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Value investing en Argentina: donde la inflación mata millones | Omaha Bridge Group',
+  title: 'Value investing en Argentina: donde la inflación mata millones',
   description: 'La inflación es el enemigo número 1. Cómo ajustar criterios. Cuándo pesos, cuándo dólares, cuándo CEDEARs.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/value-investing-argentina' },
   openGraph: {
-    title: 'Value investing en Argentina | Omaha Bridge Group',
+    title: 'Value investing en Argentina',
     description: 'La disciplina value funciona en Argentina también. Pero necesitas ajustar para inflación, devaluación y volatilidad política.',
     type: 'article',
   },

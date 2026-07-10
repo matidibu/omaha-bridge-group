@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'Deuda: el veneno que mata empresas silenciosamente | Omaha Bridge Group',
+  title: 'Deuda: el veneno que mata empresas silenciosamente',
   description: 'Una empresa rentable + deuda alta = dinamita. Cómo ver la bomba antes de que explote. Buffett y la deuda: la regla número 1.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/deuda-en-value-investing' },
   openGraph: {
-    title: 'Deuda en value investing | Omaha Bridge Group',
+    title: 'Deuda en value investing',
     description: 'Cuándo la deuda destruye valor y cuándo es irrelevante. Las métricas para evaluar el riesgo financiero de una empresa.',
     type: 'article',
   },

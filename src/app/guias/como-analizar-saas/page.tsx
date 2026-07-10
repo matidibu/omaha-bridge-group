@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { GuiasShell } from '@/components/guias/GuiasShell'
 
 export const metadata: Metadata = {
-  title: 'SaaS: la ilusión de crecimiento infinito | Omaha Bridge Group',
+  title: 'SaaS: la ilusión de crecimiento infinito',
   description: 'Ingresos recurrentes suena mágico. Pero 95% de SaaS quiebra. Cómo distinguir la verdadera de la ilusión. Magic metrics.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/guias/como-analizar-saas' },
   openGraph: {
-    title: 'Cómo analizar empresas SaaS | Omaha Bridge Group',
+    title: 'Cómo analizar empresas SaaS',
     description: 'ARR, churn, NRR y LTV/CAC: las métricas que importan para invertir en software como servicio.',
     type: 'article',
   },
