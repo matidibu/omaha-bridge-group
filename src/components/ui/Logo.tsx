@@ -17,6 +17,7 @@ export function Logo({ className, size = 'md', tagline = true }: LogoProps) {
             src="/obg-logo-new.png"
             alt="Omaha Bridge Group"
             fill
+            sizes="176px"
             className="object-cover object-center scale-[1.18]"
             priority
           />
@@ -46,6 +47,7 @@ export function Logo({ className, size = 'md', tagline = true }: LogoProps) {
           src="/obg-logo-new.png"
           alt="OBG"
           fill
+          sizes={`${imgSize}px`}
           className="object-cover object-center scale-[1.2]"
         />
       </div>

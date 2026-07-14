@@ -160,7 +160,7 @@ export default function HomePage() {
         className="px-3 sm:px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 sm:w-[120px] sm:h-[120px] shrink-0" style={{ borderRadius: '50%', overflow: 'hidden', position: 'relative', boxShadow: '0 0 0 2px rgba(201,168,76,0.60), 0 0 36px rgba(201,168,76,0.35)' }}>
-            <Image src="/obg-logo-new.png" alt="OBG" fill className="object-cover scale-[1.2]" />
+            <Image src="/obg-logo-new.png" alt="OBG" fill sizes="(min-width: 640px) 120px, 48px" className="object-cover scale-[1.2]" />
           </div>
           <div className="hidden sm:block">
             <div style={{ color: '#C9A84C', fontSize: 15, letterSpacing: '0.38em', textTransform: 'uppercase', fontFamily: 'var(--font-playfair), Georgia, serif', fontWeight: 700 }}>Omaha Bridge Group</div>

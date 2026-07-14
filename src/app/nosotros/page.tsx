@@ -18,7 +18,7 @@ export default function NosotrosPage() {
         </Link>
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full overflow-hidden relative" style={{ boxShadow: '0 0 0 2px rgba(201,168,76,0.50)' }}>
-            <Image src="/obg-logo-new.png" alt="OBG" fill className="object-cover scale-[1.2]" />
+            <Image src="/obg-logo-new.png" alt="OBG" fill sizes="40px" className="object-cover scale-[1.2]" />
           </div>
           <span style={{ color: '#C9A84C', fontSize: 13, letterSpacing: '0.30em', textTransform: 'uppercase', fontFamily: 'var(--font-playfair), Georgia, serif', fontWeight: 700 }}>Omaha Bridge Group</span>
         </div>
