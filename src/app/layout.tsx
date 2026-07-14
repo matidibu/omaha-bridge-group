@@ -81,7 +81,7 @@ export default function RootLayout({
       lang="es"
       className={`${playfair.variable} ${geist.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
+      <head suppressHydrationWarning>
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script
           async

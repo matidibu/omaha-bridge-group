@@ -190,7 +190,7 @@ export default function HomePage() {
         {/* HERO */}
         <section className="w-full max-w-4xl mx-auto px-4 pt-10 pb-4 text-center" style={{ position: 'relative' }}>
           {/* Warm ambient glow behind text */}
-          <div style={{ position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%,-50%)', width: 600, height: 200, background: 'radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
+          <div style={{ position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%,-50%)', width: 'min(600px, 100%)', height: 200, background: 'radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
           <div style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ display: 'inline-block', color: '#C9A84C', fontSize: 9, letterSpacing: '0.55em', textTransform: 'uppercase', marginBottom: 16, background: 'rgba(0,0,0,0.45)', padding: '4px 18px', borderRadius: 20, border: '1px solid rgba(201,168,76,0.22)' }}>
               ♠ &nbsp; La Mesa de los Grandes &nbsp; ♠
@@ -341,7 +341,7 @@ export default function HomePage() {
             <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: 2, borderRadius: 2, background: 'linear-gradient(to right, transparent, #C9A84C 30%, #E8C96C 50%, #C9A84C 70%, transparent)' }} />
 
             {/* Glow ambiental detrás del input */}
-            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '110%', height: '70%', background: 'radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 70%)', pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '100%', height: '70%', background: 'radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
             {/* Label invitación */}
             <div style={{ textAlign: 'center', marginBottom: 18, position: 'relative' }}>
