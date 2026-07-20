@@ -5,6 +5,8 @@ export interface CompanyProfile {
   intro: string[]          // 2-3 párrafos de introducción editorial
   businessModel: string    // cómo gana dinero
   valueInvestorAngle: string // por qué importa al inversor value
+  risks: string[]          // 3 riesgos específicos del negocio, no genéricos de mercado
+  catalysts: string[]      // 3 catalizadores específicos que podrían mover la tesis
 }
 
 export const COMPANY_PROFILES: Record<string, CompanyProfile> = {
@@ -19,6 +21,16 @@ export const COMPANY_PROFILES: Record<string, CompanyProfile> = {
     ],
     businessModel: 'El modelo de ingresos de Apple tiene dos pilares: los productos (iPhone representa ~50% de los ingresos, Mac, iPad y wearables el resto) y los servicios (App Store, suscripciones, licencias, Apple Pay), que crecen más rápido y tienen márgenes brutos del 70%+. La transición hacia servicios es estratégicamente crucial porque genera ingresos recurrentes sobre la base instalada de dispositivos, reduciendo la dependencia de los ciclos de actualización del iPhone.',
     valueInvestorAngle: 'Buffett considera a Apple una empresa de consumo masivo con fidelidad de marca excepcional, no una empresa de tecnología en el sentido tradicional. Sus clientes renuevan el iPhone con una frecuencia y lealtad que pocas marcas en la historia han logrado. El FCF yield históricamente atractivo, la recompra masiva de acciones (más de $600.000M recompradas en la última década) y los márgenes en expansión hacen de Apple uno de los ejemplos más citados de moat de marca combinado con poder de retención de ecosistema.',
+    risks: [
+      'Dependencia de China: cerca de una quinta parte de los ingresos y la mayor parte de la manufactura dependen de la cadena de suministro china, exponiendo a Apple a tensiones geopolíticas y aranceles.',
+      'Ciclos de actualización más largos: los usuarios reemplazan sus iPhones con menor frecuencia que hace una década, presionando el crecimiento del segmento de hardware que aún representa la mitad de los ingresos.',
+      'Presión regulatoria sobre el App Store: fallos antimonopolio en EE.UU. y la Digital Markets Act europea obligan a Apple a permitir tiendas alternativas y bajar comisiones, amenazando el margen del negocio de servicios.',
+    ],
+    catalysts: [
+      'Expansión del negocio de servicios: la base instalada de más de 2.000 millones de dispositivos activos deja margen para seguir monetizando con suscripciones de mayor rentabilidad.',
+      'Apple Intelligence e IA nativa: si logra diferenciar el ecosistema con funciones de IA, podría acelerar el ciclo de reemplazo de hardware.',
+      'Mercados emergentes: India y el sudeste asiático son una frontera de crecimiento de usuarios nuevos donde Apple todavía tiene baja penetración relativa.',
+    ],
   },
 
   MSFT: {
@@ -31,6 +43,16 @@ export const COMPANY_PROFILES: Record<string, CompanyProfile> = {
     ],
     businessModel: 'Microsoft tiene uno de los modelos de negocio más diversificados y recurrentes de la industria tecnológica. La mayoría de sus ingresos provienen de suscripciones (Microsoft 365, Azure, Dynamics) y licencias corporativas con altos costos de cambio. Azure es el motor de crecimiento con ingresos escalando al 20-30% anual. LinkedIn genera ingresos por suscripciones premium, publicidad y soluciones de RRHH. Los márgenes brutos del negocio superan el 70% en conjunto, y el margen operativo se ha expandido consistentemente hasta superar el 40%.',
     valueInvestorAngle: 'Microsoft es considerada por muchos inversores value de la generación moderna como el negocio más cercano al ideal de Buffett en el sector tecnológico: ventajas competitivas claras en múltiples segmentos (costos de cambio en Office/Azure, efecto de red en LinkedIn), crecimiento predecible, ROIC sostenido por encima del 30% y generación de FCF masiva ($70.000M+ anuales). La disciplina de capital allocation de Nadella — inversión en IA, recompras y dividendos crecientes — ha sido ejemplar para el inversor de largo plazo.',
+    risks: [
+      'Intensidad de capex en IA: las inversiones multimillonarias en centros de datos para sostener el crecimiento de Azure y la relación con OpenAI presionan el flujo de caja libre en el corto plazo.',
+      'Escrutinio antimonopolio: reguladores en EE.UU., la UE y Reino Unido investigan las prácticas de bundling de Microsoft 365, Teams y la relación de capital con OpenAI.',
+      'Dependencia de la ejecución en la nube: Azure debe seguir ganando cuota frente a AWS y Google Cloud para justificar el nivel de inversión actual en infraestructura.',
+    ],
+    catalysts: [
+      'Monetización de Copilot: la integración de IA generativa en Microsoft 365 es una oportunidad de upsell sobre una base de más de 400 millones de suscriptores.',
+      'Crecimiento de Azure: la migración corporativa a la nube todavía tiene años de recorrido, en particular en cargas de trabajo de IA.',
+      'Gaming y LinkedIn: Activision Blizzard y LinkedIn ofrecen vectores de crecimiento adicionales fuera del negocio core de software empresarial.',
+    ],
   },
 
   GOOGL: {
@@ -43,6 +65,16 @@ export const COMPANY_PROFILES: Record<string, CompanyProfile> = {
     ],
     businessModel: 'El negocio central de Google es la publicidad digital: cuando una persona busca algo en Google o ve un video en YouTube, los anunciantes pagan por mostrar sus anuncios en ese contexto. Este modelo genera márgenes brutos del 55%+ y es notablemente defensivo porque los anunciantes pagan por resultados medibles, no por alcance masivo. Google Cloud es el segundo motor de crecimiento, aún deficitario pero escalando rápidamente. La posición dominante en búsqueda (más del 90% del mercado global) le otorga un poder de fijación de precios excepcional frente a los anunciantes.',
     valueInvestorAngle: 'Alphabet cotiza frecuentemente con descuento respecto a sus pares tecnológicos por la incertidumbre regulatoria antimonopolio y la percepción de que su negocio de búsqueda podría ser afectado por la inteligencia artificial. Para los inversores value, esa incertidumbre crea oportunidades: el negocio central genera más de $70.000M de FCF anual, la empresa tiene más de $100.000M de caja neta en el balance y el EV/FCF ajustado a esa posición resulta históricamente atractivo. Su inversión temprana en IA (DeepMind, Gemini, TPUs propios) sugiere que el moat de búsqueda puede extenderse, no erosionarse.',
+    risks: [
+      'Disrupción de la búsqueda por IA: chatbots y motores de respuesta directa amenazan con desintermediar el modelo publicitario tradicional basado en clics.',
+      'Litigios antimonopolio: fallos judiciales en EE.UU. ya determinaron que Google mantiene un monopolio ilegal en búsqueda, con remedios aún por definirse que podrían incluir desinversiones forzadas.',
+      'Costos crecientes de infraestructura de IA: competir en modelos de lenguaje de frontera (Gemini) exige un gasto de capital que presiona los márgenes del negocio de Cloud.',
+    ],
+    catalysts: [
+      'Integración de IA en búsqueda: AI Overviews y Gemini podrían defender la cuota de búsqueda si Google logra monetizar las nuevas superficies con eficacia.',
+      'Crecimiento de Google Cloud: el tercer proveedor de nube global sigue ganando cuota y acercándose a la rentabilidad de sus pares.',
+      'Waymo y otras apuestas: la conducción autónoma podría convertirse en una línea de negocio relevante en la próxima década.',
+    ],
   },
 
   AMZN: {
@@ -55,6 +87,16 @@ export const COMPANY_PROFILES: Record<string, CompanyProfile> = {
     ],
     businessModel: 'El modelo de Amazon es inusualmente complejo: el retail (e-commerce directo + marketplace de terceros + logística) opera con márgenes bajos pero genera escala masiva; AWS es el motor de rentabilidad con $100.000M+ de ingresos anuales y márgenes del 30%; la publicidad es el negocio más rentable por unidad (márgenes similares a Google). La suscripción Prime (200M+ miembros globales) ancla la retención de clientes del retail. La infraestructura logística propia (flota aérea, almacenes, última milla) es una ventaja de costos estructural que tardó 20 años en construirse.',
     valueInvestorAngle: 'Amazon es el caso de estudio más discutido en value investing moderno: la empresa reportó "pérdidas" durante años mientras acumulaba uno de los moats más defensibles jamás construidos. El inversor que miró el P/E tradicional perdió la oportunidad; el que miró el FCF libre de capex de crecimiento y la posición estratégica de AWS la aprovechó. Actualmente, AWS + publicidad generan suficiente FCF para justificar la valoración completa de la empresa, lo que hace que el retail, la logística y todo lo demás sean opcionalidad gratuita. La clave para el análisis es separar los tres negocios y valorarlos individualmente.',
+    risks: [
+      'Márgenes de retail estructuralmente bajos: la competencia de precios, incluyendo plataformas como Temu, Shein y Walmart, limita la rentabilidad del e-commerce core.',
+      'Concentración de rentabilidad en AWS: la mayor parte del ingreso operativo del grupo depende de un solo segmento, exponiendo al conjunto si la demanda de nube se desacelera.',
+      'Escrutinio regulatorio: la FTC demandó a Amazon por prácticas anticompetitivas en su marketplace, con riesgo de sanciones o cambios forzados al modelo de negocio.',
+    ],
+    catalysts: [
+      'Publicidad digital: el negocio de ads crece a tasas de dos dígitos altos con márgenes comparables a Google, y todavía es una fracción menor de los ingresos totales.',
+      'IA generativa en AWS: servicios como Bedrock y chips propios de entrenamiento buscan capturar demanda de entrenamiento e inferencia de IA.',
+      'Expansión de márgenes en logística: años de inversión en la red de última milla empiezan a generar apalancamiento operativo.',
+    ],
   },
 
   META: {
@@ -67,6 +109,16 @@ export const COMPANY_PROFILES: Record<string, CompanyProfile> = {
     ],
     businessModel: 'El modelo de Meta es casi idéntico al de Google en su mecánica: vende atención humana a anunciantes. Los usuarios generan contenido, consumen contenido y se comunican gratuitamente; los anunciantes pagan por acceder a esos usuarios con mensajes altamente segmentados. La ventaja de Meta sobre otros medios tradicionales es la precisión del targeting: sabe lo que sus usuarios consumen, con quién se relacionan, qué les genera emoción positiva y negativa, lo cual permite a los anunciantes llegar a exactamente el subconjunto de personas más receptivas a su mensaje.',
     valueInvestorAngle: 'Meta en 2022 era uno de los mejores ejemplos recientes de margen de seguridad en un negocio de alta calidad: cotizaba a FCF yield del 10%+ cuando el mercado penalizaba las pérdidas del metaverso, mientras el negocio central de publicidad seguía siendo un monopolio de facto. Los inversores value que reconocieron que Reality Labs era una opción independiente — que podía liquidarse mentalmente con un descuento — y valoraron el negocio publicitario a múltiplos normales, capturaron uno de los retornos más grandes de la última década. El caso ilustra cómo los sesgos narrativos del mercado crean oportunidades estructurales.',
+    risks: [
+      'Dependencia casi total de publicidad: más del 97% de los ingresos provienen de un solo modelo de negocio, sensible al ciclo económico y al gasto publicitario.',
+      'Gasto continuo en Reality Labs: el metaverso y los dispositivos de realidad aumentada siguen generando pérdidas operativas significativas sin fecha clara de rentabilidad.',
+      'Riesgo regulatorio y de privacidad: cambios en las reglas de tracking, como el App Tracking Transparency de Apple, o nuevas regulaciones de privacidad pueden afectar la efectividad publicitaria.',
+    ],
+    catalysts: [
+      'Monetización de Reels y WhatsApp: el video corto y la plataforma de mensajería más grande del mundo todavía están submonetizados frente al feed de Instagram y Facebook.',
+      'IA aplicada a publicidad: mejoras algorítmicas en segmentación y creación automática de anuncios elevan la eficiencia del gasto publicitario de los clientes.',
+      'Disciplina de costos: el "Año de la Eficiencia" demostró que Meta puede expandir márgenes agresivamente cuando prioriza rentabilidad sobre crecimiento de plantilla.',
+    ],
   },
 
   NVDA: {
@@ -79,6 +131,16 @@ export const COMPANY_PROFILES: Record<string, CompanyProfile> = {
     ],
     businessModel: 'NVIDIA opera con un modelo "fabless": diseña sus chips pero subcontrata la manufactura (principalmente a TSMC en Taiwán). Sus ingresos principales vienen de Data Center (GPUs para IA y HPC, ~80% de ingresos), Gaming (tarjetas GeForce), Professional Visualization (Quadro) y Automotive. El verdadero moat no está solo en el hardware sino en el ecosistema de software CUDA: con más de 4 millones de desarrolladores entrenados sobre esa plataforma, cambiar a un competidor requeriría reescribir cientos de miles de modelos y aplicaciones — un costo de cambio enorme que protege la posición de NVIDIA.',
     valueInvestorAngle: 'NVIDIA representa el debate más interesante en value investing contemporáneo: ¿es una empresa de semiconductores cíclica que cotiza con múltiplos de burbuja, o es la Microsoft de la era de la IA con un moat software duradero? Los bearish señalan el riesgo de competencia de AMD, los chips propios de Google (TPU), Apple y Amazon, y la eventual comoditización de la infraestructura de IA. Los bullish argumentan que el ecosistema CUDA es el Windows de la IA: difícilmente reemplazable aunque aparezcan alternativas técnicamente superiores. El análisis de largo plazo requiere tomar posición sobre esa pregunta estratégica, no solo sobre los múltiplos actuales.',
+    risks: [
+      'Concentración de clientes: un puñado de hyperscalers (Microsoft, Google, Amazon, Meta) representa una porción muy alta de los ingresos de centros de datos.',
+      'Competencia creciente: los chips propios de los hyperscalers y AMD buscan reducir la dependencia de la industria respecto de NVIDIA.',
+      'Riesgo geopolítico: las restricciones de exportación a China y la dependencia de TSMC en Taiwán exponen a la empresa a shocks regulatorios y geopolíticos.',
+    ],
+    catalysts: [
+      'Ciclo de renovación de infraestructura de IA: cada nueva generación de chips genera un ciclo de reemplazo de la capacidad instalada en los centros de datos.',
+      'Expansión más allá del entrenamiento: la demanda de inferencia de IA en producción podría superar en volumen a la demanda de entrenamiento de modelos.',
+      'Nuevos verticales: robótica, vehículos autónomos e "IA física" son mercados incipientes donde NVIDIA busca replicar su dominio en centros de datos.',
+    ],
   },
 
   TSLA: {
@@ -91,6 +153,16 @@ export const COMPANY_PROFILES: Record<string, CompanyProfile> = {
     ],
     businessModel: 'Tesla tiene un modelo de ingresos híbrido: la mayor parte proviene de ventas de vehículos (con márgenes brutos que bajaron del 29% en 2022 al ~18% en 2024 por la guerra de precios del mercado EV), y una parte creciente de servicios y software (FSD, insurance, servicios de carga, créditos regulatorios). La venta de créditos de carbono a fabricantes tradicionales ha sido históricamente una fuente de ingreso significativa pero no recurrente. El negocio de energía (Megapack) tiene crecimiento acelerado y márgenes en expansión.',
     valueInvestorAngle: 'Tesla es el activo más polarizante del mercado actual entre los inversores fundamentales. Los escépticos señalan la compresión de márgenes por la guerra de precios, la competencia creciente de BYD y otros fabricantes chinos, la volatilidad de las decisiones de Elon Musk y una valoración que históricamente ha descontado un crecimiento que no se ha materializado. Los creyentes valúan la optionalidad de los negocios de FSD (si logra autonomía completa), Megapack (almacenamiento energético), el Supercharger network (adoptado por Ford, GM y otros), y la posición como empresa tecnológica de energía más que como automotriz tradicional.',
+    risks: [
+      'Guerra de precios en EVs: la competencia de BYD y otros fabricantes chinos comprimió los márgenes brutos de vehículos de forma sostenida.',
+      'Dependencia de la percepción de Elon Musk: decisiones y declaraciones del CEO generan volatilidad en la acción independiente de los fundamentales del negocio.',
+      'Ejecución de Full Self-Driving: buena parte de la valoración descuenta un avance hacia la autonomía completa que todavía no está garantizado ni aprobado regulatoriamente a escala.',
+    ],
+    catalysts: [
+      'Megapack y almacenamiento de energía: el negocio de baterías estacionarias crece con márgenes superiores a los de vehículos y menor competencia directa.',
+      'Robotaxi y licenciamiento de FSD: si Tesla logra desplegar conducción autónoma comercialmente, podría abrir una fuente de ingresos de software de alto margen.',
+      'Modelos más económicos: nuevos vehículos de menor precio podrían expandir el mercado direccionable en segmentos donde Tesla hoy tiene poca presencia.',
+    ],
   },
 
   JPM: {
@@ -103,6 +175,16 @@ export const COMPANY_PROFILES: Record<string, CompanyProfile> = {
     ],
     businessModel: 'JPMorgan genera ingresos a través de cuatro divisiones: Consumer & Community Banking (cuentas corrientes, tarjetas de crédito, hipotecas — el negocio más visible), Commercial Banking (préstamos y servicios a empresas medianas), Corporate & Investment Bank (trading, underwriting, M&A advisory — el más rentable) y Asset & Wealth Management (gestión de carteras institucionales y privadas). La diversificación entre negocios cíclicos (investment banking) y defensivos (retail banking) suaviza el resultado a lo largo del ciclo económico.',
     valueInvestorAngle: 'Buffett ha dicho que JPMorgan es el banco mejor gestionado del mundo, con Jamie Dimon como el mejor CEO bancario de su generación. La franquicia de depósitos a costo casi nulo, el ROIC consistentemente por encima del 15% y la disciplina de capital de Dimon (que preservó el balance sólido mientras otros bancos colapsaban en 2008 y 2023) lo hacen destacar entre los bancos globales. El inversor value considera a JPMorgan aceptable a P/B inferior a 2x y muy atractivo cerca de 1.2x, niveles que históricamente han marcado suelos durante ciclos bajistas.',
+    risks: [
+      'Sensibilidad a tasas de interés: cambios en la política monetaria de la Fed afectan directamente el margen de intermediación (net interest margin) del banco.',
+      'Riesgo crediticio cíclico: una recesión incrementaría las provisiones por incobrabilidad en tarjetas de crédito y préstamos comerciales.',
+      'Regulación de capital: nuevas exigencias como Basilea III Endgame podrían requerir que JPMorgan mantenga más capital, limitando el retorno sobre el equity.',
+    ],
+    catalysts: [
+      'Banca de inversión: una reactivación de M&A y ofertas públicas tras años de actividad deprimida beneficiaría al segmento más rentable del banco.',
+      'Ganancia de cuota de mercado: JPMorgan ganó depósitos y cuota de forma consistente tras las crisis bancarias regionales de 2023.',
+      'Gestión de patrimonio: el crecimiento de Asset & Wealth Management aporta ingresos por comisiones menos sensibles al ciclo crediticio.',
+    ],
   },
 
   V: {
@@ -115,6 +197,16 @@ export const COMPANY_PROFILES: Record<string, CompanyProfile> = {
     ],
     businessModel: 'El modelo de negocio de Visa es casi puro margen: genera ingresos por tarifas de transacción (service fees, data processing fees, international transaction fees) y no tiene los costos de riesgo crediticio de un banco. Sus márgenes operativos superan el 65% — extraordinarios en cualquier industria. El crecimiento estructural proviene del desplazamiento del efectivo y los cheques hacia pagos digitales en todo el mundo: en muchos mercados emergentes, más del 80% de las transacciones todavía son en efectivo, lo que representa décadas de expansión del volumen transaccional.',
     valueInvestorAngle: 'Visa es considerada uno de los mejores negocios del mundo por su combinación de moat (efecto de red bilateral imposible de replicar sin décadas), márgenes (>65% operativo), escalabilidad (ingresos crecen con el volumen sin inversión proporcional de capital), y crecimiento secular (migración global del efectivo al pago digital). Buffett tiene posición en Visa y Mastercard simultáneamente, reconociendo que el duopolio de redes de pago no tiene equivalente en términos de calidad de negocio. El principal riesgo — regulación antimonopolio y disruption de pagos alternativos — debe monitorearse pero históricamente no ha erosionado los fundamentales.',
+    risks: [
+      'Regulación antimonopolio: el Departamento de Justicia de EE.UU. demandó a Visa por prácticas anticompetitivas en el mercado de débito, con riesgo de cambios forzados al modelo de tarifas.',
+      'Disrupción de pagos alternativos: billeteras digitales, criptomonedas y sistemas de pago instantáneo entre cuentas bancarias podrían desintermediar a las redes tradicionales.',
+      'Sensibilidad al consumo: el volumen de transacciones está correlacionado con el gasto de los consumidores, que se desacelera en recesiones.',
+    ],
+    catalysts: [
+      'Migración global del efectivo: en mercados emergentes, la mayoría de las transacciones todavía son en efectivo, lo que representa años de crecimiento estructural del volumen.',
+      'Pagos B2B y transferencias transfronterizas: Visa Direct y Visa B2B Connect atacan mercados nuevos más allá del consumo tradicional con tarjeta.',
+      'Value-added services: servicios de prevención de fraude, analítica de datos y consultoría generan ingresos adicionales sobre la misma infraestructura de red.',
+    ],
   },
 
   KO: {
@@ -127,6 +219,16 @@ export const COMPANY_PROFILES: Record<string, CompanyProfile> = {
     ],
     businessModel: 'El modelo de concentrado es la clave de la rentabilidad de Coca-Cola: vende el ingrediente principal a los embotelladores con márgenes altísimos, mientras los embotelladores asumen el capex de plantas, maquinaria, flota y distribución. Los ingresos de Coca-Cola provienen de la venta de concentrados, siropes y bebidas terminadas (en los mercados donde opera directamente), más ingresos de licencias y royalties. Los márgenes brutos son del 60%+ y el ROIC supera consistentemente el 20% en un negocio que casi no requiere reinversión de capital para mantenerse.',
     valueInvestorAngle: 'Coca-Cola es la posición más famosa de Warren Buffett, comprada en 1988 después del crash del 87. Berkshire pagó aproximadamente $1.300M por una participación que hoy vale más de $25.000M sin contar dividendos recibidos. La tesis era simple: una marca global con pricing power en una categoría de bajo costo unitario, distribuida en cada rincón del planeta, con modelo de concentrado que no requiere capital para crecer. El moat de marca es tan profundo que ni la guerra de cola con Pepsi durante cuarenta años logró erosionar los fundamentos del negocio. Es el ejemplo canónico de la filosofía de Buffett: un gran negocio comprado a precio razonable y mantenido para siempre.',
+    risks: [
+      'Cambio en preferencias de consumo: la creciente preocupación por la salud y el azúcar presiona el volumen de bebidas carbonatadas tradicionales en mercados desarrollados.',
+      'Exposición cambiaria: más del 60% de los ingresos provienen de fuera de EE.UU., generando volatilidad por movimientos del dólar.',
+      'Costos de insumos: el precio del azúcar, el aluminio y otros commodities puede comprimir márgenes si no se traslada completamente a precios.',
+    ],
+    catalysts: [
+      'Diversificación de portafolio: la expansión hacia aguas, tés y bebidas energéticas reduce la dependencia de las gaseosas clásicas.',
+      'Poder de fijación de precios: la marca permite subir precios por encima de la inflación sin pérdida significativa de volumen en la mayoría de los mercados.',
+      'Crecimiento en mercados emergentes: la penetración per cápita de Coca-Cola en India, África y el sudeste asiático todavía tiene amplio margen de expansión frente a mercados maduros.',
+    ],
   },
 
 }

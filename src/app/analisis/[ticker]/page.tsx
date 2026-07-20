@@ -465,6 +465,36 @@ export default async function AnalisisPage(
                   <p className="text-sm leading-relaxed" style={{ color: '#8A9A85' }}>{profile.valueInvestorAngle}</p>
                 </div>
               </section>
+
+              {/* ── Riesgos y catalizadores ── */}
+              <Divider />
+              <section>
+                <h2 className="text-base font-semibold mb-4" style={{ color: '#C9A84C', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+                  Riesgos y catalizadores
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="rounded-lg p-4" style={{ background: 'rgba(7,43,24,0.4)', border: '1px solid rgba(239,68,68,0.15)' }}>
+                    <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#f87171' }}>Riesgos clave</p>
+                    <ul className="space-y-2.5">
+                      {profile.risks.map((risk, i) => (
+                        <li key={i} className="text-sm leading-relaxed" style={{ color: '#8A9A85' }}>
+                          <span style={{ color: '#f87171' }}>— </span>{risk}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="rounded-lg p-4" style={{ background: 'rgba(7,43,24,0.4)', border: '1px solid rgba(34,197,94,0.15)' }}>
+                    <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#22c55e' }}>Catalizadores</p>
+                    <ul className="space-y-2.5">
+                      {profile.catalysts.map((catalyst, i) => (
+                        <li key={i} className="text-sm leading-relaxed" style={{ color: '#8A9A85' }}>
+                          <span style={{ color: '#22c55e' }}>— </span>{catalyst}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </section>
             </>
           )
         })()}
