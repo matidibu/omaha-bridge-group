@@ -96,7 +96,15 @@ function InvestorSection({ p }: { p: InvestorPortfolio }) {
           &ldquo;{p.strategy}&rdquo;
         </p>
 
-        <div style={{ display: 'flex', gap: 20, marginTop: 8, flexWrap: 'wrap' }}>
+        <div style={{ marginTop: 12, marginBottom: 4 }}>
+          {(p.bio ?? []).map((paragraph, i) => (
+            <p key={i} style={{ fontSize: 13, color: '#8A9A85', lineHeight: 1.75, maxWidth: 720, margin: i === 0 ? '0 0 10px' : 0 }}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
+        <div style={{ display: 'flex', gap: 20, marginTop: 12, flexWrap: 'wrap' }}>
           {p.totalValue > 0 && (
             <span style={{ fontSize: 11, color: '#4A5A72', fontFamily: 'var(--font-geist-mono)' }}>
               Portafolio total:{' '}
@@ -264,6 +272,47 @@ export default async function CartasEnMesaPage() {
         {portfolios.map(p => (
           <InvestorSection key={p.id} p={p} />
         ))}
+
+        {/* Qué es un 13F */}
+        <div
+          style={{
+            borderTop: '1px solid rgba(201,168,76,0.10)',
+            paddingTop: 32,
+            marginTop: 8,
+            marginBottom: 40,
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: 'var(--font-playfair), Georgia, serif',
+              fontSize: 20,
+              fontWeight: 700,
+              color: '#E8EDF5',
+              marginBottom: 14,
+            }}
+          >
+            ¿Qué es un 13F y qué no muestra?
+          </h2>
+          <p style={{ fontSize: 13, color: '#8A9A85', lineHeight: 1.75, maxWidth: 720, marginBottom: 12 }}>
+            El Formulario 13F es una presentación trimestral obligatoria ante la SEC para todo gestor
+            institucional que administre más de $100 millones en acciones que cotizan en EE.UU. Fue creado
+            en 1975 para dar transparencia sobre las posiciones de los grandes inversores institucionales, y
+            hoy es la fuente pública más citada para seguir de cerca a los superinversores.
+          </p>
+          <p style={{ fontSize: 13, color: '#8A9A85', lineHeight: 1.75, maxWidth: 720, marginBottom: 8 }}>
+            Tiene limitaciones importantes a tener en cuenta antes de replicar cualquier posición:
+          </p>
+          <ul style={{ fontSize: 13, color: '#8A9A85', lineHeight: 1.75, maxWidth: 720, paddingLeft: 20, marginBottom: 16 }}>
+            <li><strong style={{ color: '#B4C0D4' }}>Retraso de hasta 45 días</strong> — lo que ves acá es una fotografía de hace más de un mes, no la cartera actual del gestor.</li>
+            <li><strong style={{ color: '#B4C0D4' }}>Solo acciones de EE.UU.</strong> — bonos, efectivo, posiciones en corto y activos internacionales no listados en EE.UU. no aparecen en el 13F.</li>
+            <li><strong style={{ color: '#B4C0D4' }}>No muestra el tamaño relativo real</strong> — una posición puede ser el 40% de la cartera pública reportada pero solo el 5% del patrimonio total del gestor si tiene activos fuera del alcance del formulario.</li>
+            <li><strong style={{ color: '#B4C0D4' }}>Sin contexto de precio de entrada</strong> — no se sabe a qué precio compró el gestor ni si la posición está en ganancia o pérdida hoy.</li>
+          </ul>
+          <p style={{ fontSize: 13, color: '#8A9A85', lineHeight: 1.75, maxWidth: 720 }}>
+            Usar esta información como punto de partida para investigar una idea es razonable. Usarla como
+            señal de compra automática, sin hacer tu propio análisis, no lo es.
+          </p>
+        </div>
 
         {/* Attribution */}
         <div

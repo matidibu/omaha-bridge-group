@@ -19,6 +19,7 @@ export interface InvestorPortfolio {
   symbol: string
   description: string
   strategy: string
+  bio: string[]
   filingDate: string
   reportPeriod: string
   totalValue: number // USD (actual dollars)
@@ -36,6 +37,10 @@ const SUPERINVESTORS = [
     symbol: '♥',
     description: 'El Oráculo de Omaha',
     strategy: 'Empresas excepcionales a precios razonables. Moat amplio, ROIC alto, gestión honesta.',
+    bio: [
+      'Warren Buffett dirige Berkshire Hathaway desde 1965, cuando transformó una empresa textil en quiebra en el conglomerado que hoy vale más de $900.000 millones. Su filosofía — comprar negocios excepcionales a precios razonables y sostenerlos indefinidamente — lo convirtió en el inversor más estudiado de la historia.',
+      'El portafolio de acciones públicas de Berkshire es solo una fracción de su valor total; el resto son negocios de propiedad completa como GEICO, BNSF Railway y See\'s Candies. Aun así, sus movimientos en el 13F se siguen de cerca porque Buffett opera con muy poca frecuencia: posiciones como Apple y Coca-Cola se mantienen durante años o décadas.',
+    ],
   },
   {
     id: 'ackman',
@@ -46,6 +51,10 @@ const SUPERINVESTORS = [
     symbol: '♣',
     description: 'Activista de alta convicción',
     strategy: 'Posiciones muy concentradas en negocios predecibles. Activismo para desbloquear valor.',
+    bio: [
+      'Bill Ackman fundó Pershing Square Capital Management en 2004 y se hizo conocido por campañas activistas de alto perfil: presionó por cambios de gestión en Canadian Pacific Railway (2011-2012) y Chipotle (2016), y apostó públicamente en contra de Herbalife durante años. A diferencia de Buffett, construye posiciones muy concentradas — a menudo menos de diez nombres — y busca influir activamente en el directorio y la estrategia de las empresas en las que invierte.',
+      'Su fondo tuvo tramos volátiles: pérdidas fuertes con Valeant Pharmaceuticals (2015-2017) y una recuperación notable durante la pandemia, cuando una cobertura de crédito le generó una ganancia de $2.600 millones en pocas semanas. Sus cartas trimestrales a inversores son seguidas de cerca por el razonamiento detallado que ofrece sobre cada posición.',
+    ],
   },
   {
     id: 'burry',
@@ -56,6 +65,10 @@ const SUPERINVESTORS = [
     symbol: '♠',
     description: 'El contrario del mercado',
     strategy: 'Value profundo con sesgo contrarian. Conocido por predecir la crisis hipotecaria de 2008.',
+    bio: [
+      'Michael Burry se hizo mundialmente conocido por predecir y apostar contra la burbuja inmobiliaria estadounidense antes de la crisis de 2008 a través de su fondo Scion Capital, una historia narrada en el libro y la película "The Big Short". Es médico de formación antes que financista, y su estilo de inversión se caracteriza por análisis profundo, contrarian, y a menudo alejado del consenso de Wall Street.',
+      'Desde que reabrió Scion Asset Management, Burry es conocido por posiciones altamente concentradas y cambios de cartera abruptos entre filings trimestrales, al punto de que 13F consecutivos suyos muestran carteras casi completamente distintas. Eso hace que sus filings sean más una fotografía de una convicción puntual que una cartera de largo plazo, a diferencia de Buffett.',
+    ],
   },
 ]
 
