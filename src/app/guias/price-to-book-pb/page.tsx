@@ -79,6 +79,18 @@ export default function PriceToBookPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            Cuándo P/B directamente no sirve
+          </h2>
+          <p>
+            El valor en libros mide activos físicos: fábricas, inventario, equipos. No captura marcas, patentes, software o base de usuarios. Coca-Cola tiene un valor en libros modesto comparado con lo que vale su marca — su P/B siempre parece "caro" aunque el negocio sea excepcional.
+          </p>
+          <p className="mt-3">
+            Para empresas de software, marcas de consumo o servicios (activos intangibles), P/B es casi inútil. Ahí importan más métricas como ROIC, márgenes o flujo de caja libre.
+          </p>
+        </section>
+
       </div>
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />

@@ -79,6 +79,18 @@ export default function PriceToSalesPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            El límite de P/S: ignora la rentabilidad
+          </h2>
+          <p>
+            P/S no dice nada sobre si la empresa gana o pierde dinero con esos ingresos. Un retailer con márgenes de -5% puede tener P/S bajo y seguir siendo una trampa de valor — factura mucho pero quema caja en cada venta.
+          </p>
+          <p className="mt-3">
+            Usá P/S siempre junto al margen bruto y operativo. P/S bajo con márgenes saludables es señal real de descuento. P/S bajo con márgenes negativos es una empresa barata por buena razón.
+          </p>
+        </section>
+
       </div>
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />

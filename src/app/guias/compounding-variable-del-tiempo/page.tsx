@@ -79,6 +79,18 @@ export default function CompoundingPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            El enemigo del compounding: las interrupciones
+          </h2>
+          <p>
+            Cada vez que vendés y volvés a comprar, el reloj del compounding arranca de cero para ese dinero. Salir del mercado en pánico y reentrar dos años después no es "esperar mejor momento" — es borrar años de crecimiento acumulado.
+          </p>
+          <p className="mt-3">
+            Impuestos por ventas frecuentes y comisiones hacen lo mismo en menor escala: cada fricción le resta años efectivos a la curva exponencial. El compounding premia la inactividad, no la actividad.
+          </p>
+        </section>
+
         <blockquote className="border-l-2 pl-4 mt-4 italic"
           style={{ borderColor: 'rgba(212,168,67,0.4)', color: 'rgba(232,237,245,0.7)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           &ldquo;La regla del 72: divide 72 por tu retorno anual, y ese es el número de años para duplicar dinero.&rdquo;

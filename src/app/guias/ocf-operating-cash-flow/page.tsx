@@ -88,6 +88,18 @@ export default function OCFPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            OCF tampoco es infalible
+          </h2>
+          <p>
+            Se puede inflar temporalmente: estirar los plazos de pago a proveedores (no pagar lo que debés todavía) o vender cuentas por cobrar a un tercero (factoring) mete dinero en el trimestre actual sin que sea sostenible.
+          </p>
+          <p className="mt-3">
+            Por eso importa ver la tendencia de varios trimestres, no un solo período. Un OCF que salta de golpe sin que las ventas hayan crecido igual merece revisión.
+          </p>
+        </section>
+
       </div>
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />

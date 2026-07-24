@@ -76,9 +76,38 @@ export default function DefensiveStocksPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            El riesgo de pagar de más por seguridad
+          </h2>
+          <p>
+            Cuando el mercado tiene miedo, todos corren hacia lo defensivo — y eso las encarece. En marzo de 2020, utilities cotizaban a P/E de 22x mientras bancos sólidos cotizaban a 8x. La "seguridad" ya estaba pagada de antemano.
+          </p>
+          <p className="mt-3">
+            Comprar defensivas caras no te protege — solo cambia el tipo de pérdida. Buscá defensivas cuando están baratas por desinterés del mercado, no cuando están de moda por pánico.
+          </p>
+        </section>
+
       </div>
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
+
+      <section className="mb-8">
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Estrategias de protección</p>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { slug: 'dividendos-value-investing', label: 'Dividendos' },
+            { slug: 'riesgo-vs-volatilidad', label: 'Riesgo vs volatilidad' },
+            { slug: 'como-analizar-consumo-masivo', label: 'Consumo masivo' },
+          ].map(({ slug, label }) => (
+            <Link key={slug} href={`/guias/${slug}`}
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
+              {label}
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section className="text-center rounded-xl border py-8 px-6"
         style={{ borderColor: 'rgba(201,168,76,0.2)', background: 'rgba(7,43,24,0.5)' }}>

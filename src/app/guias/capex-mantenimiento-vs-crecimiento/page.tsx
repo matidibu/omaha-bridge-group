@@ -91,6 +91,18 @@ export default function CapexPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            Cómo estimarlo vos mismo sin acceso interno
+          </h2>
+          <p>
+            Como inversor externo no ves el desglose real que ve el CEO, pero hay un proxy útil: la depreciación anual reportada suele aproximar el capex de mantenimiento, porque representa el desgaste de los activos que hay que reponer.
+          </p>
+          <p className="mt-3">
+            Si el capex total de una empresa es consistentemente 2-3x su depreciación durante varios años, gran parte de ese exceso es probablemente crecimiento real. Si el capex apenas supera la depreciación, casi todo es mantenimiento — hay poco crecimiento genuino financiado.
+          </p>
+        </section>
+
       </div>
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />

@@ -78,6 +78,18 @@ export default function EarningsVsCashPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            Cómo detectarlo en un reporte
+          </h2>
+          <p>
+            Compará el crecimiento de "cuentas por cobrar" contra el crecimiento de ingresos en el balance. Si las ventas crecen 10% pero las cuentas por cobrar crecen 40%, la empresa está vendiendo a clientes que todavía no pagan.
+          </p>
+          <p className="mt-3">
+            Otra señal: net income positivo varios trimestres seguidos mientras el flujo de caja operativo (OCF) es negativo o decrece. Cuando esas dos líneas se separan de forma sostenida, confiá en el cash, no en el earnings.
+          </p>
+        </section>
+
       </div>
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />

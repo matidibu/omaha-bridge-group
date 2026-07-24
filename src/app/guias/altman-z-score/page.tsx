@@ -83,6 +83,18 @@ export default function AltmanZScorePage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            Sus límites: no sirve para todo
+          </h2>
+          <p>
+            Altman diseñó la fórmula en 1968 pensando en manufactureras e industriales. Para bancos (que operan con apalancamiento estructuralmente alto por diseño) el Z-Score da falsos positivos de quiebra constantemente — no es aplicable.
+          </p>
+          <p className="mt-3">
+            Para empresas de software o servicios con pocos activos físicos ("Total Assets" bajo), el ratio también se distorsiona. Existen variantes (Z''-Score) ajustadas para esos sectores. Usalo como una señal de alerta más, nunca como veredicto único.
+          </p>
+        </section>
+
         <blockquote className="border-l-2 pl-4 mt-4 italic"
           style={{ borderColor: 'rgba(212,168,67,0.4)', color: 'rgba(232,237,245,0.7)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           &ldquo;Evitar desastres es tan importante como buscar gangas.&rdquo;

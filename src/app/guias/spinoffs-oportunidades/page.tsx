@@ -76,9 +76,50 @@ export default function SpinoffsPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            Por qué hay venta forzada al inicio
+          </h2>
+          <p>
+            Los fondos indexados que tenían la empresa original reciben acciones de la nueva compañía spinoff, pero muchos mandatos no les permiten mantener empresas fuera de su índice. Están obligados a vender sin importar el precio, en las primeras semanas.
+          </p>
+          <p className="mt-3">
+            Esa venta mecánica, no fundamentada en el negocio, es lo que crea la ineficiencia. Por eso el mejor punto de entrada suele ser 60-90 días después del spinoff, no el primer día.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            Cuándo el spinoff es trampa, no oportunidad
+          </h2>
+          <p>
+            No todo spinoff es ganga. Una táctica común: la empresa madre le carga toda la deuda al negocio que separa, dejándolo con un balance frágil desde el día uno. El "spinoff barato" en realidad está apalancado hasta el cuello.
+          </p>
+          <p className="mt-3">
+            Revisá siempre el balance de la nueva entidad antes de asumir que la caída de precio es irracional.
+          </p>
+        </section>
+
       </div>
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
+
+      <section className="mb-8">
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Eventos corporativos</p>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { slug: 'fusiones-adquisiciones', label: 'M&A' },
+            { slug: 'tipos-de-moat', label: 'Tipos de moat' },
+            { slug: 'deuda-en-value-investing', label: 'Deuda' },
+          ].map(({ slug, label }) => (
+            <Link key={slug} href={`/guias/${slug}`}
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
+              {label}
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section className="text-center rounded-xl border py-8 px-6"
         style={{ borderColor: 'rgba(201,168,76,0.2)', background: 'rgba(7,43,24,0.5)' }}>

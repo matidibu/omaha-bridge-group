@@ -79,9 +79,38 @@ export default function SelectividadPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            El precio de estar equivocado
+          </h2>
+          <p>
+            La selectividad solo funciona dentro de tu círculo de competencia. Concentrarte en 5 acciones que entendés a fondo es ventaja. Concentrarte en 5 acciones que no entendés es apuesta disfrazada de convicción.
+          </p>
+          <p className="mt-3">
+            Buffett concentra porque investiga con una profundidad que el inversor promedio no reproduce. Si no vas a leer los 10-K, los earnings calls y entender el negocio como si fueras dueño, la diversificación amplia es la opción más honesta.
+          </p>
+        </section>
+
       </div>
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
+
+      <section className="mb-8">
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Construcción de portafolio</p>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { slug: 'margen-de-seguridad', label: 'Margen de seguridad' },
+            { slug: 'psicologia-del-inversor', label: 'Psicología del inversor' },
+            { slug: 'tipos-de-moat', label: 'Tipos de moat' },
+          ].map(({ slug, label }) => (
+            <Link key={slug} href={`/guias/${slug}`}
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
+              {label}
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section className="text-center rounded-xl border py-8 px-6"
         style={{ borderColor: 'rgba(201,168,76,0.2)', background: 'rgba(7,43,24,0.5)' }}>

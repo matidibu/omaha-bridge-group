@@ -78,9 +78,38 @@ export default function MAPage() {
           </ul>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            Cash deal vs stock deal
+          </h2>
+          <p>
+            En un deal en efectivo, el spread es simple: precio oferta menos precio de mercado. En un deal en acciones (el Buyer paga con sus propias acciones), el spread depende también del precio del Buyer — si esa acción cae, tu spread cae con ella.
+          </p>
+          <p className="mt-3">
+            Los deals mixtos (cash + stock) son los más comunes en fusiones grandes. Entender qué porción es efectivo y qué porción es papel del comprador cambia por completo el perfil de riesgo de la operación.
+          </p>
+        </section>
+
       </div>
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
+
+      <section className="mb-8">
+        <p className="text-sm md:text-base uppercase tracking-widest mb-4" style={{ color: 'rgba(201,168,76,0.5)' }}>Eventos corporativos</p>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { slug: 'spinoffs-oportunidades', label: 'Spinoffs' },
+            { slug: 'riesgo-vs-volatilidad', label: 'Riesgo vs volatilidad' },
+            { slug: 'precio-vs-valor', label: 'Precio vs valor' },
+          ].map(({ slug, label }) => (
+            <Link key={slug} href={`/guias/${slug}`}
+              className="text-sm md:text-base px-3 py-1.5 rounded-full border transition-colors hover:border-[#C9A84C]/40 hover:text-[#C9A84C]"
+              style={{ color: '#6A7A95', borderColor: 'rgba(201,168,76,0.15)', background: 'rgba(7,43,24,0.4)' }}>
+              {label}
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section className="text-center rounded-xl border py-8 px-6"
         style={{ borderColor: 'rgba(201,168,76,0.2)', background: 'rgba(7,43,24,0.5)' }}>

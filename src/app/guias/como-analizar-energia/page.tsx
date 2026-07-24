@@ -88,6 +88,18 @@ export default function AnalizarEnergiaPage() {
           </p>
         </section>
 
+        <section>
+          <h2 className="text-base font-semibold mb-3" style={{ color: COLOR, fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+            Integradas vs upstream puras
+          </h2>
+          <p>
+            Una petrolera integrada (ExxonMobil, Chevron) tiene extracción, refinación y distribución. Cuando el precio del crudo cae, pierde en extracción pero gana en refinación (petróleo barato como insumo) — se cubre a sí misma parcialmente.
+          </p>
+          <p className="mt-3">
+            Una upstream pura (solo extracción) no tiene ese colchón. Sube y baja con el precio del barril sin matices. Es más rentable en booms y más frágil en crisis — mayor volatilidad en ambas direcciones.
+          </p>
+        </section>
+
       </div>
 
       <hr style={{ borderColor: 'rgba(201,168,76,0.08)', margin: '2.5rem 0' }} />
