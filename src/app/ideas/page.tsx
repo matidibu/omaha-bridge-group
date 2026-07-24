@@ -240,7 +240,7 @@ function StockCard({ stock, rank }: { stock: ScreenerStock; rank: number }) {
               ${stock.currentPrice.toFixed(2)}
             </span>
             <Link
-              href={`/analysis/${stock.ticker}`}
+              href={`/analisis/${stock.ticker}`}
               className="text-xs font-semibold text-[#080E1C] bg-[#B8922A] hover:bg-[#C9A84C] px-4 py-1.5 rounded-lg transition-all"
             >
               Análisis completo →

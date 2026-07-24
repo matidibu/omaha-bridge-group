@@ -7,7 +7,7 @@ import { HoldingCard } from './HoldingCard'
 export const revalidate = 86400
 
 export const metadata: Metadata = {
-  title: 'Cartas en Mesa — Los grandes inversores revelan su mano | Omaha Bridge Group',
+  title: 'Cartas en Mesa — Los grandes inversores revelan su mano',
   description:
     'Descubrí qué acciones tienen en cartera Warren Buffett, Bill Ackman y Michael Burry. Datos reales de formularios 13F presentados ante la SEC, actualizados cada trimestre.',
   alternates: { canonical: 'https://omaha-bridge-group.vercel.app/cartas-en-mesa' },

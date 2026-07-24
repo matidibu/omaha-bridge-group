@@ -57,7 +57,7 @@ export async function generateMetadata(
     ? ` Incluye precio CEDEAR en pesos, CCL implícito y prima/descuento vs NYSE para inversores argentinos.`
     : ''
   return {
-    title: `Análisis ${t} — Value Investing | Omaha Bridge Group`,
+    title: `Análisis ${t} — Value Investing`,
     description: `Los 6 maestros del value investing analizan ${t}. Filtro Buffett, PEG Lynch, Magic Formula Greenblatt, riesgo Taleb, ciclo Marks y calidad Fink. Actualizado diariamente.${cedearNote}`,
     alternates: { canonical: `/analisis/${t}` },
     openGraph: {
@@ -134,9 +134,9 @@ export default async function AnalisisPage(
         <span className="text-xs uppercase tracking-widest" style={{ color: 'rgba(201,168,76,0.6)', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
           Omaha Bridge Group
         </span>
-        <Link href={`/analysis/${t}`} className="text-xs px-3 py-1 rounded-full border transition-colors hover:bg-[#C9A84C]/10"
+        <Link href="/ideas" className="text-xs px-3 py-1 rounded-full border transition-colors hover:bg-[#C9A84C]/10"
           style={{ color: '#C9A84C', borderColor: 'rgba(201,168,76,0.3)' }}>
-          Análisis en vivo →
+          Screener →
         </Link>
       </header>
 
@@ -590,12 +590,12 @@ export default async function AnalisisPage(
         <section className="text-center py-6 rounded-xl border" style={{ borderColor: 'rgba(201,168,76,0.2)', background: 'rgba(7,43,24,0.5)' }}>
           <p className="text-sm mb-1" style={{ color: '#6A7A95' }}>Este análisis se actualiza automáticamente cada 24 horas.</p>
           <p className="text-base mb-4" style={{ color: '#A8BCA8', fontFamily: 'var(--font-playfair), Georgia, serif' }}>
-            ¿Querés el análisis en tiempo real con los 6 maestros deliberando en vivo?
+            ¿Querés ver el veredicto de otra acción?
           </p>
-          <Link href={`/analysis/${t}`}
+          <Link href="/analisis"
             className="inline-block px-6 py-2.5 rounded-full font-semibold text-sm transition-all hover:opacity-90"
             style={{ background: '#C9A84C', color: '#051A10' }}>
-            Análisis en vivo de {t} →
+            Ver todas las acciones →
           </Link>
         </section>
 

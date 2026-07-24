@@ -43,7 +43,7 @@ const SAGES: SageEntry[] = [
   {
     id: 'buffett', name: 'Buffett', title: 'El Anfitrión',
     suit: '♥', accent: '#D4A843', cardLabel: 'QUALITY & MOAT',
-    headline: 'Wonderful companies at fair prices',
+    headline: 'Empresas excepcionales a precios justos',
     metrics: [{ label: 'MOAT', value: 'Wide' }, { label: 'ROIC', value: '>15%' }, { label: 'P/FCF', value: '<25x' }],
     cardPos:  { left: 'calc(50% - 30px)',  top: 'calc(50% - 337px)' },
     panelPos: { left: 'calc(50% + 38px)',  top: 'calc(50% - 337px)' },
@@ -52,7 +52,7 @@ const SAGES: SageEntry[] = [
   {
     id: 'lynch', name: 'Lynch', title: 'El Rastreador',
     suit: '♣', accent: '#2EC47E', cardLabel: 'GROWTH',
-    headline: 'Average investor wins (PEG)',
+    headline: 'El inversor promedio puede ganar (PEG)',
     metrics: [{ label: 'PEG', value: '<1.0' }, { label: 'GROWTH', value: '>10%' }, { label: 'EPS', value: 'Rising' }],
     /* 60° — upper-right */
     cardPos:  { left: 'calc(50% + 226px)', top: 'calc(50% - 190px)' },
@@ -62,7 +62,7 @@ const SAGES: SageEntry[] = [
   {
     id: 'greenblatt', name: 'Greenblatt', title: 'El Matemático',
     suit: '♦', accent: '#7BBDE0', cardLabel: 'VALUE',
-    headline: 'Magic formula (cheap & good)',
+    headline: 'Magic Formula: barata y de calidad',
     metrics: [{ label: 'EARN YLD', value: '>8%' }, { label: 'ROC', value: '>20%' }, { label: 'RANK', value: 'Top 30' }],
     /* 120° — lower-right */
     cardPos:  { left: 'calc(50% + 226px)', top: 'calc(50% + 106px)' },
@@ -72,7 +72,7 @@ const SAGES: SageEntry[] = [
   {
     id: 'fink', name: 'Fink', title: 'El Arquitecto',
     suit: '✦', accent: '#A78BFA', cardLabel: 'INSTITUTIONAL',
-    headline: 'Long-term capital stewardship',
+    headline: 'Gestión de capital a largo plazo',
     metrics: [{ label: 'INST GRADE', value: 'A+' }, { label: 'GOVERN', value: 'High' }, { label: 'TSY', value: '>2%' }],
     /* 180° — bottom center */
     cardPos:  { left: 'calc(50% - 30px)',  top: 'calc(50% + 253px)' },
@@ -82,7 +82,7 @@ const SAGES: SageEntry[] = [
   {
     id: 'taleb', name: 'Taleb', title: 'El Centinela',
     suit: '★', accent: '#A8BDD8', cardLabel: 'ANTIFRAGILITY',
-    headline: 'Hunts hidden leverage, avoids ruin',
+    headline: 'Caza el apalancamiento oculto, evita la ruina',
     metrics: [{ label: 'LEVERAGE', value: 'Low' }, { label: 'TAIL RISK', value: 'Hedged' }, { label: 'CONVEX', value: 'Yes' }],
     /* 240° — lower-left */
     cardPos:  { left: 'calc(50% - 286px)', top: 'calc(50% + 106px)' },
@@ -92,7 +92,7 @@ const SAGES: SageEntry[] = [
   {
     id: 'marks', name: 'Marks', title: 'El Estratega',
     suit: '♠', accent: '#6AAFFA', cardLabel: 'CYCLES',
-    headline: 'Second-level thinking (market cycles)',
+    headline: 'Pensamiento de segundo nivel (ciclos de mercado)',
     metrics: [{ label: 'CYCLE POS', value: 'Late' }, { label: 'SPREAD', value: 'Tight' }, { label: 'RISK/RWD', value: '0.8x' }],
     /* 300° — upper-left */
     cardPos:  { left: 'calc(50% - 286px)', top: 'calc(50% - 190px)' },
@@ -146,7 +146,7 @@ export default function HomePage() {
     }, 280)
   }, [query])
 
-  function navigate(s: string) { setShowSuggestions(false); router.push(`/analysis/${s.toUpperCase()}`) }
+  function navigate(s: string) { setShowSuggestions(false); router.push(`/analisis/${s.toUpperCase()}`) }
   function onSubmit(e: React.FormEvent) { e.preventDefault(); const t = query.trim().toUpperCase(); if (t) navigate(t) }
 
   return (
@@ -427,6 +427,35 @@ export default function HomePage() {
                   <div style={{ color: '#7A9E88', fontSize: 12, lineHeight: 1.6 }}>{desc}</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* METODOLOGÍA */}
+        <section className="w-full max-w-2xl mx-auto px-4 pb-6">
+          <div style={{ borderTop: '1px solid rgba(201,168,76,0.12)', paddingTop: 28 }}>
+            <div style={{ color: 'rgba(201,168,76,0.65)', fontSize: 8, letterSpacing: '0.50em', textTransform: 'uppercase', textAlign: 'center', marginBottom: 20 }}>
+              ♠ &nbsp; Por qué Omaha Bridge Group &nbsp; ♠
+            </div>
+            <div style={{ color: '#9DBBA8', fontSize: 13, lineHeight: 1.8 }}>
+              <p style={{ marginBottom: 14 }}>
+                Cada gran inversor de la historia construyó su fortuna siguiendo un método propio, no la intuición.
+                Omaha Bridge Group traduce esos métodos a números concretos: convertimos las reglas de valuación de
+                Warren Buffett, el crecimiento a precio razonable de Peter Lynch, la <span translate="no">Magic Formula</span> de
+                Joel Greenblatt, la disciplina institucional de Larry Fink, la gestión del riesgo de cola de Nassim Taleb
+                y la lectura de ciclos de mercado de Howard Marks en un veredicto único por acción.
+              </p>
+              <p style={{ marginBottom: 14 }}>
+                No publicamos opiniones genéricas. Cada ticker que consultás pasa por los mismos filtros cuantitativos
+                que usarías con acceso a un equipo de research propio: múltiplos de valuación, retorno sobre el
+                capital invertido, apalancamiento, momentum de ganancias y posición en el ciclo de mercado. Los datos
+                salen de fuentes públicas (FMP, Yahoo Finance, FRED) y se actualizan de forma automática, así que el
+                veredicto que ves refleja el precio y los fundamentals de hoy, no un análisis desactualizado.
+              </p>
+              <p>
+                Esto no es asesoramiento financiero — es una herramienta para pensar como los seis inversores más
+                influyentes del último siglo antes de tomar vos la decisión final.
+              </p>
             </div>
           </div>
         </section>

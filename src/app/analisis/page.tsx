@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Análisis de acciones — Value Investing | Omaha Bridge Group',
+  title: 'Análisis de acciones — Value Investing',
   description: 'Analizá cualquier acción con los criterios exactos de Buffett, Lynch, Greenblatt, Taleb, Marks y Fink. Análisis value investing en español. CEDEARs incluidos para inversores argentinos.',
   alternates: { canonical: '/analisis' },
   openGraph: {
@@ -105,13 +105,6 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Omaha Bridge Group' },
 }
 
-// Top 10 have cached analysis pages (/analisis/[ticker]).
-// All others route to the live analysis (/analysis/[ticker]) to preserve the interactive experience.
-const CACHED_TICKERS = new Set([
-  'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META',
-  'NVDA', 'TSLA', 'JPM',   'V',    'KO',
-])
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function AnalisisIndexPage() {
@@ -169,7 +162,7 @@ export default function AnalisisIndexPage() {
                 {sector.tickers.map(({ ticker, name, cedear }) => (
                   <Link
                     key={ticker}
-                    href={CACHED_TICKERS.has(ticker) ? `/analisis/${ticker}` : `/analysis/${ticker}`}
+                    href={`/analisis/${ticker}`}
                     className="group rounded-xl border p-4 flex flex-col gap-1.5 transition-all hover:border-[#C9A84C]/30 hover:bg-[#C9A84C]/5"
                     style={{ borderColor: 'rgba(201,168,76,0.1)', background: 'rgba(7,43,24,0.4)' }}
                   >
