@@ -87,10 +87,12 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6133557054306983"
           crossOrigin="anonymous"
+          suppressHydrationWarning
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          suppressHydrationWarning
         />
       </head>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-ZL175YKVP9" strategy="afterInteractive" />
